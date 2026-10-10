@@ -1,0 +1,23 @@
+SlpCode,SlpName,Memo,Active,U_Zona
+-1,-Ningún empleado de ventas-,,Y,
+1,"RAMIREZ QUISPE, JORGE",Vendedor,Y,Lima
+2,"SOTO VEGA, MARIA FERNANDA",Vendedor,Y,Lima
+3,"CHAVEZ ROJAS, RAUL",Vendedor,Y,Lima
+4,"TORRES LEON, ANA",Vendedor,Y,Lima
+5,"GUTIERREZ SALAS, PEDRO",Vendedor,Y,Lima
+6,"FLORES CASTRO, ROSA",Vendedor,Y,Lima
+7,"HUAMAN DIAZ, MIGUEL",Vendedor,N,Lima
+8,"VARGAS NUÑEZ, LUCIA",Vendedor,Y,Lima
+9,"CCALLO MAMANI, RENZO",Vendedor,Y,Arequipa
+10,"PINTO ZEGARRA, KARINA",Vendedor,Y,Arequipa
+11,"DELGADO FUENTES, OSCAR",Vendedor,Y,Arequipa
+12,"ALVA REYES, CARLOS",Vendedor,Y,Lima
+13,"LAZO BEJARANO, DIANA",Vendedor,Y,Arequipa
+14,"SANCHEZ CABRERA, JULIO",Vendedor,Y,Trujillo
+15,"RODRIGUEZ PLASENCIA, MONICA",Vendedor,Y,Trujillo
+16,"GAMBOA LINARES, EDGAR",Vendedor,Y,Trujillo
+17,"OLIVARES BRAVO, PATRICIA",Ejecutivo corporativo,Y,Cuentas corporativas
+18,"CASTILLO MEJIA, FERNANDO",Ejecutivo corporativo,Y,Cuentas corporativas
+22,"PALACIOS RIVERA, ANDREA",Vendedor,Y,Lima
+30,ATENCION AL CLIENTE,,Y,
+31,TIENDA WEB,,Y,

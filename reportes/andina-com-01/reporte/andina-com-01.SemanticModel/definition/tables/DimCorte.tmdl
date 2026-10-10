@@ -1,0 +1,29 @@
+table DimCorte
+	lineageTag: 0634e222-7837-593e-9607-044b8fe84959
+
+	column CorteKey
+		dataType: string
+		lineageTag: 03399ae4-0ecd-5257-9a52-d37599496f65
+		summarizeBy: none
+		sourceColumn: CorteKey
+
+	column DatosHasta
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: a005de41-b6e5-584a-8920-f486d09199b8
+		summarizeBy: none
+		sourceColumn: DatosHasta
+
+	column Extraccion
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 4cf5c22e-d193-5105-8706-80a0106d6204
+		summarizeBy: none
+		sourceColumn: Extraccion
+
+	partition DimCorte = m
+		mode: import
+		source = Table.TransformColumnTypes(Stage[DimCorte],{{"CorteKey", type text}, {"DatosHasta", type datetime}, {"Extraccion", type datetime}},"en-US")
+
+	annotation PBI_ResultType = Table
+

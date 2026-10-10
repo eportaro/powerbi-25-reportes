@@ -1,0 +1,8 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../andina-com-01.SemanticModel"
+    }
+  }
+}

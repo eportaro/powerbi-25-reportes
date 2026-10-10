@@ -1,0 +1,33 @@
+table DimMes
+	lineageTag: c5c811c2-cee7-5b93-98bc-718b625ef2cd
+
+	column MesKey
+		dataType: int64
+		lineageTag: 84e42e4a-3a00-5f5a-a0d2-f1586e4685a5
+		summarizeBy: none
+		sourceColumn: MesKey
+
+	column Anio
+		dataType: int64
+		lineageTag: e91de9ab-1d58-5fd3-8199-40d0a38e31d3
+		summarizeBy: none
+		sourceColumn: Anio
+
+	column Mes
+		dataType: int64
+		lineageTag: b198a76a-fed9-561a-9eda-c61e35c7b6ce
+		summarizeBy: none
+		sourceColumn: Mes
+
+	column Etiqueta
+		dataType: string
+		lineageTag: eb89bde7-18e5-59c9-a1a0-386c42ced0de
+		summarizeBy: none
+		sourceColumn: Etiqueta
+
+	partition DimMes = m
+		mode: import
+		source = Table.TransformColumnTypes(Stage[DimMes],{{"MesKey", Int64.Type}, {"Anio", Int64.Type}, {"Mes", Int64.Type}, {"Etiqueta", type text}},"en-US")
+
+	annotation PBI_ResultType = Table
+

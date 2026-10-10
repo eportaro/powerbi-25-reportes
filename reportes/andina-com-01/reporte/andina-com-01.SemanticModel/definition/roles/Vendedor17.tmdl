@@ -1,0 +1,19 @@
+role Vendedor17
+	modelPermission: read
+
+	tablePermission FactVentaLinea = [VendedorKey]=17
+
+	tablePermission FactPendienteLinea = [VendedorKey]=17
+
+	tablePermission FactMetaVersion = [VendedorKey]=17
+
+	tablePermission FactAjusteCierre = FALSE()
+
+	tablePermission FactAvancePermitido = [ZonaKey]="Cuentas corporativas"
+
+	tablePermission DimCliente = CONTAINSSTRING([AccesoVendedores],"|17|")
+
+	tablePermission DimDocumento = CONTAINSSTRING([AccesoVendedores],"|17|")
+
+	annotation PBI_Id = 5216698823704e9d8cbfac2802db64d2
+

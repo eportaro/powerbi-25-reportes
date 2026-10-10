@@ -1,0 +1,39 @@
+model Model
+	culture: es-PE
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-PE
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["DimFecha","DimMes","DimCliente","DimProducto","DimVendedor","DimZonaComercial","DimRegionAtencion","DimDocumento","DimGrupoPendiente","DimCorte","FactVentaLinea","FactAjusteCierre","FactMetaVersion","FactPendienteLinea","FactAvancePermitido","DataFolder","SqlServer","SqlDatabase","Cutoff","Holidays","SalesSQL","PendingSQL","Manual","Stage"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DimFecha
+ref table DimMes
+ref table DimCliente
+ref table DimProducto
+ref table DimVendedor
+ref table DimZonaComercial
+ref table DimRegionAtencion
+ref table DimDocumento
+ref table DimGrupoPendiente
+ref table DimCorte
+ref table FactVentaLinea
+ref table FactAjusteCierre
+ref table FactMetaVersion
+ref table FactPendienteLinea
+ref table FactAvancePermitido
+
+ref role DireccionFinanzas
+ref role JefeLima
+ref role JefeArequipa
+ref role JefeTrujillo
+ref role Vendedor1
+ref role Vendedor17
+
+ref cultureInfo es-PE
+

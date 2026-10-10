@@ -1,0 +1,53 @@
+table DimCliente
+	lineageTag: 7e7da461-581e-5ca9-8a6e-797c8074fac3
+
+	column ClienteKey
+		dataType: string
+		lineageTag: 4a5c19b0-aa9a-5ace-8a30-267c84155b7a
+		summarizeBy: none
+		sourceColumn: ClienteKey
+
+	column Nombre
+		dataType: string
+		lineageTag: 454959c7-8ba7-5471-81d2-a6e993c69338
+		summarizeBy: none
+		sourceColumn: Nombre
+
+	column RUC
+		dataType: string
+		lineageTag: 7a014a22-0d7f-5a58-b383-d0cfb2547478
+		summarizeBy: none
+		sourceColumn: RUC
+
+	column FatherCard
+		dataType: string
+		lineageTag: adaa425e-ef21-56d4-a82c-f8a269d4ac75
+		summarizeBy: none
+		sourceColumn: FatherCard
+
+	column GroupCode
+		dataType: int64
+		lineageTag: c645d3cc-8ee1-58e1-88b6-bed09014a6a9
+		summarizeBy: none
+		sourceColumn: GroupCode
+
+	column AccesoVendedores
+		dataType: string
+		isHidden
+		lineageTag: cf959d99-ff33-5b13-b094-575379c57c9b
+		summarizeBy: none
+		sourceColumn: AccesoVendedores
+
+	column AccesoZonas
+		dataType: string
+		isHidden
+		lineageTag: 1f2f88f9-3cc4-5ee6-bf73-dee52866e98a
+		summarizeBy: none
+		sourceColumn: AccesoZonas
+
+	partition DimCliente = m
+		mode: import
+		source = Table.TransformColumnTypes(Stage[DimCliente],{{"ClienteKey", type text}, {"Nombre", type text}, {"RUC", type text}, {"FatherCard", type text}, {"GroupCode", Int64.Type}, {"AccesoVendedores", type text}, {"AccesoZonas", type text}},"en-US")
+
+	annotation PBI_ResultType = Table
+

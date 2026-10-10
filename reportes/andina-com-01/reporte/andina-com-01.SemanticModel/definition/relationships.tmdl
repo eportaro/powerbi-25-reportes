@@ -1,0 +1,92 @@
+relationship 64a438e0-5322-5377-9899-b9d83d8f28f2
+	fromColumn: FactVentaLinea.FechaKey
+	toColumn: DimFecha.FechaKey
+
+relationship 6a148b64-70e0-53e2-8ca0-fe7e06e1f046
+	fromColumn: FactVentaLinea.MesKey
+	toColumn: DimMes.MesKey
+
+relationship ba231ad0-4674-5ccd-ba44-72fa21ee7181
+	fromColumn: FactVentaLinea.ClienteKey
+	toColumn: DimCliente.ClienteKey
+
+relationship fd0dc739-2e52-5031-9bb6-685a313460ec
+	fromColumn: FactVentaLinea.ProductoKey
+	toColumn: DimProducto.ProductoKey
+
+relationship d8e819cc-3e67-5035-83b2-9595168965a0
+	fromColumn: FactVentaLinea.VendedorKey
+	toColumn: DimVendedor.VendedorKey
+
+relationship 1a291dc4-a504-5263-bf86-858d7d897599
+	fromColumn: FactVentaLinea.ZonaKey
+	toColumn: DimZonaComercial.ZonaKey
+
+relationship 3e5ef719-ecb7-5a32-b784-2787a1d646cb
+	fromColumn: FactVentaLinea.RegionKey
+	toColumn: DimRegionAtencion.RegionKey
+
+relationship dbdc49da-882e-57d2-b43a-c13545c487a2
+	fromColumn: FactVentaLinea.DocumentoKey
+	toColumn: DimDocumento.DocumentoKey
+
+relationship 148b7e13-6ac1-5466-861c-58589bece2c8
+	fromColumn: FactAjusteCierre.MesKey
+	toColumn: DimMes.MesKey
+
+relationship 1b47a701-468a-5262-bb56-150e810c500c
+	fromColumn: FactMetaVersion.MesKey
+	toColumn: DimMes.MesKey
+
+relationship e663241c-fa18-58e9-95bc-fd92c04ca475
+	fromColumn: FactMetaVersion.VendedorKey
+	toColumn: DimVendedor.VendedorKey
+
+relationship 5bf1b5e0-59cd-5620-a8e1-228307bce681
+	fromColumn: FactMetaVersion.ZonaKey
+	toColumn: DimZonaComercial.ZonaKey
+
+relationship 7a4fd160-90b8-5e04-8293-6df74e4906d4
+	fromColumn: FactPendienteLinea.CorteKey
+	toColumn: DimCorte.CorteKey
+
+relationship 0501a0be-731b-591c-94cd-5722fdb035ee
+	fromColumn: FactPendienteLinea.ClienteKey
+	toColumn: DimCliente.ClienteKey
+
+relationship 229d8946-b306-53a0-aeab-9ca21f5b31dd
+	fromColumn: FactPendienteLinea.ProductoKey
+	toColumn: DimProducto.ProductoKey
+
+relationship a3b2bf02-45b2-5d17-9b63-3e65b0a30228
+	fromColumn: FactPendienteLinea.VendedorKey
+	toColumn: DimVendedor.VendedorKey
+
+relationship 6eba551e-56d2-5b79-93be-b6d851ab661d
+	fromColumn: FactPendienteLinea.ZonaKey
+	toColumn: DimZonaComercial.ZonaKey
+
+relationship f3e6f612-f662-5c82-920f-e9ce05fbf1b4
+	fromColumn: FactPendienteLinea.RegionKey
+	toColumn: DimRegionAtencion.RegionKey
+
+relationship fc9f0fa7-fd30-5015-921b-a964e6c6b5c8
+	fromColumn: FactPendienteLinea.GrupoKey
+	toColumn: DimGrupoPendiente.GrupoKey
+
+relationship bb793bc8-a29f-552d-b507-a6450b57f7c2
+	fromColumn: FactAvancePermitido.CorteKey
+	toColumn: DimCorte.CorteKey
+
+relationship e199b0a2-2239-5f05-9adc-f179c205cf7a
+	fromColumn: FactAvancePermitido.MesKey
+	toColumn: DimMes.MesKey
+
+relationship 10a45548-2000-582a-99af-2ef36c88e3d6
+	fromColumn: FactAvancePermitido.VendedorKey
+	toColumn: DimVendedor.VendedorKey
+
+relationship 9bc92220-7d4f-5520-a8da-1f7429ed03e7
+	fromColumn: FactAvancePermitido.ZonaKey
+	toColumn: DimZonaComercial.ZonaKey
+

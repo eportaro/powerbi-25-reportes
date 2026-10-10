@@ -1,0 +1,21 @@
+table DimVendedor
+	lineageTag: 4abd387c-022a-5491-b66b-8bbda65d19f5
+
+	column VendedorKey
+		dataType: int64
+		lineageTag: 34a8ccde-5a2d-521c-9b02-fdd3034ffa6b
+		summarizeBy: none
+		sourceColumn: VendedorKey
+
+	column Nombre
+		dataType: string
+		lineageTag: 7c6fd9cb-21ee-59a2-8724-b98d3416ef8c
+		summarizeBy: none
+		sourceColumn: Nombre
+
+	partition DimVendedor = m
+		mode: import
+		source = Table.TransformColumnTypes(Stage[DimVendedor],{{"VendedorKey", Int64.Type}, {"Nombre", type text}},"en-US")
+
+	annotation PBI_ResultType = Table
+

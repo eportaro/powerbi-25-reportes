@@ -1,0 +1,21 @@
+table DimZonaComercial
+	lineageTag: c6ab98f4-6f58-523f-b5ba-4c97710e6c47
+
+	column ZonaKey
+		dataType: string
+		lineageTag: d8d2286e-ceec-5f1d-a4ed-3424f9e4b63d
+		summarizeBy: none
+		sourceColumn: ZonaKey
+
+	column Nombre
+		dataType: string
+		lineageTag: 4779c3a1-616c-5cd8-9439-28e9a1ebf5ba
+		summarizeBy: none
+		sourceColumn: Nombre
+
+	partition DimZonaComercial = m
+		mode: import
+		source = Table.TransformColumnTypes(Stage[DimZonaComercial],{{"ZonaKey", type text}, {"Nombre", type text}},"en-US")
+
+	annotation PBI_ResultType = Table
+

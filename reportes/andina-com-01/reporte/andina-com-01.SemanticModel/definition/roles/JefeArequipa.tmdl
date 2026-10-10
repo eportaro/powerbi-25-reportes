@@ -1,0 +1,17 @@
+role JefeArequipa
+	modelPermission: read
+
+	tablePermission FactVentaLinea = [ZonaKey]="Arequipa" || ([ZonaKey]="Cuentas corporativas" && [RegionKey]="Arequipa")
+
+	tablePermission FactPendienteLinea = [ZonaKey]="Arequipa" || ([ZonaKey]="Cuentas corporativas" && [RegionKey]="Arequipa")
+
+	tablePermission FactMetaVersion = [ZonaKey]="Arequipa"
+
+	tablePermission FactAjusteCierre = FALSE()
+
+	tablePermission DimCliente = CONTAINSSTRING([AccesoZonas],"|Arequipa|")
+
+	tablePermission DimDocumento = CONTAINSSTRING([AccesoZonas],"|Arequipa|")
+
+	annotation PBI_Id = feeb0ab6fc784899859f425e73e5391a
+

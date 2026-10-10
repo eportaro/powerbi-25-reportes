@@ -1,0 +1,213 @@
+expression DataFolder = "REEMPLAZAR-por-la-ruta-de-la-carpeta-datos" meta [IsParameterQuery=true,Type="Text",IsParameterQueryRequired=true]
+	lineageTag: 7da9f7b2-7c3c-573b-8d39-e53bad3e9fdf
+
+	annotation PBI_ResultType = Text
+
+expression SqlServer = "localhost" meta [IsParameterQuery=true,Type="Text",IsParameterQueryRequired=true]
+	lineageTag: cfdfbf39-908a-523b-91a9-e83c0ebf3ee8
+
+	annotation PBI_ResultType = Text
+
+expression SqlDatabase = "SBO_ANDINA_SIM" meta [IsParameterQuery=true,Type="Text",IsParameterQueryRequired=true]
+	lineageTag: 469410ee-1b29-5d97-b692-eb361b61f2e0
+
+	annotation PBI_ResultType = Text
+
+expression Cutoff = #datetime(2026,10,7,23,59,59)
+	lineageTag: 876e25ec-8a3c-5ed7-97a1-846e7068a733
+
+expression Holidays = {#date(2024,1,1),#date(2024,3,28),#date(2024,3,29),#date(2024,5,1),#date(2024,6,7),#date(2024,6,29),#date(2024,7,23),#date(2024,7,28),#date(2024,7,29),#date(2024,8,6),#date(2024,8,30),#date(2024,10,8),#date(2024,11,1),#date(2024,12,8),#date(2024,12,9),#date(2024,12,25),#date(2025,1,1),#date(2025,4,17),#date(2025,4,18),#date(2025,5,1),#date(2025,6,7),#date(2025,6,29),#date(2025,7,23),#date(2025,7,28),#date(2025,7,29),#date(2025,8,6),#date(2025,8,30),#date(2025,10,8),#date(2025,11,1),#date(2025,12,8),#date(2025,12,9),#date(2025,12,25),#date(2026,1,1),#date(2026,4,2),#date(2026,4,3),#date(2026,5,1),#date(2026,6,7),#date(2026,6,29),#date(2026,7,23),#date(2026,7,28),#date(2026,7,29),#date(2026,8,6),#date(2026,8,30),#date(2026,10,8),#date(2026,11,1),#date(2026,12,8),#date(2026,12,9),#date(2026,12,25)}
+	lineageTag: b3e3098e-b03e-5b0e-b8b7-ae511690ec26
+
+expression SalesSQL = "-- Solo SELECT. Grano fiscal tabla/DocEntry/LineNum; nunca sumar cabeceras repetidas.#(lf)WITH InvoiceOrigins AS (#(lf) SELECT l.DocEntry,l.LineNum,o.DocEntry AS OrderEntry,o.DocDate AS OrderDate,#(lf)        o.SlpCode AS OrderSeller,o.ShipToCode AS OrderShipTo#(lf) FROM dbo.INV1 l#(lf) LEFT JOIN dbo.INV1 original ON l.BaseType=13 AND original.DocEntry=l.BaseEntry AND original.LineNum=l.BaseLine#(lf) LEFT JOIN dbo.DLN1 dl ON dl.DocEntry=CASE WHEN l.BaseType=15 THEN l.BaseEntry WHEN original.BaseType=15 THEN original.BaseEntry END#(lf)                     AND dl.LineNum=CASE WHEN l.BaseType=15 THEN l.BaseLine WHEN original.BaseType=15 THEN original.BaseLine END#(lf) LEFT JOIN dbo.ORDR o ON dl.BaseType=17 AND o.DocEntry=dl.BaseEntry#(lf)), InvoiceOrder AS (#(lf) SELECT DocEntry,CASE WHEN COUNT(DISTINCT OrderEntry)=1 THEN MIN(OrderEntry) END OrderEntry#(lf) FROM InvoiceOrigins GROUP BY DocEntry#(lf)), ManualReference AS (#(lf) SELECT nc.DocEntry, CASE WHEN COUNT(DISTINCT inv.DocEntry)=1 THEN MIN(inv.DocEntry) END InvoiceEntry#(lf) FROM dbo.ORIN nc LEFT JOIN dbo.OINV inv ON inv.CANCELED<>'C' AND inv.CardCode=nc.CardCode#(lf)   AND (CHARINDEX(CONCAT(inv.FolioPref,'-',RIGHT(CONCAT('00000000',inv.FolioNum),8)),#(lf)        CONCAT(nc.U_DocRef,' ',nc.NumAtCard,' ',nc.Comments))>0)#(lf) GROUP BY nc.DocEntry#(lf)), Raw AS (#(lf) SELECT 'OINV' Tabla,h.DocEntry,l.LineNum,h.DocDate,h.CreateDate,h.CANCELED,h.DocType,#(lf) h.CardCode,l.ItemCode,h.SlpCode,h.ShipToCode,h.DocCur,h.DocRate,h.DiscPrcnt,l.DiscPrcnt LineDiscPrcnt,#(lf) l.Price,l.Quantity,l.LineTotal,h.DocTotal-h.VatSum HeaderNet,#(lf) CASE WHEN h.CANCELED='C' THEN -1 ELSE 1 END Signo,#(lf) CONCAT(h.FolioPref,'-',RIGHT(CONCAT('00000000',h.FolioNum),8)) Folio,#(lf) org.OrderEntry,org.OrderDate,org.OrderSeller,org.OrderShipTo,CAST(NULL AS datetime) OriginalInvoiceDate,#(lf) CAST(NULL AS datetime) OriginalInvoiceCreateDate,CAST(NULL AS nvarchar(250)) ReferenciaNC,#(lf) CAST(NULL AS varchar(30)) OrigenNC,h.U_Canal#(lf) FROM dbo.OINV h JOIN dbo.INV1 l ON l.DocEntry=h.DocEntry#(lf) LEFT JOIN InvoiceOrigins org ON org.DocEntry=l.DocEntry AND org.LineNum=l.LineNum#(lf) UNION ALL#(lf) SELECT 'ORIN',h.DocEntry,l.LineNum,h.DocDate,h.CreateDate,h.CANCELED,h.DocType,#(lf) h.CardCode,l.ItemCode,h.SlpCode,h.ShipToCode,h.DocCur,h.DocRate,h.DiscPrcnt,l.DiscPrcnt,#(lf) l.Price,l.Quantity,l.LineTotal,h.DocTotal-h.VatSum,-1,#(lf) CONCAT(h.FolioPref,'-',RIGHT(CONCAT('00000000',h.FolioNum),8)),#(lf) COALESCE(lineorg.OrderEntry,onlyorder.OrderEntry),o.DocDate,o.SlpCode,o.ShipToCode,inv.DocDate,inv.CreateDate,h.U_DocRef,#(lf) CASE WHEN inv.DocEntry IS NOT NULL THEN 'Probado' ELSE 'Sin referencia probada' END,h.U_Canal#(lf) FROM dbo.ORIN h JOIN dbo.RIN1 l ON h.DocEntry=l.DocEntry#(lf) LEFT JOIN ManualReference ref ON ref.DocEntry=h.DocEntry#(lf) LEFT JOIN dbo.OINV inv ON inv.DocEntry=CASE WHEN l.BaseType=13 THEN l.BaseEntry ELSE ref.InvoiceEntry END#(lf)                           AND inv.CardCode=h.CardCode#(lf) LEFT JOIN InvoiceOrigins lineorg ON l.BaseType=13 AND lineorg.DocEntry=inv.DocEntry AND lineorg.LineNum=l.BaseLine#(lf) LEFT JOIN InvoiceOrder onlyorder ON onlyorder.DocEntry=inv.DocEntry#(lf) LEFT JOIN dbo.ORDR o ON o.DocEntry=COALESCE(lineorg.OrderEntry,onlyorder.OrderEntry)#(lf)), Rounded AS (#(lf) SELECT *, CAST(ROUND(LineTotal*(1-DiscPrcnt/100.0),2) AS decimal(19,2)) LineRounded,#(lf) ROW_NUMBER() OVER(PARTITION BY Tabla,DocEntry ORDER BY ABS(LineTotal*(1-DiscPrcnt/100.0)) DESC,LineNum) ResidualRank,#(lf) COUNT(*) OVER(PARTITION BY Tabla,DocEntry) LineCount FROM Raw#(lf)), WithResidual AS (#(lf) SELECT *,HeaderNet-SUM(LineRounded) OVER(PARTITION BY Tabla,DocEntry) Residual FROM Rounded#(lf))#(lf)SELECT r.*,t.descript TerritoryName,addr.City DestinationCity,addr.Address DestinationAddress#(lf)FROM WithResidual r LEFT JOIN dbo.OCRD c ON c.CardCode=r.CardCode#(lf)LEFT JOIN dbo.OTER t ON t.territryID=c.Territory#(lf)LEFT JOIN dbo.CRD1 addr ON addr.CardCode=r.CardCode AND addr.AdresType='S'#(lf)  AND addr.Address=COALESCE(r.OrderShipTo,r.ShipToCode)#(lf)ORDER BY r.Tabla,r.DocEntry,r.LineNum#(lf)"
+	lineageTag: ec9a869a-5872-541f-b769-581644bded98
+
+expression PendingSQL = "-- Residuales de pedidos y entregas. Ambas etapas son excluyentes por OpenQty.#(lf)WITH Lines AS (#(lf) SELECT 'Pedido' Etapa,h.DocEntry,l.LineNum,h.CardCode,l.ItemCode,l.WhsCode,l.Quantity,l.OpenQty,#(lf) l.LineTotal,h.DiscPrcnt,h.DocDate,h.DocDueDate,l.ShipDate,h.SlpCode,h.ShipToCode,h.Confirmed,h.NumAtCard,#(lf) h.Comments,h.PartSupply,l.Price,h.DocEntry OrderEntry#(lf) FROM dbo.ORDR h JOIN dbo.RDR1 l ON l.DocEntry=h.DocEntry#(lf) WHERE h.CANCELED='N' AND h.DocStatus='O' AND l.LineStatus='O' AND l.OpenQty>0#(lf) UNION ALL#(lf) SELECT 'Entrega',h.DocEntry,l.LineNum,h.CardCode,l.ItemCode,l.WhsCode,l.Quantity,l.OpenQty,#(lf) l.LineTotal,h.DiscPrcnt,COALESCE(o.DocDate,h.DocDate),h.DocDueDate,l.ShipDate,#(lf) COALESCE(o.SlpCode,h.SlpCode),COALESCE(o.ShipToCode,h.ShipToCode),COALESCE(o.Confirmed,'Y'),o.NumAtCard,#(lf) o.Comments,COALESCE(o.PartSupply,'Y'),l.Price,o.DocEntry#(lf) FROM dbo.ODLN h JOIN dbo.DLN1 l ON l.DocEntry=h.DocEntry#(lf) LEFT JOIN dbo.ORDR o ON l.BaseType=17 AND o.DocEntry=l.BaseEntry#(lf) WHERE h.CANCELED='N' AND h.DocStatus='O' AND l.LineStatus='O' AND l.OpenQty>0#(lf))#(lf)SELECT l.*,COALESCE(i.InvntItem,'N') InvntItem,COALESCE(w.OnHand,0) OnHand,#(lf) COALESCE(w.IsCommited,0) IsCommited,COALESCE(w.OnOrder,0) OnOrder,#(lf) c.U_BloqCred,c.U_ExigeOC,t.descript TerritoryName,a.City DestinationCity,a.Address DestinationAddress,#(lf) COALESCE(po.TotalPO,0) TotalPO,COALESCE(po.MonthPO,0) MonthPO,po.FirstArrival,#(lf) COALESCE(pk.PickQtty,0) PickQtty#(lf)FROM Lines l LEFT JOIN dbo.OITM i ON i.ItemCode=l.ItemCode#(lf)LEFT JOIN dbo.OITW w ON w.ItemCode=l.ItemCode AND w.WhsCode=l.WhsCode#(lf)LEFT JOIN dbo.OCRD c ON c.CardCode=l.CardCode LEFT JOIN dbo.OTER t ON t.territryID=c.Territory#(lf)LEFT JOIN dbo.CRD1 a ON a.CardCode=l.CardCode AND a.AdresType='S' AND a.Address=l.ShipToCode#(lf)OUTER APPLY (SELECT SUM(p.OpenQty) TotalPO,#(lf) SUM(CASE WHEN p.ShipDate<=EOMONTH(CAST('2026-10-07' AS date)) THEN p.OpenQty ELSE 0 END) MonthPO,#(lf) MIN(p.ShipDate) FirstArrival FROM dbo.POR1 p JOIN dbo.OPOR oh ON oh.DocEntry=p.DocEntry#(lf) WHERE p.ItemCode=l.ItemCode AND p.WhsCode=l.WhsCode AND p.LineStatus='O' AND p.OpenQty>0#(lf) AND oh.CANCELED='N' AND oh.DocStatus='O') po#(lf)OUTER APPLY (SELECT SUM(PickQtty) PickQtty FROM dbo.PKL1#(lf) WHERE BaseObject=17 AND OrderEntry=l.OrderEntry AND OrderLine=l.LineNum) pk#(lf)ORDER BY l.Etapa,l.DocEntry,l.LineNum#(lf)"
+	lineageTag: 77ab16dc-b72d-5eb7-bba6-2bf00c763d1a
+
+expression Manual =
+		let
+		    MonthNames = {"enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"},
+		    Norm = (x as any) as text => Text.Lower(Text.Trim(Text.From(x ?? ""))),
+		    MonthKey = (s as text, y as number) as number => y*100 + List.PositionOf(MonthNames, Norm(s)) + 1,
+		    Sheet = (binary as binary) as table => Excel.Workbook(binary, false, true){0}[Data],
+		    Sellers = Table.Buffer(Sql.Database(SqlServer, SqlDatabase){[Schema="dbo",Item="OSLP"]}[Data]),
+		    Tokens = (s as text) as list => List.Select(Text.SplitAny(Text.Replace(Text.Replace(Text.Replace(Text.Replace(Text.Replace(Text.Replace(Norm(s),"á","a"),"é","e"),"í","i"),"ó","o"),"ú","u"),"ñ","n"), " .,"), each _<>""),
+		    Seller = (s as any) as number => let
+		        ts = Tokens(Text.From(s)), lastname = List.Last(ts), given = List.RemoveLastN(ts,1),
+		        matches = Table.SelectRows(Sellers, (r) => if not Text.Contains(r[SlpName],",") then false else
+		            let ap = Tokens(Text.BeforeDelimiter(r[SlpName],",")), nm = Tokens(Text.AfterDelimiter(r[SlpName],","))
+		            in List.Count(given)<=List.Count(nm) and List.First(ap)=lastname and
+		               List.AllTrue(List.Transform(List.Positions(given), (i) => Text.StartsWith(nm{i},given{i})))),
+		        n = Table.RowCount(matches)
+		        in if n=1 then matches{0}[SlpCode] else error "Equivalencia vendedor ambigua/ausente: " & Text.From(s),
+		    RegistryRaw = Sheet(File.Contents(DataFolder & "\excel\Comercial\Metas\Registro de aprobaciones.xlsx")),
+		    Registry = Table.Buffer(Table.Skip(RegistryRaw,1)),
+		    Files = Table.SelectRows(Folder.Files(DataFolder & "\excel\Comercial\Metas"), each [Extension]=".xlsx" and [Name]<>"Registro de aprobaciones.xlsx" and not Text.Contains(Norm([Name]),"copia")),
+		    Parse = (file as record) as table => let
+		        rows = Table.ToRows(Sheet(file[Content])),
+		        title = Text.Combine(List.Transform(List.RemoveNulls(List.First(List.Select(rows, each Text.Contains(Text.Combine(List.Transform(List.RemoveNulls(_),each Text.From(_))," "),"versión ")))), each Text.From(_))," "),
+		        titleparts = Text.Split(Text.BeforeDelimiter(title," —")," "),
+		        mk = MonthKey(List.Last(List.RemoveLastN(titleparts,1)),Number.FromText(List.Last(titleparts))),
+		        ver = Number.FromText(Text.Select(Text.AfterDelimiter(title,"versión "),{"0".."9"})),
+		        reg = Table.SelectRows(Registry, each Text.From([Column1])=Text.Start(Text.From(mk),4)&"-"&Text.End(Text.From(mk),2) and Number.From([Column2])=ver and [Column3]=file[Name]),
+		        note = List.First(List.Select(rows, each Text.Contains(Norm(Text.Combine(List.Transform(List.RemoveNulls(_), each Text.From(_))," ")),"aprobado por")),null),
+		        notetext = if note=null then "" else Text.Combine(List.Transform(List.RemoveNulls(note),each Text.From(_))," "),
+		        noteDate = try Date.FromText(Text.End(notetext,10),[Culture="es-PE"]) otherwise null,
+		        approved = if Table.RowCount(reg)=1 then (try Date.From(reg{0}[Column7]) otherwise null) else if mk=202609 and ver=2 and file[Name]="Metas 2026-09 v2.xlsx" then noteDate else null,
+		        header = List.PositionOf(List.Transform(rows,each _{0}),"Zona"),
+		        detail = if header<0 then error "Meta sin cabecera" else List.Select(List.Skip(rows,header+1),each _{0}<>null and _{1}<>null and not Text.StartsWith(Text.From(_{1}),"Subtotal") and Text.From(_{1})<>"Total empresa"),
+		        result = Table.FromRecords(List.Transform(detail, each [MesKey=mk,VendedorKey=Seller(_{1}),ZonaKey=if Norm(_{0})="corporativas" then "Cuentas corporativas" else Text.Proper(Norm(_{0})),Version=ver,MetaPEN=Number.Round(Number.From(_{2}),2,RoundingMode.AwayFromZero),FechaAprobacion=approved,Fuente=file[Name],ProcedenciaAprobacion=if Table.RowCount(reg)=1 then "Registro Excel" else "Confirmación ronda 4 + fecha de nota"])),
+		        eligible = if approved<>null and approved<=Date.From(Cutoff) then result else Table.FirstN(result,0)
+		        in eligible,
+		    MetaRaw = Table.Combine(List.Transform(Table.ToRecords(Files),Parse)),
+		    MetaGrouped = Table.Group(MetaRaw,{"MesKey"},{{"Rows",(t) => let versions=List.Sort(List.Distinct(t[Version])) in Table.AddColumn(Table.AddColumn(t,"EsOriginal",each if [Version]=List.First(versions) then 1 else 0,Int64.Type),"EsVigente",each if [Version]=List.Last(versions) then 1 else 0,Int64.Type)}}),
+		    Meta = Table.Buffer(Table.Combine(MetaGrouped[Rows])),
+		    PortfolioRows = Table.ToRows(Table.Skip(Sheet(File.Contents(DataFolder & "\excel\Comercial\Cambios de cartera.xlsx")),1)),
+		    Portfolio = Table.Buffer(Table.FromRecords(List.Transform(List.Select(PortfolioRows,each _{0}<>null),each [Fecha=Date.From(_{0}),ClienteKey=Text.From(_{1}),Antes=Seller(_{3}),Nuevo=Seller(_{4})]))),
+		    CloseBook = Excel.Workbook(File.Contents(DataFolder & "\excel\Finanzas\Cierre mensual de ventas.xlsx"),false,true),
+		    CloseRows = Table.Combine(List.Transform(Table.ToRecords(Table.SelectRows(CloseBook,each [Kind]="Sheet")), (sheet) =>
+		        Table.FromRecords(List.Transform(List.Select(Table.ToRows(sheet[Data]),each List.Contains(MonthNames,Norm(_{0}))), each [MesKey=MonthKey(_{0},Number.FromText(sheet[Name])),ImportePEN=Number.From(_{3}??0),ReferenciaExcel=Number.From(_{4}),FechaCierre=try Date.From(_{5}) otherwise null])))),
+		    Close = Table.Buffer(CloseRows),
+		    WooFiles = Table.SelectRows(Folder.Files(DataFolder & "\csv\WooCommerce"),each Text.StartsWith([Name],"pedidos-") and [Extension]=".csv"),
+		    Woo = Table.Buffer(Table.Combine(List.Transform(WooFiles[Content],each Table.PromoteHeaders(Csv.Document(_,[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),[PromoteAllScalars=true]))))
+		in
+		    [Metas=Meta,Cartera=Portfolio,Cierre=Close,Woo=Woo]
+	lineageTag: 4055ad85-9abd-54dc-b3bd-9a9de838b806
+
+expression Stage =
+		let
+		    SAP = Sql.Database(SqlServer,SqlDatabase),
+		    T = (name as text) as table => SAP{[Schema="dbo",Item=name]}[Data],
+		    MK = (d as date) as number => Date.Year(d)*100+Date.Month(d),
+		    FK = (d as date) as number => MK(d)*100+Date.Day(d),
+		    CutDate = Date.From(Cutoff),
+		    HistMeta = Table.SelectRows(Manual[Metas],each [EsOriginal]=1),
+		    ZoneMap = Record.FromList(HistMeta[ZonaKey],List.Transform(Table.ToRecords(HistMeta),each Text.From([MesKey])&":"&Text.From([VendedorKey]))),
+		    PortfolioMap = Record.FromList(List.Transform(Table.Group(Manual[Cartera],{"ClienteKey"},{{"Events",each Table.Sort(_,{"Fecha",Order.Ascending})}})[Events],each Table.ToRecords(_)),
+		        Table.Group(Manual[Cartera],{"ClienteKey"},{{"Events",each _}})[ClienteKey]),
+		    CloseMap = Record.FromList(Manual[Cierre][FechaCierre],List.Transform(Manual[Cierre][MesKey],each Text.From(_))),
+		    OrdersRaw = Table.Buffer(T("ORDR")),
+		    OrderMap = Record.FromList(Table.ToRecords(OrdersRaw),List.Transform(OrdersRaw[DocEntry],each Text.From(_))),
+		    QuotesRaw = Table.Buffer(T("OQUT")),
+		    QuoteMap = Record.FromList(Table.ToRecords(QuotesRaw),List.Transform(QuotesRaw[DocNum],each Text.From(_))),
+		    ClientRaw = Table.Buffer(T("OCRD")),
+		    ClientMap = Record.FromList(ClientRaw[LicTradNum],ClientRaw[CardCode]),
+		    WooMap = Record.FromList(Table.ToRecords(Manual[Woo]),Table.Column(Manual[Woo],"N.º de pedido")),
+		    DigitsAfter = (s as text,label as text) as nullable number => if not Text.Contains(s,label) then null else
+		        let tail=Text.Trim(Text.AfterDelimiter(s,label)),digits=Text.Combine(List.FirstN(Text.ToList(tail),each List.Contains({"0".."9"},_)))
+		        in try Number.FromText(digits) otherwise null,
+		    QuoteProof = (r as record) as nullable record => let
+		        order=if r[OrderEntry]=null then null else Record.FieldOrDefault(OrderMap,Text.From(r[OrderEntry]),null),
+		        wid=if order=null then null else order[U_WooOrderId] ?? DigitsAfter(order[NumAtCard]??"","WEB ") ?? DigitsAfter(order[Comments]??"","Pedido tienda online "),
+		        woo=if wid=null then null else Record.FieldOrDefault(WooMap,Text.From(wid),null),
+		        note=Text.Lower(Text.Replace((if woo=null then "" else Record.Field(woo,"Nota del cliente"))&" "&(if order=null then "" else order[Comments]??""),"ó","o")),
+		        ts=List.Select(Text.SplitAny(note," ()#(tab),.-:;"),each _<>""),
+		        citations=List.Distinct(List.RemoveNulls(List.Transform(List.Select(List.Positions(ts),each ts{_}="cot" or Text.StartsWith(ts{_},"cotizaci")),each try Number.FromText(ts{_+1}) otherwise null))),
+		        q=if List.Count(citations)<>1 then null else Record.FieldOrDefault(QuoteMap,Text.From(citations{0}),null),
+		        cr=Record.FieldOrDefault(ClientMap,r[CardCode],null),qr=if q=null then null else Record.FieldOrDefault(ClientMap,q[CardCode],null),
+		        valid=q<>null and (q[CardCode]=r[CardCode] or (cr<>null and cr<>"" and cr=qr))
+		        in if valid then q else null,
+		    Region = (territory as any,city as any,address as any) as text =>
+		        if List.Contains({"Lima","Arequipa","Trujillo"},territory) then territory
+		        else if address<>null and Text.Upper(Text.Trim(address))<>"PRINCIPAL" and List.Contains({"Lima","Arequipa","Trujillo"},city) then city
+		        else "Desconocida",
+		    Attr = (r as record) as record => let
+		        od = Date.From(r[OrderDate] ?? r[DocDate]),
+		        base = r[OrderSeller] ?? r[SlpCode],
+		        proof = QuoteProof(r),
+		        events = Record.FieldOrDefault(PortfolioMap,r[CardCode],{}),
+		        before = List.Select(events,each [Fecha]<=od),
+		        historical = if proof<>null then proof[SlpCode] else if List.Contains({-1,30,31},base) then -1 else if r[OrderEntry]=null or List.IsEmpty(events) then base
+		                     else if List.IsEmpty(before) then events{0}[Antes] else List.Last(before)[Nuevo],
+		        zoneRegion = Region(r[TerritoryName],r[DestinationCity],r[DestinationAddress]),
+		        region = Region(null,r[DestinationCity],r[DestinationAddress]),
+		        zone = if historical=-1 then (if zoneRegion="Desconocida" then "Sin zona asignada" else zoneRegion)
+		               else Record.FieldOrDefault(ZoneMap,Text.From(MK(od))&":"&Text.From(historical),"Sin zona asignada")
+		        in [VendedorKey=historical,ZonaKey=zone,RegionKey=region,FechaPedido=od,FuenteAtribucion=if proof<>null then "Cita única Woo/SAP + cotización + identidad" else if r[OrderEntry]=null then "Documento sin pedido probado" else if List.IsEmpty(events) then "Pedido SAP + metas históricas" else "Cartera Excel + metas históricas"],
+		    Attribute = (t as table) as table => Table.ExpandRecordColumn(Table.AddColumn(t,"Atribucion",each Attr(_)),"Atribucion",{"VendedorKey","ZonaKey","RegionKey","FechaPedido","FuenteAtribucion"}),
+		    SalesRaw = Table.Buffer(Sql.Database(SqlServer,SqlDatabase,[Query=SalesSQL])),
+		    SalesGuard = if Table.RowCount(Table.SelectRows(SalesRaw,each ([Tabla]="ORIN" and [CANCELED]<>"N") or Number.Abs([Residual])>Number.RoundUp([LineCount]/2)*0.01+0.0000001))>0 then error "Documento sin regla de signo o residuo material" else SalesRaw,
+		    SalesAttr = Attribute(SalesGuard),
+		    SalesRecon = Table.AddColumn(SalesAttr,"Reconocimiento",each let fd=Date.From([DocDate]),fc=Date.From([CreateDate]),cl=Record.FieldOrDefault(CloseMap,Text.From(MK(fd)),null) in if [Tabla]="OINV" and cl<>null and fc>Date.From(cl) then fc else fd,type date),
+		    SalesKeys = Table.AddColumn(Table.AddColumn(Table.AddColumn(Table.AddColumn(SalesRecon,"DocumentoKey",each [Tabla]&":"&Text.From([DocEntry]),type text),"ClienteKey",each [CardCode],type text),"ProductoKey",each if [ItemCode]=null or [ItemCode]="" then "SERVICIO" else [ItemCode],type text),"Tipo",each if [Tabla]="OINV" then "Factura" else if [DocType]="I" then "Devolución" else "Descuento",type text),
+		    InvoiceRaw = Table.Buffer(T("OINV")),
+		    MinFolioTable = Table.Group(Table.SelectRows(InvoiceRaw,each [CANCELED]<>"C"),{"FolioPref"},{{"Minimo",each List.Min([FolioNum]),Int64.Type}}),
+		    MinFolio = Record.FromList(MinFolioTable[Minimo],MinFolioTable[FolioPref]),
+		    NCOrigin = Table.AddColumn(SalesKeys,"OrigenNota",each if [Tabla]<>"ORIN" then null else
+		        if [OriginalInvoiceDate]<>null then let od=Date.From([OriginalInvoiceDate]),oc=Date.From([OriginalInvoiceCreateDate]),cl=Record.FieldOrDefault(CloseMap,Text.From(MK(od)),null),recognized=if cl<>null and oc>Date.From(cl) then oc else od in if MK(recognized)=MK(Date.From([DocDate])) then "Ventas de este mes" else "Ventas de meses anteriores"
+		        else let ref=Text.Trim([ReferenciaNC]??""),parts=Text.Split(ref,"-"),prefix=if List.Count(parts)=2 then parts{0} else "",num=if List.Count(parts)=2 then (try Number.FromText(parts{1}) otherwise null) else null,minimum=Record.FieldOrDefault(MinFolio,prefix,null)
+		        in if minimum<>null and num<>null and num<minimum then "Anterior a historia; sin factura cargada" else "Origen no identificado",type text),
+		    SalesNet = Table.AddColumn(Table.AddColumn(Table.AddColumn(NCOrigin,"NetoPENFirmado",each ([LineRounded]+(if [ResidualRank]=1 then [Residual] else 0))*[Signo],Currency.Type),"ResiduoCentimos",each if [ResidualRank]=1 then [Residual]*[Signo]*100 else 0,Int64.Type),"CantidadFirmada",each [Quantity]*[Signo],type number),
+		    SalesDates = Table.AddColumn(Table.AddColumn(SalesNet,"FechaKey",each FK([Reconocimiento]),Int64.Type),"MesKey",each MK([Reconocimiento]),Int64.Type),
+		    SalesFinal = Table.SelectColumns(SalesDates,{"DocumentoKey","LineNum","FechaKey","MesKey","ClienteKey","ProductoKey","VendedorKey","ZonaKey","RegionKey","NetoPENFirmado","CantidadFirmada","ResiduoCentimos","Tipo","Folio","DocDate","CreateDate","Reconocimiento","FechaPedido","FuenteAtribucion","OrigenNC","OrigenNota","ReferenciaNC","OriginalInvoiceDate","Price","LineDiscPrcnt","DiscPrcnt","DocCur","DocRate","U_Canal","OrderEntry"}),
+		    PendingRaw0 = Sql.Database(SqlServer,SqlDatabase,[Query=Text.Replace(PendingSQL,"2026-10-07",Date.ToText(CutDate,[Format="yyyy-MM-dd"]))]),
+		    PendingRaw = Table.AddColumn(Table.AddColumn(PendingRaw0,"OrderDate",each [DocDate]),"OrderSeller",each [SlpCode]),
+		    PendingGuard = if Table.RowCount(Table.SelectRows(PendingRaw,each [Quantity]<=0))>0 then error "Saldo con cantidad original no positiva" else PendingRaw,
+		    PendingAttr = Attribute(PendingGuard),
+		    PendingFlags = Table.AddColumn(PendingAttr,"Flags",each let
+		        stock = [InvntItem]<>"Y" or [Etapa]="Entrega" or [OnHand]>=List.Max({[IsCommited],[OpenQty]}),
+		        deficit = List.Max({[IsCommited],[OpenQty]})-[OnHand],
+		        noPO = not stock and [TotalPO]<=0,
+		        futurePO = not stock and [MonthPO]<deficit,
+		        delivery = Date.From([ShipDate]??[DocDueDate]),
+		        complete = [PartSupply]="N" or Text.Contains(Text.Upper([Comments]??""),"ENTREGA COMPLETA")
+		        in [FlagFuturo=if MK(delivery)>MK(CutDate) then 1 else 0,
+		            FlagVencido=if Duration.Days(Date.AddDays(CutDate,1)-Date.From([DocDueDate]))>60 then 1 else 0,
+		            FlagSinCompra=if noPO then 1 else 0,FlagLlegada=if not stock and not noPO then 1 else 0,
+		            FlagCondiciones=if [Confirmed]<>"Y" or [U_BloqCred]="Y" or ([U_ExigeOC]="Y" and Text.Trim([NumAtCard]??"")="") or [Price]<=0 then 1 else 0,
+		            FlagCompleto=if complete then 1 else 0,StockCubierto=if stock then 1 else 0,
+		            CompraCubreMes=if not futurePO then 1 else 0,FlagPicking=if stock and [PickQtty]<[OpenQty] and [Etapa]="Pedido" then 1 else 0]),
+		    FlagNames = {"FlagFuturo","FlagVencido","FlagSinCompra","FlagLlegada","FlagCondiciones","FlagCompleto","StockCubierto","CompraCubreMes","FlagPicking"},
+		    PendingExpanded = Table.ExpandRecordColumn(PendingFlags,"Flags",FlagNames),
+		    CompleteGroups = Table.Group(PendingExpanded,{"Etapa","DocEntry"},{{"All",(t) => let
+		        complete=List.Max(t[FlagCompleto])=1,
+		        uncovered=List.Min(t[StockCubierto])=0,
+		        other=List.Max(t[FlagCondiciones])=1,
+		        nopo=List.Max(t[FlagSinCompra])=1,
+		        arrival=List.Max(t[FlagLlegada])=1,
+		        future=List.Max(t[FlagFuturo])=1,
+		        overdue=List.Max(t[FlagVencido])=1,
+		        add = Table.AddColumn(t,"GrupoKey",each if [FlagFuturo]=1 or (complete and future) then 1 else if [FlagVencido]=1 or (complete and overdue) then 2
+		              else if [FlagSinCompra]=1 or (complete and uncovered and nopo) then 3
+		              else if [FlagLlegada]=1 or (complete and uncovered and arrival) then 4
+		              else if [FlagCondiciones]=1 or (complete and other) then 5 else 6,Int64.Type)
+		        in add}}),
+		    PendingAll = Table.Combine(CompleteGroups[All]),
+		    PendingKeys = Table.AddColumn(Table.AddColumn(Table.AddColumn(PendingAll,"CorteKey",each "snapshot-20261008T070000",type text),"ClienteKey",each [CardCode],type text),"ProductoKey",each if [ItemCode]=null or [ItemCode]="" then "SERVICIO" else [ItemCode],type text),
+		    PendingNet = Table.AddColumn(Table.AddColumn(PendingKeys,"SaldoPEN",each Currency.From([LineTotal]*[OpenQty]/[Quantity]*(1-[DiscPrcnt]/100),null,RoundingMode.AwayFromZero),Currency.Type),"CantidadAbierta",each [OpenQty],type number),
+		    PendingFinal = Table.SelectColumns(PendingNet,List.Combine({{"CorteKey","Etapa","DocEntry","LineNum","OrderEntry","ClienteKey","ProductoKey","VendedorKey","ZonaKey","RegionKey","GrupoKey","SaldoPEN","CantidadAbierta","ShipDate","FechaPedido","FuenteAtribucion","Price","WhsCode","FirstArrival"},FlagNames})),
+		    Adjust = Table.AddColumn(Table.SelectRows(Manual[Cierre],each [ImportePEN]<>0),"AjusteKey",each Text.From([MesKey])&":ajuste-cierre",type text),
+		    AdjFinal = Table.AddColumn(Table.SelectColumns(Adjust,{"AjusteKey","MesKey","ImportePEN"}),"Concepto",each "Ajustes de cierre",type text),
+		    SaleAgg = Table.Group(SalesFinal,{"MesKey","VendedorKey","ZonaKey"},{{"VentaPEN",each List.Sum([NetoPENFirmado]),Currency.Type}}),
+		    MetaAgg = Table.Group(Manual[Metas],{"MesKey","VendedorKey","ZonaKey"},{{"MetaVigentePEN",each List.Sum(Table.SelectRows(_,each [EsVigente]=1)[MetaPEN]),Currency.Type},{"MetaOriginalPEN",each List.Sum(Table.SelectRows(_,each [EsOriginal]=1)[MetaPEN]),Currency.Type}}),
+		    AggKeys = Table.Distinct(Table.Combine({Table.SelectColumns(SaleAgg,{"MesKey","VendedorKey","ZonaKey"}),Table.SelectColumns(MetaAgg,{"MesKey","VendedorKey","ZonaKey"})})),
+		    AggJoined = Table.ExpandTableColumn(Table.NestedJoin(AggKeys,{"MesKey","VendedorKey","ZonaKey"},SaleAgg,{"MesKey","VendedorKey","ZonaKey"},"Sale",JoinKind.LeftOuter),"Sale",{"VentaPEN"}),
+		    AggMeta = Table.ExpandTableColumn(Table.NestedJoin(AggJoined,{"MesKey","VendedorKey","ZonaKey"},MetaAgg,{"MesKey","VendedorKey","ZonaKey"},"Meta",JoinKind.LeftOuter),"Meta",{"MetaVigentePEN","MetaOriginalPEN"}),
+		    AggFinal = Table.AddColumn(AggMeta,"CorteKey",each "snapshot-20261008T070000",type text),
+		    DateList = List.Dates(#date(2024,1,1),Duration.Days(#date(2027,1,1)-#date(2024,1,1)),#duration(1,0,0,0)),
+		    Dates = Table.FromRecords(List.Transform(DateList,each [FechaKey=FK(_),Fecha=_,MesKey=MK(_),Anio=Date.Year(_),Mes=Date.Month(_),Habil=if Date.DayOfWeek(_,Day.Monday)<5 and not List.Contains(Holidays,_) then 1 else 0,Disponible=if _<=CutDate then 1 else 0])),
+		    Months = Table.Distinct(Table.SelectColumns(Table.AddColumn(Dates,"Etiqueta",each Date.ToText([Fecha],[Format="yyyy-MM"])),{"MesKey","Anio","Mes","Etiqueta"})),
+		    Security = (data as table,keys as list) as table => Table.Group(data,keys,{
+		        {"AccesoVendedores",each "|" & Text.Combine(List.Transform(List.Sort(List.Distinct([VendedorKey])),each Text.From(_)),"|") & "|",type text},
+		        {"AccesoZonas",each "|" & Text.Combine(List.Sort(List.Distinct(List.Combine({[ZonaKey],Table.SelectRows(_,each [ZonaKey]="Cuentas corporativas")[RegionKey]}))),"|") & "|",type text}}),
+		    ClientAccess = Security(Table.Combine({Table.SelectColumns(SalesFinal,{"ClienteKey","VendedorKey","ZonaKey","RegionKey"}),Table.SelectColumns(PendingFinal,{"ClienteKey","VendedorKey","ZonaKey","RegionKey"})}),{"ClienteKey"}),
+		    ClientsRaw = Table.RenameColumns(Table.SelectColumns(T("OCRD"),{"CardCode","CardName","LicTradNum","FatherCard","GroupCode"}),{{"CardCode","ClienteKey"},{"CardName","Nombre"},{"LicTradNum","RUC"}}),
+		    Clients = Table.ExpandTableColumn(Table.NestedJoin(ClientsRaw,{"ClienteKey"},ClientAccess,{"ClienteKey"},"Access",JoinKind.LeftOuter),"Access",{"AccesoVendedores","AccesoZonas"}),
+		    Products = Table.RenameColumns(Table.SelectColumns(T("OITM"),{"ItemCode","ItemName","ItmsGrpCod","InvntItem"}),{{"ItemCode","ProductoKey"},{"ItemName","Nombre"}}),
+		    ProductsFinal = Table.Combine({Products,#table({"ProductoKey","Nombre","ItmsGrpCod","InvntItem"},{{"SERVICIO","Servicio / sin artículo",-1,"N"}})}),
+		    Sellers = Table.RenameColumns(Table.SelectRows(Table.SelectColumns(T("OSLP"),{"SlpCode","SlpName"}),each not List.Contains({-1,30,31},[SlpCode])),{{"SlpCode","VendedorKey"},{"SlpName","Nombre"}}),
+		    SellersFinal = Table.Combine({Sellers,#table({"VendedorKey","Nombre"},{{-1,"Sin vendedor"}})}),
+		    DocumentRows = Table.Distinct(Table.SelectColumns(SalesFinal,{"DocumentoKey","Folio","Tipo","DocDate","CreateDate","Reconocimiento"})),
+		    DocumentAccess = Security(SalesFinal,{"DocumentoKey"}),
+		    Documents = Table.ExpandTableColumn(Table.NestedJoin(DocumentRows,{"DocumentoKey"},DocumentAccess,{"DocumentoKey"},"Access",JoinKind.LeftOuter),"Access",{"AccesoVendedores","AccesoZonas"}),
+		    Groups = #table({"GrupoKey","Nombre"},{{1,"Entrega fuera de este mes"},{2,"Vencidos más de 60 días"},{3,"Sin stock y sin compra en camino"},{4,"Depende de llegada"},{5,"Otras condiciones"},{6,"Facturable este mes"}}),
+		    Cuts = #table({"CorteKey","DatosHasta","Extraccion"},{{"snapshot-20261008T070000",CutDate,#datetime(2026,10,8,7,0,0)}}),
+		    Zones = #table({"ZonaKey","Nombre"},List.Transform({"Lima","Arequipa","Trujillo","Cuentas corporativas","Sin zona asignada"},each {_,_})),
+		    Regions = #table({"RegionKey","Nombre"},List.Transform({"Lima","Arequipa","Trujillo","Desconocida"},each {_,_})),
+		    WooGuard = if Table.RowCount(Manual[Woo])=0 then error "Export Woo vacío" else SalesFinal
+		in
+		    [FactVentaLinea=WooGuard,FactAjusteCierre=AdjFinal,FactMetaVersion=Manual[Metas],FactPendienteLinea=PendingFinal,FactAvancePermitido=AggFinal,
+		     DimFecha=Dates,DimMes=Months,DimCliente=Clients,DimProducto=ProductsFinal,DimVendedor=SellersFinal,DimZonaComercial=Zones,DimRegionAtencion=Regions,DimDocumento=Documents,DimGrupoPendiente=Groups,DimCorte=Cuts]
+	lineageTag: 489a33e9-f63f-5c1a-ab34-6de1f0d8a1ee
+

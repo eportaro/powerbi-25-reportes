@@ -1,0 +1,53 @@
+table DimFecha
+	lineageTag: 50976852-975f-5c82-9965-01d6e6509d28
+	dataCategory: Time
+
+	column FechaKey
+		dataType: int64
+		lineageTag: 05eefc83-4fe7-5384-8cda-50c493de3dbf
+		summarizeBy: none
+		sourceColumn: FechaKey
+
+	column Fecha
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 5f35c133-0e23-5a2e-b769-0a4dcf617ea4
+		summarizeBy: none
+		sourceColumn: Fecha
+
+	column MesKey
+		dataType: int64
+		lineageTag: 312d8849-513d-5b3a-9236-e33fa558748f
+		summarizeBy: none
+		sourceColumn: MesKey
+
+	column Anio
+		dataType: int64
+		lineageTag: f0f64c74-0c01-5fdc-97dd-db405e6aef36
+		summarizeBy: none
+		sourceColumn: Anio
+
+	column Mes
+		dataType: int64
+		lineageTag: 2a6a5cb5-4869-5b2e-8671-44077b75318b
+		summarizeBy: none
+		sourceColumn: Mes
+
+	column Habil
+		dataType: int64
+		lineageTag: c77bc301-75d0-57eb-8ea9-867e74960819
+		summarizeBy: none
+		sourceColumn: Habil
+
+	column Disponible
+		dataType: int64
+		lineageTag: 4458e38a-1bb3-570a-a85e-b094ff8232dd
+		summarizeBy: none
+		sourceColumn: Disponible
+
+	partition DimFecha = m
+		mode: import
+		source = Table.TransformColumnTypes(Stage[DimFecha],{{"FechaKey", Int64.Type}, {"Fecha", type datetime}, {"MesKey", Int64.Type}, {"Anio", Int64.Type}, {"Mes", Int64.Type}, {"Habil", Int64.Type}, {"Disponible", Int64.Type}},"en-US")
+
+	annotation PBI_ResultType = Table
+

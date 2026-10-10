@@ -1,0 +1,21 @@
+table DimRegionAtencion
+	lineageTag: e607f3b4-850d-5027-a0af-c951b1b92abd
+
+	column RegionKey
+		dataType: string
+		lineageTag: 6dbb5cc6-f0d7-5140-b5c3-51380faa3b7c
+		summarizeBy: none
+		sourceColumn: RegionKey
+
+	column Nombre
+		dataType: string
+		lineageTag: 937f8b7b-37ef-5dae-9fa5-2728fe8bdef8
+		summarizeBy: none
+		sourceColumn: Nombre
+
+	partition DimRegionAtencion = m
+		mode: import
+		source = Table.TransformColumnTypes(Stage[DimRegionAtencion],{{"RegionKey", type text}, {"Nombre", type text}},"en-US")
+
+	annotation PBI_ResultType = Table
+

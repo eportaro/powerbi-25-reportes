@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "andina-com-01"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "869ba1a1-d58f-4ac2-906e-a0dd868e0384"
+  }
+}

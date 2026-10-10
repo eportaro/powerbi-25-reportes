@@ -1,0 +1,412 @@
+table FactVentaLinea
+	lineageTag: 10cf5ccc-0fcb-55b4-b435-bf70544aee73
+
+	measure 'Venta comercial' = SUM(FactVentaLinea[NetoPENFirmado])
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 01 Ventas
+		lineageTag: c525a86e-aa40-5080-93ec-189812eb3ed8
+
+	measure Facturación = CALCULATE([Venta comercial],FactVentaLinea[Tipo]="Factura")
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 01 Ventas
+		lineageTag: e7e6bcc2-1e5c-53a7-b42a-f3d09e3e9732
+
+	measure Devoluciones = -CALCULATE([Venta comercial],FactVentaLinea[Tipo]="Devolución")
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 01 Ventas
+		lineageTag: 6d90397e-7af8-5ca3-a44b-6b6f32c4ea54
+
+	measure 'Descuentos por nota' = -CALCULATE([Venta comercial],FactVentaLinea[Tipo]="Descuento")
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 01 Ventas
+		lineageTag: 5d4e878f-7aca-56fb-a1bb-75cd17f47ab4
+
+	measure 'Notas de crédito' = [Devoluciones]+[Descuentos por nota]
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 01 Ventas
+		lineageTag: 0f94e362-a022-5688-a57b-f8207682b05a
+
+	measure 'Notas sobre ventas anteriores' = -CALCULATE([Venta comercial],FactVentaLinea[Tipo]<>"Factura",FactVentaLinea[OrigenNota] IN {"Ventas de meses anteriores","Anterior a historia; sin factura cargada"})
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 01 Ventas
+		lineageTag: 5577d9ab-8741-5320-9d0d-826a0bfcaaa3
+
+	measure 'Notas sin origen identificado' = -CALCULATE([Venta comercial],FactVentaLinea[OrigenNota]="Origen no identificado")
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 01 Ventas
+		lineageTag: ddf746ea-f5e3-561d-a8c0-3384dd46b1d2
+
+	measure 'Ajustes de cierre' = IF(ISCROSSFILTERED(DimCliente) || ISCROSSFILTERED(DimProducto) || ISCROSSFILTERED(DimDocumento) || ISCROSSFILTERED(DimVendedor) || ISCROSSFILTERED(DimZonaComercial) || ISCROSSFILTERED(DimRegionAtencion),BLANK(),CALCULATE(SUM(FactAjusteCierre[ImportePEN]),KEEPFILTERS(TREATAS(VALUES(DimFecha[MesKey]),DimMes[MesKey]))))
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 01 Ventas
+		lineageTag: c827beca-eac9-5944-97b9-a3c77082ec82
+
+	measure 'Venta neta' =
+			VAR v=[Venta comercial]
+			RETURN IF(ISBLANK(v),BLANK(),v+COALESCE([Ajustes de cierre],0))
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 01 Ventas
+		lineageTag: e8e29503-cb6c-5a14-9f84-c9571cf96f89
+
+	measure 'Venta oficial empresa' = IF(ISCROSSFILTERED(DimCliente) || ISCROSSFILTERED(DimProducto) || ISCROSSFILTERED(DimDocumento) || ISCROSSFILTERED(DimVendedor) || ISCROSSFILTERED(DimZonaComercial) || ISCROSSFILTERED(DimRegionAtencion),BLANK(),[Venta neta])
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 01 Ventas
+		lineageTag: 295dd87f-be2d-5d3d-8dea-4ffd0667d581
+
+	measure 'Documentos fiscales' = DISTINCTCOUNT(FactVentaLinea[DocumentoKey])
+		formatString: #,0
+		displayFolder: 05 Trazabilidad
+		lineageTag: 4428e8cf-8d39-5302-b333-8f9f652fa243
+
+	measure 'Residuo de redondeo' = DIVIDE(SUM(FactVentaLinea[ResiduoCentimos]),100)
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 05 Trazabilidad
+		lineageTag: 6c74d553-24df-5133-930e-737472556d85
+
+	measure 'Meta vigente' = IF(ISCROSSFILTERED(DimCliente) || ISCROSSFILTERED(DimProducto) || ISCROSSFILTERED(DimDocumento),BLANK(),CALCULATE(SUM(FactMetaVersion[MetaPEN]),FactMetaVersion[EsVigente]=1,KEEPFILTERS(TREATAS(VALUES(DimFecha[MesKey]),DimMes[MesKey]))))
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 02 Metas
+		lineageTag: a5410d97-e210-59bf-a1eb-76a1a82a45d3
+
+	measure 'Meta original' = IF(ISCROSSFILTERED(DimCliente) || ISCROSSFILTERED(DimProducto) || ISCROSSFILTERED(DimDocumento),BLANK(),CALCULATE(SUM(FactMetaVersion[MetaPEN]),FactMetaVersion[EsOriginal]=1,KEEPFILTERS(TREATAS(VALUES(DimFecha[MesKey]),DimMes[MesKey]))))
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 02 Metas
+		lineageTag: cf193b80-8214-5a7b-b58f-b9342372bc2e
+
+	measure Cumplimiento = DIVIDE([Venta neta],[Meta vigente])
+		formatString: 0.0%
+		displayFolder: 02 Metas
+		lineageTag: 1be4157f-7620-5f49-9877-091f04dc3cef
+
+	measure 'Faltante a meta' =
+			VAR m=[Meta vigente]
+			VAR v=[Venta neta]
+			RETURN IF(ISBLANK(m)||ISBLANK(v),BLANK(),MAX(0,m-v))
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 02 Metas
+		lineageTag: 7972e87f-7a32-5ade-bce1-134ce98d61e9
+
+	measure 'Venta año anterior comparable' =
+			VAR fechas=CALCULATETABLE(VALUES(DimFecha[Fecha]),DimFecha[Disponible]=1,TREATAS(VALUES(DimMes[MesKey]),DimFecha[MesKey]))
+			VAR previas=DISTINCT(SELECTCOLUMNS(fechas,"FechaAnterior",EDATE(DimFecha[Fecha],-12)))
+			RETURN IF(COUNTROWS(fechas)=0 || MINX(previas,[FechaAnterior])<DATE(2024,1,1),BLANK(),CALCULATE([Venta neta],REMOVEFILTERS(DimFecha),REMOVEFILTERS(DimMes),TREATAS(previas,DimFecha[Fecha])))
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 03 Comparación
+		lineageTag: 9d7ea991-ca2b-5bb9-9af8-4bd9433f7049
+
+	measure 'Variación interanual' =
+			VAR actual=[Venta neta]
+			VAR previa=[Venta año anterior comparable]
+			RETURN IF(ISBLANK(actual)||ISBLANK(previa),BLANK(),DIVIDE(actual-previa,previa))
+		formatString: 0.0%
+		displayFolder: 03 Comparación
+		lineageTag: b15f473c-7844-5015-b27d-34bc553c3ed5
+
+	measure 'Venta año anterior mes completo' =
+			VAR meses=SELECTCOLUMNS(VALUES(DimMes[MesKey]),"MesAnterior",DimMes[MesKey]-100)
+			RETURN CALCULATE([Venta neta],REMOVEFILTERS(DimFecha),REMOVEFILTERS(DimMes),TREATAS(meses,DimMes[MesKey]))
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 03 Comparación
+		lineageTag: d16b7656-3a13-5143-bde6-4123bf855591
+
+	measure 'Días hábiles del mes' = IF(HASONEVALUE(DimMes[MesKey]),CALCULATE(SUM(DimFecha[Habil]),REMOVEFILTERS(DimFecha),TREATAS(VALUES(DimMes[MesKey]),DimFecha[MesKey])),BLANK())
+		formatString: 0
+		displayFolder: 02 Metas
+		lineageTag: 7c02834a-1986-5ddb-a7d8-342a9825d2da
+
+	measure 'Días hábiles transcurridos' = IF(HASONEVALUE(DimMes[MesKey]),CALCULATE(SUM(DimFecha[Habil]),REMOVEFILTERS(DimFecha),DimFecha[Disponible]=1,TREATAS(VALUES(DimMes[MesKey]),DimFecha[MesKey])),BLANK())
+		formatString: 0
+		displayFolder: 02 Metas
+		lineageTag: efe5806f-e7da-5f24-b187-3beb194cc60a
+
+	measure 'Días hábiles restantes' =
+			VAR total=[Días hábiles del mes]
+			RETURN IF(ISBLANK(total),BLANK(),MAX(0,total-[Días hábiles transcurridos]))
+		formatString: 0
+		displayFolder: 02 Metas
+		lineageTag: 5cde6386-8c80-5554-9dd4-f082924e8109
+
+	measure 'Faltante por día hábil' = DIVIDE([Faltante a meta],[Días hábiles restantes])
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 02 Metas
+		lineageTag: d27985d7-eff9-5aa5-a765-dd3f652b2d12
+
+	measure 'Venta diaria por hábil' = DIVIDE([Venta neta],[Días hábiles transcurridos])
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 02 Metas
+		lineageTag: 1cba1368-10a9-5f84-82c0-49bc592ee634
+
+	measure 'Avance esperado' = DIVIDE([Días hábiles transcurridos],[Días hábiles del mes])
+		formatString: 0.0%
+		displayFolder: 02 Metas
+		lineageTag: ef156c60-0272-5127-8f0b-28d0b107331f
+
+	measure Revisar =
+			VAR c=[Cumplimiento]
+			VAR e=[Avance esperado]
+			RETURN IF(ISBLANK(c)||ISBLANK(e),BLANK(),IF(c<e-0.05,1,0))
+		formatString: 0
+		displayFolder: 02 Metas
+		lineageTag: b785369d-048c-5cd6-8b53-f8c12a497217
+
+	measure 'Pendiente confirmado' = IF(HASONEVALUE(DimCorte[CorteKey]),ROUND(SUM(FactPendienteLinea[SaldoPEN]),2),BLANK())
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 04 Pendiente
+		lineageTag: 7a6b7eb2-edc8-5336-ace8-bf575cadf408
+
+	measure 'Facturable este mes' = CALCULATE([Pendiente confirmado],KEEPFILTERS(FactPendienteLinea[GrupoKey]=6))
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 04 Pendiente
+		lineageTag: b8621c90-cedb-560e-a33b-9ed752c18b0b
+
+	measure 'Facturable pendiente de picking' = CALCULATE([Facturable este mes],FactPendienteLinea[FlagPicking]=1)
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 04 Pendiente
+		lineageTag: 77a4b503-0466-58ed-bbf1-6ba7722b606d
+
+	measure 'Facturado más pendiente confirmado' =
+			VAR v=[Venta neta]
+			VAR p=[Pendiente confirmado]
+			RETURN IF(ISBLANK(v)||ISBLANK(p),BLANK(),v+p)
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 04 Pendiente
+		lineageTag: d6fbb805-3396-509c-9700-25c735b90de5
+
+	measure 'Avance permitido venta' = IF(HASONEVALUE(DimCorte[CorteKey]),SUM(FactAvancePermitido[VentaPEN]),BLANK())
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 06 Avance sin detalle
+		lineageTag: 7d2ed146-92f9-5353-b780-9578be2a07e2
+
+	measure 'Avance permitido meta' = IF(HASONEVALUE(DimCorte[CorteKey]),SUM(FactAvancePermitido[MetaVigentePEN]),BLANK())
+		formatString: "S/ "#,0.00;("S/ "#,0.00);"S/ "0.00
+		displayFolder: 06 Avance sin detalle
+		lineageTag: bb7cf308-f926-5494-ba62-d701578bc57e
+
+	measure 'Avance permitido cumplimiento' = DIVIDE([Avance permitido venta],[Avance permitido meta])
+		formatString: 0.0%
+		displayFolder: 06 Avance sin detalle
+		lineageTag: 85cc49a8-9598-58af-a2eb-8b3db365c2be
+
+	column DocumentoKey
+		dataType: string
+		isHidden
+		lineageTag: 0335afbd-3e2f-5df2-98c1-4a0149ec61db
+		summarizeBy: none
+		sourceColumn: DocumentoKey
+
+	column LineNum
+		dataType: int64
+		isHidden
+		lineageTag: 235a14c8-506c-585d-abe5-ae362c351a0a
+		summarizeBy: none
+		sourceColumn: LineNum
+
+	column FechaKey
+		dataType: int64
+		isHidden
+		lineageTag: 7eab2660-2b4b-5d6c-9cf8-4eb4e4bee0b9
+		summarizeBy: none
+		sourceColumn: FechaKey
+
+	column MesKey
+		dataType: int64
+		isHidden
+		lineageTag: b70a1656-4437-5528-be1f-61fa4982db83
+		summarizeBy: none
+		sourceColumn: MesKey
+
+	column ClienteKey
+		dataType: string
+		isHidden
+		lineageTag: c1077f5c-083c-5079-818f-89e8e4f5e11e
+		summarizeBy: none
+		sourceColumn: ClienteKey
+
+	column ProductoKey
+		dataType: string
+		isHidden
+		lineageTag: 259bc075-4497-59c2-871e-8105040786b6
+		summarizeBy: none
+		sourceColumn: ProductoKey
+
+	column VendedorKey
+		dataType: int64
+		isHidden
+		lineageTag: f531cba8-4739-50d0-afeb-fd8bf6cc69d2
+		summarizeBy: none
+		sourceColumn: VendedorKey
+
+	column ZonaKey
+		dataType: string
+		isHidden
+		lineageTag: 8fc5398a-4bf7-547d-9aaf-8c923920be00
+		summarizeBy: none
+		sourceColumn: ZonaKey
+
+	column RegionKey
+		dataType: string
+		isHidden
+		lineageTag: ef731aa9-78de-5b84-a30c-2c127e429975
+		summarizeBy: none
+		sourceColumn: RegionKey
+
+	column NetoPENFirmado
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: 424a2ec7-caf5-5fef-90d4-e76b07031b47
+		summarizeBy: none
+		sourceColumn: NetoPENFirmado
+
+	column CantidadFirmada
+		dataType: double
+		isHidden
+		lineageTag: e0d46463-4309-56b2-a920-5384bcd9ce40
+		summarizeBy: none
+		sourceColumn: CantidadFirmada
+
+	column ResiduoCentimos
+		dataType: int64
+		isHidden
+		lineageTag: c620cbc9-a1c2-5e58-bcf6-9277df44dde1
+		summarizeBy: none
+		sourceColumn: ResiduoCentimos
+
+	column Tipo
+		dataType: string
+		isHidden
+		lineageTag: e5dab77d-63dc-55f7-b97a-2a1911ae8fbf
+		summarizeBy: none
+		sourceColumn: Tipo
+
+	column Folio
+		dataType: string
+		isHidden
+		lineageTag: 7260d6c2-f456-526f-b677-39813e623131
+		summarizeBy: none
+		sourceColumn: Folio
+
+	column DocDate
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: ffad16e0-f618-5a3d-9eb8-4a7ca87f3c1b
+		summarizeBy: none
+		sourceColumn: DocDate
+
+	column CreateDate
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 4245ffd3-7a6c-561c-be5a-ff54f59567e5
+		summarizeBy: none
+		sourceColumn: CreateDate
+
+	column Reconocimiento
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: a3b94dd7-0160-5e4b-bd96-850d29577018
+		summarizeBy: none
+		sourceColumn: Reconocimiento
+
+	column FechaPedido
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 83851d38-6463-5085-b8ba-24a29748d247
+		summarizeBy: none
+		sourceColumn: FechaPedido
+
+	column FuenteAtribucion
+		dataType: string
+		isHidden
+		lineageTag: df01975c-2bc8-5808-a7d0-0a1f53e6f429
+		summarizeBy: none
+		sourceColumn: FuenteAtribucion
+
+	column OrigenNC
+		dataType: string
+		isHidden
+		lineageTag: 27960f6d-1780-518d-ba68-905eb2e4ae09
+		summarizeBy: none
+		sourceColumn: OrigenNC
+
+	column OriginalInvoiceDate
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 52a148b4-f9f9-5777-8304-27bc33c39059
+		summarizeBy: none
+		sourceColumn: OriginalInvoiceDate
+
+	column Price
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: 792d6f36-100e-5020-97bb-52849052aff3
+		summarizeBy: none
+		sourceColumn: Price
+
+	column LineDiscPrcnt
+		dataType: double
+		isHidden
+		lineageTag: e88e45e1-e510-5f3e-98c5-9441e70bfaf8
+		summarizeBy: none
+		sourceColumn: LineDiscPrcnt
+
+	column DiscPrcnt
+		dataType: double
+		isHidden
+		lineageTag: c5d14111-cfe9-5aad-ab04-2838e471216f
+		summarizeBy: none
+		sourceColumn: DiscPrcnt
+
+	column DocCur
+		dataType: string
+		isHidden
+		lineageTag: 88d5cec5-44f6-5645-aedb-a6dc9e4961d5
+		summarizeBy: none
+		sourceColumn: DocCur
+
+	column DocRate
+		dataType: double
+		isHidden
+		lineageTag: 79c424ab-d429-5ede-bf70-0c72ffd6d22b
+		summarizeBy: none
+		sourceColumn: DocRate
+
+	column U_Canal
+		dataType: string
+		isHidden
+		lineageTag: a034fcb8-e8d7-5774-a6ac-ee60de600f9a
+		summarizeBy: none
+		sourceColumn: U_Canal
+
+	column OrderEntry
+		dataType: int64
+		isHidden
+		lineageTag: 30cc2d22-121e-5c99-baa8-cb6d5c54c7ca
+		summarizeBy: none
+		sourceColumn: OrderEntry
+
+	column OrigenNota
+		dataType: string
+		isHidden
+		lineageTag: 2eb926ec-d02a-5043-a13e-05f59bc6ca9c
+		summarizeBy: none
+		sourceColumn: OrigenNota
+
+	column ReferenciaNC
+		dataType: string
+		isHidden
+		lineageTag: 6d019ef6-9716-5416-b292-8b30a20f53bb
+		summarizeBy: none
+		sourceColumn: ReferenciaNC
+
+	partition FactVentaLinea = m
+		mode: import
+		source = Table.TransformColumnTypes(Stage[FactVentaLinea],{{"DocumentoKey", type text}, {"LineNum", Int64.Type}, {"FechaKey", Int64.Type}, {"MesKey", Int64.Type}, {"ClienteKey", type text}, {"ProductoKey", type text}, {"VendedorKey", Int64.Type}, {"ZonaKey", type text}, {"RegionKey", type text}, {"NetoPENFirmado", Currency.Type}, {"CantidadFirmada", type number}, {"ResiduoCentimos", Int64.Type}, {"Tipo", type text}, {"Folio", type text}, {"DocDate", type datetime}, {"CreateDate", type datetime}, {"Reconocimiento", type datetime}, {"FechaPedido", type datetime}, {"FuenteAtribucion", type text}, {"OrigenNC", type text}, {"OriginalInvoiceDate", type datetime}, {"Price", Currency.Type}, {"LineDiscPrcnt", type number}, {"DiscPrcnt", type number}, {"DocCur", type text}, {"DocRate", type number}, {"U_Canal", type text}, {"OrderEntry", Int64.Type}, {"OrigenNota", type text}, {"ReferenciaNC", type text}},"en-US")
+
+	annotation PBI_ResultType = Table
+

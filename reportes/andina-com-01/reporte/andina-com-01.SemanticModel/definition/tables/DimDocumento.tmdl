@@ -1,0 +1,62 @@
+table DimDocumento
+	lineageTag: e7dfaa83-c6de-5783-8bff-39e07cdb8e43
+
+	column DocumentoKey
+		dataType: string
+		lineageTag: 6e7be222-141c-59e9-8912-2e1286299323
+		summarizeBy: none
+		sourceColumn: DocumentoKey
+
+	column Folio
+		dataType: string
+		lineageTag: 41273a5d-e4f9-542e-ba88-07a4458eecef
+		summarizeBy: none
+		sourceColumn: Folio
+
+	column Tipo
+		dataType: string
+		lineageTag: a803ab7f-d589-5d0e-9e19-f211d0c80764
+		summarizeBy: none
+		sourceColumn: Tipo
+
+	column DocDate
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 4a5e3c02-db00-5420-902b-99ad8dbe8390
+		summarizeBy: none
+		sourceColumn: DocDate
+
+	column CreateDate
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: bd448d2a-6afa-5c5b-b4e3-41060dec95d7
+		summarizeBy: none
+		sourceColumn: CreateDate
+
+	column Reconocimiento
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 48ed30c2-80ee-56bd-a848-13e52524b014
+		summarizeBy: none
+		sourceColumn: Reconocimiento
+
+	column AccesoVendedores
+		dataType: string
+		isHidden
+		lineageTag: 0ee46ce9-77a0-5c03-ae15-d569071834a4
+		summarizeBy: none
+		sourceColumn: AccesoVendedores
+
+	column AccesoZonas
+		dataType: string
+		isHidden
+		lineageTag: ec579e8f-75cb-59e3-aced-eb55d2e6fdd0
+		summarizeBy: none
+		sourceColumn: AccesoZonas
+
+	partition DimDocumento = m
+		mode: import
+		source = Table.TransformColumnTypes(Stage[DimDocumento],{{"DocumentoKey", type text}, {"Folio", type text}, {"Tipo", type text}, {"DocDate", type datetime}, {"CreateDate", type datetime}, {"Reconocimiento", type datetime}, {"AccesoVendedores", type text}, {"AccesoZonas", type text}},"en-US")
+
+	annotation PBI_ResultType = Table
+

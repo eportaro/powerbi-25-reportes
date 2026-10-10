@@ -1,0 +1,81 @@
+table FactMetaVersion
+	lineageTag: 9de07067-f03f-577b-bdce-aa8eafa45f22
+
+	column MesKey
+		dataType: int64
+		isHidden
+		lineageTag: a6abc0d7-01f9-5f9a-9580-8cce2531fb1b
+		summarizeBy: none
+		sourceColumn: MesKey
+
+	column VendedorKey
+		dataType: int64
+		isHidden
+		lineageTag: 9b41dd94-0e05-59be-ba61-5e95ed50e568
+		summarizeBy: none
+		sourceColumn: VendedorKey
+
+	column ZonaKey
+		dataType: string
+		isHidden
+		lineageTag: c32752a6-ccf6-5db1-8fb7-12f59bd5f5f4
+		summarizeBy: none
+		sourceColumn: ZonaKey
+
+	column Version
+		dataType: int64
+		isHidden
+		lineageTag: 720dab71-b5a0-5a5f-bad7-972b4b7d4225
+		summarizeBy: none
+		sourceColumn: Version
+
+	column MetaPEN
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: e59a88bb-73e3-589a-b781-8f41bce9463a
+		summarizeBy: none
+		sourceColumn: MetaPEN
+
+	column FechaAprobacion
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 3dec7a6e-f6b1-517c-9692-36cd5c247cdb
+		summarizeBy: none
+		sourceColumn: FechaAprobacion
+
+	column Fuente
+		dataType: string
+		isHidden
+		lineageTag: f4ee6722-9868-5d1a-8d34-5b96507e0fcd
+		summarizeBy: none
+		sourceColumn: Fuente
+
+	column ProcedenciaAprobacion
+		dataType: string
+		isHidden
+		lineageTag: d3569a05-425c-527d-98fe-a58fd6539c60
+		summarizeBy: none
+		sourceColumn: ProcedenciaAprobacion
+
+	column EsOriginal
+		dataType: int64
+		isHidden
+		lineageTag: d438ae14-f1bc-5944-b193-0e5ffbaa8e14
+		summarizeBy: none
+		sourceColumn: EsOriginal
+
+	column EsVigente
+		dataType: int64
+		isHidden
+		lineageTag: 15348421-053a-5ab5-8d3b-db869288521a
+		summarizeBy: none
+		sourceColumn: EsVigente
+
+	partition FactMetaVersion = m
+		mode: import
+		source = Table.TransformColumnTypes(Stage[FactMetaVersion],{{"MesKey", Int64.Type}, {"VendedorKey", Int64.Type}, {"ZonaKey", type text}, {"Version", Int64.Type}, {"MetaPEN", Currency.Type}, {"FechaAprobacion", type datetime}, {"Fuente", type text}, {"ProcedenciaAprobacion", type text}, {"EsOriginal", Int64.Type}, {"EsVigente", Int64.Type}},"en-US")
+
+	annotation PBI_ResultType = Table
+

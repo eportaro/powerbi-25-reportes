@@ -1,0 +1,17 @@
+role JefeLima
+	modelPermission: read
+
+	tablePermission FactVentaLinea = [ZonaKey]="Lima" || ([ZonaKey]="Cuentas corporativas" && [RegionKey]="Lima")
+
+	tablePermission FactPendienteLinea = [ZonaKey]="Lima" || ([ZonaKey]="Cuentas corporativas" && [RegionKey]="Lima")
+
+	tablePermission FactMetaVersion = [ZonaKey]="Lima"
+
+	tablePermission FactAjusteCierre = FALSE()
+
+	tablePermission DimCliente = CONTAINSSTRING([AccesoZonas],"|Lima|")
+
+	tablePermission DimDocumento = CONTAINSSTRING([AccesoZonas],"|Lima|")
+
+	annotation PBI_Id = 344e1ea058af4209b18f2f5326e47e6f
+

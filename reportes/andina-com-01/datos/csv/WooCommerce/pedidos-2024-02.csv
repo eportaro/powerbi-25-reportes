@@ -1,0 +1,98 @@
+﻿Fecha,N.º de pedido,Estado,Cliente,RUC/DNI,Tipo de comprobante,Producto(s),Artículos vendidos,Cupón(es),Ventas netas,Nota del cliente
+01/02/2024 15:27,10309,Completado,Gladys Lozano Espinoza,10352277480,Factura,"Tapones auditivos claro × 12; Casco de seguridad caja x 100 × 73; Lentes de seguridad talla 40 × 1; Chaleco reflectivo clase E × 12; Taladro percutor 1200 W × 3; Electrodo E7018 1/8"" × 4; Atornillador inalámbrico 18 V × 1",106,,6989.88,
+01/02/2024 15:26,10310,Completado,Sonia Mendoza Vargas,10932738488,Factura,"Lijadora orbital 4 1/2"" × 1; Electrodo E7018 1/8"" × 29",30,ANDINA10,5242.33,
+01/02/2024 21:24,10311,Completado,Exploraciones Quebrada Honda Lozano S.A.C.,20779491488,Factura,"Varilla de aporte rollo 15 kg × 5; Silicona 6 mm × 177; Máquina de soldar inverter 1/8"" × 23",205,,7878.64,
+01/02/2024 16:19,10312,Completado,Pesquera Illimani S.A.C.,20507918158,Factura,"Lija al agua grano 120 × 17; Disco de desbaste rollo × 51; Llave Stillson 14"" × 4; Disco de corte galón × 15; Disco de corte 4 1/2"" × 598",685,,15412.05,
+02/02/2024 15:54,10313,Completado,Metalmecánica Vilcanota S.R.L.,20894453811,Factura,"Anclaje expansivo 3/8"" × 12; Electrodo E7018 1/8"" × 4; Cinta aislante grano 120 × 284",300,,2265.12,
+02/02/2024 07:49,10314,Completado,Textil Salkantay Ccori S.A.C.,20658963595,Factura,"Pistola de calor 600 W × 1; Tapones auditivos oscuro × 669; Careta facial caja x 100 × 98; Cinta aislante grano 80 × 16; Rotomartillo 7"" × 1; Wincha 18"" × 1; Llave Stillson 18"" × 4; Llave Stillson 24"" × 32",822,,14471.51,cotizacion 4268
+02/02/2024 20:07,10315,Completado,Iván Vargas Cueva,11860909,Boleta,"Broca HSS galón × 21; Martillo de uña 18"" × 20",41,,2283.36,
+03/02/2024 17:47,10316,Cancelado,Inversiones Huancapampa Vargas S.R.L.,20119206136,Factura,"Llave Stillson 8 mm × 7; Trapo industrial grano 120 × 7; Cincel 8 m × 26; Disco de desbaste rollo × 13; Juego de dados 12 mm × 4; Careta de soldar 200 A × 1; Anclaje expansivo 3/8"" × 153",211,,4250.22,Según cotización N° 4227 de Rosa
+04/02/2024 07:07,10317,Cancelado,Industrias Quebrada Honda Carbajal S.A.C.,20001618321,Factura,Electrodo E7018 200 A × 1; Disco de desbaste 6 mm × 10,11,,1328.03,
+04/02/2024 04:51,10318,Completado,Óscar Salazar Zegarra,02065157,Boleta,"Aceite lubricante galón × 9; Varilla de aporte 1/8"" × 3; Taladro percutor 7"" × 2",14,ANDINA10,1920.13,
+04/02/2024 09:33,10319,Completado,Ingenieros Contratistas Chachani S.R.L.,20349419715,Factura,Careta de soldar 200 A × 1; Nivel de burbuja 10 mm × 32; Taladro percutor 1200 W × 1; Tapones auditivos talla M × 9; Amoladora angular 18 V × 4; Cinta aislante grano 120 × 15,62,,4555.57,cotizacion 4436
+04/02/2024 11:01,10320,Completado,Distribuidora Pampa Blanca Paredes S.A.C.,20255035332,Factura,"Careta facial clase E × 31; Electrodo E7018 5/32"" × 3",34,,2456.44,
+05/02/2024 18:04,10321,Completado,Luis Lozano Benites,30504483,Boleta,Arco de sierra 10 mm × 5; Taladro percutor 600 W × 1; Botín punta de acero caja x 100 × 98,104,,3687.42,
+05/02/2024 09:35,10322,Completado,Comercial Punta Negra S.A.C.,20392768714,Factura,"Juego de dados 10 mm × 16; Sierra circular 4 1/2"" × 4; Esmeril de banco 20 V × 2",22,,1956.04,
+05/02/2024 22:21,10323,Completado,Carmen Quispe Rojas,64285952,Boleta,"Destornillador plano 10 mm × 4; Llave Stillson 1/2"" × 3; Disco de desbaste galón × 156; Silicona 10 mm × 12; Silicona 7"" × 138; Sierra circular 600 W × 1; Arnés de cuerpo entero talla 40 × 2",316,,2797.76,
+05/02/2024 21:15,10324,Completado,Envases Chachani S.A.C.,20550261340,Factura,Casco de seguridad clase E × 4; Electrodo E6011 200 A × 1,5,,2204.16,
+06/02/2024 16:13,10325,Completado,Constructora Ñawi S.A.C.,20587530296,Factura,Electrodo E7018 200 A × 2; Lija al agua grano 120 × 18,20,,1352.72,
+06/02/2024 22:59,10326,Completado,Luis Lozano Benites,30504483,Boleta,Tapones auditivos talla L × 2,2,,271.94,
+07/02/2024 06:55,10327,Completado,Ferretería Chachani Torres S.A.,20510344442,Factura,Casco de seguridad clase E × 26; Careta facial clase E × 7; Sierra circular 1200 W × 1; Careta facial claro × 7; Lentes de seguridad talla L × 95,136,,5560.84,cotizacion 4285
+07/02/2024 09:07,10328,Completado,Distribuidora Monte Azul Rojas S.A.C.,20376388214,Factura,"Arco de sierra 14"" × 41; Electrodo E6011 1/8"" × 10; Varilla de aporte 5/32"" × 10; Disco de desbaste rollo × 18",79,,5109.53,
+07/02/2024 19:16,10329,Completado,Exploraciones Pukara S.A.,20647566573,Factura,"Taladro percutor 1200 W × 1; Alicate universal 12 mm × 8; Disco de corte 4 1/2"" × 31; Tapones auditivos talla 42 × 44; Tapones auditivos talla 40 × 8",92,,2705.53,
+07/02/2024 05:42,10330,Completado,César Chávez Ticona,72396124,Boleta,"Rotomartillo 18 V × 1; Nivel de burbuja 1/2"" × 4; Sierra circular 1200 W × 2; Botín punta de acero talla 40 × 5; Disco de corte rollo × 13",25,,2534.26,
+07/02/2024 04:26,10331,Completado,Ferretería Urqu S.R.L.,20579535644,Factura,Careta facial talla 40 × 2,2,,438.92,
+07/02/2024 14:49,10332,Completado,Minera Tawa S.R.L.,20960610471,Factura,"Llave Stillson 14"" × 6; Wincha 5 m × 12; Tapones auditivos claro × 75; Perno hexagonal caja x 100 × 1159; Nivel de burbuja 10 mm × 23",1275,,7003.91,
+07/02/2024 03:56,10333,Completado,Minera Chachani Ccori E.I.R.L.,20046449405,Factura,"Alicate universal 1/2"" × 45; Electrodo E6011 5/32"" × 4; Disco de desbaste rollo × 19; Anclaje expansivo 1/4"" × 5",73,,2983.60,
+08/02/2024 10:51,10334,Completado,Fundición Qhapaq S.A.C.,20982210401,Factura,"Cincel 24"" × 2",2,,479.56,Ref COT-4481
+08/02/2024 08:56,10335,Completado,Milagros Benites Ramos,10082841889,Factura,"Careta de soldar 200 A × 1; Juego de dados 24"" × 2; Sierra circular 18 V × 1; Esmeril de banco 7"" × 3",7,,5072.10,
+08/02/2024 00:37,10336,Completado,Juan Zegarra Ticona,26202123,Boleta,"Llave mixta 3/4"" × 4; Careta facial claro × 67; Tapones auditivos talla 42 × 127; Nivel de burbuja 3/4"" × 72; Martillo de uña 18"" × 3",273,ANDINA10,5059.60,
+08/02/2024 04:10,10337,Completado,Envases Rumi S.A.C.,20875120901,Factura,Silicona grano 120 × 24; Pistola de calor 600 W × 4; Guantes de nitrilo clase E × 1; Arnés de cuerpo entero oscuro × 3; Destornillador plano 5 m × 11; Sierra circular 20 V × 1,44,,5647.05,
+09/02/2024 21:56,10338,Completado,Óscar Mendoza Lozano,10962924058,Factura,"Rotomartillo 7"" × 16",16,ANDINA10,5589.07,
+09/02/2024 10:05,10339,Completado,Perforaciones Inti Raymi Paredes E.I.R.L.,20833179364,Factura,"Pistola de calor 7"" × 1; Alicate universal 14"" × 2",3,,2407.84,
+10/02/2024 04:27,10340,Completado,Maestranza Killa E.I.R.L.,20631441706,Factura,"Cinta aislante 7"" × 4; Chaleco reflectivo talla 42 × 49; Lijadora orbital 600 W × 1",54,,4605.36,cotizacion 4319
+12/02/2024 21:38,10341,Completado,Minera San Benito Chávez S.R.L.,20373096496,Factura,"Varilla de aporte 5/32"" × 10",10,,970.10,
+12/02/2024 09:23,10342,Completado,Fundición Sechín Cueva S.A.C.,20159234665,Factura,"Alambre MIG 5/32"" × 18; Wincha 5 m × 30; Nivel de burbuja 8 mm × 65; Cincel 8 mm × 15; Careta de soldar rollo 15 kg × 16; Lentes de seguridad clase E × 81",225,,8244.35,Según cotización N° 4378 de Pedro
+12/02/2024 13:32,10343,Completado,Carmen Torres Vargas,20422470,Boleta,"Sierra circular 4 1/2"" × 4",4,,973.64,Entregar en horario de oficina
+12/02/2024 11:14,10344,Completado,Hugo Quispe Paredes,10027594542,Factura,"Botín punta de acero talla M × 278; Nivel de burbuja 14"" × 35; Disco de desbaste 7"" × 7; Sierra circular 1200 W × 1; Aceite lubricante galón × 3",324,,6440.49,
+12/02/2024 11:04,10345,Completado,Milagros Quispe Huamán,10085321757,Factura,"Cincel 18"" × 4; Careta de soldar 200 A × 1; Broca HSS grano 80 × 78",83,,3169.14,
+13/02/2024 01:19,10346,Completado,Elena Cueva Cueva,10690652272,Factura,"Cincel 3/4"" × 63; Pistola de calor 18 V × 1; Sierra circular 1200 W × 1",65,,1886.85,
+13/02/2024 04:31,10347,Completado,Ferretería Urqu S.R.L.,20579535644,Factura,"Nivel de burbuja 1/2"" × 12; Careta facial clase E × 15; Lentes de seguridad talla M × 7",34,,994.37,
+13/02/2024 04:12,10348,Completado,María Ramos Cueva,96876712,Boleta,Pistola de calor 800 W × 1,1,,2639.77,
+13/02/2024 04:17,10349,Completado,Envases Quebrada Honda Ccori S.A.,20075186210,Factura,Electrodo E6011 250 A × 6; Lentes de seguridad clase E × 9; Cinta aislante grano 80 × 10,25,,941.27,Llamar antes de llegar
+14/02/2024 12:43,10350,Completado,Cementera San Benito S.A.C.,20275998011,Factura,"Sierra circular 7"" × 3",3,,1650.42,
+14/02/2024 02:30,10351,Completado,Juan Zegarra Ticona,26202123,Boleta,Destornillador plano 5 m × 13; Taladro percutor 1200 W × 1; Amoladora angular 20 V × 4; Esmeril de banco 800 W × 1,19,,3074.55,
+14/02/2024 04:48,10352,Pendiente de pago,Edificaciones Sechín Vargas S.A.C.,20245591024,Factura,"Martillo de uña 18"" × 4; Tapones auditivos talla M × 23",27,,896.78,
+14/02/2024 19:06,10353,Completado,Textil Las Lomas S.A.C.,20260968568,Factura,"Guantes de cuero talla L × 22; Llave mixta 14"" × 21",43,ANDINA10,285.76,
+14/02/2024 04:53,10354,Completado,Edificaciones Illimani Ramos S.A.C.,20417071278,Factura,Electrodo E7018 250 A × 83,83,,3739.15,
+14/02/2024 04:46,10355,Completado,Pesquera Illimani S.A.C.,20507918158,Factura,Cinta aislante grano 120 × 189,189,,894.16,
+14/02/2024 04:54,10356,Fallido,Edificaciones Pichu S.R.L.,20485027590,Factura,Arco de sierra 8 mm × 26; Arnés de cuerpo entero talla M × 3,29,,998.28,
+15/02/2024 08:16,10357,Completado,Comercial Cayma E.I.R.L.,20400946584,Factura,Careta facial talla 40 × 9; Lentes de seguridad caja x 100 × 205,214,,3553.64,
+15/02/2024 03:58,10358,Completado,Comercial Río Seco Ramos E.I.R.L.,20342718669,Factura,"Destornillador plano 1/2"" × 10",10,,706.20,
+15/02/2024 01:04,10359,Fallido,Negociaciones Vilcanota Torres S.A.C.,20480153735,Factura,"Nivel de burbuja 8 mm × 76; Sierra circular 7"" × 2; Martillo de uña 24"" × 2; Disco de desbaste grano 80 × 199; Careta facial claro × 13; Amoladora angular 600 W × 1; Electrodo E6011 250 A × 11",304,,10394.85,
+15/02/2024 07:14,10360,Completado,Iván Valdivia Huamán,51645465,Boleta,"Juego de dados 14"" × 1; Trapo industrial 10 mm × 708; Trapo industrial grano 120 × 4; Disco de desbaste galón × 68",781,,3515.58,
+16/02/2024 19:05,10361,Completado,José Alvarado Mendoza,23074874,Boleta,Lija al agua grano 120 × 25; Wincha 8 m × 83; Tapones auditivos clase E × 90,198,,6358.34,
+16/02/2024 05:13,10362,Completado,Edificaciones Ñawi S.A.C.,20862673664,Factura,Cinta aislante grano 80 × 34; Taladro percutor 600 W × 1,35,,5051.52,Según cotización N° 4575 de Diana
+16/02/2024 23:03,10363,Completado,Inversiones Inti Raymi S.A.C.,20769123779,Factura,"Chaleco reflectivo talla 40 × 23; Cinta aislante grano 120 × 45; Llave mixta 18"" × 30; Sierra circular 20 V × 1; Martillo de uña 18"" × 2; Alicate universal 3/4"" × 1",102,,7246.45,
+16/02/2024 06:05,10364,Completado,Ana Mamani Carbajal,34746591,Boleta,"Broca HSS 7"" × 80; Arnés de cuerpo entero talla 40 × 3",83,,942.08,
+16/02/2024 07:39,10365,Completado,Milagros Flores Benites,86176704,Boleta,"Perno hexagonal 1/4"" × 174; Taladro percutor 20 V × 1; Taladro percutor 7"" × 1; Casco de seguridad talla 40 × 89; Tarugo 1/4"" × 28",293,,4330.82,
+17/02/2024 05:43,10366,Completado,Plásticos Tawa S.A.C.,20181589136,Factura,Botín punta de acero oscuro × 42,42,,1014.30,Ref COT-4373
+18/02/2024 12:25,10367,Completado,Pesquera Chavimochic S.A.C.,20562833339,Factura,"Casco de seguridad oscuro × 26; Amoladora angular 600 W × 1; Martillo de uña 18"" × 22; Cinta aislante grano 80 × 1724; Wincha 10 mm × 6; Careta facial talla M × 14",1793,,19830.83,
+18/02/2024 10:29,10368,Fallido,Edificaciones Illimani E.I.R.L.,20156241528,Factura,Respirador media cara caja x 100 × 4; Careta facial talla 40 × 34,38,,2267.88,Llamar antes de llegar
+19/02/2024 03:22,10369,Completado,Textil Pukara Valdivia E.I.R.L.,20509428168,Factura,"Sierra circular 600 W × 1; Destornillador plano 12 mm × 1; Tapones auditivos talla 42 × 423; Aceite lubricante galón × 8; Lija al agua grano 80 × 56; Tornillo autorroscante 1/4"" × 8; Tapones auditivos talla 42 × 36",533,,5790.43,Entregar en horario de oficina
+20/02/2024 03:51,10370,Completado,Nancy Zegarra Salazar,40116458,Boleta,"Disco de desbaste 4 1/2"" × 45; Electrodo E6011 250 A × 2; Arco de sierra 10 mm × 8; Juego de dados 24"" × 26; Alicate universal 18"" × 4",85,,3095.34,
+20/02/2024 01:57,10371,Completado,Maestranza Tres Cruces Chávez S.R.L.,20435110269,Factura,"Varilla de aporte rollo 15 kg × 22; Llave mixta 14"" × 107; Chaleco reflectivo talla M × 59; Rotomartillo 7"" × 1; Cinta aislante grano 120 × 264",453,,4668.05,
+20/02/2024 03:31,10372,Completado,Inmobiliaria Chavimochic Ramos S.A.C.,20660503374,Factura,"Electrodo E7018 1/8"" × 9; Taladro percutor 7"" × 1",10,,1896.31,
+20/02/2024 17:11,10373,Completado,Servicios Mineros Río Seco Flores S.A.C.,20078003781,Factura,Lija al agua galón × 1,1,,156.27,
+21/02/2024 05:34,10374,Completado,Inmobiliaria Virú S.A.C.,20599167640,Factura,"Destornillador plano 18"" × 2; Chaleco reflectivo claro × 45; Pistola de calor 4 1/2"" × 3; Lijadora orbital 18 V × 1",51,,3464.98,cotizacion 4524
+21/02/2024 14:19,10375,Completado,Exploraciones Salkantay E.I.R.L.,20716596566,Factura,"Esmeril de banco 7"" × 2; Botín punta de acero claro × 4; Juego de dados 5 m × 59; Pistola de calor 20 V × 1",66,,4732.07,
+21/02/2024 00:08,10376,Completado,Envases Huancapampa E.I.R.L.,20065402599,Factura,Pistola de calor 1200 W × 1,1,,1716.99,
+22/02/2024 13:07,10377,Completado,Pesquera Chavimochic S.A.C.,20562833339,Factura,"Respirador media cara talla 42 × 11; Alambre MIG 1/8"" × 11",22,,10011.87,Ref COT-4568
+22/02/2024 09:26,10378,Completado,Minera Villa Rica E.I.R.L.,20967788892,Factura,Respirador media cara talla L × 231,231,,2400.09,Ref COT-4608
+22/02/2024 22:33,10379,Completado,Pesquera Illimani S.A.C.,20507918158,Factura,"Sierra circular 4 1/2"" × 19; Arco de sierra 10 mm × 11",30,,7250.34,
+22/02/2024 05:52,10380,Completado,Obras Y Montajes Pichu S.R.L.,20911612215,Factura,"Anclaje expansivo M10 × 15; Pistola de calor 4 1/2"" × 8",23,,2267.35,
+23/02/2024 13:49,10381,Completado,Servicios Mineros Chachani S.R.L.,20904322302,Factura,"Disco de desbaste 4 1/2"" × 141; Alicate universal 12 mm × 6; Taladro percutor 1200 W × 4; Cinta aislante galón × 12",163,,10569.44,cotizacion 4528
+23/02/2024 23:39,10382,Completado,Maestranza Killa E.I.R.L.,20631441706,Factura,"Varilla de aporte 5/32"" × 5; Silicona grano 80 × 111",116,,1803.54,
+23/02/2024 21:37,10383,Completado,Hugo Apaza Cueva,57017631,Boleta,"Sierra circular 600 W × 1; Guantes de nitrilo claro × 41; Lija al agua grano 120 × 13; Juego de dados 1/2"" × 1; Aceite lubricante 10 mm × 198; Chaleco reflectivo caja x 100 × 29; Esmeril de banco 1200 W × 2; Casco de seguridad clase E × 30",315,,5128.12,
+23/02/2024 08:29,10384,Completado,Envases Inti Raymi Ccori S.R.L.,20405199508,Factura,"Juego de dados 24"" × 6; Llave mixta 10 mm × 53; Silicona 6 mm × 6",65,,1079.77,
+25/02/2024 18:14,10385,Fallido,Negociaciones Lurín Rojas S.A.,20692689947,Factura,"Arnés de cuerpo entero caja x 100 × 67; Destornillador plano 3/4"" × 31; Tarugo 1/2"" × 38; Alicate universal 12 mm × 265; Tapones auditivos talla L × 8; Destornillador plano 8 m × 13; Arnés de cuerpo entero talla 40 × 2",424,,10570.19,Según cotización N° 4491 de Julio
+25/02/2024 12:21,10386,Fallido,Industrias Tawa E.I.R.L.,20281847266,Factura,"Llave mixta 3/4"" × 4; Martillo de uña 18"" × 21",25,,2905.04,cotizacion 4543
+26/02/2024 16:07,10387,Completado,Inversiones Rumi Ramos S.A.,20733614247,Factura,Botín punta de acero talla 40 × 28; Sierra circular 20 V × 3; Broca HSS 6 mm × 240,271,,6787.55,
+26/02/2024 04:06,10388,Completado,Inversiones Sumaq Salazar S.A.C.,20425556183,Factura,"Llave Stillson 18"" × 15; Disco de corte grano 120 × 11; Electrodo E7018 1/8"" × 4",30,ANDINA10,1769.37,
+26/02/2024 12:09,10389,Completado,Rosa Valdivia Carbajal,10864236455,Factura,"Tornillo autorroscante 3/8"" × 303; Amoladora angular 600 W × 4; Lijadora orbital 800 W × 1; Tarugo M10 × 168; Martillo de uña 24"" × 1; Electrodo E7018 200 A × 9; Careta facial caja x 100 × 10",496,,6618.23,
+26/02/2024 14:51,10390,Completado,Milagros Vargas Ramos,10203095124,Factura,"Silicona 7"" × 6",6,,28.26,Factura a nombre de la empresa
+27/02/2024 20:24,10391,Completado,Carmen Ccori Ramos,20906413,Boleta,"Destornillador plano 12 mm × 4; Esmeril de banco 7"" × 1; Perno hexagonal caja x 100 × 1627; Electrodo E7018 1/8"" × 10; Martillo de uña 18"" × 36; Tapones auditivos talla M × 11",1689,,9559.74,
+27/02/2024 12:59,10392,Pendiente de pago,Ferretería Urqu S.R.L.,20579535644,Factura,"Taladro percutor 1200 W × 58; Disco de corte 4 1/2"" × 22; Electrodo E7018 1/8"" × 14; Máquina de soldar inverter 1/8"" × 4; Silicona rollo × 3; Silicona 7"" × 79; Careta de soldar 200 A × 1",181,,34039.55,
+27/02/2024 03:23,10393,Completado,Plásticos Yanahuara Valdivia S.A.C.,20267011678,Factura,Electrodo E6011 250 A × 11; Juego de dados 12 mm × 94; Pistola de calor 600 W × 1,106,,3581.63,
+28/02/2024 08:55,10394,Completado,Juan Lozano Quispe,10491241280,Factura,Destornillador plano 5 m × 1; Martillo de uña 8 m × 35; Trapo industrial grano 120 × 73; Cincel 8 m × 3; Lija al agua 6 mm × 35; Lentes de seguridad talla M × 17,164,,2874.57,
+28/02/2024 20:33,10395,Completado,Maestranza Huancapampa S.A.C.,20391841805,Factura,"Martillo de uña 18"" × 1; Arco de sierra 14"" × 219; Trapo industrial galón × 19; Tuerca 3/8"" × 23; Martillo de uña 18"" × 3",265,ANDINA10,2833.04,
+28/02/2024 21:56,10396,Completado,Gladys Ccori Alvarado,90959027,Boleta,Martillo de uña 10 mm × 2; Tuerca caja x 100 × 7,9,,855.58,
+28/02/2024 20:22,10397,Completado,Envases Monte Azul S.R.L.,20067761065,Factura,"Wincha 10 mm × 1; Amoladora angular 18 V × 10; Juego de dados 1/2"" × 2; Destornillador plano 5 m × 2; Silicona grano 120 × 53; Tuerca 1/4"" × 10; Careta facial claro × 56; Alicate universal 3/4"" × 1",135,,7269.47,
+28/02/2024 10:41,10398,Completado,Maestranza Punta Negra Flores S.A.C.,20728878072,Factura,Careta facial oscuro × 1; Broca HSS galón × 67; Sierra circular 20 V × 1,69,,4564.09,
+28/02/2024 16:00,10399,Completado,Sonia Quispe Espinoza,10756625561,Factura,"Disco de corte rollo × 119; Tornillo autorroscante caja x 100 × 1424; Trapo industrial grano 120 × 2; Pistola de calor 18 V × 8; Electrodo E7018 1/8"" × 17; Guantes de nitrilo talla 40 × 8",1578,,14530.75,
+29/02/2024 20:33,10400,Pendiente de pago,Exploraciones Quebrada Honda E.I.R.L.,20984200326,Factura,"Arco de sierra 10 mm × 3; Destornillador plano 12 mm × 23; Taladro percutor 1200 W × 1; Trapo industrial 7"" × 137; Lija al agua rollo × 87; Tornillo autorroscante caja x 100 × 8; Martillo de uña 18"" × 2",261,,8780.74,
+29/02/2024 21:35,10401,Cancelado,Inversiones Qhapaq S.A.C.,20494039518,Factura,Arnés de cuerpo entero talla M × 2,2,,499.64,
+29/02/2024 22:48,10402,Completado,María Lozano Apaza,39247652,Boleta,"Juego de dados 12 mm × 18; Destornillador plano 5 m × 23; Destornillador plano 24"" × 25; Arco de sierra 24"" × 9; Esmeril de banco 600 W × 2",77,,5587.42,
+29/02/2024 22:43,10403,Completado,Juan Vargas Benites,17927371,Boleta,Cinta aislante grano 80 × 11,11,,341.11,
+29/02/2024 10:13,10404,Completado,Víctor Carbajal Alvarado,10027291714,Factura,Tapones auditivos talla M × 7,7,,127.82,
+29/02/2024 12:39,10405,Completado,Gladys Huamán Espinoza,60488647,Boleta,Llave mixta 12 mm × 12; Careta de soldar 200 A × 2; Lija al agua grano 120 × 13,27,,3255.80,

@@ -1,0 +1,38 @@
+table FactAjusteCierre
+	lineageTag: d8970da7-3c9d-5856-afde-a8a5db38b657
+
+	column AjusteKey
+		dataType: string
+		isHidden
+		lineageTag: 0c868c4b-5bea-5980-91fa-a1162412fd6f
+		summarizeBy: none
+		sourceColumn: AjusteKey
+
+	column MesKey
+		dataType: int64
+		isHidden
+		lineageTag: 223f2394-b973-56ff-b7a2-5845790b126a
+		summarizeBy: none
+		sourceColumn: MesKey
+
+	column ImportePEN
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: 5aa703e1-c651-598a-974d-7f2ed6368ddf
+		summarizeBy: none
+		sourceColumn: ImportePEN
+
+	column Concepto
+		dataType: string
+		isHidden
+		lineageTag: a81d5a4c-c2a7-5083-930f-ffb7fac10aaa
+		summarizeBy: none
+		sourceColumn: Concepto
+
+	partition FactAjusteCierre = m
+		mode: import
+		source = Table.TransformColumnTypes(Stage[FactAjusteCierre],{{"AjusteKey", type text}, {"MesKey", Int64.Type}, {"ImportePEN", Currency.Type}, {"Concepto", type text}},"en-US")
+
+	annotation PBI_ResultType = Table
+

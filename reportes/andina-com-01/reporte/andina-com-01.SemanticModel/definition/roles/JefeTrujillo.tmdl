@@ -1,0 +1,17 @@
+role JefeTrujillo
+	modelPermission: read
+
+	tablePermission FactVentaLinea = [ZonaKey]="Trujillo" || ([ZonaKey]="Cuentas corporativas" && [RegionKey]="Trujillo")
+
+	tablePermission FactPendienteLinea = [ZonaKey]="Trujillo" || ([ZonaKey]="Cuentas corporativas" && [RegionKey]="Trujillo")
+
+	tablePermission FactMetaVersion = [ZonaKey]="Trujillo"
+
+	tablePermission FactAjusteCierre = FALSE()
+
+	tablePermission DimCliente = CONTAINSSTRING([AccesoZonas],"|Trujillo|")
+
+	tablePermission DimDocumento = CONTAINSSTRING([AccesoZonas],"|Trujillo|")
+
+	annotation PBI_Id = dcc3404809ef4a9e93c4565313730e6b
+

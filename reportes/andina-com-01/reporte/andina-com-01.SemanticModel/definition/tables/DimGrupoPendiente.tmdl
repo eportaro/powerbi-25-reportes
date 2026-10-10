@@ -1,0 +1,21 @@
+table DimGrupoPendiente
+	lineageTag: df765fa9-e6c4-5851-9cf1-ded3fe4d30e1
+
+	column GrupoKey
+		dataType: int64
+		lineageTag: 6cec7e74-0b70-5517-bafa-849948158f20
+		summarizeBy: none
+		sourceColumn: GrupoKey
+
+	column Nombre
+		dataType: string
+		lineageTag: 78d67982-2f0f-5551-8aa8-5956d8dd696d
+		summarizeBy: none
+		sourceColumn: Nombre
+
+	partition DimGrupoPendiente = m
+		mode: import
+		source = Table.TransformColumnTypes(Stage[DimGrupoPendiente],{{"GrupoKey", Int64.Type}, {"Nombre", type text}},"en-US")
+
+	annotation PBI_ResultType = Table
+

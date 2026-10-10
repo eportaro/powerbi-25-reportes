@@ -1,0 +1,61 @@
+table FactAvancePermitido
+	lineageTag: f4fcc996-a7a7-5fae-bcc5-2aeb9216203a
+
+	column CorteKey
+		dataType: string
+		isHidden
+		lineageTag: ca40240d-515f-5851-8683-812c41741066
+		summarizeBy: none
+		sourceColumn: CorteKey
+
+	column MesKey
+		dataType: int64
+		isHidden
+		lineageTag: 6395549f-bbd9-54cc-b8df-e466ce1ff59a
+		summarizeBy: none
+		sourceColumn: MesKey
+
+	column VendedorKey
+		dataType: int64
+		isHidden
+		lineageTag: 2ecd1b32-39f1-553e-93f7-37fb308bdc5d
+		summarizeBy: none
+		sourceColumn: VendedorKey
+
+	column ZonaKey
+		dataType: string
+		isHidden
+		lineageTag: a8414199-f080-505c-a695-b4805ef2115e
+		summarizeBy: none
+		sourceColumn: ZonaKey
+
+	column VentaPEN
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: 789ad9b9-b273-5518-9ddf-646ac1cbfa99
+		summarizeBy: none
+		sourceColumn: VentaPEN
+
+	column MetaVigentePEN
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: 6cecad4f-b087-50f3-a758-1df41f27c3f8
+		summarizeBy: none
+		sourceColumn: MetaVigentePEN
+
+	column MetaOriginalPEN
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: 59a00661-8b53-5380-ae93-82bf4ad446b9
+		summarizeBy: none
+		sourceColumn: MetaOriginalPEN
+
+	partition FactAvancePermitido = m
+		mode: import
+		source = Table.TransformColumnTypes(Stage[FactAvancePermitido],{{"CorteKey", type text}, {"MesKey", Int64.Type}, {"VendedorKey", Int64.Type}, {"ZonaKey", type text}, {"VentaPEN", Currency.Type}, {"MetaVigentePEN", Currency.Type}, {"MetaOriginalPEN", Currency.Type}},"en-US")
+
+	annotation PBI_ResultType = Table
+

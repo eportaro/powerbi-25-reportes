@@ -1,0 +1,5 @@
+role DireccionFinanzas
+	modelPermission: read
+
+	annotation PBI_Id = 042b9cc02d1947de95dde8c8cc221f16
+

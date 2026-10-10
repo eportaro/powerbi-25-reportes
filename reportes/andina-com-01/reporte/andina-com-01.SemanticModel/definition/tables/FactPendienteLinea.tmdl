@@ -1,0 +1,210 @@
+table FactPendienteLinea
+	lineageTag: 21a5012c-d588-525b-8759-9ae0eabd9dfe
+
+	column CorteKey
+		dataType: string
+		isHidden
+		lineageTag: 91955e56-ef12-59b7-ab43-2f1365120b3e
+		summarizeBy: none
+		sourceColumn: CorteKey
+
+	column Etapa
+		dataType: string
+		isHidden
+		lineageTag: e523063d-10ae-5c74-883a-6f249acbd5d7
+		summarizeBy: none
+		sourceColumn: Etapa
+
+	column DocEntry
+		dataType: int64
+		isHidden
+		lineageTag: 1313b3c2-6b29-5d5f-b3e1-1885a712d420
+		summarizeBy: none
+		sourceColumn: DocEntry
+
+	column LineNum
+		dataType: int64
+		isHidden
+		lineageTag: 21fd0202-ae80-5cb9-9e51-3b94903829a0
+		summarizeBy: none
+		sourceColumn: LineNum
+
+	column OrderEntry
+		dataType: int64
+		isHidden
+		lineageTag: 4b1337bd-7ea4-5db8-8c79-65b2048c124e
+		summarizeBy: none
+		sourceColumn: OrderEntry
+
+	column ClienteKey
+		dataType: string
+		isHidden
+		lineageTag: 3e48b2aa-786a-5863-8545-e625e423d664
+		summarizeBy: none
+		sourceColumn: ClienteKey
+
+	column ProductoKey
+		dataType: string
+		isHidden
+		lineageTag: 5d8f41f0-9f21-5105-88d1-e0a6f578b25e
+		summarizeBy: none
+		sourceColumn: ProductoKey
+
+	column VendedorKey
+		dataType: int64
+		isHidden
+		lineageTag: 12fff650-2c54-5fa0-a11d-191e6e54c382
+		summarizeBy: none
+		sourceColumn: VendedorKey
+
+	column ZonaKey
+		dataType: string
+		isHidden
+		lineageTag: 24029bbe-679d-550b-ae3f-8eda87b25245
+		summarizeBy: none
+		sourceColumn: ZonaKey
+
+	column RegionKey
+		dataType: string
+		isHidden
+		lineageTag: 9ab5dbef-b9c8-59ae-873b-01e5431202cb
+		summarizeBy: none
+		sourceColumn: RegionKey
+
+	column GrupoKey
+		dataType: int64
+		isHidden
+		lineageTag: bffa2ff7-31a5-5380-9831-449d77b556e7
+		summarizeBy: none
+		sourceColumn: GrupoKey
+
+	column SaldoPEN
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: bb4c7810-c50f-571b-8637-42576a020577
+		summarizeBy: none
+		sourceColumn: SaldoPEN
+
+	column CantidadAbierta
+		dataType: double
+		isHidden
+		lineageTag: d2407f2b-b472-5729-b6fa-da217655adab
+		summarizeBy: none
+		sourceColumn: CantidadAbierta
+
+	column ShipDate
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 80bab522-04f1-5754-91ff-3e8d42488a9b
+		summarizeBy: none
+		sourceColumn: ShipDate
+
+	column FechaPedido
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 0d2f5256-ae03-5ae2-9fcc-b4fd20c9d834
+		summarizeBy: none
+		sourceColumn: FechaPedido
+
+	column FuenteAtribucion
+		dataType: string
+		isHidden
+		lineageTag: 4769c628-b26c-5386-9c47-bb7ac05a05bf
+		summarizeBy: none
+		sourceColumn: FuenteAtribucion
+
+	column Price
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: b170c9e9-39f1-552d-ab82-e78bcec6e11a
+		summarizeBy: none
+		sourceColumn: Price
+
+	column WhsCode
+		dataType: string
+		isHidden
+		lineageTag: 8b193def-7a75-56d4-b75f-fa1e4ca8d51f
+		summarizeBy: none
+		sourceColumn: WhsCode
+
+	column FirstArrival
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 7bc22758-e180-5405-8ffc-7346321436e9
+		summarizeBy: none
+		sourceColumn: FirstArrival
+
+	column FlagFuturo
+		dataType: int64
+		isHidden
+		lineageTag: 5891190e-7239-524d-bf53-d07fc12a9965
+		summarizeBy: none
+		sourceColumn: FlagFuturo
+
+	column FlagVencido
+		dataType: int64
+		isHidden
+		lineageTag: 7c8c7a97-5bed-5738-93d3-09d611ba188d
+		summarizeBy: none
+		sourceColumn: FlagVencido
+
+	column FlagSinCompra
+		dataType: int64
+		isHidden
+		lineageTag: 6cb09e0b-028a-5dae-a5a0-24f866078cfc
+		summarizeBy: none
+		sourceColumn: FlagSinCompra
+
+	column FlagLlegada
+		dataType: int64
+		isHidden
+		lineageTag: ed000051-734a-5d95-8cb9-e30d9f0b6acd
+		summarizeBy: none
+		sourceColumn: FlagLlegada
+
+	column FlagCondiciones
+		dataType: int64
+		isHidden
+		lineageTag: fd660ef8-dde6-5165-824d-e966a1a2cdc6
+		summarizeBy: none
+		sourceColumn: FlagCondiciones
+
+	column FlagCompleto
+		dataType: int64
+		isHidden
+		lineageTag: 7d0cd656-4550-5878-b4bf-9cd8fdd19535
+		summarizeBy: none
+		sourceColumn: FlagCompleto
+
+	column StockCubierto
+		dataType: int64
+		isHidden
+		lineageTag: 95a68381-11f9-58a1-b4f2-6c09c033f5b9
+		summarizeBy: none
+		sourceColumn: StockCubierto
+
+	column CompraCubreMes
+		dataType: int64
+		isHidden
+		lineageTag: 65d6e051-1e58-5ed7-9ded-5518e91e1ac7
+		summarizeBy: none
+		sourceColumn: CompraCubreMes
+
+	column FlagPicking
+		dataType: int64
+		isHidden
+		lineageTag: f22d70a2-8086-5e36-98f5-a242a4631909
+		summarizeBy: none
+		sourceColumn: FlagPicking
+
+	partition FactPendienteLinea = m
+		mode: import
+		source = Table.TransformColumnTypes(Stage[FactPendienteLinea],{{"CorteKey", type text}, {"Etapa", type text}, {"DocEntry", Int64.Type}, {"LineNum", Int64.Type}, {"OrderEntry", Int64.Type}, {"ClienteKey", type text}, {"ProductoKey", type text}, {"VendedorKey", Int64.Type}, {"ZonaKey", type text}, {"RegionKey", type text}, {"GrupoKey", Int64.Type}, {"SaldoPEN", Currency.Type}, {"CantidadAbierta", type number}, {"ShipDate", type datetime}, {"FechaPedido", type datetime}, {"FuenteAtribucion", type text}, {"Price", Currency.Type}, {"WhsCode", type text}, {"FirstArrival", type datetime}, {"FlagFuturo", Int64.Type}, {"FlagVencido", Int64.Type}, {"FlagSinCompra", Int64.Type}, {"FlagLlegada", Int64.Type}, {"FlagCondiciones", Int64.Type}, {"FlagCompleto", Int64.Type}, {"StockCubierto", Int64.Type}, {"CompraCubreMes", Int64.Type}, {"FlagPicking", Int64.Type}},"en-US")
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,33 @@
+table DimProducto
+	lineageTag: 10ec09c7-b6ad-5e84-8628-66ce91c9a290
+
+	column ProductoKey
+		dataType: string
+		lineageTag: 58286fcb-e424-5715-843d-a10ad4f1aad4
+		summarizeBy: none
+		sourceColumn: ProductoKey
+
+	column Nombre
+		dataType: string
+		lineageTag: 0e5df795-253c-5888-a34a-2d86bedf718d
+		summarizeBy: none
+		sourceColumn: Nombre
+
+	column ItmsGrpCod
+		dataType: int64
+		lineageTag: 8bf49fed-fcfa-551c-89f2-cae3a7629fe6
+		summarizeBy: none
+		sourceColumn: ItmsGrpCod
+
+	column InvntItem
+		dataType: string
+		lineageTag: 7f718b39-e00e-5b53-b5d1-c9206188a5e6
+		summarizeBy: none
+		sourceColumn: InvntItem
+
+	partition DimProducto = m
+		mode: import
+		source = Table.TransformColumnTypes(Stage[DimProducto],{{"ProductoKey", type text}, {"Nombre", type text}, {"ItmsGrpCod", Int64.Type}, {"InvntItem", type text}},"en-US")
+
+	annotation PBI_ResultType = Table
+

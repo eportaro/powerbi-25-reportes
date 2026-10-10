@@ -1,0 +1,19 @@
+role Vendedor1
+	modelPermission: read
+
+	tablePermission FactVentaLinea = [VendedorKey]=1
+
+	tablePermission FactPendienteLinea = [VendedorKey]=1
+
+	tablePermission FactMetaVersion = [VendedorKey]=1
+
+	tablePermission FactAjusteCierre = FALSE()
+
+	tablePermission FactAvancePermitido = [ZonaKey]="Lima"
+
+	tablePermission DimCliente = CONTAINSSTRING([AccesoVendedores],"|1|")
+
+	tablePermission DimDocumento = CONTAINSSTRING([AccesoVendedores],"|1|")
+
+	annotation PBI_Id = c360528a0ca84be984ba420c2d6e1457
+
