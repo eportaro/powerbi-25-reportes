@@ -1,0 +1,320 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "stock_detalle",
+  "position": {
+    "x": 40,
+    "y": 681,
+    "width": 904,
+    "height": 234,
+    "z": 53000,
+    "tabOrder": 53000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimArticulo"
+                    }
+                  },
+                  "Property": "sku"
+                }
+              },
+              "queryRef": "DimArticulo.sku",
+              "nativeQueryRef": "sku",
+              "displayName": "SKU",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimArticulo"
+                    }
+                  },
+                  "Property": "nombre"
+                }
+              },
+              "queryRef": "DimArticulo.nombre",
+              "nativeQueryRef": "nombre",
+              "displayName": "Artículo",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimAlmacen"
+                    }
+                  },
+                  "Property": "almacen"
+                }
+              },
+              "queryRef": "DimAlmacen.almacen",
+              "nativeQueryRef": "almacen",
+              "displayName": "Alm.",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactInventario"
+                    }
+                  },
+                  "Property": "Saldo unidades"
+                }
+              },
+              "queryRef": "FactInventario.Saldo unidades",
+              "nativeQueryRef": "Saldo unidades",
+              "active": true,
+              "displayName": "Saldo"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactInventario"
+                    }
+                  },
+                  "Property": "Reserva activa"
+                }
+              },
+              "queryRef": "FactInventario.Reserva activa",
+              "nativeQueryRef": "Reserva activa",
+              "active": true,
+              "displayName": "Reserva"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactInventario"
+                    }
+                  },
+                  "Property": "Bloqueo abierto"
+                }
+              },
+              "queryRef": "FactInventario.Bloqueo abierto",
+              "nativeQueryRef": "Bloqueo abierto",
+              "active": true,
+              "displayName": "Bloqueo"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactInventario"
+                    }
+                  },
+                  "Property": "Disponible neto"
+                }
+              },
+              "queryRef": "FactInventario.Disponible neto",
+              "nativeQueryRef": "Disponible neto",
+              "active": true,
+              "displayName": "Neto"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactInventario"
+                    }
+                  },
+                  "Property": "Disponible prometible"
+                }
+              },
+              "queryRef": "FactInventario.Disponible prometible",
+              "nativeQueryRef": "Disponible prometible",
+              "active": true,
+              "displayName": "Prometible"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactInventario"
+                    }
+                  },
+                  "Property": "Mínimo unidades"
+                }
+              },
+              "queryRef": "FactInventario.Mínimo unidades",
+              "nativeQueryRef": "Mínimo unidades",
+              "active": true,
+              "displayName": "Mín."
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactInventario"
+                    }
+                  },
+                  "Property": "Objetivo unidades"
+                }
+              },
+              "queryRef": "FactInventario.Objetivo unidades",
+              "nativeQueryRef": "Objetivo unidades",
+              "active": true,
+              "displayName": "Objetivo"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "FactInventario"
+                  }
+                },
+                "Property": "Orden revisión"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DFEAE5'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#657886'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

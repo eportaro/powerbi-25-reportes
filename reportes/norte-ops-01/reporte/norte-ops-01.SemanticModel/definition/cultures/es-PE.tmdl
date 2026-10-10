@@ -1,0 +1,431 @@
+cultureInfo es-PE
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "dimarticulo.sku": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimArticulo",
+			          "ConceptualProperty": "sku"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "SKU": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimarticulo.familia": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimArticulo",
+			          "ConceptualProperty": "familia"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "familia": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimarticulo.nombre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimArticulo",
+			          "ConceptualProperty": "nombre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Artículo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimalmacen.almacen": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimAlmacen",
+			          "ConceptualProperty": "almacen"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Alm.": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimalmacen.nombre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimAlmacen",
+			          "ConceptualProperty": "nombre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nombre": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factinventario.prioridad_revisión": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactInventario",
+			          "ConceptualProperty": "Prioridad revisión"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Nivel": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factinventario.disponible_neto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactInventario",
+			          "ConceptualProperty": "Disponible neto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Neto": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factinventario.faltante_unidades": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactInventario",
+			          "ConceptualProperty": "Faltante unidades"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Falta": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factinventario.mínimo_unidades": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactInventario",
+			          "ConceptualProperty": "Mínimo unidades"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Mín.": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factinventario.objetivo_unidades": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactInventario",
+			          "ConceptualProperty": "Objetivo unidades"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Objetivo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factinventario.saldo_unidades": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactInventario",
+			          "ConceptualProperty": "Saldo unidades"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Saldo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factinventario.reserva_activa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactInventario",
+			          "ConceptualProperty": "Reserva activa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Reserva": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factinventario.bloqueo_abierto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactInventario",
+			          "ConceptualProperty": "Bloqueo abierto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Bloqueo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factinventario.disponible_prometible": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactInventario",
+			          "ConceptualProperty": "Disponible prometible"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Prometible": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factcompra.pedido_compra": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactCompra",
+			          "ConceptualProperty": "pedido_compra"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Orden": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factcompra.linea": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactCompra",
+			          "ConceptualProperty": "linea"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Lín.": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factcompra.sku": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactCompra",
+			          "ConceptualProperty": "sku"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "SKU": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factcompra.almacen": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactCompra",
+			          "ConceptualProperty": "almacen"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Alm.": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factcompra.fecha_prometida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactCompra",
+			          "ConceptualProperty": "fecha_prometida"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Prometida": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factcompra.compra_pendiente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactCompra",
+			          "ConceptualProperty": "Compra pendiente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Pendiente": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

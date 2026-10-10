@@ -1,0 +1,19 @@
+sku,nombre,familia,unidad_base,unidades_caja
+SKU-001,Resma A4 75 g,Papel,UN,6
+SKU-002,Resma A3 80 g,Papel,UN,12
+SKU-003,Cuaderno cuadriculado,Papel,UN,24
+SKU-004,Sobre manila A4,Papel,UN,6
+SKU-005,Papel fotografico A4,Papel,UN,12
+SKU-006,Etiqueta autoadhesiva,Papel,UN,24
+SKU-007,Lapicero azul,Escritura,UN,6
+SKU-008,Lapicero negro,Escritura,UN,12
+SKU-009,Lapiz HB,Escritura,UN,24
+SKU-010,Marcador permanente,Escritura,UN,6
+SKU-011,Resaltador amarillo,Escritura,UN,12
+SKU-012,Corrector cinta,Escritura,UN,24
+SKU-013,Archivador palanca A4,Organizacion,UN,6
+SKU-014,Folder plastico,Organizacion,UN,12
+SKU-015,Caja archivo,Organizacion,UN,24
+SKU-016,Bandeja documentos,Organizacion,UN,6
+SKU-017,Portaclip magnetico,Organizacion,UN,12
+SKU-018,Separador indice,Organizacion,UN,24

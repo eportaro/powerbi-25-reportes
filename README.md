@@ -5,6 +5,7 @@ Reportes de negocio sobre empresas simuladas. Cada carpeta trae el caso, las cap
 ## Reportes
 
 1. [Ventas ejecutivas — una sola cifra oficial](reportes/andina-com-01/) · Comercial
+2. [Inventario que puedes comprometer](reportes/norte-ops-01/) · Operaciones
 
 ---
 
@@ -15,3 +16,4 @@ Business reports built on simulated companies. Each folder holds the case, the s
 ## Reports
 
 1. [Executive sales — one official number](reportes/andina-com-01/) · Commercial
+2. [Inventory you can commit](reportes/norte-ops-01/) · Operations

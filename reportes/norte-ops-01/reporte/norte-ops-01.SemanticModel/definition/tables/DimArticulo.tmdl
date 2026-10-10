@@ -1,0 +1,56 @@
+table DimArticulo
+	lineageTag: 39019fe9-05c1-5d79-a916-0a21cfdb0b02
+
+	column sku
+		dataType: string
+		lineageTag: bfb7b64b-e344-5dbc-b7e3-60911c48669c
+		summarizeBy: none
+		sourceColumn: sku
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre
+		dataType: string
+		lineageTag: 4c521194-8851-534b-a62c-ae4f758e34e2
+		summarizeBy: none
+		sourceColumn: nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column familia
+		dataType: string
+		lineageTag: 783abbde-e045-5711-b697-ef94b1b34bc0
+		summarizeBy: none
+		sourceColumn: familia
+
+		annotation SummarizationSetBy = Automatic
+
+	column unidad_base
+		dataType: string
+		lineageTag: cfe1a891-91fb-5089-ae7f-7a9f9e7ee3ef
+		summarizeBy: none
+		sourceColumn: unidad_base
+
+		annotation SummarizationSetBy = Automatic
+
+	column unidades_caja
+		dataType: int64
+		formatString: 0
+		lineageTag: c50642f6-dda5-596a-a0a3-e2456484318e
+		summarizeBy: none
+		sourceColumn: unidades_caja
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimArticulo = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\DimArticulo.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"sku", type text}, {"nombre", type text}, {"familia", type text}, {"unidad_base", type text}, {"unidades_caja", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

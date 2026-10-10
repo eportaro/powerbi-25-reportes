@@ -1,0 +1,486 @@
+{
+  "caseId": "norte-ops-01",
+  "cutoff": "2026-09-30",
+  "encoding": "utf-8",
+  "currency": "PEN",
+  "quantity": "unidad base excepto unidad declarada en Excel",
+  "tables": {
+    "articulos": {
+      "columns": [
+        "sku",
+        "nombre",
+        "familia",
+        "unidad_base",
+        "unidades_caja"
+      ],
+      "rows": 18
+    },
+    "almacenes": {
+      "columns": [
+        "almacen",
+        "nombre"
+      ],
+      "rows": 2
+    },
+    "saldo_inicial": {
+      "columns": [
+        "fecha",
+        "sku",
+        "almacen",
+        "cantidad_base"
+      ],
+      "rows": 36
+    },
+    "saldo_actual": {
+      "columns": [
+        "fecha_corte",
+        "sku",
+        "almacen",
+        "saldo_base",
+        "costo_promedio_pen"
+      ],
+      "rows": 37
+    },
+    "movimientos_cabecera": {
+      "columns": [
+        "documento",
+        "fecha",
+        "tipo",
+        "estado",
+        "referencia"
+      ],
+      "rows": 175
+    },
+    "movimientos_detalle": {
+      "columns": [
+        "documento",
+        "linea",
+        "sku",
+        "almacen",
+        "cantidad_base"
+      ],
+      "rows": 176
+    },
+    "reservas_cabecera": {
+      "columns": [
+        "reserva",
+        "fecha",
+        "estado"
+      ],
+      "rows": 72
+    },
+    "reservas_detalle": {
+      "columns": [
+        "reserva",
+        "linea",
+        "sku",
+        "almacen",
+        "cantidad_base"
+      ],
+      "rows": 72
+    },
+    "compras_cabecera": {
+      "columns": [
+        "pedido_compra",
+        "proveedor",
+        "fecha",
+        "estado",
+        "fecha_prometida"
+      ],
+      "rows": 36
+    },
+    "compras_detalle": {
+      "columns": [
+        "pedido_compra",
+        "linea",
+        "sku",
+        "almacen",
+        "cantidad_base"
+      ],
+      "rows": 36
+    },
+    "recepciones_cabecera": {
+      "columns": [
+        "recepcion",
+        "fecha",
+        "estado"
+      ],
+      "rows": 36
+    },
+    "recepciones_detalle": {
+      "columns": [
+        "recepcion",
+        "linea",
+        "pedido_compra",
+        "linea_compra",
+        "cantidad_base"
+      ],
+      "rows": 36
+    }
+  },
+  "keys": {
+    "movimientos_detalle": [
+      "documento",
+      "linea"
+    ],
+    "saldo_actual": [
+      "fecha_corte",
+      "sku",
+      "almacen"
+    ],
+    "compras_detalle": [
+      "pedido_compra",
+      "linea"
+    ],
+    "politicas": [
+      "sku",
+      "almacen",
+      "vigente_desde"
+    ]
+  },
+  "signs": {
+    "cantidad_base_movimiento": "positivo ingreso, negativo salida"
+  },
+  "manual_files": {
+    "politicas_reposicion.xlsx": [
+      "sku",
+      "almacen",
+      "unidad",
+      "minimo",
+      "objetivo",
+      "vigente_desde",
+      "vigente_hasta",
+      "responsable"
+    ],
+    "incidencias_fisicas.csv": [
+      "incidencia",
+      "sku",
+      "almacen",
+      "fecha",
+      "cantidad_base",
+      "estado",
+      "motivo"
+    ]
+  },
+  "columnDetails": {
+    "articulos": {
+      "sku": {
+        "type": "text",
+        "meaning": "Codigo de articulo; relaciona articulo con operaciones"
+      },
+      "nombre": {
+        "type": "text",
+        "meaning": "Descripcion de articulo o almacen"
+      },
+      "familia": {
+        "type": "text",
+        "meaning": "Familia de articulo"
+      },
+      "unidad_base": {
+        "type": "text",
+        "meaning": "UN, unidad individual del articulo comercial, p.ej. una resma"
+      },
+      "unidades_caja": {
+        "type": "integer",
+        "meaning": "Numero de unidades comerciales por caja"
+      }
+    },
+    "almacenes": {
+      "almacen": {
+        "type": "text",
+        "meaning": "Codigo de ubicacion, referencia almacenes.almacen"
+      },
+      "nombre": {
+        "type": "text",
+        "meaning": "Descripcion de articulo o almacen"
+      }
+    },
+    "saldo_inicial": {
+      "fecha": {
+        "type": "date",
+        "meaning": "Fecha YYYY-MM-DD del evento o cabecera"
+      },
+      "sku": {
+        "type": "text",
+        "meaning": "Codigo de articulo; relaciona articulo con operaciones"
+      },
+      "almacen": {
+        "type": "text",
+        "meaning": "Codigo de ubicacion, referencia almacenes.almacen"
+      },
+      "cantidad_base": {
+        "type": "integer",
+        "meaning": "Cantidad en unidades base; movimiento puede ser negativo"
+      }
+    },
+    "saldo_actual": {
+      "fecha_corte": {
+        "type": "date",
+        "meaning": "Fecha de la instantanea, no fecha de movimiento"
+      },
+      "sku": {
+        "type": "text",
+        "meaning": "Codigo de articulo; relaciona articulo con operaciones"
+      },
+      "almacen": {
+        "type": "text",
+        "meaning": "Codigo de ubicacion, referencia almacenes.almacen"
+      },
+      "saldo_base": {
+        "type": "integer",
+        "meaning": "Cantidad total fisica ERP al corte"
+      },
+      "costo_promedio_pen": {
+        "type": "decimal(18,2)",
+        "meaning": "Costo promedio unitario al cierre, PEN sin IGV"
+      }
+    },
+    "movimientos_cabecera": {
+      "documento": {
+        "type": "text",
+        "meaning": "Identificador de cabecera de movimiento"
+      },
+      "fecha": {
+        "type": "date",
+        "meaning": "Fecha YYYY-MM-DD del evento o cabecera"
+      },
+      "tipo": {
+        "type": "text",
+        "meaning": "RECEPCION_COMPRA o SALIDA_DESPACHO"
+      },
+      "estado": {
+        "type": "text",
+        "meaning": "Estado nativo del documento; ver dominio por tabla"
+      },
+      "referencia": {
+        "type": "text",
+        "meaning": "Recepcion origen cuando aplica; vacio en salida de despacho"
+      }
+    },
+    "movimientos_detalle": {
+      "documento": {
+        "type": "text",
+        "meaning": "Identificador de cabecera de movimiento"
+      },
+      "linea": {
+        "type": "integer",
+        "meaning": "Posicion dentro del documento, clave compuesta con cabecera"
+      },
+      "sku": {
+        "type": "text",
+        "meaning": "Codigo de articulo; relaciona articulo con operaciones"
+      },
+      "almacen": {
+        "type": "text",
+        "meaning": "Codigo de ubicacion, referencia almacenes.almacen"
+      },
+      "cantidad_base": {
+        "type": "integer",
+        "meaning": "Cantidad en unidades base; movimiento puede ser negativo"
+      }
+    },
+    "reservas_cabecera": {
+      "reserva": {
+        "type": "text",
+        "meaning": "Identificador de reserva, relacion cabecera/detalle"
+      },
+      "fecha": {
+        "type": "date",
+        "meaning": "Fecha YYYY-MM-DD del evento o cabecera"
+      },
+      "estado": {
+        "type": "text",
+        "meaning": "Estado nativo del documento; ver dominio por tabla"
+      }
+    },
+    "reservas_detalle": {
+      "reserva": {
+        "type": "text",
+        "meaning": "Identificador de reserva, relacion cabecera/detalle"
+      },
+      "linea": {
+        "type": "integer",
+        "meaning": "Posicion dentro del documento, clave compuesta con cabecera"
+      },
+      "sku": {
+        "type": "text",
+        "meaning": "Codigo de articulo; relaciona articulo con operaciones"
+      },
+      "almacen": {
+        "type": "text",
+        "meaning": "Codigo de ubicacion, referencia almacenes.almacen"
+      },
+      "cantidad_base": {
+        "type": "integer",
+        "meaning": "Cantidad en unidades base; movimiento puede ser negativo"
+      }
+    },
+    "compras_cabecera": {
+      "pedido_compra": {
+        "type": "text",
+        "meaning": "Identificador de orden de compra"
+      },
+      "proveedor": {
+        "type": "text",
+        "meaning": "Identificador de proveedor"
+      },
+      "fecha": {
+        "type": "date",
+        "meaning": "Fecha YYYY-MM-DD del evento o cabecera"
+      },
+      "estado": {
+        "type": "text",
+        "meaning": "Estado nativo del documento; ver dominio por tabla"
+      },
+      "fecha_prometida": {
+        "type": "date",
+        "meaning": "Fecha comprometida original de la compra"
+      }
+    },
+    "compras_detalle": {
+      "pedido_compra": {
+        "type": "text",
+        "meaning": "Identificador de orden de compra"
+      },
+      "linea": {
+        "type": "integer",
+        "meaning": "Posicion dentro del documento, clave compuesta con cabecera"
+      },
+      "sku": {
+        "type": "text",
+        "meaning": "Codigo de articulo; relaciona articulo con operaciones"
+      },
+      "almacen": {
+        "type": "text",
+        "meaning": "Codigo de ubicacion, referencia almacenes.almacen"
+      },
+      "cantidad_base": {
+        "type": "integer",
+        "meaning": "Cantidad en unidades base; movimiento puede ser negativo"
+      }
+    },
+    "recepciones_cabecera": {
+      "recepcion": {
+        "type": "text",
+        "meaning": "Identificador de recepcion"
+      },
+      "fecha": {
+        "type": "date",
+        "meaning": "Fecha YYYY-MM-DD del evento o cabecera"
+      },
+      "estado": {
+        "type": "text",
+        "meaning": "Estado nativo del documento; ver dominio por tabla"
+      }
+    },
+    "recepciones_detalle": {
+      "recepcion": {
+        "type": "text",
+        "meaning": "Identificador de recepcion"
+      },
+      "linea": {
+        "type": "integer",
+        "meaning": "Posicion dentro del documento, clave compuesta con cabecera"
+      },
+      "pedido_compra": {
+        "type": "text",
+        "meaning": "Identificador de orden de compra"
+      },
+      "linea_compra": {
+        "type": "integer",
+        "meaning": "Linea de la orden origen, junto a pedido_compra"
+      },
+      "cantidad_base": {
+        "type": "integer",
+        "meaning": "Cantidad en unidades base; movimiento puede ser negativo"
+      }
+    },
+    "politicas_reposicion": {
+      "sku": {
+        "type": "text",
+        "meaning": "Codigo de articulo; relaciona articulo con operaciones"
+      },
+      "almacen": {
+        "type": "text",
+        "meaning": "Codigo de ubicacion, referencia almacenes.almacen"
+      },
+      "unidad": {
+        "type": "text",
+        "meaning": "UN o CAJA para cantidades de la politica"
+      },
+      "minimo": {
+        "type": "integer",
+        "meaning": "Umbral de reposicion expresado en unidad de la fila"
+      },
+      "objetivo": {
+        "type": "integer",
+        "meaning": "Referencia objetivo expresada en unidad de la fila"
+      },
+      "vigente_desde": {
+        "type": "date",
+        "meaning": "Inicio inclusivo de vigencia"
+      },
+      "vigente_hasta": {
+        "type": "date",
+        "meaning": "Fin inclusivo de vigencia"
+      },
+      "responsable": {
+        "type": "text",
+        "meaning": "Persona responsable de politica manual"
+      }
+    },
+    "incidencias_fisicas": {
+      "incidencia": {
+        "type": "text",
+        "meaning": "Identificador de incidencia fisica"
+      },
+      "sku": {
+        "type": "text",
+        "meaning": "Codigo de articulo; relaciona articulo con operaciones"
+      },
+      "almacen": {
+        "type": "text",
+        "meaning": "Codigo de ubicacion, referencia almacenes.almacen"
+      },
+      "fecha": {
+        "type": "date",
+        "meaning": "Fecha YYYY-MM-DD del evento o cabecera"
+      },
+      "cantidad_base": {
+        "type": "integer",
+        "meaning": "Cantidad en unidades base; movimiento puede ser negativo"
+      },
+      "estado": {
+        "type": "text",
+        "meaning": "Estado nativo del documento; ver dominio por tabla"
+      },
+      "motivo": {
+        "type": "text",
+        "meaning": "Nota descriptiva, no campo para clasificar estado"
+      }
+    }
+  },
+  "stateDomains": {
+    "movimientos_cabecera": [
+      "CONTABILIZADO"
+    ],
+    "reservas_cabecera": [
+      "ACTIVA",
+      "LIBERADA",
+      "ATENDIDA"
+    ],
+    "compras_cabecera": [
+      "CONFIRMADA",
+      "BORRADOR",
+      "CANCELADA"
+    ],
+    "recepciones_cabecera": [
+      "CONTABILIZADA",
+      "BORRADOR"
+    ],
+    "incidencias_fisicas": [
+      "ABIERTA",
+      "RESUELTA"
+    ]
+  }
+}

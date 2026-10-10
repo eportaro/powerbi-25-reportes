@@ -1,0 +1,64 @@
+{
+  "name": "Portaro Mint",
+  "dataColors": [
+    "#087C83",
+    "#10243A",
+    "#29C982",
+    "#5B7FE7",
+    "#D99A36",
+    "#C64E55"
+  ],
+  "foreground": "#15283B",
+  "background": "#F3F7F5",
+  "foregroundNeutralSecondary": "#667789",
+  "foregroundNeutralTertiary": "#A5B1B8",
+  "backgroundLight": "#E3F6EF",
+  "backgroundNeutral": "#E3E9EC",
+  "tableAccent": "#087C83",
+  "maximum": "#087C83",
+  "center": "#29C982",
+  "minimum": "#10243A",
+  "bad": "#C64E55",
+  "neutral": "#BD7415",
+  "good": "#087C83",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "title": [
+          {
+            "show": true,
+            "fontSize": 12,
+            "fontFamily": "Segoe UI",
+            "color": {
+              "solid": {
+                "color": "#15283B"
+              }
+            }
+          }
+        ],
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#E3E9EC"
+              }
+            },
+            "radius": 10
+          }
+        ]
+      }
+    }
+  }
+}

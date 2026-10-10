@@ -1,0 +1,5 @@
+incidencia,sku,almacen,fecha,cantidad_base,estado,motivo
+INC-0001,SKU-001,LIM,2026-09-29,5,ABIERTA,Revision de embalaje
+INC-0009,SKU-005,LIM,2026-09-29,7,ABIERTA,Revision de embalaje
+INC-0022,SKU-011,TRU,2026-09-29,7,ABIERTA,Revision de embalaje
+INC-RES-01,SKU-004,TRU,2026-09-18,4,RESUELTA,Embalaje corregido

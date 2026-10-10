@@ -1,0 +1,26 @@
+table DimCorte
+	lineageTag: 20f3796b-3630-5f0d-839b-36916de62062
+
+	column fecha_corte
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 56a5f60e-ff0d-570a-ab9f-0d0e008d2fea
+		summarizeBy: none
+		sourceColumn: fecha_corte
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition DimCorte = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\DimCorte.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"fecha_corte", type date}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

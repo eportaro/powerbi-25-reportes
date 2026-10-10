@@ -1,0 +1,305 @@
+table FactInventario
+	lineageTag: 3db8dabb-8539-55ff-97e0-149d192826c4
+
+	/// Saldo físico oficial del único corte en unidades base.
+	measure 'Saldo unidades' = SUM ( FactInventario[saldo_base] )
+		formatString: #,0
+		displayFolder: Inventario
+		lineageTag: 563f491a-0c3c-5dd4-a377-e04edb671479
+
+	/// Reservas ACTIVA al corte; no modifica el saldo.
+	measure 'Reserva activa' = SUM ( FactInventario[reserva_activa_base] )
+		formatString: #,0
+		displayFolder: Inventario
+		lineageTag: 0779ed51-bc1b-5caf-bc5e-20ae7bceec34
+
+	/// Incidencias ABIERTA incluidas físicamente en saldo y distintas de reservas.
+	measure 'Bloqueo abierto' = SUM ( FactInventario[bloqueo_abierto_base] )
+		formatString: #,0
+		displayFolder: Inventario
+		lineageTag: 7ecc204b-994d-5014-b6cc-62a4c84e7731
+
+	/// Saldo menos reservas activas y bloqueo abierto; conserva negativos.
+	measure 'Disponible neto' = SUM ( FactInventario[neto_base] )
+		formatString: #,0
+		displayFolder: Inventario
+		lineageTag: 318ff644-1893-51b3-9e31-6762cd2cacfb
+
+	/// Suma del máximo(neto,0) calculado por SKU/almacén/corte, nunca clamp del total.
+	measure 'Disponible prometible' = SUM ( FactInventario[prometible_base] )
+		formatString: #,0
+		displayFolder: Inventario
+		lineageTag: 97692a70-35bd-541f-9edb-c1f511166c05
+
+	/// Suma del máximo(-neto,0) por SKU/almacén/corte.
+	measure 'Faltante unidades' = SUM ( FactInventario[faltante_base] )
+		formatString: #,0
+		displayFolder: Inventario
+		lineageTag: da9cea26-ecd1-54cf-90ce-98d20f4be51a
+
+	/// Suma de mínimos válidos convertidos a unidad base; políticas ausentes permanecen BLANK.
+	measure 'Mínimo unidades' = SUM ( FactInventario[minimo_base] )
+		formatString: #,0
+		displayFolder: Inventario
+		lineageTag: 1950bf4c-a2bc-5626-b3de-f3094fbc368f
+
+	/// Referencia de planificación convertida a unidad base; no es una orden automática.
+	measure 'Objetivo unidades' = SUM ( FactInventario[objetivo_base] )
+		formatString: #,0
+		displayFolder: Inventario
+		lineageTag: cf0520fc-76e5-54c7-a698-b5c3d8916578
+
+	/// Cuenta SKU/almacén con prometible estrictamente menor al mínimo; sin política no evaluable.
+	measure 'Combinaciones en alerta' = SUM ( FactInventario[alerta_flag] )
+		formatString: #,0
+		displayFolder: Inventario
+		lineageTag: 4bec445c-f7f4-5623-bcc6-7a5c0d69c943
+
+	/// Combinaciones con política ausente, inválida, ambigua o fuera de vigencia.
+	measure 'Políticas por revisar' = SUM ( FactInventario[politica_revisar_flag] )
+		formatString: #,0
+		displayFolder: Inventario
+		lineageTag: c3e89f68-2ab7-52d0-bf8f-86d42f5fb7b3
+
+	/// Itera cada SKU/almacén/corte: saldo físico por costo promedio oficial y redondeo a céntimos por fila antes de sumar. PEN sin IGV; Currency conserva 4 decimales.
+	measure 'Valor stock' = SUMX ( FactInventario, ROUND ( FactInventario[saldo_base] * FactInventario[costo_promedio_pen], 2 ) )
+		formatString: "S/ "#,0.00
+		displayFolder: Inventario
+		lineageTag: f6e116cc-a995-5324-a9aa-36f414f17789
+
+	/// Conteo de combinaciones visibles del único corte.
+	measure 'Combinaciones inventario' = COUNTROWS ( FactInventario )
+		formatString: #,0
+		displayFolder: Inventario
+		lineageTag: 1c11f5ea-8e15-5629-8f66-40ef7e2b2709
+
+	/// Alertas entre combinaciones con política válida; DIVIDE devuelve BLANK si denominador vacío/cero.
+	measure '% combinaciones en alerta' = DIVIDE ( [Combinaciones en alerta], SUM ( FactInventario[politica_valida_flag] ) )
+		formatString: 0.0%
+		displayFolder: Inventario
+		lineageTag: 66f5cc7f-a4ce-5ccd-bd5d-35a4126daf88
+
+	/// Nivel 1 faltante; 2 prometible cero; 3 bajo mínimo; 4 resto válido. Sin política y sin nivel 1/2, BLANK. Solo detalle SKU/almacén.
+	measure 'Prioridad revisión' = IF ( HASONEVALUE ( DimArticulo[sku] ) && HASONEVALUE ( DimAlmacen[almacen] ), SELECTEDVALUE ( FactInventario[prioridad] ), BLANK () )
+		formatString: #,0
+		displayFolder: Revisión
+		lineageTag: d369ecfc-2823-555f-ae10-2e425eebe185
+
+	/// Orden global al corte por prioridad, faltante*costo descendente, SKU/almacén ascendentes. Prioridad pendiente de revisión al final.
+	measure 'Orden revisión' = IF ( HASONEVALUE ( DimArticulo[sku] ) && HASONEVALUE ( DimAlmacen[almacen] ), SELECTEDVALUE ( FactInventario[orden_revision] ), BLANK () )
+		formatString: #,0
+		displayFolder: Revisión
+		lineageTag: f38ccb8c-d3b3-5f52-8fa7-f385281f47ca
+
+	column sku
+		dataType: string
+		isHidden
+		lineageTag: fc5f807e-8607-59b0-acbd-0e3feba90da1
+		summarizeBy: none
+		sourceColumn: sku
+
+		annotation SummarizationSetBy = Automatic
+
+	column almacen
+		dataType: string
+		isHidden
+		lineageTag: fd81d554-d945-5f09-b64b-ff4ba946acd2
+		summarizeBy: none
+		sourceColumn: almacen
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_corte
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 51a98962-a9ba-591f-89c2-2c7b33f59030
+		summarizeBy: none
+		sourceColumn: fecha_corte
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column saldo_base
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6eab4d28-b654-5d5c-a35b-79f6c86edc34
+		summarizeBy: none
+		sourceColumn: saldo_base
+
+		annotation SummarizationSetBy = Automatic
+
+	column reserva_activa_base
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ba0552e5-f396-5698-aa8d-ca7fa88ecfe8
+		summarizeBy: none
+		sourceColumn: reserva_activa_base
+
+		annotation SummarizationSetBy = Automatic
+
+	column bloqueo_abierto_base
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 701b20f6-79dd-5ce0-89c5-3e653a2d6846
+		summarizeBy: none
+		sourceColumn: bloqueo_abierto_base
+
+		annotation SummarizationSetBy = Automatic
+
+	column neto_base
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4c29bae0-23af-5af6-bad6-0a7689788d58
+		summarizeBy: none
+		sourceColumn: neto_base
+
+		annotation SummarizationSetBy = Automatic
+
+	column prometible_base
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 520baebe-9c65-52b0-80b1-ccc9f56b1bb7
+		summarizeBy: none
+		sourceColumn: prometible_base
+
+		annotation SummarizationSetBy = Automatic
+
+	column faltante_base
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e5cedebf-febc-54b1-b69c-a19120015f32
+		summarizeBy: none
+		sourceColumn: faltante_base
+
+		annotation SummarizationSetBy = Automatic
+
+	column costo_promedio_pen
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: b1e6531b-f7ef-563b-bf83-31c1d91d76ca
+		summarizeBy: none
+		sourceColumn: costo_promedio_pen
+
+		annotation SummarizationSetBy = Automatic
+
+	column valor_stock_pen
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: 6b2c7cbc-b88e-5145-9d4e-743fb1a9dbd7
+		summarizeBy: none
+		sourceColumn: valor_stock_pen
+
+		annotation SummarizationSetBy = Automatic
+
+	column valor_faltante_pen
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: 61059efa-4f2e-5eae-9f68-fde6cc67eb1a
+		summarizeBy: none
+		sourceColumn: valor_faltante_pen
+
+		annotation SummarizationSetBy = Automatic
+
+	column minimo_base
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e1f76ec1-4405-56df-86c7-511fecfec990
+		summarizeBy: none
+		sourceColumn: minimo_base
+
+		annotation SummarizationSetBy = Automatic
+
+	column objetivo_base
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2800bd1c-d5f5-579d-8997-38255e036569
+		summarizeBy: none
+		sourceColumn: objetivo_base
+
+		annotation SummarizationSetBy = Automatic
+
+	column alerta_flag
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b058d166-2f4d-5bbe-936d-0f3812111fe6
+		summarizeBy: none
+		sourceColumn: alerta_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column politica_valida_flag
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b314a55b-24cc-5608-b401-4603f7c3b1de
+		summarizeBy: none
+		sourceColumn: politica_valida_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column politica_revisar_flag
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 122e1cb8-fd48-5383-8faa-805551f8281d
+		summarizeBy: none
+		sourceColumn: politica_revisar_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column prioridad
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 199429ba-3a70-5064-b3e7-f36c0f615c63
+		summarizeBy: none
+		sourceColumn: prioridad
+
+		annotation SummarizationSetBy = Automatic
+
+	column prioridad_revision
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c45ed4a8-eabd-5ec0-b6a9-af2542f05ff6
+		summarizeBy: none
+		sourceColumn: prioridad_revision
+
+		annotation SummarizationSetBy = Automatic
+
+	column orden_revision
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9844b1d7-ce4c-5bc7-8f7d-6f63ad764110
+		summarizeBy: none
+		sourceColumn: orden_revision
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactInventario = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\FactInventario.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"sku", type text}, {"almacen", type text}, {"fecha_corte", type date}, {"saldo_base", Int64.Type}, {"reserva_activa_base", Int64.Type}, {"bloqueo_abierto_base", Int64.Type}, {"neto_base", Int64.Type}, {"prometible_base", Int64.Type}, {"faltante_base", Int64.Type}, {"costo_promedio_pen", Currency.Type}, {"valor_stock_pen", Currency.Type}, {"valor_faltante_pen", Currency.Type}, {"minimo_base", Int64.Type}, {"objetivo_base", Int64.Type}, {"alerta_flag", Int64.Type}, {"politica_valida_flag", Int64.Type}, {"politica_revisar_flag", Int64.Type}, {"prioridad", Int64.Type}, {"prioridad_revision", Int64.Type}, {"orden_revision", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,24 @@
+relationship e4f3a061-18c3-5d95-8533-e331e05f506b
+	fromColumn: FactInventario.sku
+	toColumn: DimArticulo.sku
+
+relationship 3b879f80-a075-5a7e-8f47-8fbadcf2c052
+	fromColumn: FactInventario.almacen
+	toColumn: DimAlmacen.almacen
+
+relationship 0f240051-8a9d-5c78-a5dd-29eb137c1bee
+	fromColumn: FactInventario.fecha_corte
+	toColumn: DimCorte.fecha_corte
+
+relationship fa6252dc-0857-5226-ba97-4e9e1b1738a5
+	fromColumn: FactCompra.sku
+	toColumn: DimArticulo.sku
+
+relationship 6e9795bf-7461-545c-87ff-a1407babe2bf
+	fromColumn: FactCompra.almacen
+	toColumn: DimAlmacen.almacen
+
+relationship c86b34f6-9a10-5f87-9aae-6f009d20599c
+	fromColumn: FactCompra.fecha_corte
+	toColumn: DimCorte.fecha_corte
+

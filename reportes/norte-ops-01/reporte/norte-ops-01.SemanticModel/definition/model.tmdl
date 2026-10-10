@@ -1,0 +1,22 @@
+model Model
+	culture: es-PE
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-PE
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["DimArticulo","DimAlmacen","DimCorte","FactInventario","FactCompra","DataFolder"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DimArticulo
+ref table DimAlmacen
+ref table DimCorte
+ref table FactInventario
+ref table FactCompra
+
+ref cultureInfo es-PE
+

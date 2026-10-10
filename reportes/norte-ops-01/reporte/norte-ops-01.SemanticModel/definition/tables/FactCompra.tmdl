@@ -1,0 +1,159 @@
+table FactCompra
+	lineageTag: c29c49cf-5bea-50cc-82c7-c236acfe5f19
+
+	/// Líneas CONFIRMADA con pendiente positivo: pedido menos recepciones CONTABILIZADA hasta corte inclusive. No se agrega al stock.
+	measure 'Compra pendiente' = SUM ( FactCompra[pendiente_base] )
+		formatString: #,0
+		displayFolder: Abastecimiento
+		lineageTag: 54ebbf2e-51c4-59e8-a16e-d3b4da16e32c
+
+	/// Itera líneas pendientes confirmadas; fecha prometida estrictamente menor al corte. Igual al corte no atrasada; sin fecha no inferir atraso.
+	measure 'Compra atrasada' = SUMX ( FactCompra, FactCompra[pendiente_base] * FactCompra[atrasada_flag] )
+		formatString: #,0
+		displayFolder: Abastecimiento
+		lineageTag: 484ee3e4-3fa3-5e0c-8179-64ec3dbfedec
+
+	/// Conteo de líneas confirmadas pendientes al corte, independiente del hecho de inventario.
+	measure 'Líneas compra pendientes' = COUNTROWS ( FactCompra )
+		formatString: #,0
+		displayFolder: Abastecimiento
+		lineageTag: 7aaa7ff7-3797-57ff-8a16-cb19048fe0dd
+
+	/// Líneas pendientes con fecha prometida por confirmar; no se clasifican atrasadas automáticamente.
+	measure 'Líneas sin fecha' = SUM ( FactCompra[fecha_por_confirmar_flag] )
+		formatString: #,0
+		displayFolder: Abastecimiento
+		lineageTag: 353e27ad-b966-5880-a500-c604bbe5f1ae
+
+	column pedido_compra
+		dataType: string
+		isHidden
+		lineageTag: 9e79c7ff-693c-5c44-9ff6-be9f8e6638ce
+		summarizeBy: none
+		sourceColumn: pedido_compra
+
+		annotation SummarizationSetBy = Automatic
+
+	column linea
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 17bc718f-da39-56b7-b64a-777ad1089220
+		summarizeBy: none
+		sourceColumn: linea
+
+		annotation SummarizationSetBy = Automatic
+
+	column sku
+		dataType: string
+		isHidden
+		lineageTag: a6028ffd-6257-50c0-a13e-ffe710eed9da
+		summarizeBy: none
+		sourceColumn: sku
+
+		annotation SummarizationSetBy = Automatic
+
+	column almacen
+		dataType: string
+		isHidden
+		lineageTag: 3bae61e7-7a6f-555a-a269-3bba51654deb
+		summarizeBy: none
+		sourceColumn: almacen
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_corte
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 84037c8f-9969-5b36-ae03-f5a1db0dd489
+		summarizeBy: none
+		sourceColumn: fecha_corte
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column proveedor
+		dataType: string
+		isHidden
+		lineageTag: 8db18caf-e395-57bb-bd1c-9a3da36a96e6
+		summarizeBy: none
+		sourceColumn: proveedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_prometida
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 1ed01041-7ded-5ad2-bf4b-b713f2b0f038
+		summarizeBy: none
+		sourceColumn: fecha_prometida
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column pedida_base
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d7343fb3-d03a-588f-808f-f4cf2abe89f5
+		summarizeBy: none
+		sourceColumn: pedida_base
+
+		annotation SummarizationSetBy = Automatic
+
+	column recibida_base
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b3220c2b-004a-5f8e-baff-360506fcc316
+		summarizeBy: none
+		sourceColumn: recibida_base
+
+		annotation SummarizationSetBy = Automatic
+
+	column pendiente_base
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f41122f9-47f0-5b44-815d-b4bd73e38aa3
+		summarizeBy: none
+		sourceColumn: pendiente_base
+
+		annotation SummarizationSetBy = Automatic
+
+	column atrasada_flag
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7240515e-8329-54d7-becf-5f86b8513328
+		summarizeBy: none
+		sourceColumn: atrasada_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_por_confirmar_flag
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 21132218-f5b6-5972-988e-0e990588768e
+		summarizeBy: none
+		sourceColumn: fecha_por_confirmar_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactCompra = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\FactCompra.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"pedido_compra", type text}, {"linea", Int64.Type}, {"sku", type text}, {"almacen", type text}, {"fecha_corte", type date}, {"proveedor", type text}, {"fecha_prometida", type date}, {"pedida_base", Int64.Type}, {"recibida_base", Int64.Type}, {"pendiente_base", Int64.Type}, {"atrasada_flag", Int64.Type}, {"fecha_por_confirmar_flag", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

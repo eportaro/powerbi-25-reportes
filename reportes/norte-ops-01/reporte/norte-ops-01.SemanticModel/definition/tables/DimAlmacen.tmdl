@@ -1,0 +1,31 @@
+table DimAlmacen
+	lineageTag: d6a99c7b-7f8e-59ec-8f7c-9f0531296ef3
+
+	column almacen
+		dataType: string
+		lineageTag: 8222df6b-ad1c-50a8-afe5-6a9a3e10af06
+		summarizeBy: none
+		sourceColumn: almacen
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre
+		dataType: string
+		lineageTag: e9edff7e-35b8-5bfd-a3d4-cb9e84a26702
+		summarizeBy: none
+		sourceColumn: nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimAlmacen = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\DimAlmacen.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"almacen", type text}, {"nombre", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

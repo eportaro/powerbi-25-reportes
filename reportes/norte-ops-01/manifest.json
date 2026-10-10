@@ -1,0 +1,567 @@
+{
+  "caseId": "norte-ops-01",
+  "passed": true,
+  "rows": {
+    "DimArticulo": 18,
+    "DimAlmacen": 2,
+    "DimCorte": 1,
+    "FactInventario": 36,
+    "FactCompra": 29
+  },
+  "singleV2Entry": true,
+  "relativeReferencesValid": true,
+  "publicContentScanPassed": true,
+  "files": [
+    {
+      "path": "capturas/norte-ops-01-v2-desktop.png",
+      "sha256": "269990d3403270ff2f71eda11c66f4b997f0161a2ad2ed45ee58ac0a8b51c53a",
+      "bytes": 239328
+    },
+    {
+      "path": "capturas/norte-ops-01-v2.pdf",
+      "sha256": "0ed4c6ba9afdac9e11c9fbd4de9e528ac55470f060d231f14f387fbdceb07b88",
+      "bytes": 146149
+    },
+    {
+      "path": "capturas/previsualizacion-html.png",
+      "sha256": "e996075a5a9ce52b17b07e88bb710111a2ec34ebf3d9fd9dca86334283a6eb9e",
+      "bytes": 157015
+    },
+    {
+      "path": "datos/fuentes/csv/incidencias_fisicas.csv",
+      "sha256": "6e9fefd12afb60c8d7f8338a2dbd0545d3932eaab9a22392e46cc3a85e01691c",
+      "bytes": 315
+    },
+    {
+      "path": "datos/fuentes/diccionario.json",
+      "sha256": "35e2566c784ba4fd1967b5a88dce2bb7c62f9aad20db6894fe83865b9c38a0b2",
+      "bytes": 12380
+    },
+    {
+      "path": "datos/fuentes/erp/almacenes.csv",
+      "sha256": "65e7c06e376bd47fcecaeada2c7846dfc5c1daf5465a7cfc91175831328f92d2",
+      "bytes": 40
+    },
+    {
+      "path": "datos/fuentes/erp/articulos.csv",
+      "sha256": "526ad019781f6622d8f3982c0d2d18e848dde4be61d7aaf75acb1ad686440fcb",
+      "bytes": 794
+    },
+    {
+      "path": "datos/fuentes/erp/compras_cabecera.csv",
+      "sha256": "0690f94e2315623a71084bbe1fd4fef3e86cbf2321928f62fd348e21e8389c30",
+      "bytes": 1845
+    },
+    {
+      "path": "datos/fuentes/erp/compras_detalle.csv",
+      "sha256": "e20dfd433f2c9da7a312a0d84ab1a5ceb941188548e9e4cd35ababd173a437e2",
+      "bytes": 993
+    },
+    {
+      "path": "datos/fuentes/erp/movimientos_cabecera.csv",
+      "sha256": "72d37e0e5154537e2035ac23eea4c477a289c35e9456171e6bb45e0638df4e46",
+      "bytes": 9585
+    },
+    {
+      "path": "datos/fuentes/erp/movimientos_detalle.csv",
+      "sha256": "ff38e451e1973a5c1173466e345dd00acce4d8e1e06c11ad09bfeea46c218447",
+      "bytes": 5070
+    },
+    {
+      "path": "datos/fuentes/erp/recepciones_cabecera.csv",
+      "sha256": "95f009ba51bcef8c2d38ebdcbdf070468f995f0e31587db98bf0ddec11f61b4f",
+      "bytes": 1254
+    },
+    {
+      "path": "datos/fuentes/erp/recepciones_detalle.csv",
+      "sha256": "212230ecf5610bf596db6b9d2d9a569d5ae8f602abc4c03075976ee294164ea4",
+      "bytes": 945
+    },
+    {
+      "path": "datos/fuentes/erp/reservas_cabecera.csv",
+      "sha256": "af7a7b97d968bdf3d8dce9f2805d664df9988a84f177006a5db8386a73d8122a",
+      "bytes": 2182
+    },
+    {
+      "path": "datos/fuentes/erp/reservas_detalle.csv",
+      "sha256": "b168d27481b7af0cd6e31aaa38498e39965145711a878185ee5cfa886a1f6968",
+      "bytes": 2010
+    },
+    {
+      "path": "datos/fuentes/erp/saldo_actual.csv",
+      "sha256": "3cd32d885abfb1186732364cebea38b5c4e2305c64a617f3b65ceb27fa0cbd1a",
+      "bytes": 1321
+    },
+    {
+      "path": "datos/fuentes/erp/saldo_inicial.csv",
+      "sha256": "ec69cb1acdaa2f11825d234d7c97af0fd8f8a13e2be0cc240c276e903120e6ef",
+      "bytes": 1041
+    },
+    {
+      "path": "datos/fuentes/excel/politicas_reposicion.xlsx",
+      "sha256": "993ba7591046120d4d36edfa66f25c087a3df0c25dada379ec1bc92e70d516a1",
+      "bytes": 6293
+    },
+    {
+      "path": "datos/modelo/DimAlmacen.csv",
+      "sha256": "fabf2ad09f7ebb40aec3d471cdd6a81175204f862887cf9d19adafa0b40f9799",
+      "bytes": 37
+    },
+    {
+      "path": "datos/modelo/DimArticulo.csv",
+      "sha256": "22f68be3f9c95eda408db0af414890b42615ec24805119a49c87b95ec5e6eecb",
+      "bytes": 775
+    },
+    {
+      "path": "datos/modelo/DimCorte.csv",
+      "sha256": "8d6f9e3d3036242b7c7644f588c34ce6042498c8d74a1d17d80c8e8257b62c41",
+      "bytes": 23
+    },
+    {
+      "path": "datos/modelo/FactCompra.csv",
+      "sha256": "723091ee3e0bcce2367dc54c470fd07203fdee5e30d51b97840af1284b77e42a",
+      "bytes": 2035
+    },
+    {
+      "path": "datos/modelo/FactInventario.csv",
+      "sha256": "23a844fb1fea5bca813f700c7e1af51375fedb77918ba3d55545d7209bddd58b",
+      "bytes": 3192
+    },
+    {
+      "path": "documentacion/guia-uso.md",
+      "sha256": "a40b2ae815ceaa5a892b27c7301d36c2fbba74fc2fd6c2178d846a1222b9fea9",
+      "bytes": 1666
+    },
+    {
+      "path": "documentacion/reglas-negocio.md",
+      "sha256": "45ec662e98ff8aa2662e17155be85e1c8b35c3b7cceea3e3d5bfb6dfe6dabd21",
+      "bytes": 4415
+    },
+    {
+      "path": "ficha-galeria.json",
+      "sha256": "d26aa420181005fb0efad2a21ffe5bbf912742fdfa864e92e602fd1602805582",
+      "bytes": 7590
+    },
+    {
+      "path": "README.md",
+      "sha256": "9ac5a1f20cc5b4138d9fd382c4317ca1b4461abed13ec2609749573162706fca",
+      "bytes": 2674
+    },
+    {
+      "path": "reporte/norte-ops-01-v2.pbip",
+      "sha256": "c9a61fd96a72bccd5382efba0befc59cd8d08e96c87bdf887bf4d5aeebf0b7d1",
+      "bytes": 184
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/page.json",
+      "sha256": "0e36c86b6efbf64e0a663dcd095cdb6f7e4465ad3ceb3233e20689de02ea421a",
+      "bytes": 773
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/abastecimiento_panel/visual.json",
+      "sha256": "942debccf72b8604338d0e9b7590113e2983b985dfbbae74c43fa4a046aeac9e",
+      "bytes": 2830
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/abastecimiento_sub/visual.json",
+      "sha256": "5a5966ec75c3c3da50028d303fe2347eeb11b94f340b22b4074c630bdca06846",
+      "bytes": 2426
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/abastecimiento_title/visual.json",
+      "sha256": "78127c79f47af86f30ac32244e6d8f8ae33381f265c5272ab52166ddec373d20",
+      "bytes": 2443
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/alertas_detalle/visual.json",
+      "sha256": "475e5bbfa72dc5a3d472330a6d137fe9027669eb27aee04277cecef6fc672270",
+      "bytes": 8511
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/alertas_label/visual.json",
+      "sha256": "1febf1a43bebe70ecbac6300b145deea57131b833b85dcf6a2122e706e5305d7",
+      "bytes": 2430
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/alertas_note/visual.json",
+      "sha256": "23061c6ec7bfa705fc8743c51e79bbe7255b280d1e20b100dc8d56ff39f0b3f5",
+      "bytes": 2407
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/alertas_panel/visual.json",
+      "sha256": "a06135eae72b7150e5545a34073eea9694624f4e75e420bb33a12ab2cbae2834",
+      "bytes": 2823
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/alertas_value/visual.json",
+      "sha256": "da914394a38619f22d07ce9a06d02801d1cb8e62adfd8e7411d8a2b7115fae3c",
+      "bytes": 3831
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/almacen/visual.json",
+      "sha256": "b634d2a4e2482b4f043802da80f3d4ee5796ed7e36f7d1a2f0f6afd103e81fe9",
+      "bytes": 3927
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/almacen_label/visual.json",
+      "sha256": "dfebbb9720edf16e76e038f75b41a913c85e53aee5d8f187526ebfb6ebab05a6",
+      "bytes": 2421
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/atrasada_label/visual.json",
+      "sha256": "cde4b13a7fe50323f59fb01bec19339af0c704f0bf3c3f9eaeed9b8759531897",
+      "bytes": 2435
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/atrasada_note/visual.json",
+      "sha256": "5e4c0834569e1509382be1ca22c4d12133a6b391e1dfa1cce2e4ba0de57e0325",
+      "bytes": 2399
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/atrasada_panel/visual.json",
+      "sha256": "4110cf862917b9df1a1f5de323bd69a8f64373d93a80cf79803d15f0c8523078",
+      "bytes": 2825
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/atrasada_value/visual.json",
+      "sha256": "e86d59865a2d605d2356b2c4ac933bc1e74338a79c33dc117650ef00caf93e11",
+      "bytes": 3801
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/brand/visual.json",
+      "sha256": "22a668393278dd2718c9a760f7afc08e0ad22c1b60f1095e4fe3cb8d5e8fd7d5",
+      "bytes": 2425
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/bridge_bloqueo/visual.json",
+      "sha256": "9c81943a8f199f91c6b79922233dd3bdc022024075b8bc6a06d0cdaaba9c37ea",
+      "bytes": 2388
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/bridge_neto/visual.json",
+      "sha256": "2f6a8d4a7a18373303037fe9a5b864b6910146705c3298cbc812301cd43cc049",
+      "bytes": 2385
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/bridge_reservas/visual.json",
+      "sha256": "f3310f8d6b1d0570b6a5b6da279f9e56aedae95e9caadb0aa201ba0112ea8c2d",
+      "bytes": 2388
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/bridge_saldo/visual.json",
+      "sha256": "465c71a745c75b0110ce19970750100966fbfd77aca7e8248097d5ce725898c4",
+      "bytes": 2384
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/bridge_value_bloqueo/visual.json",
+      "sha256": "1412a1aa5d259ca8859012c1db3d5579f3078816bc6911b92caafc15479f4fec",
+      "bytes": 3814
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/bridge_value_neto/visual.json",
+      "sha256": "395d6a7867f8e92d40b047aa89dbf4ebe36f84d18350ab9938e0b8f073b38385",
+      "bytes": 3811
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/bridge_value_reservas/visual.json",
+      "sha256": "c102dc7f25d28ed5ed9fcff06218c3a7d7285b5cf6b165c4d68c28357d5f85dd",
+      "bytes": 3812
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/bridge_value_saldo/visual.json",
+      "sha256": "5ebcfcd2312f8ea43c01f531c5f43f87132afd33d92a3cfdea432d9eb062b0c7",
+      "bytes": 3809
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/compra_label/visual.json",
+      "sha256": "005f18bc99d46b46c03dedf26a1edb6945cd7cfc07f77850d3e4cb681872f318",
+      "bytes": 2433
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/compra_note/visual.json",
+      "sha256": "9ac3332276a6f82ac1bc6b54b760e7f0884d3c7b2b7769fa904df7e65840fc2e",
+      "bytes": 2407
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/compra_panel/visual.json",
+      "sha256": "301cd9e44aae39e1e5614cb6306170309ada598f0989d93baca4faa191cf5f58",
+      "bytes": 2822
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/compra_value/visual.json",
+      "sha256": "7130e29d2c20e49a1129c51cc1dc9572ee5f2c141c1da8727bbf3dd013612b20",
+      "bytes": 3801
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/compras_detalle/visual.json",
+      "sha256": "20b6321378bc10e8c3bc8f856d1d70e48eabbf52b7ed24a61676c727274e0c54",
+      "bytes": 6457
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/cut/visual.json",
+      "sha256": "90110060d811b356dcaaf21898f3b8a8af45f13015bd2c9f83f65784238dfd06",
+      "bytes": 2433
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/detalle_panel/visual.json",
+      "sha256": "1d29ae0ae51941ceea8d1689d55c078a6a0f54c802f2942678e4b1042944be50",
+      "bytes": 2822
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/detalle_sub/visual.json",
+      "sha256": "efd3f1097468013d26f841ebfc8a9813b5855ef97923ff9d0584e6befb9acc23",
+      "bytes": 2428
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/detalle_title/visual.json",
+      "sha256": "693195a4f89700cf973c0205277b5b30fac395f75191c8dbed3aa97a607fb2eb",
+      "bytes": 2447
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/disponibilidad_panel/visual.json",
+      "sha256": "eeadc2391adac2070d65d828a2cdf1c4a960adb26b88eb3160afd6deba43c315",
+      "bytes": 2830
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/disponibilidad_sub/visual.json",
+      "sha256": "9819806a09b5919446b8f83eae94d4283c025a3e473b834715fcfbcc3b30cb09",
+      "bytes": 2414
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/disponibilidad_title/visual.json",
+      "sha256": "75a6b340c4a7e9f4b63e6affdd4b55e9d394c5ad5531ac395d42babbac6d037b",
+      "bytes": 2444
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/familia/visual.json",
+      "sha256": "fa34340078fea067fc4df4cd971e2a57919fd70e459589885ad95b2135d385ba",
+      "bytes": 3936
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/familia_label/visual.json",
+      "sha256": "0b0acda18ee313e4334e436462abf99ade2a416427473f3f52ff7537c46ab961",
+      "bytes": 2421
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/familia_valor/visual.json",
+      "sha256": "ecf6d25ac8733cbf4ef052681983088a7fd2a8f6204dc66ea2fb0c53fc75283d",
+      "bytes": 4599
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/familias_panel/visual.json",
+      "sha256": "723ccb7850c717d52205361be0c2c8ee54c300fead3d05a4261ea689033e7cba",
+      "bytes": 2823
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/familias_sub/visual.json",
+      "sha256": "4d0b13a61bed75f5a44b49f5034e6a57255cba387ff08bdd29d68231af61b8e4",
+      "bytes": 2403
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/familias_title/visual.json",
+      "sha256": "adf567525f96bcc6d28c99ed23daea9e807f7c02484f525b3f0162451618e49a",
+      "bytes": 2438
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/foot/visual.json",
+      "sha256": "0cdd61a96280abc978bc56f85b02625248df1cb5ba2f124a26b4a32694bb3dc4",
+      "bytes": 2575
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/policy_label/visual.json",
+      "sha256": "ed9cbfc6246ef04cf59fbbaf4ebe96e46b642367177866be626f5baed6b95cde",
+      "bytes": 2438
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/policy_value/visual.json",
+      "sha256": "bbce9eebe6161520637c8ca259a8ece72b4d5f3b8b3642d5e84b18164320c487",
+      "bytes": 3826
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/prioridad_panel/visual.json",
+      "sha256": "694d7b687bb0225cc292298de03d1b960f12bd3a2e2da43875b5ec375bf2cd31",
+      "bytes": 2825
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/prioridad_sub/visual.json",
+      "sha256": "eec34857a820f9b86b38f201f29ee1b39183051fd39f1c4b67c222d0c20a0ecb",
+      "bytes": 2427
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/prioridad_title/visual.json",
+      "sha256": "35b99a7ded9c2841c97371d7ea7387c6b47ef31fd74f1022726dae26bfaaed8a",
+      "bytes": 2439
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/prometible_label/visual.json",
+      "sha256": "745c610243237eb1f4d59c7254f7f7e2c46db0652be33eaef379ec5b100e2b91",
+      "bytes": 2442
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/prometible_note/visual.json",
+      "sha256": "3e3902ad1b6bd36392bd6306d0b3c272fd358291f3ddb1c5957f9b28162e10ab",
+      "bytes": 2412
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/prometible_panel/visual.json",
+      "sha256": "0a240836ad1bf836cc8bdbbfe8f426e755cb0e42de8dc449284f5c22036b3f10",
+      "bytes": 2826
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/prometible_value/visual.json",
+      "sha256": "2f6c1eb94e03ba6793c942edfbf8560a528ae2f1cdf935ff235f67bf964a5d0c",
+      "bytes": 3828
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/sin_fecha/visual.json",
+      "sha256": "bd8686007a7bea0fedc52bf59984f1e6d13ca6e6f3040af6aef6ae86c4b65e22",
+      "bytes": 5270
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/sin_fecha_label/visual.json",
+      "sha256": "1db1336b4749fdfbe454705735d213828ef68b660be5d00f001d3d0095ef3350",
+      "bytes": 2395
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/stock_detalle/visual.json",
+      "sha256": "27ad4ec95e155d36d5067aa5ffdae4a6c0c249e2a9d40f6dbb2039133b7d3498",
+      "bytes": 8604
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/sub/visual.json",
+      "sha256": "5d44ceb712455c725fe6510176f5086ddfa75773584e65ccd83b74d41563347c",
+      "bytes": 2445
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/title/visual.json",
+      "sha256": "b883a08107ab7af2dbbfc8dbbb79b04830ea18570f27d9786099e134f0b321f4",
+      "bytes": 2439
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/valor_label/visual.json",
+      "sha256": "bd3eeb490b6bfa39f41278a02739911935e71dedbe97587496b7ca625f4c5503",
+      "bytes": 2427
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/valor_note/visual.json",
+      "sha256": "4c1a816fdf7c0fb8f16d440af06d665c438b5196a3038c64b58333ef69d430e8",
+      "bytes": 2406
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/valor_panel/visual.json",
+      "sha256": "696fdb6cdb1230c805474c5db5b7923907be44ba305fe7f0c1eb4a8cb9776a45",
+      "bytes": 2818
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/valor_value/visual.json",
+      "sha256": "37d0746f0736e542f1fe598130e7c9a9e50a7c64b4ff0c196c94b71eab488e47",
+      "bytes": 3792
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/vence_hoy/visual.json",
+      "sha256": "98ed0e3cec667e032f2fde5c2ff73c27eb933207553964a325331e8b4a8e1989",
+      "bytes": 5269
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/inventario/visuals/vence_hoy_label/visual.json",
+      "sha256": "2b5e077e783f81c77e127695341861661044c8e2a736910e4d16be3c0cd9f0ba",
+      "bytes": 2389
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/pages/pages.json",
+      "sha256": "da24966d477409f158213ef0c1a09233de8f738529989e55f17c9e99d95935c1",
+      "bytes": 204
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/report.json",
+      "sha256": "ed01256136b652fe4fb967e800e3718799696c7a4038c087735eac008c6c4faa",
+      "bytes": 1386
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition/version.json",
+      "sha256": "c8bdd966a85f1eaab4312d2096b6d7b508243e4d7bc5a4d25af3cfcb1056a4e7",
+      "bytes": 152
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/definition.pbir",
+      "sha256": "4e763ad243c742b21083b2fb2e97868721f1a63b68e557b5602f758e9e4fe05f",
+      "bytes": 126
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/StaticResources/RegisteredResources/portaro-mint.json",
+      "sha256": "4b9a7d6171cd1b577a38a9c3fe499dd7fdf5f5da50d08be95ff7f1e0f2c3551a",
+      "bytes": 1342
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/StaticResources/RegisteredResources/tidal-accessible.json",
+      "sha256": "a720112f9b384f9268cab05c26c3358efd1584cdef94f1a469c77be118bf1e5a",
+      "bytes": 8412
+    },
+    {
+      "path": "reporte/norte-ops-01.Report/StaticResources/SharedResources/BaseThemes/CY26SU05.json",
+      "sha256": "e52370c540c1ca0ac856f712fb9b0a21d955bd3262149e6ece77ce731192ecec",
+      "bytes": 20403
+    },
+    {
+      "path": "reporte/norte-ops-01.SemanticModel/definition/cultures/es-PE.tmdl",
+      "sha256": "be79b73ab81c683799088cc34ee265cb1b72764df5e71191f2d9a6e68f82f750",
+      "bytes": 11609
+    },
+    {
+      "path": "reporte/norte-ops-01.SemanticModel/definition/database.tmdl",
+      "sha256": "822c914b643bca32bb20abd8a762df8204a1b9ef02acc2bc7348727f6699cb96",
+      "bytes": 39
+    },
+    {
+      "path": "reporte/norte-ops-01.SemanticModel/definition/expressions.tmdl",
+      "sha256": "3e92834045923df187eaf4973f18ff75341ae2883db8d4bf0b079987832918de",
+      "bytes": 232
+    },
+    {
+      "path": "reporte/norte-ops-01.SemanticModel/definition/model.tmdl",
+      "sha256": "925c7e4ca027f960de4c08fc3eebe248bfab5c16fd8f65dae8d75b4a85d8fe21",
+      "bytes": 517
+    },
+    {
+      "path": "reporte/norte-ops-01.SemanticModel/definition/relationships.tmdl",
+      "sha256": "3439bc1d046cfbebcabfa05405c141ed8fbe2309582f5ee48042ca4266059c27",
+      "bytes": 712
+    },
+    {
+      "path": "reporte/norte-ops-01.SemanticModel/definition/tables/DimAlmacen.tmdl",
+      "sha256": "0ecb15bbc42585fae3ac9540a9419305d180cb8d907444c92d3b46ea8dec56a9",
+      "bytes": 899
+    },
+    {
+      "path": "reporte/norte-ops-01.SemanticModel/definition/tables/DimArticulo.tmdl",
+      "sha256": "ac492c1124e7ebdfc92473bf505e3c619ffe60faf0633dfd5bc50631043bd8ab",
+      "bytes": 1563
+    },
+    {
+      "path": "reporte/norte-ops-01.SemanticModel/definition/tables/DimCorte.tmdl",
+      "sha256": "73144e08cfc795983346a6b771629d8e92ddf221d620220e585c594e3a9bfd00",
+      "bytes": 780
+    },
+    {
+      "path": "reporte/norte-ops-01.SemanticModel/definition/tables/FactCompra.tmdl",
+      "sha256": "eb5a1a6fd5f027ce7e9e35111a0f23ec6183b8a48a0143d0008426471bf611ed",
+      "bytes": 4790
+    },
+    {
+      "path": "reporte/norte-ops-01.SemanticModel/definition/tables/FactInventario.tmdl",
+      "sha256": "27d5aa897a500b8cc1c5239f0c1c79703342cde8340064865de974ca802dcce0",
+      "bytes": 10079
+    },
+    {
+      "path": "reporte/norte-ops-01.SemanticModel/definition.pbism",
+      "sha256": "ed99ec078efd2ff27fc1c65cc97902138d7d3c438acdb7770ae37dc71c7f06c8",
+      "bytes": 43
+    },
+    {
+      "path": "reporte/norte-ops-01.SemanticModel/diagramLayout.json",
+      "sha256": "5bf87f3aecae5e79d9690adc6c5c404e939e944b38336a0beafa2d97c091c240",
+      "bytes": 2218
+    }
+  ],
+  "sourceEntryUnchanged": true
+}

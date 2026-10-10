@@ -1,0 +1,189 @@
+{
+  "id": "norte-ops-01",
+  "caso": "norte-ops-01",
+  "numero": 2,
+  "ready": true,
+  "familia": {
+    "es": "Operaciones",
+    "en": "Operations"
+  },
+  "etiquetas": [
+    "Power BI",
+    "DAX",
+    "CSV",
+    "Excel",
+    "Modelo dimensional"
+  ],
+  "titulo": {
+    "es": "Inventario que puedes comprometer",
+    "en": "Inventory you can commit"
+  },
+  "resumen": {
+    "es": "Del saldo físico a la reposición: identifica el faltante y revisa el abastecimiento sin contar compras futuras como stock disponible.",
+    "en": "From physical stock to replenishment: identify shortages and review supply without counting future purchases as available inventory."
+  },
+  "empresa": {
+    "es": "Distribuidora Norte es una distribuidora ficticia con 18 artículos de tres familias y dos almacenes. Empresa y datos son simulados.",
+    "en": "Distribuidora Norte is a fictional distributor with 18 items in three families and two warehouses. The company and all data are simulated."
+  },
+  "problema": {
+    "es": "El saldo ERP mezcla existencias disponibles, reservas y unidades bloqueadas. Compras pendientes generan una expectativa de abastecimiento que no puede prometerse hoy.",
+    "en": "ERP stock includes available, reserved and blocked units. Open purchases create supply expectations that cannot be committed today."
+  },
+  "preguntas": {
+    "es": [
+      "¿Qué stock podemos comprometer hoy?",
+      "¿Dónde está concentrado el valor del inventario?",
+      "¿Qué artículo y almacén tiene faltante o está bajo mínimo?",
+      "¿Qué compras siguen pendientes y cuáles están atrasadas?"
+    ],
+    "en": [
+      "Which stock can we commit today?",
+      "Where is inventory value concentrated?",
+      "Which item and warehouse is short or below minimum?",
+      "Which purchases remain open and which are overdue?"
+    ]
+  },
+  "decision": {
+    "es": "Separar saldo, reserva, bloqueo y neto por artículo/almacén. El prometible aplica piso cero por combinación; las compras no lo incrementan ni eliminan alertas.",
+    "en": "Separate stock, reserved units, blocked units and net availability per item and warehouse. Available-to-promise is floored at zero per combination; open purchases neither increase it nor remove alerts."
+  },
+  "como_se_armo": [
+    {
+      "titulo": {
+        "es": "Requerimiento",
+        "en": "Requirements"
+      },
+      "texto": {
+        "es": "Definir unidad base, corte y reglas de disponibilidad, reposición y compras.",
+        "en": "Define base units, cutoff and rules for availability, replenishment and purchases."
+      }
+    },
+    {
+      "titulo": {
+        "es": "Fuentes y preparación",
+        "en": "Sources and preparation"
+      },
+      "texto": {
+        "es": "Conciliar 12 CSV ERP con políticas Excel e incidencias físicas, conservando RAW y modelo preparado.",
+        "en": "Reconcile 12 ERP CSV tables with Excel policies and physical incidents, keeping RAW and prepared data separate."
+      }
+    },
+    {
+      "titulo": {
+        "es": "Modelo dimensional",
+        "en": "Dimensional model"
+      },
+      "texto": {
+        "es": "Dos hechos y tres dimensiones compartidas: cinco tablas y seis relaciones unidireccionales.",
+        "en": "Two facts and three shared dimensions: five tables and six single-direction relationships."
+      }
+    },
+    {
+      "titulo": {
+        "es": "Modelo semántico",
+        "en": "Semantic model"
+      },
+      "texto": {
+        "es": "19 medidas DAX con descripciones, carpetas y filtros de almacén/familia.",
+        "en": "19 DAX measures with descriptions, folders and warehouse/family filters."
+      }
+    },
+    {
+      "titulo": {
+        "es": "Calidad",
+        "en": "Quality"
+      },
+      "texto": {
+        "es": "1.412 controles previos RAW/modelo/DAX, incluidos 45 contextos filtrados en motor.",
+        "en": "1,412 prior RAW/model/DAX checks, including 45 filtered engine contexts."
+      }
+    },
+    {
+      "titulo": {
+        "es": "Visual y entrega",
+        "en": "Visual and delivery"
+      },
+      "texto": {
+        "es": "Una página nativa revisada en Desktop, PDF original y PNG renderizado; PBIP y datos descargables.",
+        "en": "One native page reviewed in Desktop, original PDF and rendered PNG; downloadable PBIP and data."
+      }
+    }
+  ],
+  "tecnico": {
+    "fuentes": {
+      "es": [
+        "ERP relacional exportado en 12 CSV",
+        "Excel de políticas de reposición",
+        "CSV de incidencias físicas"
+      ],
+      "en": [
+        "Relational ERP exported as 12 CSV tables",
+        "Excel replenishment policies",
+        "Physical incident CSV"
+      ]
+    },
+    "modelo": {
+      "es": [
+        "Inventario: artículo + almacén + corte; 36 combinaciones",
+        "Compras: pedido + línea + corte; 29 líneas",
+        "DimArticulo, DimAlmacen y DimCorte compartidas",
+        "5 tablas, 6 relaciones, 19 medidas DAX"
+      ],
+      "en": [
+        "Inventory: item + warehouse + cutoff; 36 combinations",
+        "Purchases: order + line + cutoff; 29 lines",
+        "Shared DimArticulo, DimAlmacen and DimCorte",
+        "5 tables, 6 relationships, 19 DAX measures"
+      ]
+    },
+    "calidad": {
+      "es": [
+        "552 controles RAW/modelo",
+        "855 comparaciones DAX en 45 contextos",
+        "5 recuentos de tabla",
+        "Apertura, actualización, guardado y filtros confirmados en Desktop"
+      ],
+      "en": [
+        "552 RAW/model checks",
+        "855 DAX comparisons across 45 contexts",
+        "5 table counts",
+        "Opening, refresh, save and filters confirmed in Desktop"
+      ]
+    },
+    "flujo": {
+      "es": "Fuentes RAW → preparación y conciliación → cinco CSV del modelo → Power Query Import → modelo en estrella y DAX → página nativa Power BI. Desktop refresca el modelo preparado; no ejecuta el ETL sobre RAW.",
+      "en": "RAW sources → preparation and reconciliation → five model CSV files → Power Query Import → star schema and DAX → native Power BI page. Desktop refreshes prepared data; it does not execute RAW ETL."
+    },
+    "rasgos": {
+      "es": [
+        "Una página al corte 30/09/2026",
+        "PEN sin IGV",
+        "Sin SQL, Pro ni credenciales para abrir localmente",
+        "Sin cobertura, rotación ni tendencias inventadas"
+      ],
+      "en": [
+        "One page at 2026-09-30 cutoff",
+        "PEN excluding VAT",
+        "No SQL, Pro or credentials required locally",
+        "No invented coverage, turnover or trends"
+      ]
+    }
+  },
+  "imagenes": [
+    {
+      "archivo": "norte-ops-01-v2-desktop.png",
+      "alt": {
+        "es": "Inventario al corte: valor, prometible, alertas, diagnóstico y compras pendientes",
+        "en": "Inventory at cutoff: value, available-to-promise, alerts, diagnostics and open purchases"
+      },
+      "provenance": "powerbi-desktop-pdf-render"
+    }
+  ],
+  "repo": "https://github.com/eportaro/powerbi-25-reportes/tree/main/reportes/norte-ops-01",
+  "pdf": "capturas/norte-ops-01-v2.pdf",
+  "nota_datos": {
+    "es": "Demostración con datos sintéticos. El PDF conserva el export original, incluidos iconos grises y tarjetas sin filas; no contiene datos de clientes reales.",
+    "en": "Demonstration with synthetic data. The PDF preserves the original export, including grey icons and cards with no eligible rows; it contains no real customer data."
+  }
+}
