@@ -1,0 +1,64 @@
+table DimCuenta
+	lineageTag: dd6e9cd2-5f35-5f7a-a870-70f73c18b5cf
+
+	column cuenta
+		dataType: string
+		lineageTag: bd9de317-2ab1-5f4f-8b2b-4f907f7010d8
+		summarizeBy: none
+		sourceColumn: cuenta
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre
+		dataType: string
+		lineageTag: 495a5035-5f9f-59eb-80c8-ea20215ad045
+		summarizeBy: none
+		sourceColumn: nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column clase
+		dataType: int64
+		formatString: 0
+		lineageTag: c67a69d5-7909-54a1-a99e-353317fd1703
+		summarizeBy: none
+		sourceColumn: clase
+
+		annotation SummarizationSetBy = Automatic
+
+	column naturaleza
+		dataType: string
+		lineageTag: e1f527b4-77d8-5d86-9ddd-4945d9f72e7f
+		summarizeBy: none
+		sourceColumn: naturaleza
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_linea
+		dataType: string
+		lineageTag: 82b72509-9559-5472-aedd-06f78764e689
+		summarizeBy: none
+		sourceColumn: codigo_linea
+
+		annotation SummarizationSetBy = Automatic
+
+	column origen_mapeo
+		dataType: string
+		lineageTag: 07f21191-4bc2-5c38-9c47-e014800c5334
+		summarizeBy: none
+		sourceColumn: origen_mapeo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimCuenta = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\DimCuenta.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"cuenta", type text}, {"nombre", type text}, {"clase", Int64.Type}, {"naturaleza", type text}, {"codigo_linea", type text}, {"origen_mapeo", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

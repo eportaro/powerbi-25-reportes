@@ -1,0 +1,18 @@
+excepcion_id,tipo,asiento,periodo,centro_costo,codigo_linea,importe_pen,tratamiento,fuente
+EXC-001,PRESUPUESTO_SOLO_ANUAL,,2026,ADM,PYG-60,180000.00,Sin presupuesto mensual: no se prorratea y queda fuera de la variación,vero-budget-annual
+EXC-002,EXCLUIDO_ANULADO,AS-2026-05-0070,2026-05,,,23650.00,ANULADO no forma parte de ningún saldo,paula-status
+EXC-003,DESCUADRE_ACEPTADO,AS-2026-06-0071,2026-06,,,5666.40,El resultado cuenta; el IGV faltante es tema de balance,paula-unbalanced
+EXC-004,SIN_CENTRO,AS-2026-07-0040,2026-07,SIN_CENTRO,,10047.52,"No se reasigna; se ve como Sin centro asignado, fuera de la variación",paula-cc
+EXC-005,SIN_CENTRO,AS-2026-07-0042,2026-07,SIN_CENTRO,,16063.81,"No se reasigna; se ve como Sin centro asignado, fuera de la variación",paula-cc
+EXC-006,SIN_CENTRO,AS-2026-08-0040,2026-08,SIN_CENTRO,,13224.12,"No se reasigna; se ve como Sin centro asignado, fuera de la variación",paula-cc
+EXC-007,SIN_CENTRO,AS-2026-08-0042,2026-08,SIN_CENTRO,,18403.35,"No se reasigna; se ve como Sin centro asignado, fuera de la variación",paula-cc
+EXC-008,MAPEO_PENDIENTE_EXCEL,AS-2026-08-0070,2026-08,,PYG-50,4475.29,659901: Línea decidida por Contabilidad; falta cargarla a mapeo_pyg.xlsx,paula-unmapped-659901
+EXC-009,SIN_CENTRO,AS-2026-09-0040,2026-09,SIN_CENTRO,,11192.14,"No se reasigna; se ve como Sin centro asignado, fuera de la variación",paula-cc
+EXC-010,SIN_CENTRO,AS-2026-09-0042,2026-09,SIN_CENTRO,,6585.06,"No se reasigna; se ve como Sin centro asignado, fuera de la variación",paula-cc
+EXC-011,MAPEO_PENDIENTE_EXCEL,AS-2026-09-0071,2026-09,,PYG-50,8015.74,659901: Línea decidida por Contabilidad; falta cargarla a mapeo_pyg.xlsx,paula-unmapped-659901
+EXC-012,EXCLUIDO_BORRADOR,AS-2026-09-0076,2026-09,,,8143.12,BORRADOR no forma parte de ningún saldo,paula-status
+EXC-013,PERIODO_ABIERTO,AS-2026-10-0001,2026-10,,,-36900.00,"Extorno de AS-2026-09-0074; periodo abierto, no es oficial",paula-closed
+EXC-014,PERIODO_ABIERTO,AS-2026-10-0002,2026-10,,,23192.14,"periodo abierto, no es oficial",paula-closed
+EXC-015,PERIODO_ABIERTO,AS-2026-10-0003,2026-10,,,23036.21,"periodo abierto, no es oficial",paula-closed
+EXC-016,PERIODO_ABIERTO,AS-2026-10-0004,2026-10,,,22828.23,"periodo abierto, no es oficial",paula-closed
+EXC-017,PERIODO_ABIERTO,AS-2026-10-0005,2026-10,,,25213.67,"periodo abierto, no es oficial",paula-closed

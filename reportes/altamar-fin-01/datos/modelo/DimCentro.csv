@@ -1,0 +1,5 @@
+centro_costo,nombre,sede,tipo
+LIM-OPE,Operaciones Lima,Lima,OPERATIVO
+AQP-OPE,Operaciones Arequipa,Arequipa,OPERATIVO
+ADM,Administracion y ventas,Lima,ADMINISTRATIVO
+SIN_CENTRO,Sin centro asignado,,SIN_ASIGNAR

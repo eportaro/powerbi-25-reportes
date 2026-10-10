@@ -1,0 +1,95 @@
+table FactReal
+	lineageTag: e31ca602-1d3c-5706-8cc9-8fae24577bbd
+
+	/// Saldo por naturaleza de las cuentas de la página, asientos CONTABILIZADO de enero a septiembre.
+	measure 'Real base' = SUM ( FactReal[importe_pen] )
+		formatString: #,0.00
+		isHidden
+		displayFolder: Base
+		lineageTag: d4c17633-b45b-589c-bcf7-d5678c2ac817
+
+	/// Real de las celdas mes × línea × centro con presupuesto mensual V1.
+	measure 'Real comparable base' = CALCULATE ( SUM ( FactReal[importe_pen] ), FactReal[comparable_flag] = 1 )
+		formatString: #,0.00
+		isHidden
+		displayFolder: Base
+		lineageTag: 45223f08-88b4-5fda-9f09-9cf639587c40
+
+	column periodo
+		dataType: string
+		isHidden
+		lineageTag: 3dc00dae-006f-5e04-935a-b57c74414d3f
+		summarizeBy: none
+		sourceColumn: periodo
+
+		annotation SummarizationSetBy = Automatic
+
+	column cuenta
+		dataType: string
+		isHidden
+		lineageTag: b15ca7ba-ba5d-521f-b6a2-ccafc5bca471
+		summarizeBy: none
+		sourceColumn: cuenta
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_linea
+		dataType: string
+		isHidden
+		lineageTag: 0deecf93-1c49-5204-a65a-7846df510c7a
+		summarizeBy: none
+		sourceColumn: codigo_linea
+
+		annotation SummarizationSetBy = Automatic
+
+	column centro_costo
+		dataType: string
+		isHidden
+		lineageTag: 2a1d84f7-c696-5347-8836-f1f2f58901f6
+		summarizeBy: none
+		sourceColumn: centro_costo
+
+		annotation SummarizationSetBy = Automatic
+
+	column importe_pen
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: ff8ae23b-b330-501e-8f19-3779777610a5
+		summarizeBy: none
+		sourceColumn: importe_pen
+
+		annotation SummarizationSetBy = Automatic
+
+	column movimientos
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9608fee9-55d6-55ad-867d-9b7f8f7ea760
+		summarizeBy: none
+		sourceColumn: movimientos
+
+		annotation SummarizationSetBy = Automatic
+
+	column comparable_flag
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 98b82900-e956-5197-82ee-3d570f40a8ca
+		summarizeBy: none
+		sourceColumn: comparable_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactReal = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\FactReal.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"periodo", type text}, {"cuenta", type text}, {"codigo_linea", type text}, {"centro_costo", type text}, {"importe_pen", Currency.Type}, {"movimientos", Int64.Type}, {"comparable_flag", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

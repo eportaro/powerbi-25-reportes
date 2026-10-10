@@ -1,0 +1,59 @@
+table FactPresupuesto
+	lineageTag: 0b4acad5-ead8-5567-8bce-4dfef53a74a3
+
+	/// PPTO-2026-V1 mensual de enero a septiembre, positivo por naturaleza.
+	measure 'Presupuesto base' = SUM ( FactPresupuesto[importe_pen] )
+		formatString: #,0.00
+		isHidden
+		displayFolder: Base
+		lineageTag: 217f5ade-a52a-5a25-a37a-9e565cdc4c48
+
+	column periodo
+		dataType: string
+		isHidden
+		lineageTag: 7e740bcc-ac6d-5f22-884f-6074fb3d11a2
+		summarizeBy: none
+		sourceColumn: periodo
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_linea
+		dataType: string
+		isHidden
+		lineageTag: d92a9c87-5199-5d02-8d73-3cf8dd2ef2dd
+		summarizeBy: none
+		sourceColumn: codigo_linea
+
+		annotation SummarizationSetBy = Automatic
+
+	column centro_costo
+		dataType: string
+		isHidden
+		lineageTag: 09e532a9-010c-5a79-b38b-525772177cf9
+		summarizeBy: none
+		sourceColumn: centro_costo
+
+		annotation SummarizationSetBy = Automatic
+
+	column importe_pen
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: 71e0b705-10ad-57f5-bd67-30668217f2f9
+		summarizeBy: none
+		sourceColumn: importe_pen
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactPresupuesto = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\FactPresupuesto.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"periodo", type text}, {"codigo_linea", type text}, {"centro_costo", type text}, {"importe_pen", Currency.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

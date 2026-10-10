@@ -1,0 +1,60 @@
+table DimMes
+	lineageTag: 07540660-ca48-561b-bde2-27d6603149bc
+
+	/// Texto con el mes elegido y su acumulado; sin selección, el último mes cerrado.
+	measure 'Mes elegido' =
+			VAR _mes = MAX ( DimMes[mes_num] )
+			VAR _nombre = CALCULATE ( MAX ( DimMes[mes] ), REMOVEFILTERS ( DimMes ), DimMes[mes_num] = _mes )
+			RETURN "Mes " & _nombre & "  ·  Acumulado Ene–" & LEFT ( _nombre, 3 ) & " 2026"
+		displayFolder: Tarjetas
+		lineageTag: 8d2e71d6-319e-557f-a33d-02919297386d
+
+	column periodo
+		dataType: string
+		lineageTag: a4a1af04-43df-5ff6-80ba-8f7df6ebeb18
+		summarizeBy: none
+		sourceColumn: periodo
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes_num
+		dataType: int64
+		formatString: 0
+		lineageTag: f02fa803-b4c0-5923-8d12-b1a8503e8615
+		summarizeBy: none
+		sourceColumn: mes_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes
+		dataType: string
+		lineageTag: 6800871f-a0ae-547b-9484-26b5abdc5790
+		summarizeBy: none
+		sourceColumn: mes
+		sortByColumn: mes_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 27bbcded-6619-5740-8dc2-c0be5456516a
+		summarizeBy: none
+		sourceColumn: fecha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition DimMes = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\DimMes.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"periodo", type text}, {"mes_num", Int64.Type}, {"mes", type text}, {"fecha", type date}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

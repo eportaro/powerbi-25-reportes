@@ -1,0 +1,14 @@
+cuenta,nombre,clase,naturaleza,codigo_linea,origen_mapeo
+621101,Remuneraciones personal tecnico,6,DEUDORA,PYG-30,mapeo_pyg.xlsx
+621201,Remuneraciones personal administrativo,6,DEUDORA,PYG-40,mapeo_pyg.xlsx
+632101,Subcontratistas de mantenimiento,6,DEUDORA,PYG-30,mapeo_pyg.xlsx
+635101,Alquiler de oficinas y talleres,6,DEUDORA,PYG-50,mapeo_pyg.xlsx
+636101,Energia y agua,6,DEUDORA,PYG-50,mapeo_pyg.xlsx
+637101,Publicidad y eventos,6,DEUDORA,PYG-60,mapeo_pyg.xlsx
+656101,Repuestos y suministros consumidos,6,DEUDORA,PYG-30,mapeo_pyg.xlsx
+659101,Otros gastos de gestion,6,DEUDORA,PYG-50,mapeo_pyg.xlsx
+659901,Penalidades contractuales,6,DEUDORA,PYG-50,decision_contabilidad
+681401,Depreciacion maquinaria y equipo,6,DEUDORA,PYG-70,mapeo_pyg.xlsx
+704101,Servicios de mantenimiento,7,ACREEDORA,PYG-10,mapeo_pyg.xlsx
+704201,Alquiler de equipos,7,ACREEDORA,PYG-10,mapeo_pyg.xlsx
+741101,Descuentos concedidos,7,DEUDORA,PYG-20,mapeo_pyg.xlsx

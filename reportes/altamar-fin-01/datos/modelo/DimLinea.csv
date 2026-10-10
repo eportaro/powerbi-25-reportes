@@ -1,0 +1,9 @@
+codigo_linea,linea_pyg,seccion,naturaleza,orden,presupuesto_mensual_flag
+PYG-10,Ingresos por servicios,INGRESOS,ACREEDORA,10,1
+PYG-20,Descuentos concedidos,INGRESOS,DEUDORA,20,1
+PYG-30,Costo del servicio,COSTO,DEUDORA,30,1
+PYG-40,Gastos de personal administrativo,GASTO_OPERATIVO,DEUDORA,40,1
+PYG-50,Gastos generales,GASTO_OPERATIVO,DEUDORA,50,1
+PYG-60,Publicidad y ventas,GASTO_OPERATIVO,DEUDORA,60,0
+PYG-70,Depreciacion,GASTO_OPERATIVO,DEUDORA,70,1
+PYG-99,Por clasificar,GASTO_OPERATIVO,DEUDORA,99,0

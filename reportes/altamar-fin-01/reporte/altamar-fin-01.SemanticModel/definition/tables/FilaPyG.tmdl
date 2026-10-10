@@ -1,0 +1,339 @@
+table FilaPyG
+	lineageTag: be91c18a-12f5-5725-9a8f-6c02ea9e03aa
+
+	/// Real base de la fila visible: línea, o subtotal IN = PYG-10 − PYG-20, MB = IN − CS, GO = PYG-40 a PYG-70 + Por clasificar, RO = MB − GO. Sin fila elegida, RO.
+	measure 'Real fila' =
+			VAR _k = IF ( COUNTROWS ( FilaPyG ) = 1, SELECTEDVALUE ( FilaPyG[clave] ),
+				IF ( COUNTROWS ( FilaPyG ) = COUNTROWS ( ALL ( FilaPyG ) ), "RO" ) )
+			VAR _10 = CALCULATE ( [Real base], DimLinea[codigo_linea] = "PYG-10" )
+			VAR _20 = CALCULATE ( [Real base], DimLinea[codigo_linea] = "PYG-20" )
+			VAR _30 = CALCULATE ( [Real base], DimLinea[codigo_linea] = "PYG-30" )
+			VAR _40 = CALCULATE ( [Real base], DimLinea[codigo_linea] = "PYG-40" )
+			VAR _50 = CALCULATE ( [Real base], DimLinea[codigo_linea] = "PYG-50" )
+			VAR _60 = CALCULATE ( [Real base], DimLinea[codigo_linea] = "PYG-60" )
+			VAR _70 = CALCULATE ( [Real base], DimLinea[codigo_linea] = "PYG-70" )
+			VAR _99 = CALCULATE ( [Real base], DimLinea[codigo_linea] = "PYG-99" )
+			VAR _in = _10 - _20
+			VAR _mb = _in - _30
+			VAR _go = _40 + _50 + _60 + _70 + _99
+			VAR _ro = _mb - _go
+			RETURN SWITCH ( _k,
+				"PYG-10", _10,
+				"PYG-20", _20,
+				"PYG-30", _30,
+				"PYG-40", _40,
+				"PYG-50", _50,
+				"PYG-60", _60,
+				"PYG-70", _70,
+				"PYG-99", _99,
+				"IN", _in, "MB", _mb, "GO", _go, "RO", _ro )
+		formatString: #,0.00
+		isHidden
+		displayFolder: Base
+		lineageTag: 6fa57e25-a392-5339-bfcc-edb96a4c8557
+
+	/// Real comparable base de la fila visible: línea, o subtotal IN = PYG-10 − PYG-20, MB = IN − CS, GO = PYG-40 a PYG-70 + Por clasificar, RO = MB − GO. Sin fila elegida, RO.
+	measure 'Real comparable fila' =
+			VAR _k = IF ( COUNTROWS ( FilaPyG ) = 1, SELECTEDVALUE ( FilaPyG[clave] ),
+				IF ( COUNTROWS ( FilaPyG ) = COUNTROWS ( ALL ( FilaPyG ) ), "RO" ) )
+			VAR _10 = CALCULATE ( [Real comparable base], DimLinea[codigo_linea] = "PYG-10" )
+			VAR _20 = CALCULATE ( [Real comparable base], DimLinea[codigo_linea] = "PYG-20" )
+			VAR _30 = CALCULATE ( [Real comparable base], DimLinea[codigo_linea] = "PYG-30" )
+			VAR _40 = CALCULATE ( [Real comparable base], DimLinea[codigo_linea] = "PYG-40" )
+			VAR _50 = CALCULATE ( [Real comparable base], DimLinea[codigo_linea] = "PYG-50" )
+			VAR _60 = CALCULATE ( [Real comparable base], DimLinea[codigo_linea] = "PYG-60" )
+			VAR _70 = CALCULATE ( [Real comparable base], DimLinea[codigo_linea] = "PYG-70" )
+			VAR _99 = CALCULATE ( [Real comparable base], DimLinea[codigo_linea] = "PYG-99" )
+			VAR _in = _10 - _20
+			VAR _mb = _in - _30
+			VAR _go = _40 + _50 + _60 + _70 + _99
+			VAR _ro = _mb - _go
+			RETURN SWITCH ( _k,
+				"PYG-10", _10,
+				"PYG-20", _20,
+				"PYG-30", _30,
+				"PYG-40", _40,
+				"PYG-50", _50,
+				"PYG-60", _60,
+				"PYG-70", _70,
+				"PYG-99", _99,
+				"IN", _in, "MB", _mb, "GO", _go, "RO", _ro )
+		formatString: #,0.00
+		isHidden
+		displayFolder: Base
+		lineageTag: bc2db949-d936-53ba-8451-e32f807b7c6f
+
+	/// Presupuesto base de la fila visible: línea, o subtotal IN = PYG-10 − PYG-20, MB = IN − CS, GO = PYG-40 a PYG-70 + Por clasificar, RO = MB − GO. Sin fila elegida, RO.
+	measure 'Presupuesto fila' =
+			VAR _k = IF ( COUNTROWS ( FilaPyG ) = 1, SELECTEDVALUE ( FilaPyG[clave] ),
+				IF ( COUNTROWS ( FilaPyG ) = COUNTROWS ( ALL ( FilaPyG ) ), "RO" ) )
+			VAR _10 = CALCULATE ( [Presupuesto base], DimLinea[codigo_linea] = "PYG-10" )
+			VAR _20 = CALCULATE ( [Presupuesto base], DimLinea[codigo_linea] = "PYG-20" )
+			VAR _30 = CALCULATE ( [Presupuesto base], DimLinea[codigo_linea] = "PYG-30" )
+			VAR _40 = CALCULATE ( [Presupuesto base], DimLinea[codigo_linea] = "PYG-40" )
+			VAR _50 = CALCULATE ( [Presupuesto base], DimLinea[codigo_linea] = "PYG-50" )
+			VAR _60 = CALCULATE ( [Presupuesto base], DimLinea[codigo_linea] = "PYG-60" )
+			VAR _70 = CALCULATE ( [Presupuesto base], DimLinea[codigo_linea] = "PYG-70" )
+			VAR _99 = CALCULATE ( [Presupuesto base], DimLinea[codigo_linea] = "PYG-99" )
+			VAR _in = _10 - _20
+			VAR _mb = _in - _30
+			VAR _go = _40 + _50 + _60 + _70 + _99
+			VAR _ro = _mb - _go
+			RETURN SWITCH ( _k,
+				"PYG-10", _10,
+				"PYG-20", _20,
+				"PYG-30", _30,
+				"PYG-40", _40,
+				"PYG-50", _50,
+				"PYG-60", _60,
+				"PYG-70", _70,
+				"PYG-99", _99,
+				"IN", _in, "MB", _mb, "GO", _go, "RO", _ro )
+		formatString: #,0.00
+		isHidden
+		displayFolder: Base
+		lineageTag: 811de822-3fd2-5229-9818-daf0257f2d52
+
+	/// Mes elegido. Real total de la fila, incluido lo que queda fuera de la comparación.
+	measure 'Real mes' =
+			VAR _mes = MAX ( DimMes[mes_num] )
+			RETURN CALCULATE ( [Real fila], REMOVEFILTERS ( DimMes ), DimMes[mes_num] = _mes )
+		formatString: #,0
+		displayFolder: P&L
+		lineageTag: 41332137-0c54-56c4-bf95-fe5d0acb2c35
+
+	/// Mes elegido. Real de las celdas con presupuesto mensual.
+	measure 'Real comparable mes' =
+			VAR _mes = MAX ( DimMes[mes_num] )
+			RETURN CALCULATE ( [Real comparable fila], REMOVEFILTERS ( DimMes ), DimMes[mes_num] = _mes )
+		formatString: #,0
+		isHidden
+		displayFolder: P&L
+		lineageTag: 69482bff-bb38-5847-b9c4-e7acbcf9d53d
+
+	/// Mes elegido. PPTO-2026-V1 de la fila; PYG-60 no tiene presupuesto mensual.
+	measure 'Presupuesto mes' =
+			VAR _mes = MAX ( DimMes[mes_num] )
+			RETURN CALCULATE ( [Presupuesto fila], REMOVEFILTERS ( DimMes ), DimMes[mes_num] = _mes )
+		formatString: #,0
+		displayFolder: P&L
+		lineageTag: 61fdabb9-069f-5927-86b0-1db73d98c397
+
+	/// Mes elegido. Real comparable − presupuesto, en soles. Sin presupuesto mensual queda en blanco. No hay variación %.
+	measure 'Variación mes' =
+			VAR _p = [Presupuesto mes]
+			RETURN IF ( ISBLANK ( _p ), BLANK (), [Real comparable mes] - _p )
+		formatString: #,0
+		displayFolder: P&L
+		lineageTag: dc0120b9-b0d3-53b7-80c3-1838dcc101ee
+
+	/// Mes elegido. Real sin presupuesto mensual: PYG-60, Sin centro asignado y Por clasificar.
+	measure 'Fuera de comparación mes' =
+			VAR _x = [Real mes] - [Real comparable mes]
+			RETURN IF ( _x = 0, BLANK (), _x )
+		formatString: #,0
+		displayFolder: P&L
+		lineageTag: 20a5ee4c-792d-5253-889a-4169823b9b9e
+
+	/// Mes elegido. Verde si la variación es favorable según la fila (más ingreso o resultado; menos costo, descuento o gasto), rojo si es desfavorable, gris sin presupuesto mensual.
+	measure 'Color variación mes' =
+			VAR _v = [Variación mes]
+			VAR _s = SELECTEDVALUE ( FilaPyG[sentido], 1 )
+			RETURN IF ( ISBLANK ( _v ) || _v = 0, "#657886", IF ( _v * _s > 0, "#087F73", "#B4232A" ) )
+		isHidden
+		displayFolder: Formato
+		lineageTag: 7677dd81-e6a4-50f3-b747-2755956b5203
+
+	/// Enero hasta el mes elegido. Real total de la fila, incluido lo que queda fuera de la comparación.
+	measure 'Real acumulado' =
+			VAR _mes = MAX ( DimMes[mes_num] )
+			RETURN CALCULATE ( [Real fila], REMOVEFILTERS ( DimMes ), DimMes[mes_num] <= _mes )
+		formatString: #,0
+		displayFolder: P&L
+		lineageTag: 5fecb919-2a2f-5f34-be01-f7214022f811
+
+	/// Enero hasta el mes elegido. Real de las celdas con presupuesto mensual.
+	measure 'Real comparable acumulado' =
+			VAR _mes = MAX ( DimMes[mes_num] )
+			RETURN CALCULATE ( [Real comparable fila], REMOVEFILTERS ( DimMes ), DimMes[mes_num] <= _mes )
+		formatString: #,0
+		isHidden
+		displayFolder: P&L
+		lineageTag: eec0bc91-5965-5b81-a0a3-37094619586c
+
+	/// Enero hasta el mes elegido. PPTO-2026-V1 de la fila; PYG-60 no tiene presupuesto mensual.
+	measure 'Presupuesto acumulado' =
+			VAR _mes = MAX ( DimMes[mes_num] )
+			RETURN CALCULATE ( [Presupuesto fila], REMOVEFILTERS ( DimMes ), DimMes[mes_num] <= _mes )
+		formatString: #,0
+		displayFolder: P&L
+		lineageTag: 23150dc9-1150-5f82-9f72-3fb9c9c38ff5
+
+	/// Enero hasta el mes elegido. Real comparable − presupuesto, en soles. Sin presupuesto mensual queda en blanco. No hay variación %.
+	measure 'Variación acumulado' =
+			VAR _p = [Presupuesto acumulado]
+			RETURN IF ( ISBLANK ( _p ), BLANK (), [Real comparable acumulado] - _p )
+		formatString: #,0
+		displayFolder: P&L
+		lineageTag: fd6f913c-bb52-5403-acb2-3017b8100358
+
+	/// Enero hasta el mes elegido. Real sin presupuesto mensual: PYG-60, Sin centro asignado y Por clasificar.
+	measure 'Fuera de comparación acumulado' =
+			VAR _x = [Real acumulado] - [Real comparable acumulado]
+			RETURN IF ( _x = 0, BLANK (), _x )
+		formatString: #,0
+		displayFolder: P&L
+		lineageTag: 098f6363-058d-5e6d-8dda-9179c1f685fe
+
+	/// Enero hasta el mes elegido. Verde si la variación es favorable según la fila (más ingreso o resultado; menos costo, descuento o gasto), rojo si es desfavorable, gris sin presupuesto mensual.
+	measure 'Color variación acumulado' =
+			VAR _v = [Variación acumulado]
+			VAR _s = SELECTEDVALUE ( FilaPyG[sentido], 1 )
+			RETURN IF ( ISBLANK ( _v ) || _v = 0, "#657886", IF ( _v * _s > 0, "#087F73", "#B4232A" ) )
+		isHidden
+		displayFolder: Formato
+		lineageTag: ee8d1b41-2b76-5fb7-9df8-3a755187fbfc
+
+	/// Mes elegido. Margen bruto / ingresos netos; en blanco si los ingresos netos son cero.
+	measure 'Margen bruto % mes' = DIVIDE ( CALCULATE ( [Real mes], FilaPyG[clave] = "MB" ), CALCULATE ( [Real mes], FilaPyG[clave] = "IN" ) )
+		formatString: 0.0%
+		displayFolder: Margen
+		lineageTag: eae65dc4-bf6e-5b14-bed1-608949606e33
+
+	/// Mes elegido. Margen bruto / ingresos netos del presupuesto V1.
+	measure 'Margen bruto % presupuesto mes' = DIVIDE ( CALCULATE ( [Presupuesto mes], FilaPyG[clave] = "MB" ), CALCULATE ( [Presupuesto mes], FilaPyG[clave] = "IN" ) )
+		formatString: 0.0%
+		displayFolder: Margen
+		lineageTag: 225ba7cd-049c-540d-b135-592169045fc3
+
+	/// Texto de tarjeta: real del mes elegido, redondeado a soles.
+	measure 'Tarjeta real' =
+			VAR _v = [Real mes]
+			RETURN IF ( ISBLANK ( _v ), "Sin movimiento", IF ( _v < 0, "−", "" ) & "S/ " & FORMAT ( ABS ( _v ), "#,0" ) )
+		displayFolder: Tarjetas
+		lineageTag: f54e0050-be12-51de-a247-f72c029917e6
+
+	/// Texto de tarjeta: variación del mes en soles con su lectura según la fila.
+	measure 'Tarjeta variación' =
+			VAR _v = [Variación mes]
+			VAR _s = SELECTEDVALUE ( FilaPyG[sentido], 1 )
+			RETURN IF ( ISBLANK ( _v ), "Sin presupuesto mensual",
+				IF ( _v < 0, "−", "+" ) & "S/ " & FORMAT ( ABS ( _v ), "#,0" ) & " vs ppto. · " & IF ( _v * _s > 0, "favorable", IF ( _v * _s < 0, "desfavorable", "en línea" ) ) )
+		displayFolder: Tarjetas
+		lineageTag: 0c66f3df-121b-55f3-8a3e-d50c96da4514
+
+	/// Texto de tarjeta: parte del real del mes sin presupuesto mensual, que no entra en la variación.
+	measure 'Tarjeta fuera de comparación' =
+			VAR _x = [Fuera de comparación mes]
+			RETURN IF ( ISBLANK ( [Real mes] ), "Sin real en la selección",
+				IF ( ISBLANK ( _x ), "Todo el real tiene presupuesto mensual",
+				"Incluye " & IF ( _x < 0, "−", "" ) & "S/ " & FORMAT ( ABS ( _x ), "#,0" ) & " fuera de comparación" ) )
+		displayFolder: Tarjetas
+		lineageTag: 7382d28f-2961-5447-8f3b-991f56cbe800
+
+	/// Fondo de los subtotales en la tabla del estado de resultados.
+	measure 'Fondo fila' = IF ( SELECTEDVALUE ( FilaPyG[clave] ) IN { "IN", "MB", "GO", "RO" }, "#E6F2EE", "#FFFFFF" )
+		isHidden
+		displayFolder: Formato
+		lineageTag: fabdc36b-7eb4-5d56-8a21-f60510b43637
+
+	/// Texto de tarjeta: margen bruto % del mes; sin ingresos netos no se calcula.
+	measure 'Tarjeta margen' =
+			VAR _r = [Margen bruto % mes]
+			RETURN IF ( ISBLANK ( _r ), "Sin ingresos", FORMAT ( _r, "0.0%" ) )
+		displayFolder: Tarjetas
+		lineageTag: 7609a9f2-e30b-5807-85cf-7fcdac3a0b7d
+
+	/// Texto de tarjeta: margen bruto % del presupuesto del mes.
+	measure 'Tarjeta margen presupuesto' =
+			VAR _r = [Margen bruto % presupuesto mes]
+			RETURN IF ( ISBLANK ( _r ), "Presupuesto sin ingresos", "Presupuesto " & FORMAT ( _r, "0.0%" ) )
+		displayFolder: Tarjetas
+		lineageTag: de01d75f-2c7b-5feb-bdcc-f7302af53e80
+
+	/// Fila elegida en el estado de resultados o, sin selección, Resultado operativo.
+	measure 'Título tendencia' = "Tendencia · " & IF ( COUNTROWS ( FilaPyG ) = 1, SELECTEDVALUE ( FilaPyG[nombre] ), "Resultado operativo" )
+		displayFolder: Tarjetas
+		lineageTag: 174cb5a5-a7e5-516e-a2f5-6fd9b5fd246b
+
+	/// Fila elegida en el estado de resultados o, sin selección, Resultado operativo.
+	measure 'Título centros' = "Por centro · " & IF ( COUNTROWS ( FilaPyG ) = 1, SELECTEDVALUE ( FilaPyG[nombre] ), "Resultado operativo" )
+		displayFolder: Tarjetas
+		lineageTag: 73ddd8c7-5aaf-5a63-b205-127f716fd93a
+
+	column orden
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 810ea04d-85fa-5ec8-9789-e8f8e9a0ea2b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [orden]
+
+		annotation SummarizationSetBy = Automatic
+
+	column clave
+		dataType: string
+		isHidden
+		lineageTag: fb2cb186-7b17-5b04-b893-a83aa9de39ef
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [clave]
+
+		annotation SummarizationSetBy = Automatic
+
+	column fila
+		dataType: string
+		lineageTag: d48465d1-29a8-556d-b541-b39451c2780e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [fila]
+		sortByColumn: orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre
+		dataType: string
+		isHidden
+		lineageTag: 298cfc65-a070-581f-8ee4-c07dccec4fa5
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [nombre]
+		sortByColumn: orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column sentido
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d2b9df0e-e884-56b7-8f8a-366d9b351761
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [sentido]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FilaPyG = calculated
+		mode: import
+		source =
+				DATATABLE (
+					"orden", INTEGER, "clave", STRING, "fila", STRING, "nombre", STRING, "sentido", INTEGER,
+					{
+					{ 10, "PYG-10", "Ingresos por servicios", "Ingresos por servicios", 1 },
+					{ 20, "PYG-20", "(−) Descuentos concedidos", "Descuentos concedidos", -1 },
+					{ 30, "IN", "= Ingresos netos", "Ingresos netos", 1 },
+					{ 40, "PYG-30", "(−) Costo del servicio", "Costo del servicio", -1 },
+					{ 50, "MB", "= Margen bruto", "Margen bruto", 1 },
+					{ 60, "PYG-40", "Gastos de personal administrativo", "Gastos de personal administrativo", -1 },
+					{ 70, "PYG-50", "Gastos generales", "Gastos generales", -1 },
+					{ 80, "PYG-60", "Publicidad y ventas", "Publicidad y ventas", -1 },
+					{ 90, "PYG-70", "Depreciación", "Depreciación", -1 },
+					{ 100, "PYG-99", "Por clasificar", "Por clasificar", -1 },
+					{ 110, "GO", "(−) Gastos operativos", "Gastos operativos", -1 },
+					{ 120, "RO", "= Resultado operativo", "Resultado operativo", 1 }
+					}
+				)
+
+	annotation PBI_ResultType = Table
+

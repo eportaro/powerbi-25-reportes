@@ -1,0 +1,28 @@
+relationship 479f1166-fffe-5464-8b1a-d29c635b95bb
+	fromColumn: FactReal.periodo
+	toColumn: DimMes.periodo
+
+relationship b736e5e5-27b1-50f7-b43f-6bf97e7af8ed
+	fromColumn: FactReal.centro_costo
+	toColumn: DimCentro.centro_costo
+
+relationship 9e9581a1-1005-54e2-bee6-b7366bc87aab
+	fromColumn: FactReal.codigo_linea
+	toColumn: DimLinea.codigo_linea
+
+relationship b88590ae-cfc5-508e-a608-1c97569be577
+	fromColumn: FactPresupuesto.periodo
+	toColumn: DimMes.periodo
+
+relationship d4f059ef-f115-5a42-8e52-da65b2aca30c
+	fromColumn: FactPresupuesto.centro_costo
+	toColumn: DimCentro.centro_costo
+
+relationship 9442a53f-247c-5428-a9da-ec7f7f8b9b41
+	fromColumn: FactPresupuesto.codigo_linea
+	toColumn: DimLinea.codigo_linea
+
+relationship 6732397c-0205-5a4f-8635-a8d963f27da0
+	fromColumn: FactReal.cuenta
+	toColumn: DimCuenta.cuenta
+

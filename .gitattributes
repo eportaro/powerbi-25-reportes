@@ -1,2 +1,3 @@
 # Preserve the bytes covered by the Norte delivery manifest on every platform.
 reportes/norte-ops-01/** -text
+reportes/altamar-fin-01/** -text

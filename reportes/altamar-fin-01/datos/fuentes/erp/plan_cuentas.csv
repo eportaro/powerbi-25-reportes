@@ -1,0 +1,28 @@
+cuenta,nombre,clase,naturaleza,imputable,estado,fecha_creacion
+104101,Cuentas corrientes operativas,1,DEUDORA,S,ACTIVA,2019-01-02
+121201,Facturas por cobrar emitidas,1,DEUDORA,S,ACTIVA,2019-01-02
+251101,Repuestos y suministros,2,DEUDORA,S,ACTIVA,2019-01-02
+391301,Depreciacion acumulada maquinaria y equipo,3,ACREEDORA,S,ACTIVA,2019-01-02
+401111,IGV cuenta propia,4,ACREEDORA,S,ACTIVA,2019-01-02
+411101,Remuneraciones por pagar,4,ACREEDORA,S,ACTIVA,2019-01-02
+421201,Facturas por pagar emitidas,4,ACREEDORA,S,ACTIVA,2019-01-02
+591101,Utilidades acumuladas,5,ACREEDORA,S,ACTIVA,2019-01-02
+621101,Remuneraciones personal tecnico,6,DEUDORA,S,ACTIVA,2019-01-02
+621201,Remuneraciones personal administrativo,6,DEUDORA,S,ACTIVA,2019-01-02
+632101,Subcontratistas de mantenimiento,6,DEUDORA,S,ACTIVA,2019-01-02
+635101,Alquiler de oficinas y talleres,6,DEUDORA,S,ACTIVA,2019-01-02
+636101,Energia y agua,6,DEUDORA,S,ACTIVA,2019-01-02
+637101,Publicidad y eventos,6,DEUDORA,S,ACTIVA,2019-01-02
+656101,Repuestos y suministros consumidos,6,DEUDORA,S,ACTIVA,2019-01-02
+659101,Otros gastos de gestion,6,DEUDORA,S,ACTIVA,2019-01-02
+659901,Penalidades contractuales,6,DEUDORA,S,ACTIVA,2026-08-01
+676101,Perdida por diferencia de cambio,6,DEUDORA,S,ACTIVA,2019-01-02
+681401,Depreciacion maquinaria y equipo,6,DEUDORA,S,ACTIVA,2019-01-02
+704101,Servicios de mantenimiento,7,ACREEDORA,S,ACTIVA,2019-01-02
+704201,Alquiler de equipos,7,ACREEDORA,S,ACTIVA,2019-01-02
+741101,Descuentos concedidos,7,DEUDORA,S,ACTIVA,2019-01-02
+776101,Ganancia por diferencia de cambio,7,ACREEDORA,S,ACTIVA,2019-01-02
+791101,Cargas imputables a cuentas de costos y gastos,7,ACREEDORA,S,ACTIVA,2019-01-02
+901101,Costo del servicio (destino),9,DEUDORA,S,ACTIVA,2019-01-02
+941101,Gastos administrativos (destino),9,DEUDORA,S,ACTIVA,2019-01-02
+951101,Gastos de ventas (destino),9,DEUDORA,S,ACTIVA,2019-01-02

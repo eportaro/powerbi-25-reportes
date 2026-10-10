@@ -1,0 +1,169 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "exc_note",
+  "position": {
+    "x": 652,
+    "y": 812,
+    "width": 264,
+    "height": 176,
+    "z": 41000,
+    "tabOrder": 41000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Periodo abierto: octubre no es oficial.",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "color": "#657886",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Sin centro: alquileres desde julio, no se reasignan.",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "color": "#657886",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Mapeo pendiente: 659901 decidido por Contabilidad.",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "color": "#657886",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Presupuesto solo anual: Publicidad y ventas.",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "color": "#657886",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Anulado y borrador: fuera de todo saldo.",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "color": "#657886",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Descuadre aceptado: el resultado cuenta.",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "color": "#657886",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DFEAE5'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

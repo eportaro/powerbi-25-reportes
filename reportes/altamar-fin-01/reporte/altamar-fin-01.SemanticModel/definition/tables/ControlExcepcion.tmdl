@@ -1,0 +1,100 @@
+table ControlExcepcion
+	lineageTag: 7767a6ec-6c12-59a2-ae91-45fa4d0d2e6f
+
+	/// Registros de ControlExcepcion: lo excluido o mostrado aparte, con su tratamiento.
+	measure Excepciones = COUNTROWS ( ControlExcepcion )
+		formatString: #,0
+		displayFolder: Control
+		lineageTag: a8ed0054-8576-5948-9cdd-1219301c5810
+
+	/// Importe declarado de las excepciones de un mismo tipo, en soles. Tipos distintos no forman un total.
+	measure 'Importe excepciones' = SUM ( ControlExcepcion[importe_pen] )
+		formatString: #,0
+		displayFolder: Control
+		lineageTag: bfd635d3-30f9-5afe-9a76-45263f4d9e06
+
+	column excepcion_id
+		dataType: string
+		lineageTag: 0695647a-23a9-572e-839a-84bf08af64f1
+		summarizeBy: none
+		sourceColumn: excepcion_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo
+		dataType: string
+		lineageTag: 2767ed70-b55c-55a0-a4b4-9d188b14cd77
+		summarizeBy: none
+		sourceColumn: tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column asiento
+		dataType: string
+		lineageTag: 569351cb-a9bf-5312-8b94-ec1879412647
+		summarizeBy: none
+		sourceColumn: asiento
+
+		annotation SummarizationSetBy = Automatic
+
+	column periodo
+		dataType: string
+		lineageTag: b5bd7ec9-03e2-5ed4-ae1d-24e2c21571b1
+		summarizeBy: none
+		sourceColumn: periodo
+
+		annotation SummarizationSetBy = Automatic
+
+	column centro_costo
+		dataType: string
+		lineageTag: b5d98934-2c12-5579-a4dd-724910c3bdcf
+		summarizeBy: none
+		sourceColumn: centro_costo
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_linea
+		dataType: string
+		lineageTag: 5d9bf51b-4567-5825-a57c-e79ba97005f5
+		summarizeBy: none
+		sourceColumn: codigo_linea
+
+		annotation SummarizationSetBy = Automatic
+
+	column importe_pen
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: 550f69ec-4b10-5e07-963d-1de0dea18e85
+		summarizeBy: none
+		sourceColumn: importe_pen
+
+		annotation SummarizationSetBy = Automatic
+
+	column tratamiento
+		dataType: string
+		lineageTag: 23656ec0-7942-53ed-ae26-4d903bc98c31
+		summarizeBy: none
+		sourceColumn: tratamiento
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuente
+		dataType: string
+		lineageTag: 26dc8cec-6cef-5664-8db5-c33024eae95a
+		summarizeBy: none
+		sourceColumn: fuente
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ControlExcepcion = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\ControlExcepcion.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"excepcion_id", type text}, {"tipo", type text}, {"asiento", type text}, {"periodo", type text}, {"centro_costo", type text}, {"codigo_linea", type text}, {"importe_pen", Currency.Type}, {"tratamiento", type text}, {"fuente", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

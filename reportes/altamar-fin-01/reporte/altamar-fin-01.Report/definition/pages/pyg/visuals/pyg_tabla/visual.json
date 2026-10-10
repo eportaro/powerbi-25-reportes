@@ -1,0 +1,806 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "pyg_tabla",
+  "position": {
+    "x": 36,
+    "y": 386,
+    "width": 880,
+    "height": 336,
+    "z": 39000,
+    "tabOrder": 39000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FilaPyG"
+                    }
+                  },
+                  "Property": "fila"
+                }
+              },
+              "queryRef": "FilaPyG.fila",
+              "nativeQueryRef": "fila",
+              "displayName": "Línea",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FilaPyG"
+                    }
+                  },
+                  "Property": "Real mes"
+                }
+              },
+              "queryRef": "FilaPyG.Real mes",
+              "nativeQueryRef": "Real mes",
+              "active": true,
+              "displayName": "Real mes"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FilaPyG"
+                    }
+                  },
+                  "Property": "Presupuesto mes"
+                }
+              },
+              "queryRef": "FilaPyG.Presupuesto mes",
+              "nativeQueryRef": "Presupuesto mes",
+              "active": true,
+              "displayName": "Ppto. mes"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FilaPyG"
+                    }
+                  },
+                  "Property": "Variación mes"
+                }
+              },
+              "queryRef": "FilaPyG.Variación mes",
+              "nativeQueryRef": "Variación mes",
+              "active": true,
+              "displayName": "Var. mes"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FilaPyG"
+                    }
+                  },
+                  "Property": "Fuera de comparación mes"
+                }
+              },
+              "queryRef": "FilaPyG.Fuera de comparación mes",
+              "nativeQueryRef": "Fuera de comparación mes",
+              "active": true,
+              "displayName": "Fuera mes"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FilaPyG"
+                    }
+                  },
+                  "Property": "Real acumulado"
+                }
+              },
+              "queryRef": "FilaPyG.Real acumulado",
+              "nativeQueryRef": "Real acumulado",
+              "active": true,
+              "displayName": "Real acum."
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FilaPyG"
+                    }
+                  },
+                  "Property": "Presupuesto acumulado"
+                }
+              },
+              "queryRef": "FilaPyG.Presupuesto acumulado",
+              "nativeQueryRef": "Presupuesto acumulado",
+              "active": true,
+              "displayName": "Ppto. acum."
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FilaPyG"
+                    }
+                  },
+                  "Property": "Variación acumulado"
+                }
+              },
+              "queryRef": "FilaPyG.Variación acumulado",
+              "nativeQueryRef": "Variación acumulado",
+              "active": true,
+              "displayName": "Var. acum."
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FilaPyG"
+                    }
+                  },
+                  "Property": "Fuera de comparación acumulado"
+                }
+              },
+              "queryRef": "FilaPyG.Fuera de comparación acumulado",
+              "nativeQueryRef": "Fuera de comparación acumulado",
+              "active": true,
+              "displayName": "Fuera acum."
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "FilaPyG"
+                  }
+                },
+                "Property": "fila"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#657886'"
+                    }
+                  }
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#132B43'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FilaPyG"
+                        }
+                      },
+                      "Property": "Color variación mes"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "FilaPyG.Variación mes"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FilaPyG"
+                        }
+                      },
+                      "Property": "Color variación acumulado"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "FilaPyG.Variación acumulado"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FilaPyG"
+                        }
+                      },
+                      "Property": "Fondo fila"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "FilaPyG.fila"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FilaPyG"
+                        }
+                      },
+                      "Property": "Fondo fila"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "FilaPyG.Real mes"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FilaPyG"
+                        }
+                      },
+                      "Property": "Fondo fila"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "FilaPyG.Presupuesto mes"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FilaPyG"
+                        }
+                      },
+                      "Property": "Fondo fila"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "FilaPyG.Variación mes"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FilaPyG"
+                        }
+                      },
+                      "Property": "Fondo fila"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "FilaPyG.Fuera de comparación mes"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FilaPyG"
+                        }
+                      },
+                      "Property": "Fondo fila"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "FilaPyG.Real acumulado"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FilaPyG"
+                        }
+                      },
+                      "Property": "Fondo fila"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "FilaPyG.Presupuesto acumulado"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FilaPyG"
+                        }
+                      },
+                      "Property": "Fondo fila"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "FilaPyG.Variación acumulado"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FilaPyG"
+                        }
+                      },
+                      "Property": "Fondo fila"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "FilaPyG.Fuera de comparación acumulado"
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "250D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FilaPyG.fila"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FilaPyG.Real mes"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FilaPyG.Presupuesto mes"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FilaPyG.Variación mes"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FilaPyG.Fuera de comparación mes"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FilaPyG.Real acumulado"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FilaPyG.Presupuesto acumulado"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FilaPyG.Variación acumulado"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FilaPyG.Fuera de comparación acumulado"
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DFEAE5'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

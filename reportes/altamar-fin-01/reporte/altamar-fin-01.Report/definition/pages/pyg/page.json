@@ -1,0 +1,191 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "pyg",
+  "displayName": "P&L · Altamar",
+  "displayOption": "FitToPage",
+  "width": 1440,
+  "height": 1012,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F0F6F3'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "mes",
+      "target": "tendencia",
+      "type": "NoFilter"
+    },
+    {
+      "source": "pyg_tabla",
+      "target": "kpi_IN_value",
+      "type": "NoFilter"
+    },
+    {
+      "source": "pyg_tabla",
+      "target": "kpi_IN_note",
+      "type": "NoFilter"
+    },
+    {
+      "source": "pyg_tabla",
+      "target": "kpi_IN_foot",
+      "type": "NoFilter"
+    },
+    {
+      "source": "pyg_tabla",
+      "target": "kpi_MB_value",
+      "type": "NoFilter"
+    },
+    {
+      "source": "pyg_tabla",
+      "target": "kpi_MB_note",
+      "type": "NoFilter"
+    },
+    {
+      "source": "pyg_tabla",
+      "target": "kpi_GO_value",
+      "type": "NoFilter"
+    },
+    {
+      "source": "pyg_tabla",
+      "target": "kpi_GO_note",
+      "type": "NoFilter"
+    },
+    {
+      "source": "pyg_tabla",
+      "target": "kpi_GO_foot",
+      "type": "NoFilter"
+    },
+    {
+      "source": "pyg_tabla",
+      "target": "kpi_RO_value",
+      "type": "NoFilter"
+    },
+    {
+      "source": "pyg_tabla",
+      "target": "kpi_RO_note",
+      "type": "NoFilter"
+    },
+    {
+      "source": "pyg_tabla",
+      "target": "kpi_RO_foot",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "periodo",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "mes",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "centro",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "kpi_IN_value",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "kpi_IN_note",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "kpi_IN_foot",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "kpi_MB_value",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "kpi_MB_note",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "kpi_GO_value",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "kpi_GO_note",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "kpi_GO_foot",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "kpi_RO_value",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "kpi_RO_note",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "kpi_RO_foot",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "pyg_tabla",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "exc_tabla",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "tend_title",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "cen_title",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "cen_tabla",
+      "type": "NoFilter"
+    }
+  ]
+}

@@ -1,0 +1,475 @@
+{
+  "caseId": "altamar-fin-01",
+  "passed": true,
+  "rows": {
+    "DimMes": 9,
+    "DimCentro": 4,
+    "DimLinea": 8,
+    "DimCuenta": 13,
+    "FactReal": 224,
+    "FactPresupuesto": 117,
+    "ControlExcepcion": 17
+  },
+  "singleEntry": true,
+  "relativeReferencesValid": true,
+  "publicContentScanPassed": true,
+  "files": [
+    {
+      "path": "capturas/altamar-fin-01-desktop.pdf",
+      "sha256": "f5561c4a5657878e96e15a23d3a9422af1ac213736b0c59d524af3a50c2754ba",
+      "bytes": 187571
+    },
+    {
+      "path": "capturas/altamar-fin-01-desktop.png",
+      "sha256": "d5d9114c00e8219df95c6a9d4074db426990fd619712134ed86ec82cd4e40f36",
+      "bytes": 351161
+    },
+    {
+      "path": "datos/fuentes/diccionario.json",
+      "sha256": "ca03b73d837a35c97b8660a13c02d3b424a574fb73ed86f9a8b9a19bbc563b9f",
+      "bytes": 8552
+    },
+    {
+      "path": "datos/fuentes/erp/asientos_cabecera.csv",
+      "sha256": "ec166ea5cdabd46640c08788033ffc074a56b68a0dd5549a249f175f08296def",
+      "bytes": 55523
+    },
+    {
+      "path": "datos/fuentes/erp/asientos_detalle.csv",
+      "sha256": "3078f750429e4a16a02d0d59dbaafe72582bb57dc9c76f26c50714274fbe0bf0",
+      "bytes": 117303
+    },
+    {
+      "path": "datos/fuentes/erp/centros_costo.csv",
+      "sha256": "c1c6d30718b8e40847848be3acedd0a6640f513acc57cee554487a499a4f7b0a",
+      "bytes": 170
+    },
+    {
+      "path": "datos/fuentes/erp/periodos.csv",
+      "sha256": "1ae67890e0dd678e91f5444895252ad6d3ed37e261684f0334561ee3a5ec5afb",
+      "bytes": 299
+    },
+    {
+      "path": "datos/fuentes/erp/plan_cuentas.csv",
+      "sha256": "a04c75037aa12a129e895dc0f24cdd99dbe537236c1d4ba4dabc6d79265b9f53",
+      "bytes": 1889
+    },
+    {
+      "path": "datos/fuentes/excel/mapeo_pyg.xlsx",
+      "sha256": "2d088ee8d9d5300447f2a0e7c42b0e77d707de4a9ccb323908251f7b45bfe8c9",
+      "bytes": 5722
+    },
+    {
+      "path": "datos/fuentes/excel/presupuesto_2026.xlsx",
+      "sha256": "6943ffdeadf835b65d8a4ed296b8126dd04018801eac1a8a524cf2693cd2e99a",
+      "bytes": 13296
+    },
+    {
+      "path": "datos/modelo/ControlExcepcion.csv",
+      "sha256": "6ff999cc6793dd9e249082516cd0b5320616aef49dd4f2cd5aaea1ab5019a9d1",
+      "bytes": 2362
+    },
+    {
+      "path": "datos/modelo/DimCentro.csv",
+      "sha256": "aacbaf0f58f9497d0a26fddcbfcb56010a541d9a0fc88e1910fe1956c9b9e48f",
+      "bytes": 210
+    },
+    {
+      "path": "datos/modelo/DimCuenta.csv",
+      "sha256": "1724bab009d9b6046b6175036326d278a801993df1c5f2c7c2d8a7d04baf49c5",
+      "bytes": 934
+    },
+    {
+      "path": "datos/modelo/DimLinea.csv",
+      "sha256": "24e170683e4bba25e978590c873b34f57a09ba37249ad6564882de304efcb4c0",
+      "bytes": 502
+    },
+    {
+      "path": "datos/modelo/DimMes.csv",
+      "sha256": "3d00aed0ed07d8c733547b7675428710fb4548d215bc9d18131a1baffd96b2a2",
+      "bytes": 296
+    },
+    {
+      "path": "datos/modelo/FactPresupuesto.csv",
+      "sha256": "cd31968babbc5704fb9a4173c74f5102cd9fefba5252a97edfdd685411c3fb31",
+      "bytes": 3700
+    },
+    {
+      "path": "datos/modelo/FactReal.csv",
+      "sha256": "33ed252e92966feb64c49b97ff9566bc0a1be9e38f1b57c0ff48283c6a5d3159",
+      "bytes": 9509
+    },
+    {
+      "path": "documentacion/guia-uso.md",
+      "sha256": "b3f89897dab1ca8e39060ec9e153732ed67027e13a43160f65e4f339b3f47cc0",
+      "bytes": 2316
+    },
+    {
+      "path": "documentacion/indicadores.md",
+      "sha256": "f68fe4b0f50e0fd980dfc2d29145da7eec01e56764bcbacc14b668798a126e35",
+      "bytes": 2457
+    },
+    {
+      "path": "documentacion/reglas-negocio.md",
+      "sha256": "c76657a1426e0750d32d317474730362e7a395f7544527f86e88b9cda1ebc824",
+      "bytes": 4370
+    },
+    {
+      "path": "ficha-galeria.json",
+      "sha256": "d8aa0cb799ee8bf62e3f9dcd3360201bcdd007c4af1bda2a0c99770b33ae65e8",
+      "bytes": 8295
+    },
+    {
+      "path": "README.md",
+      "sha256": "052321ab257c2ca378169cd3089d3320f082f3fb713609adf9e326060ed95804",
+      "bytes": 2705
+    },
+    {
+      "path": "reporte/altamar-fin-01.pbip",
+      "sha256": "68d161690ae16078dc0172f13430dbff2c5c6aea1a66a508f76e4164c69a49ae",
+      "bytes": 186
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pages.json",
+      "sha256": "d361307637ba199503c1f8065c8819699a2c3f6ac37799e8ad67396c04c4ad93",
+      "bytes": 190
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/page.json",
+      "sha256": "5af8da5be1957ccae1300a7f60f178e8d35fccbe12f14c3f68cabaf0bf35e456",
+      "bytes": 3960
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/brand/visual.json",
+      "sha256": "d71337e2e701fc674dd97d8f00df4bb3e3227f878c4119d2e75f7e043df776fc",
+      "bytes": 2425
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/cen_panel/visual.json",
+      "sha256": "3a52635a2d822fb282c3798ae40a297f1aba71646f5fb36f7071130ed65538da",
+      "bytes": 2819
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/cen_sub/visual.json",
+      "sha256": "7bc4db60eaff8b6bd29c721ec93faf7d3756352a445f11be792cf2949f10bd61",
+      "bytes": 2434
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/cen_tabla/visual.json",
+      "sha256": "eef0fee85dccda127b2c7396c589ec273c673ff4707014484df75ccfa2529d17",
+      "bytes": 9370
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/cen_title/visual.json",
+      "sha256": "81e5aa975e8ff388248d8fb0e23e8dfc02c15c561ebd67d9a62bbb97a14f4fd4",
+      "bytes": 3440
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/centro/visual.json",
+      "sha256": "4d185d9e7d1236f4ae02a504783e9a384f5e51620c96f6910f31f151dd64f3dd",
+      "bytes": 3924
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/centro_label/visual.json",
+      "sha256": "5353e0a99e6749450606a3e7f3ae2742c1012822aa5f33ff21d11f04d90c85ad",
+      "bytes": 2489
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/cut/visual.json",
+      "sha256": "f0a3f84eef0bff346873caf919c3b6a2ac90cb314dfaa2fe02ca63ed7a2d7cd2",
+      "bytes": 2910
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/exc_note/visual.json",
+      "sha256": "a209526dbb1d120b9ccf0f333255743bd64676fc044ce62f6f34dfa1de5bc68d",
+      "bytes": 4397
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/exc_panel/visual.json",
+      "sha256": "86374c0d2c3b551e3c3bdab790541679984ca415f0690afa6da0e17e63929592",
+      "bytes": 2818
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/exc_sub/visual.json",
+      "sha256": "096fc2b97cf14bee3d026b678fa3a9bca34a4ada546779b14a6995d432882ef2",
+      "bytes": 2505
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/exc_tabla/visual.json",
+      "sha256": "544b74d556643684860c8c5a2d66c5ca330ce218dc530fba92af1bb95095552d",
+      "bytes": 7004
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/exc_title/visual.json",
+      "sha256": "6bb0171822829066ab89b66260f4afcf687f0e3de22f37622b4633800b0d3959",
+      "bytes": 2434
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/kpi_GO_foot/visual.json",
+      "sha256": "2723f628275f15fd94e3f6185a202b0ae62bcc6ec47641fbdb5fa1cb64cb1877",
+      "bytes": 4890
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/kpi_GO_label/visual.json",
+      "sha256": "7075d7987b236f975ad9409ba265f4a9debb96be40b240cf89259a7f59722cc3",
+      "bytes": 2442
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/kpi_GO_note/visual.json",
+      "sha256": "852966d5018d0e269bce51ac920e95836cca2a8d28b827419d892b7e7328ab16",
+      "bytes": 5050
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/kpi_GO_panel/visual.json",
+      "sha256": "ba779f6d3799efbce5bef1b13aab327b2d6107890ebfc7f0e9505accbf4d24bd",
+      "bytes": 2822
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/kpi_GO_value/visual.json",
+      "sha256": "04aa09b6205528d5fbf135063cea73fb62d99976c518c09bd967fa5a3749d0ea",
+      "bytes": 4840
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/kpi_IN_foot/visual.json",
+      "sha256": "dd6324a1fd525a599163fe50271d7e4c0e0412328e8d304a128555436b1ff858",
+      "bytes": 4889
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/kpi_IN_label/visual.json",
+      "sha256": "9d1084fe7bb3b4a7cb30dbcac41a1c9cb4eaddf94461fc27e7f704ad7410e77e",
+      "bytes": 2438
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/kpi_IN_note/visual.json",
+      "sha256": "75eb4e7844dbdaccdf77e0227e7284c310fed95e983e3b79bf06cfc8f70ee95d",
+      "bytes": 5049
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/kpi_IN_panel/visual.json",
+      "sha256": "3ca74d9709848fb2d327a038f6218240477d4cd9bb71a25249bd823dc35bf6fb",
+      "bytes": 2819
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/kpi_IN_value/visual.json",
+      "sha256": "62b2ae221c6ee12b11519d7790d0e1a6fd5611c2fde0d2fc3cb4cc0e20349376",
+      "bytes": 4839
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/kpi_MB_foot/visual.json",
+      "sha256": "15f13b7eb974ee33a1bf02379969725638ccd4737847f1f30f96d5d0809150d0",
+      "bytes": 2398
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/kpi_MB_label/visual.json",
+      "sha256": "4131c54d26eb01f41b5c68a6ca5f45d69226e869fcc86a1bd91f578ae4593b1d",
+      "bytes": 2439
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/kpi_MB_note/visual.json",
+      "sha256": "3e7606c9e892ba39b0fea0b7f1a4d23d544f4cbae08a2ba5cc1fc6917d3e5330",
+      "bytes": 3475
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/kpi_MB_panel/visual.json",
+      "sha256": "dae47a40aa459b73414df794e58563aa8f4d3e4afba0101a0e86cd9c9afb0bbf",
+      "bytes": 2822
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/kpi_MB_value/visual.json",
+      "sha256": "e92dbd25327661f85706a289febe03fc4493e127b30248220bc6c58b1ea61c81",
+      "bytes": 3440
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/kpi_RO_foot/visual.json",
+      "sha256": "87c183941fabcdfef07b4e66200e322d1ac010c42eb74afa1b80a65a05e0c87c",
+      "bytes": 4891
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/kpi_RO_label/visual.json",
+      "sha256": "97d0a3bae5104fd3ebf8b7d11dbd8f2c228836fee99970202d5ab6da068ce30e",
+      "bytes": 2445
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/kpi_RO_note/visual.json",
+      "sha256": "a8818542665d0b1cdba6e4382a11cfb061b04f0ae3d67869813101fa034edc56",
+      "bytes": 5051
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/kpi_RO_panel/visual.json",
+      "sha256": "aef04035f15e8fb11500d1009a333c5b4ba50a6a5a55d59a09beee8359ac229d",
+      "bytes": 2823
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/kpi_RO_value/visual.json",
+      "sha256": "9b618aeeab71b365a79674093650737dd4207f6060444492b751c08770df7e02",
+      "bytes": 4841
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/mes/visual.json",
+      "sha256": "a896382b196c4c1953da90827878e520f283dda3f853852296666ddb6ee2f1ae",
+      "bytes": 4162
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/mes_label/visual.json",
+      "sha256": "e3391e7bdabb15b54d7aeb157e8d2ce67294e11eff63659a80c479ce135e9966",
+      "bytes": 2481
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/periodo/visual.json",
+      "sha256": "ef621aeb77c146fbc76c9243a406438a730de94b48abe43a0947bebf6f66e61f",
+      "bytes": 3421
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/pyg_panel/visual.json",
+      "sha256": "c2cb6678a5df29bb9ea43960c19eedd19d5bf24c19e7252e5a8eb60f706296fe",
+      "bytes": 2818
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/pyg_sub/visual.json",
+      "sha256": "ed017123a5a1a4a13a21c7deec39ca926182da09f6a909174f60d711b1f9a278",
+      "bytes": 3106
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/pyg_tabla/visual.json",
+      "sha256": "fc0431c7433a86094431fee928c5c947a6b76e3ab9990d375753d3add33f45c4",
+      "bytes": 20707
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/pyg_title/visual.json",
+      "sha256": "c5bd567ef1939fcbd250780f294ccd9c9218c0222587e5dbdcb989910826ef25",
+      "bytes": 2464
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/sub/visual.json",
+      "sha256": "be51f64a58f538082be080aa4a82c7dfcdccfbdfd7631321ee912f9ed7a58b70",
+      "bytes": 2458
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/tend_panel/visual.json",
+      "sha256": "b7396c1298d9eea46fb3406850a34d24d988c946e5c31477bdbda1c51a539384",
+      "bytes": 2820
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/tend_sub/visual.json",
+      "sha256": "adadd0b67e043eecf80823f2bcf5c42b9d56ac7ee01295bb41a2011121dd3a90",
+      "bytes": 2471
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/tend_title/visual.json",
+      "sha256": "ca509b980684bb4deecafe18b2baf201a9fc537adfe8bb8047e28a42d43aaa62",
+      "bytes": 3448
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/tendencia/visual.json",
+      "sha256": "00fe94cebed5fdf2b482d72dc3d3b1e9367bcb366440cc9258c23a92c0e8461d",
+      "bytes": 6982
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/pages/pyg/visuals/title/visual.json",
+      "sha256": "27f132bf65dcf68369fc8de84f8457988f77f36b187f435ff9594bd23ee0fa09",
+      "bytes": 2511
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/report.json",
+      "sha256": "ed01256136b652fe4fb967e800e3718799696c7a4038c087735eac008c6c4faa",
+      "bytes": 1386
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition/version.json",
+      "sha256": "c8bdd966a85f1eaab4312d2096b6d7b508243e4d7bc5a4d25af3cfcb1056a4e7",
+      "bytes": 152
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/definition.pbir",
+      "sha256": "9453883e7b753cae54b83ba0b082db4df571783402ea7872dbc472d2db1e0e3a",
+      "bytes": 128
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/StaticResources/RegisteredResources/portaro-mint.json",
+      "sha256": "4b9a7d6171cd1b577a38a9c3fe499dd7fdf5f5da50d08be95ff7f1e0f2c3551a",
+      "bytes": 1342
+    },
+    {
+      "path": "reporte/altamar-fin-01.Report/StaticResources/SharedResources/BaseThemes/CY26SU05.json",
+      "sha256": "e52370c540c1ca0ac856f712fb9b0a21d955bd3262149e6ece77ce731192ecec",
+      "bytes": 20403
+    },
+    {
+      "path": "reporte/altamar-fin-01.SemanticModel/definition/cultures/es-PE.tmdl",
+      "sha256": "0d50d4c36070f899ce18f808b25ca8feb86467fd53f1ece19314bd3c952c878f",
+      "bytes": 9041
+    },
+    {
+      "path": "reporte/altamar-fin-01.SemanticModel/definition/database.tmdl",
+      "sha256": "822c914b643bca32bb20abd8a762df8204a1b9ef02acc2bc7348727f6699cb96",
+      "bytes": 39
+    },
+    {
+      "path": "reporte/altamar-fin-01.SemanticModel/definition/expressions.tmdl",
+      "sha256": "55ec9bad79f0457e6b1cbdb9e02f403d5c04c5f07e165ffe4fffc033e2ea52c3",
+      "bytes": 232
+    },
+    {
+      "path": "reporte/altamar-fin-01.SemanticModel/definition/model.tmdl",
+      "sha256": "72d06cca4e5c0fe4b1fedf11b9f811a6c17762170f0f72310a094aa5bfd89e7b",
+      "bytes": 602
+    },
+    {
+      "path": "reporte/altamar-fin-01.SemanticModel/definition/relationships.tmdl",
+      "sha256": "d84923777a014f1bcde1cc7a773fd504a280a2d06923bcedb3b20bdb07fbe75e",
+      "bytes": 849
+    },
+    {
+      "path": "reporte/altamar-fin-01.SemanticModel/definition/tables/ControlExcepcion.tmdl",
+      "sha256": "e932b8e127b86430c2878f883239279790ea87b52e56b1a3d7f2c432f4695f95",
+      "bytes": 2986
+    },
+    {
+      "path": "reporte/altamar-fin-01.SemanticModel/definition/tables/DimCentro.tmdl",
+      "sha256": "af6887648480ad96c6f94efd1e9da457624b5ae6b747ab2b43b4d5f241e853ae",
+      "bytes": 1309
+    },
+    {
+      "path": "reporte/altamar-fin-01.SemanticModel/definition/tables/DimCuenta.tmdl",
+      "sha256": "4d301a8ddded234c591df028f7ae6c32880120d3cab360095e2fac59fb03109b",
+      "bytes": 1777
+    },
+    {
+      "path": "reporte/altamar-fin-01.SemanticModel/definition/tables/DimLinea.tmdl",
+      "sha256": "0e14944e0e3275120b47cc394f108653ebaea2d875e81ca11bbbf0f6e6779303",
+      "bytes": 1841
+    },
+    {
+      "path": "reporte/altamar-fin-01.SemanticModel/definition/tables/DimMes.tmdl",
+      "sha256": "d317264335a7e30f7b06e8d91e538c9e62e0f12bc3af78a78f506e26d4affbd7",
+      "bytes": 1834
+    },
+    {
+      "path": "reporte/altamar-fin-01.SemanticModel/definition/tables/FactPresupuesto.tmdl",
+      "sha256": "92b61a3fea5c03a30d7b2063592b811a1488ce993f41e506ae74077ddc70b035",
+      "bytes": 1708
+    },
+    {
+      "path": "reporte/altamar-fin-01.SemanticModel/definition/tables/FactReal.tmdl",
+      "sha256": "261d6e891667f2543f83fb22fe2a4a910dc4fe93920805bed3c6c8bca51c5f7b",
+      "bytes": 2732
+    },
+    {
+      "path": "reporte/altamar-fin-01.SemanticModel/definition/tables/FilaPyG.tmdl",
+      "sha256": "7d3037c9d1ae1d2842367eed7a7c2a96782881a8711325b545e086084fe345f1",
+      "bytes": 14778
+    },
+    {
+      "path": "reporte/altamar-fin-01.SemanticModel/definition.pbism",
+      "sha256": "ed99ec078efd2ff27fc1c65cc97902138d7d3c438acdb7770ae37dc71c7f06c8",
+      "bytes": 43
+    },
+    {
+      "path": "reporte/altamar-fin-01.SemanticModel/diagramLayout.json",
+      "sha256": "79a29a1035a1935227a09d6459357e24079d8753d5e910e0a9b8c393efb7d633",
+      "bytes": 3279
+    }
+  ],
+  "sourceEntryUnchanged": true,
+  "imageProvenance": "powerbi-desktop-pdf-render"
+}

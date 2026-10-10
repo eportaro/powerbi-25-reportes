@@ -1,0 +1,335 @@
+cultureInfo es-PE
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "dimcentro.nombre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimCentro",
+			          "ConceptualProperty": "nombre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nombre": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Centro": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "filapyg.real_mes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FilaPyG",
+			          "ConceptualProperty": "Real mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Real mes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Real": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "filapyg.presupuesto_mes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FilaPyG",
+			          "ConceptualProperty": "Presupuesto mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Ppto. mes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Presupuesto V1": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "filapyg.variación_mes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FilaPyG",
+			          "ConceptualProperty": "Variación mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Var. mes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "filapyg.fuera_de_comparación_mes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FilaPyG",
+			          "ConceptualProperty": "Fuera de comparación mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Fuera mes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "filapyg.fila": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FilaPyG",
+			          "ConceptualProperty": "fila"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Línea": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "filapyg.real_acumulado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FilaPyG",
+			          "ConceptualProperty": "Real acumulado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Real acum.": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "filapyg.presupuesto_acumulado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FilaPyG",
+			          "ConceptualProperty": "Presupuesto acumulado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Ppto. acum.": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "filapyg.variación_acumulado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FilaPyG",
+			          "ConceptualProperty": "Variación acumulado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Var. acum.": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "filapyg.fuera_de_comparación_acumulado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FilaPyG",
+			          "ConceptualProperty": "Fuera de comparación acumulado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Fuera acum.": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "controlexcepcion.tipo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ControlExcepcion",
+			          "ConceptualProperty": "tipo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Tipo de excepción": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "controlexcepcion.excepciones": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ControlExcepcion",
+			          "ConceptualProperty": "Excepciones"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Registros": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "controlexcepcion.importe_excepciones": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ControlExcepcion",
+			          "ConceptualProperty": "Importe excepciones"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Importe S/": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimmes.mes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimMes",
+			          "ConceptualProperty": "mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "mes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

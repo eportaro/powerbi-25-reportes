@@ -1,0 +1,47 @@
+table DimCentro
+	lineageTag: 292044f2-d49e-5497-b201-43386cc3d1eb
+
+	column centro_costo
+		dataType: string
+		lineageTag: b5a36284-fb82-54a7-8d92-ee25cc13227a
+		summarizeBy: none
+		sourceColumn: centro_costo
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre
+		dataType: string
+		lineageTag: b43ee0c2-7471-5c36-a4ed-93cd081ef1a2
+		summarizeBy: none
+		sourceColumn: nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column sede
+		dataType: string
+		lineageTag: 2082c4e3-5bf4-5108-a5b4-ad357d69c7d1
+		summarizeBy: none
+		sourceColumn: sede
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo
+		dataType: string
+		lineageTag: 1a1c87d2-0827-5ff8-a18e-2015463ffc80
+		summarizeBy: none
+		sourceColumn: tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimCentro = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\DimCentro.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"centro_costo", type text}, {"nombre", type text}, {"sede", type text}, {"tipo", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

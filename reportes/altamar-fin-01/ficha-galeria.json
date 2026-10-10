@@ -1,0 +1,187 @@
+{
+  "id": "altamar-fin-01",
+  "caso": "altamar-fin-01",
+  "numero": 3,
+  "ready": true,
+  "familia": {
+    "es": "Finanzas",
+    "en": "Finance"
+  },
+  "etiquetas": [
+    "Power BI",
+    "DAX",
+    "CSV",
+    "Excel",
+    "Modelo dimensional"
+  ],
+  "titulo": {
+    "es": "Resultado operativo frente al presupuesto",
+    "en": "Operating result against budget"
+  },
+  "resumen": {
+    "es": "Estado de resultados mensual en soles: de los ingresos al resultado operativo, con variación en S/ solo donde hay presupuesto mensual y lo demás a la vista.",
+    "en": "Monthly income statement in soles: from revenue to operating result, with S/ variance only where a monthly budget exists and everything else in plain sight."
+  },
+  "empresa": {
+    "es": "Altamar Servicios Industriales es una empresa de servicios ficticia con operaciones en Lima y Arequipa y un centro administrativo. Empresa y datos son simulados.",
+    "en": "Altamar Servicios Industriales is a fictional services company with operations in Lima and Arequipa and an administrative centre. The company and all data are simulated."
+  },
+  "problema": {
+    "es": "El ERP mezcla asientos anulados, un mes abierto, cuentas de clase 9 que duplican el gasto y real sin centro. El presupuesto tiene una línea solo anual. Comparar todo contra todo da una variación que nadie puede explicar.",
+    "en": "The ERP mixes voided entries, an open month, class 9 accounts that duplicate expenses and actuals without a cost centre. The budget has an annual-only line. Comparing everything against everything gives a variance nobody can explain."
+  },
+  "preguntas": {
+    "es": [
+      "¿Cómo va el resultado operativo del mes y del año frente al presupuesto?",
+      "¿Qué línea del estado explica la diferencia?",
+      "¿Qué centro de costo se desvía?",
+      "¿Qué parte del real no tiene presupuesto con qué compararse?"
+    ],
+    "en": [
+      "How is the operating result for the month and year to date against budget?",
+      "Which income statement line explains the gap?",
+      "Which cost centre is off budget?",
+      "Which part of actuals has no budget to compare against?"
+    ]
+  },
+  "decision": {
+    "es": "La variación compara solo el real que tiene presupuesto mensual, en soles. Publicidad y ventas (presupuesto anual), el real sin centro y lo no clasificado se muestran aparte como fuera de comparación; no se prorratean ni se reasignan.",
+    "en": "Variance compares only actuals that have a monthly budget, in soles. Advertising and sales (annual budget), actuals without a cost centre and unclassified accounts are shown separately as outside the comparison; they are neither prorated nor reassigned."
+  },
+  "como_se_armo": [
+    {
+      "titulo": {
+        "es": "Requerimiento",
+        "en": "Requirements"
+      },
+      "texto": {
+        "es": "Control financiero y Contabilidad fijaron asientos válidos, periodo, signo, mapeo, versión de presupuesto y regla de variación.",
+        "en": "Financial control and Accounting set valid entries, period, sign, mapping, budget version and the variance rule."
+      }
+    },
+    {
+      "titulo": {
+        "es": "Fuentes y preparación",
+        "en": "Sources and preparation"
+      },
+      "texto": {
+        "es": "Cinco CSV del ERP contable con el Excel de mapeo y el de presupuesto, conservando RAW y modelo preparado por separado.",
+        "en": "Five accounting ERP CSV tables with the mapping and budget workbooks, keeping RAW and prepared data separate."
+      }
+    },
+    {
+      "titulo": {
+        "es": "Modelo dimensional",
+        "en": "Dimensional model"
+      },
+      "texto": {
+        "es": "Real por cuenta y presupuesto por línea, cruzados solo por mes, centro y línea: siete relaciones de dirección simple.",
+        "en": "Actuals by account and budget by line, joined only through month, cost centre and line: seven single-direction relationships."
+      }
+    },
+    {
+      "titulo": {
+        "es": "Modelo semántico",
+        "en": "Semantic model"
+      },
+      "texto": {
+        "es": "Medidas DAX de mes y acumulado con real comparable, variación y fuera de comparación; textos claros donde no hay dato.",
+        "en": "Month and year-to-date DAX measures with comparable actuals, variance and outside-comparison amounts; clear text where there is no data."
+      }
+    },
+    {
+      "titulo": {
+        "es": "Calidad",
+        "en": "Quality"
+      },
+      "texto": {
+        "es": "Recalculo independiente desde RAW contra el modelo y contra el motor de Power BI, en cada mes, centro y línea.",
+        "en": "Independent recalculation from RAW against the model and the Power BI engine, for every month, cost centre and line."
+      }
+    },
+    {
+      "titulo": {
+        "es": "Visual y entrega",
+        "en": "Visual and delivery"
+      },
+      "texto": {
+        "es": "Una página nativa en Desktop; PBIP y datos sintéticos descargables.",
+        "en": "One native Desktop page; downloadable PBIP and synthetic data."
+      }
+    }
+  ],
+  "tecnico": {
+    "fuentes": {
+      "es": [
+        "ERP contable exportado en 5 CSV",
+        "Excel de mapeo cuenta → línea",
+        "Excel de presupuesto por versión"
+      ],
+      "en": [
+        "Accounting ERP exported as 5 CSV tables",
+        "Account-to-line mapping workbook",
+        "Budget workbook by version"
+      ]
+    },
+    "modelo": {
+      "es": [
+        "Real: periodo + cuenta + centro; 224 filas",
+        "Presupuesto: periodo + línea + centro; 117 filas",
+        "DimMes, DimCentro, DimLinea y DimCuenta",
+        "Tabla de excepciones y filas del estado calculadas"
+      ],
+      "en": [
+        "Actuals: period + account + cost centre; 224 rows",
+        "Budget: period + line + cost centre; 117 rows",
+        "DimMes, DimCentro, DimLinea and DimCuenta",
+        "Exceptions table and calculated statement rows"
+      ]
+    },
+    "calidad": {
+      "es": [
+        "Claves e importes RAW/modelo conciliados",
+        "Declaraciones de Contabilidad comprobadas contra los archivos",
+        "Motor de Power BI comparado en cada mes, centro y ventana"
+      ],
+      "en": [
+        "RAW/model keys and amounts reconciled",
+        "Accounting statements checked against the files",
+        "Power BI engine compared for every month, cost centre and window"
+      ]
+    },
+    "flujo": {
+      "es": "Fuentes RAW → reglas contables y conciliación → siete CSV del modelo → Power Query Import → modelo en estrella y DAX → página nativa Power BI. Desktop refresca el modelo preparado; no ejecuta el ETL sobre RAW.",
+      "en": "RAW sources → accounting rules and reconciliation → seven model CSV files → Power Query Import → star schema and DAX → native Power BI page. Desktop refreshes prepared data; it does not execute RAW ETL."
+    },
+    "rasgos": {
+      "es": [
+        "Una página, enero a septiembre de 2026",
+        "PEN; variación solo en soles",
+        "Sin SQL, Pro ni credenciales para abrir localmente",
+        "Sin EBITDA, utilidad neta ni caja inventados"
+      ],
+      "en": [
+        "One page, January to September 2026",
+        "PEN; variance in soles only",
+        "No SQL, Pro or credentials required locally",
+        "No invented EBITDA, net income or cash flow"
+      ]
+    }
+  },
+  "imagenes": [
+    {
+      "archivo": "altamar-fin-01-desktop.png",
+      "alt": {
+        "es": "Estado de resultados de septiembre: tarjetas, estado mes y acumulado, tendencia, centros y excepciones",
+        "en": "September income statement: cards, month and year-to-date statement, trend, cost centres and exceptions"
+      },
+      "provenance": "powerbi-desktop-pdf-render"
+    }
+  ],
+  "repo": "https://github.com/eportaro/powerbi-25-reportes/tree/main/reportes/altamar-fin-01",
+  "pdf": "capturas/altamar-fin-01-desktop.pdf",
+  "nota_datos": {
+    "es": "Demostración con datos sintéticos de una empresa ficticia; no contiene datos de clientes reales.",
+    "en": "Demonstration with synthetic data for a fictional company; it contains no real customer data."
+  }
+}

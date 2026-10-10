@@ -1,0 +1,351 @@
+{
+  "caseId": "altamar-fin-01",
+  "company": "Altamar Servicios Industriales",
+  "encoding": "utf-8",
+  "currency": "PEN",
+  "reportPeriodCutoff": "2026-09",
+  "tables": {
+    "plan_cuentas": {
+      "columns": [
+        "cuenta",
+        "nombre",
+        "clase",
+        "naturaleza",
+        "imputable",
+        "estado",
+        "fecha_creacion"
+      ],
+      "rows": 27
+    },
+    "centros_costo": {
+      "columns": [
+        "centro_costo",
+        "nombre",
+        "sede",
+        "tipo"
+      ],
+      "rows": 3
+    },
+    "periodos": {
+      "columns": [
+        "periodo",
+        "estado",
+        "fecha_cierre"
+      ],
+      "rows": 10
+    },
+    "asientos_cabecera": {
+      "columns": [
+        "asiento",
+        "periodo",
+        "fecha_contable",
+        "tipo",
+        "estado",
+        "moneda",
+        "tipo_cambio",
+        "asiento_revertido",
+        "glosa"
+      ],
+      "rows": 640
+    },
+    "asientos_detalle": {
+      "columns": [
+        "asiento",
+        "linea",
+        "cuenta",
+        "centro_costo",
+        "debe_pen",
+        "haber_pen",
+        "debe_me",
+        "haber_me"
+      ],
+      "rows": 2380
+    }
+  },
+  "keys": {
+    "plan_cuentas": [
+      "cuenta"
+    ],
+    "centros_costo": [
+      "centro_costo"
+    ],
+    "periodos": [
+      "periodo"
+    ],
+    "asientos_cabecera": [
+      "asiento"
+    ],
+    "asientos_detalle": [
+      "asiento",
+      "linea"
+    ],
+    "mapeo_pyg": [
+      "cuenta"
+    ],
+    "presupuesto_2026": [
+      "version",
+      "codigo_linea",
+      "centro_costo",
+      "periodo"
+    ]
+  },
+  "columnDetails": {
+    "plan_cuentas": {
+      "cuenta": {
+        "type": "text",
+        "meaning": "Cuenta contable imputable de 6 digitos"
+      },
+      "nombre": {
+        "type": "text",
+        "meaning": "Nombre de la cuenta o del centro de costo"
+      },
+      "clase": {
+        "type": "integer",
+        "meaning": "Primer digito de la cuenta segun el plan contable"
+      },
+      "naturaleza": {
+        "type": "text",
+        "meaning": "DEUDORA o ACREEDORA"
+      },
+      "imputable": {
+        "type": "text",
+        "meaning": "S si admite movimientos"
+      },
+      "estado": {
+        "type": "text",
+        "meaning": "Estado nativo del registro; ver dominio por tabla"
+      },
+      "fecha_creacion": {
+        "type": "date",
+        "meaning": "Alta de la cuenta en el plan"
+      }
+    },
+    "centros_costo": {
+      "centro_costo": {
+        "type": "text",
+        "meaning": "Codigo de centro de costo; puede venir vacio"
+      },
+      "nombre": {
+        "type": "text",
+        "meaning": "Nombre de la cuenta o del centro de costo"
+      },
+      "sede": {
+        "type": "text",
+        "meaning": "Ciudad del centro de costo"
+      },
+      "tipo": {
+        "type": "text",
+        "meaning": "Tipo nativo; ver dominio por tabla"
+      }
+    },
+    "periodos": {
+      "periodo": {
+        "type": "text",
+        "meaning": "Periodo contable YYYY-MM (en presupuesto puede ser YYYY)"
+      },
+      "estado": {
+        "type": "text",
+        "meaning": "Estado nativo del registro; ver dominio por tabla"
+      },
+      "fecha_cierre": {
+        "type": "date",
+        "meaning": "Fecha en que contabilidad cerro el periodo"
+      }
+    },
+    "asientos_cabecera": {
+      "asiento": {
+        "type": "text",
+        "meaning": "Identificador del asiento"
+      },
+      "periodo": {
+        "type": "text",
+        "meaning": "Periodo contable YYYY-MM (en presupuesto puede ser YYYY)"
+      },
+      "fecha_contable": {
+        "type": "date",
+        "meaning": "Fecha de registro del asiento"
+      },
+      "tipo": {
+        "type": "text",
+        "meaning": "Tipo nativo; ver dominio por tabla"
+      },
+      "estado": {
+        "type": "text",
+        "meaning": "Estado nativo del registro; ver dominio por tabla"
+      },
+      "moneda": {
+        "type": "text",
+        "meaning": "Moneda del documento origen"
+      },
+      "tipo_cambio": {
+        "type": "decimal(10,3)",
+        "meaning": "Tipo de cambio PEN por USD del documento; vacio en PEN"
+      },
+      "asiento_revertido": {
+        "type": "text",
+        "meaning": "Asiento original cuando el asiento es un extorno"
+      },
+      "glosa": {
+        "type": "text",
+        "meaning": "Texto libre del asiento; no clasifica"
+      }
+    },
+    "asientos_detalle": {
+      "asiento": {
+        "type": "text",
+        "meaning": "Identificador del asiento"
+      },
+      "linea": {
+        "type": "integer",
+        "meaning": "Posicion dentro del asiento, clave compuesta con asiento"
+      },
+      "cuenta": {
+        "type": "text",
+        "meaning": "Cuenta contable imputable de 6 digitos"
+      },
+      "centro_costo": {
+        "type": "text",
+        "meaning": "Codigo de centro de costo; puede venir vacio"
+      },
+      "debe_pen": {
+        "type": "decimal(18,2)",
+        "meaning": "Debe en soles"
+      },
+      "haber_pen": {
+        "type": "decimal(18,2)",
+        "meaning": "Haber en soles"
+      },
+      "debe_me": {
+        "type": "decimal(18,2)",
+        "meaning": "Debe en moneda extranjera; vacio en PEN"
+      },
+      "haber_me": {
+        "type": "decimal(18,2)",
+        "meaning": "Haber en moneda extranjera; vacio en PEN"
+      }
+    },
+    "presupuesto_2026": {
+      "version": {
+        "type": "text",
+        "meaning": "Version del presupuesto"
+      },
+      "estado_version": {
+        "type": "text",
+        "meaning": "Estado de la version del presupuesto"
+      },
+      "fecha_version": {
+        "type": "date",
+        "meaning": "Fecha de la version"
+      },
+      "codigo_linea": {
+        "type": "text",
+        "meaning": "Codigo de linea del estado de resultados"
+      },
+      "linea_pyg": {
+        "type": "text",
+        "meaning": "Nombre de linea del estado de resultados"
+      },
+      "centro_costo": {
+        "type": "text",
+        "meaning": "Codigo de centro de costo; puede venir vacio"
+      },
+      "periodo": {
+        "type": "text",
+        "meaning": "Periodo contable YYYY-MM (en presupuesto puede ser YYYY)"
+      },
+      "importe_pen": {
+        "type": "decimal(18,2)",
+        "meaning": "Importe presupuestado en soles"
+      }
+    },
+    "mapeo_pyg": {
+      "cuenta": {
+        "type": "text",
+        "meaning": "Cuenta contable imputable de 6 digitos"
+      },
+      "nombre_cuenta": {
+        "type": "text",
+        "meaning": "Nombre de la cuenta en el Excel de mapeo"
+      },
+      "codigo_linea": {
+        "type": "text",
+        "meaning": "Codigo de linea del estado de resultados"
+      },
+      "linea_pyg": {
+        "type": "text",
+        "meaning": "Nombre de linea del estado de resultados"
+      },
+      "seccion": {
+        "type": "text",
+        "meaning": "Seccion de la linea en el Excel de mapeo"
+      },
+      "vigente_desde": {
+        "type": "date",
+        "meaning": "Inicio de vigencia del mapeo"
+      },
+      "actualizado_por": {
+        "type": "text",
+        "meaning": "Area que mantiene el archivo"
+      }
+    }
+  },
+  "stateDomains": {
+    "plan_cuentas.estado": [
+      "ACTIVA"
+    ],
+    "periodos.estado": [
+      "CERRADO",
+      "ABIERTO"
+    ],
+    "asientos_cabecera.estado": [
+      "CONTABILIZADO",
+      "ANULADO",
+      "BORRADOR"
+    ],
+    "asientos_cabecera.tipo": [
+      "AJUSTE_CIERRE",
+      "APERTURA",
+      "COMPRA",
+      "DIARIO",
+      "PLANILLA",
+      "PROVISION",
+      "REVERSION",
+      "VENTA"
+    ],
+    "centros_costo.tipo": [
+      "OPERATIVO",
+      "ADMINISTRATIVO"
+    ],
+    "presupuesto_2026.estado_version": [
+      "APROBADO",
+      "BORRADOR"
+    ]
+  },
+  "manual_files": {
+    "excel/presupuesto_2026.xlsx": {
+      "sheet": "Presupuesto",
+      "columns": [
+        "version",
+        "estado_version",
+        "fecha_version",
+        "codigo_linea",
+        "linea_pyg",
+        "centro_costo",
+        "periodo",
+        "importe_pen"
+      ]
+    },
+    "excel/mapeo_pyg.xlsx": {
+      "sheet": "Mapeo",
+      "columns": [
+        "cuenta",
+        "nombre_cuenta",
+        "codigo_linea",
+        "linea_pyg",
+        "seccion",
+        "vigente_desde",
+        "actualizado_por"
+      ]
+    }
+  }
+}
