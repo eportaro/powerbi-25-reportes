@@ -1,0 +1,52 @@
+table FactPlan
+	lineageTag: 21501fd5-78cf-53a5-8222-0fb0c88412d5
+
+	column periodo
+		dataType: string
+		isHidden
+		lineageTag: 43d5cf9b-bcb3-5657-b336-5b9918055c22
+		summarizeBy: none
+		sourceColumn: periodo
+
+		annotation SummarizationSetBy = Automatic
+
+	column area_id
+		dataType: string
+		isHidden
+		lineageTag: 3ffdd4f5-9782-57cc-8f35-8182d3742507
+		summarizeBy: none
+		sourceColumn: area_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sede_id
+		dataType: string
+		isHidden
+		lineageTag: b19e89f2-36a8-57c3-abbf-bac8669cb062
+		summarizeBy: none
+		sourceColumn: sede_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column plan_personas
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 8400f0e5-4125-5a71-9141-a687e32f2844
+		summarizeBy: none
+		sourceColumn: plan_personas
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactPlan = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\FactPlan.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"periodo", type text}, {"area_id", type text}, {"sede_id", type text}, {"plan_personas", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

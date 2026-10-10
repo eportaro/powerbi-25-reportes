@@ -1,0 +1,444 @@
+{
+  "caseId": "sur-hr-01",
+  "cutoff": "2026-09-30",
+  "encoding": "utf-8",
+  "dateFormat": "YYYY-MM-DD",
+  "currency": "PEN",
+  "synthetic": true,
+  "containsPII": false,
+  "tables": {
+    "hris/personas.csv": {
+      "columns": [
+        "persona_id",
+        "referencia_ficticia"
+      ],
+      "rows": 60,
+      "key": [
+        "persona_id"
+      ],
+      "fields": {
+        "persona_id": {
+          "type": "text",
+          "meaning": "Identificador ficticio estable de persona, sin DNI ni nombre real",
+          "unit": "id"
+        },
+        "referencia_ficticia": {
+          "type": "text",
+          "meaning": "Etiqueta explícitamente sintética de persona",
+          "unit": "text"
+        }
+      }
+    },
+    "hris/contratos.csv": {
+      "columns": [
+        "contrato_id",
+        "persona_id",
+        "fecha_ingreso",
+        "fecha_baja",
+        "estado",
+        "motivo_baja",
+        "tipo_contrato"
+      ],
+      "rows": 62,
+      "key": [
+        "contrato_id"
+      ],
+      "fields": {
+        "contrato_id": {
+          "type": "text",
+          "meaning": "Identificador del vínculo laboral",
+          "unit": "id"
+        },
+        "persona_id": {
+          "type": "text",
+          "meaning": "Identificador ficticio estable de persona, sin DNI ni nombre real",
+          "unit": "id"
+        },
+        "fecha_ingreso": {
+          "type": "date",
+          "meaning": "Inicio del contrato YYYY-MM-DD",
+          "unit": "date"
+        },
+        "fecha_baja": {
+          "type": "date?",
+          "meaning": "Fecha de baja registrada YYYY-MM-DD; vacío sin baja registrada",
+          "unit": "date"
+        },
+        "estado": {
+          "type": "text",
+          "meaning": "Estado nativo de registro o documento; dominio específico por tabla",
+          "unit": "text"
+        },
+        "motivo_baja": {
+          "type": "text?",
+          "meaning": "VOLUNTARIA o FIN_CONTRATO; vacío sin baja",
+          "unit": "text"
+        },
+        "tipo_contrato": {
+          "type": "text",
+          "meaning": "INDEFINIDO o TEMPORAL",
+          "unit": "text"
+        }
+      }
+    },
+    "hris/asignaciones.csv": {
+      "columns": [
+        "asignacion_id",
+        "contrato_id",
+        "area_id",
+        "sede_id",
+        "desde",
+        "hasta",
+        "fte"
+      ],
+      "rows": 63,
+      "key": [
+        "asignacion_id"
+      ],
+      "fields": {
+        "asignacion_id": {
+          "type": "text",
+          "meaning": "Identificador de tramo histórico de asignación",
+          "unit": "id"
+        },
+        "contrato_id": {
+          "type": "text",
+          "meaning": "Identificador del vínculo laboral",
+          "unit": "id"
+        },
+        "area_id": {
+          "type": "text",
+          "meaning": "Referencia al maestro hris/areas.csv",
+          "unit": "id"
+        },
+        "sede_id": {
+          "type": "text",
+          "meaning": "Referencia al maestro hris/sedes.csv",
+          "unit": "id"
+        },
+        "desde": {
+          "type": "date",
+          "meaning": "Fecha inicial registrada del tramo YYYY-MM-DD",
+          "unit": "date"
+        },
+        "hasta": {
+          "type": "date?",
+          "meaning": "Fecha final registrada del tramo; vacío sin término registrado",
+          "unit": "date"
+        },
+        "fte": {
+          "type": "decimal(3,2)",
+          "meaning": "Fracción contractual de jornada completa",
+          "unit": "FTE"
+        }
+      }
+    },
+    "hris/areas.csv": {
+      "columns": [
+        "area_id",
+        "nombre"
+      ],
+      "rows": 4,
+      "key": [
+        "area_id"
+      ],
+      "fields": {
+        "area_id": {
+          "type": "text",
+          "meaning": "Referencia al maestro hris/areas.csv",
+          "unit": "id"
+        },
+        "nombre": {
+          "type": "text",
+          "meaning": "Nombre de área o sede ficticia",
+          "unit": "text"
+        }
+      }
+    },
+    "hris/sedes.csv": {
+      "columns": [
+        "sede_id",
+        "nombre"
+      ],
+      "rows": 3,
+      "key": [
+        "sede_id"
+      ],
+      "fields": {
+        "sede_id": {
+          "type": "text",
+          "meaning": "Referencia al maestro hris/sedes.csv",
+          "unit": "id"
+        },
+        "nombre": {
+          "type": "text",
+          "meaning": "Nombre de área o sede ficticia",
+          "unit": "text"
+        }
+      }
+    },
+    "planillas/cierres.csv": {
+      "columns": [
+        "cierre_id",
+        "periodo_devengado",
+        "fecha_cierre",
+        "fecha_pago",
+        "estado"
+      ],
+      "rows": 10,
+      "key": [
+        "cierre_id"
+      ],
+      "fields": {
+        "cierre_id": {
+          "type": "text",
+          "meaning": "Identificador de exportación del cierre mensual",
+          "unit": "id"
+        },
+        "periodo_devengado": {
+          "type": "year-month",
+          "meaning": "Mes de devengo YYYY-MM, independiente de la fecha de pago",
+          "unit": "month"
+        },
+        "fecha_cierre": {
+          "type": "date",
+          "meaning": "Fecha administrativa de cierre YYYY-MM-DD",
+          "unit": "date"
+        },
+        "fecha_pago": {
+          "type": "date",
+          "meaning": "Fecha registrada de pago YYYY-MM-DD",
+          "unit": "date"
+        },
+        "estado": {
+          "type": "text",
+          "meaning": "Estado nativo de registro o documento; dominio específico por tabla",
+          "unit": "text"
+        }
+      }
+    },
+    "planillas/detalle.csv": {
+      "columns": [
+        "cierre_id",
+        "linea",
+        "contrato_id",
+        "periodo_devengado",
+        "area_id",
+        "sede_id",
+        "concepto_id",
+        "estado",
+        "costo_empresa_pen",
+        "referencia"
+      ],
+      "rows": 994,
+      "key": [
+        "cierre_id",
+        "linea"
+      ],
+      "fields": {
+        "cierre_id": {
+          "type": "text",
+          "meaning": "Identificador de exportación del cierre mensual",
+          "unit": "id"
+        },
+        "linea": {
+          "type": "integer",
+          "meaning": "Posición del detalle dentro del cierre",
+          "unit": "ordinal"
+        },
+        "contrato_id": {
+          "type": "text",
+          "meaning": "Identificador del vínculo laboral",
+          "unit": "id"
+        },
+        "periodo_devengado": {
+          "type": "year-month",
+          "meaning": "Mes de devengo YYYY-MM, independiente de la fecha de pago",
+          "unit": "month"
+        },
+        "area_id": {
+          "type": "text",
+          "meaning": "Referencia al maestro hris/areas.csv",
+          "unit": "id"
+        },
+        "sede_id": {
+          "type": "text",
+          "meaning": "Referencia al maestro hris/sedes.csv",
+          "unit": "id"
+        },
+        "concepto_id": {
+          "type": "text",
+          "meaning": "Referencia al maestro planillas/conceptos.csv",
+          "unit": "id"
+        },
+        "estado": {
+          "type": "text",
+          "meaning": "Estado nativo de registro o documento; dominio específico por tabla",
+          "unit": "text"
+        },
+        "costo_empresa_pen": {
+          "type": "decimal(18,2)",
+          "meaning": "Costo empresa firmado; positivo cargo y negativo reducción",
+          "unit": "PEN"
+        },
+        "referencia": {
+          "type": "text?",
+          "meaning": "Referencia administrativa del movimiento, vacío cuando no aplica",
+          "unit": "text"
+        }
+      }
+    },
+    "planillas/conceptos.csv": {
+      "columns": [
+        "concepto_id",
+        "descripcion"
+      ],
+      "rows": 3,
+      "key": [
+        "concepto_id"
+      ],
+      "fields": {
+        "concepto_id": {
+          "type": "text",
+          "meaning": "Referencia al maestro planillas/conceptos.csv",
+          "unit": "id"
+        },
+        "descripcion": {
+          "type": "text",
+          "meaning": "Descripción nativa del concepto",
+          "unit": "text"
+        }
+      }
+    },
+    "excel/plan_dotacion.xlsx": {
+      "columns": [
+        "periodo",
+        "area_id",
+        "sede_id",
+        "version",
+        "estado",
+        "fecha_aprobacion",
+        "dotacion_plan_personas",
+        "unidad"
+      ],
+      "rows": 216,
+      "key": [
+        "periodo",
+        "area_id",
+        "sede_id",
+        "version"
+      ],
+      "fields": {
+        "periodo": {
+          "type": "year-month",
+          "meaning": "Mes al que corresponde la fila del plan YYYY-MM",
+          "unit": "month"
+        },
+        "area_id": {
+          "type": "text",
+          "meaning": "Referencia al maestro hris/areas.csv",
+          "unit": "id"
+        },
+        "sede_id": {
+          "type": "text",
+          "meaning": "Referencia al maestro hris/sedes.csv",
+          "unit": "id"
+        },
+        "version": {
+          "type": "text",
+          "meaning": "Identificador de versión del plan",
+          "unit": "text"
+        },
+        "estado": {
+          "type": "text",
+          "meaning": "Estado nativo de registro o documento; dominio específico por tabla",
+          "unit": "text"
+        },
+        "fecha_aprobacion": {
+          "type": "date?",
+          "meaning": "Fecha registrada de aprobación, vacío en borrador",
+          "unit": "date"
+        },
+        "dotacion_plan_personas": {
+          "type": "integer",
+          "meaning": "Cantidad de personas prevista en esta fila del plan",
+          "unit": "PERSONAS"
+        },
+        "unidad": {
+          "type": "text",
+          "meaning": "Unidad explícita del dato planificado",
+          "unit": "PERSONAS"
+        }
+      }
+    }
+  },
+  "relationships": [
+    [
+      "hris/contratos.csv.persona_id",
+      "hris/personas.csv.persona_id"
+    ],
+    [
+      "hris/asignaciones.csv.contrato_id",
+      "hris/contratos.csv.contrato_id"
+    ],
+    [
+      "hris/asignaciones.csv.area_id",
+      "hris/areas.csv.area_id"
+    ],
+    [
+      "hris/asignaciones.csv.sede_id",
+      "hris/sedes.csv.sede_id"
+    ],
+    [
+      "planillas/detalle.csv.cierre_id",
+      "planillas/cierres.csv.cierre_id"
+    ],
+    [
+      "planillas/detalle.csv.contrato_id",
+      "hris/contratos.csv.contrato_id"
+    ],
+    [
+      "planillas/detalle.csv.concepto_id",
+      "planillas/conceptos.csv.concepto_id"
+    ],
+    [
+      "planillas/detalle.csv.area_id",
+      "hris/areas.csv.area_id"
+    ],
+    [
+      "planillas/detalle.csv.sede_id",
+      "hris/sedes.csv.sede_id"
+    ],
+    [
+      "excel/plan_dotacion.xlsx.area_id",
+      "hris/areas.csv.area_id"
+    ],
+    [
+      "excel/plan_dotacion.xlsx.sede_id",
+      "hris/sedes.csv.sede_id"
+    ]
+  ],
+  "stateDomains": {
+    "hris/contratos.csv": [
+      "ACTIVO",
+      "BAJA"
+    ],
+    "planillas/cierres.csv": [
+      "CONTABILIZADO",
+      "BORRADOR"
+    ],
+    "planillas/detalle.csv": [
+      "CONTABILIZADO",
+      "BORRADOR"
+    ],
+    "excel/plan_dotacion.xlsx": [
+      "APROBADO",
+      "BORRADOR"
+    ]
+  },
+  "workbook": {
+    "file": "excel/plan_dotacion.xlsx",
+    "sheet": "PlanDotacion",
+    "headerRow": 1
+  }
+}

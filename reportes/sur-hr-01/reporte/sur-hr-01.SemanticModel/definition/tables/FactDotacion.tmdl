@@ -1,0 +1,207 @@
+table FactDotacion
+	lineageTag: 292554da-6aac-50c6-95de-831b22fe2774
+
+	/// Personas activas al cierre del día anterior al primer día del mes. Uso técnico mensual; no sumar snapshots.
+	measure 'Personas inicio mes' = COALESCE ( SUM ( FactDotacion[personas_inicio] ), 0 )
+		formatString: #,0
+		isHidden
+		displayFolder: 01 Dotación
+		lineageTag: 35ea7570-7b49-50e5-8f7c-cdcde0f7e13d
+
+	/// Personas distintas activas al cierre del mes por asignación histórica. Baja inclusiva. Grano validado persona/mes/asignación.
+	measure 'Personas cierre mes' = COALESCE ( SUM ( FactDotacion[personas_fin] ), 0 )
+		formatString: #,0
+		displayFolder: 01 Dotación
+		lineageTag: 33affcd3-512f-5089-9f01-eb1f7d106d48
+
+	/// Suma de fracciones FTE vigentes al cierre del mes. Complementa personas; no compara con plan en personas.
+	measure 'FTE cierre mes' = COALESCE ( SUM ( FactDotacion[fte_fin] ), 0 )
+		formatString: #,0.00
+		displayFolder: 01 Dotación
+		lineageTag: ed25a8cc-adc0-5f8b-a657-dd6fc170eafc
+
+	/// Plan P2026 APROBADO en personas al cierre del mes; versión borrador excluida.
+	measure 'Plan cierre mes' = COALESCE ( SUM ( FactPlan[plan_personas] ), 0 )
+		formatString: #,0
+		displayFolder: 01 Dotación
+		lineageTag: 752aca1c-3f19-594b-a0d7-fc5d4357e04e
+
+	/// Personas reales menos plan del mismo mes/área/sede. Negativo significa bajo plan, no vacantes confirmadas.
+	measure 'Brecha cierre mes' = [Personas cierre mes] - [Plan cierre mes]
+		formatString: +#,0;-#,0;0
+		displayFolder: 01 Dotación
+		lineageTag: dca2a340-50c9-5061-a8e6-73cdfbaaae8d
+
+	/// Personas del último mes seleccionado; no suma meses.
+	measure 'Dotación al cierre' =
+			VAR _mes = MAX ( DimMes[periodo] )
+			RETURN IF ( ISBLANK ( _mes ), BLANK (),
+			    CALCULATE ( [Personas cierre mes], KEEPFILTERS ( DimMes[periodo] = _mes ) ) )
+		formatString: #,0
+		displayFolder: 01 Dotación
+		lineageTag: cdf491f2-162f-5950-b022-94e79f243d43
+
+	/// FTE del último mes seleccionado; no suma meses.
+	measure 'FTE al cierre' =
+			VAR _mes = MAX ( DimMes[periodo] )
+			RETURN IF ( ISBLANK ( _mes ), BLANK (),
+			    CALCULATE ( [FTE cierre mes], KEEPFILTERS ( DimMes[periodo] = _mes ) ) )
+		formatString: #,0.00
+		displayFolder: 01 Dotación
+		lineageTag: 2d3e552b-e86d-5b32-bca7-b0fcdd8c7c91
+
+	/// Plan en personas del último mes seleccionado.
+	measure 'Plan al cierre' =
+			VAR _mes = MAX ( DimMes[periodo] )
+			RETURN IF ( ISBLANK ( _mes ), BLANK (),
+			    CALCULATE ( [Plan cierre mes], KEEPFILTERS ( DimMes[periodo] = _mes ) ) )
+		formatString: #,0
+		displayFolder: 01 Dotación
+		lineageTag: 9ab24013-9d62-580c-9a1b-a0ada4654003
+
+	/// Real menos plan del último mes seleccionado; brecha absoluta en personas.
+	measure 'Brecha al cierre' =
+			VAR _mes = MAX ( DimMes[periodo] )
+			RETURN IF ( ISBLANK ( _mes ), BLANK (),
+			    CALCULATE ( [Brecha cierre mes], KEEPFILTERS ( DimMes[periodo] = _mes ) ) )
+		formatString: +#,0;-#,0;0
+		displayFolder: 01 Dotación
+		lineageTag: e043b0e6-6500-5ab0-8b24-91aed4f2ae0d
+
+	/// Altas de contratos en meses seleccionados. Reingreso tras intervalo cuenta alta; traslado no.
+	measure 'Altas del período' = COALESCE ( CALCULATE ( COUNTROWS ( FactMovimiento ), FactMovimiento[tipo] = "ALTA" ), 0 )
+		formatString: #,0
+		displayFolder: 02 Movimientos
+		lineageTag: d8f6b01f-b961-5b7c-96ed-72109c5f67fe
+
+	/// Todas las bajas por fecha inclusiva en meses seleccionados; incluye fin de contrato. Conteo, sin tasa total.
+	measure 'Bajas del período' = COALESCE ( CALCULATE ( COUNTROWS ( FactMovimiento ), FactMovimiento[tipo] = "BAJA" ), 0 )
+		formatString: #,0
+		displayFolder: 02 Movimientos
+		lineageTag: 0290284b-7f1d-5b4a-a542-99fa6f02a79e
+
+	/// Eventos de baja con motivo VOLUNTARIA. Conteo aditivo de meses, área y sede de la baja.
+	measure 'Bajas voluntarias' = COALESCE ( CALCULATE ( COUNTROWS ( FactMovimiento ), FactMovimiento[tipo] = "BAJA", FactMovimiento[voluntaria] = 1 ), 0 )
+		formatString: #,0
+		displayFolder: 02 Movimientos
+		lineageTag: f5ea1a6a-3793-5537-b005-464a98c9195f
+
+	/// Suma de los promedios inicio/fin de cada mes seleccionado; conserva todos los filtros de área y sede.
+	measure 'Base mensual ponderada' = SUMX ( VALUES ( DimMes[periodo] ), DIVIDE ( [Personas inicio mes] + [Personas cierre mes], 2 ) )
+		formatString: #,0.0
+		isHidden
+		displayFolder: 02 Movimientos
+		lineageTag: a7601bcd-cd13-54f1-805f-c70c47b911cb
+
+	/// Bajas voluntarias divididas por suma de promedios mensuales inicio/fin. Un mes equivale a rotación mensual; varios meses NO son tasa anual ni suma/promedio de porcentajes. Base cero: BLANK.
+	measure 'Índice ponderado mensual' = DIVIDE ( [Bajas voluntarias], [Base mensual ponderada] )
+		formatString: 0.00%
+		displayFolder: 02 Movimientos
+		lineageTag: cac9cc75-5756-551c-aec2-891326ccd97b
+
+	/// Costo firmado en PEN por devengo de cierres y líneas CONTABILIZADO: HABER + CARGA_EMPRESA + AJUSTE. Suma meses seleccionados; no usa fecha de pago ni reprorratea.
+	measure 'Costo empresa del período' = COALESCE ( SUM ( FactCosto[costo_empresa_pen] ), 0 )
+		formatString: "S/ "#,0.00
+		displayFolder: 03 Costo
+		lineageTag: f41c6d10-6ae7-5ad8-bd64-ad098b094e45
+
+	/// Cantidad de meses del contexto entre enero y septiembre de 2026.
+	measure 'Meses seleccionados' = COUNTROWS ( VALUES ( DimMes[periodo] ) )
+		formatString: #,0
+		isHidden
+		displayFolder: 04 Contexto
+		lineageTag: 00820956-34c7-5aab-903d-6fbc0f71020c
+
+	/// Mes de los snapshots de las tarjetas; los flujos acumulan los meses seleccionados.
+	measure 'Último mes seleccionado' = MAX ( DimMes[periodo] )
+		displayFolder: 04 Contexto
+		lineageTag: a2253b00-fb63-594d-9f3a-56035a6a8bf9
+
+	column periodo
+		dataType: string
+		isHidden
+		lineageTag: ef1c79da-a28f-5134-8ccd-4792155280a4
+		summarizeBy: none
+		sourceColumn: periodo
+
+		annotation SummarizationSetBy = Automatic
+
+	column persona_id
+		dataType: string
+		isHidden
+		lineageTag: 10910623-7edd-527d-a406-1c38cfb1f88e
+		summarizeBy: none
+		sourceColumn: persona_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column area_id
+		dataType: string
+		isHidden
+		lineageTag: c9044fc5-10c5-5ed5-82da-b2d3c8bcdbfd
+		summarizeBy: none
+		sourceColumn: area_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sede_id
+		dataType: string
+		isHidden
+		lineageTag: 2f721ef5-3f2e-5940-8292-136a8423c7cd
+		summarizeBy: none
+		sourceColumn: sede_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column personas_inicio
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7b4c73ee-7342-5437-9e42-3234ceed100b
+		summarizeBy: none
+		sourceColumn: personas_inicio
+
+		annotation SummarizationSetBy = Automatic
+
+	column personas_fin
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 95b775a3-ea7c-550b-a330-485d51d366f5
+		summarizeBy: none
+		sourceColumn: personas_fin
+
+		annotation SummarizationSetBy = Automatic
+
+	column fte_inicio
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: d869c051-6df2-517c-87e6-a96d69c0bde0
+		summarizeBy: none
+		sourceColumn: fte_inicio
+
+		annotation SummarizationSetBy = Automatic
+
+	column fte_fin
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: bf34570a-5362-56bf-ab82-0d2b728c1323
+		summarizeBy: none
+		sourceColumn: fte_fin
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactDotacion = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\FactDotacion.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"periodo", type text}, {"persona_id", type text}, {"area_id", type text}, {"sede_id", type text}, {"personas_inicio", Int64.Type}, {"personas_fin", Int64.Type}, {"fte_inicio", Currency.Type}, {"fte_fin", Currency.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

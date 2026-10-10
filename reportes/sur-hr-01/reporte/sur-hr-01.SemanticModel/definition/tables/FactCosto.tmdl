@@ -1,0 +1,70 @@
+table FactCosto
+	lineageTag: 72bd2089-0cdc-5d45-8a04-fe0b30576405
+
+	column periodo
+		dataType: string
+		isHidden
+		lineageTag: 184ff6f8-e167-520f-a66c-abc1ef89ed29
+		summarizeBy: none
+		sourceColumn: periodo
+
+		annotation SummarizationSetBy = Automatic
+
+	column persona_id
+		dataType: string
+		isHidden
+		lineageTag: ee2a2817-6f54-5f9c-9a9b-b4f0ad993ba2
+		summarizeBy: none
+		sourceColumn: persona_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column contrato_id
+		dataType: string
+		isHidden
+		lineageTag: 8cfd0c6c-a81d-5fec-b701-78d799a4d4e8
+		summarizeBy: none
+		sourceColumn: contrato_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column area_id
+		dataType: string
+		isHidden
+		lineageTag: 8052777a-b964-546d-b13c-1711078b72b5
+		summarizeBy: none
+		sourceColumn: area_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sede_id
+		dataType: string
+		isHidden
+		lineageTag: 9d76a94a-fb72-5134-b868-08e623a0a4c4
+		summarizeBy: none
+		sourceColumn: sede_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column costo_empresa_pen
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: 1417e4ee-4b03-514c-9bd5-3e8ee11e93b5
+		summarizeBy: none
+		sourceColumn: costo_empresa_pen
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactCosto = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\FactCosto.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"periodo", type text}, {"persona_id", type text}, {"contrato_id", type text}, {"area_id", type text}, {"sede_id", type text}, {"costo_empresa_pen", Currency.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

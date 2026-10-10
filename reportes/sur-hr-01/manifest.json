@@ -1,0 +1,540 @@
+{
+  "caseId": "sur-hr-01",
+  "passed": true,
+  "rows": {
+    "DimMes": 9,
+    "DimArea": 4,
+    "DimSede": 3,
+    "DimPersona": 60,
+    "FactDotacion": 499,
+    "FactMovimiento": 14,
+    "FactCosto": 496,
+    "FactPlan": 108
+  },
+  "singleEntry": true,
+  "relativeReferencesValid": true,
+  "publicContentScanPassed": true,
+  "files": [
+    {
+      "path": "capturas/sur-hr-01.pdf",
+      "sha256": "c5ff62937f6fe672dffe7917671d4dfd5d31ddf8f31542f7c626cfa50bc12327",
+      "bytes": 148821
+    },
+    {
+      "path": "capturas/sur-hr-01.png",
+      "sha256": "32c3c57c1cd253dcc0f3d0ca249f543332f69e95f967b784d2e78c20f0e28825",
+      "bytes": 196074
+    },
+    {
+      "path": "datos/fuentes/diccionario.json",
+      "sha256": "9177889e74a8b86f3c5156f51910376bde6f8eb7fed75e02c1b37dab50bdf234",
+      "bytes": 11515
+    },
+    {
+      "path": "datos/fuentes/excel/plan_dotacion.xlsx",
+      "sha256": "1b1fd3a496948749910c6f50134f29e240cce9a474658ab1437172fc9ce3dafd",
+      "bytes": 11586
+    },
+    {
+      "path": "datos/fuentes/hris/areas.csv",
+      "sha256": "17b0d92416a052be5c05498e25efd55312b5b669c7abe05f4b2c1e07cbc56bb0",
+      "bytes": 79
+    },
+    {
+      "path": "datos/fuentes/hris/asignaciones.csv",
+      "sha256": "d6c5b3023a45bfac1fe36b8682b5962bef105a7a7abf00138e904b5612980a05",
+      "bytes": 2648
+    },
+    {
+      "path": "datos/fuentes/hris/contratos.csv",
+      "sha256": "6b14bbf328ea11a7e9b2b82e5ff25617c2c569f80d8d1074f0201c91089cca09",
+      "bytes": 3037
+    },
+    {
+      "path": "datos/fuentes/hris/personas.csv",
+      "sha256": "eea471c7646111fbfa8ed0494d4d7e1a00a732c0031c1e628c33bbd63a740f48",
+      "bytes": 1831
+    },
+    {
+      "path": "datos/fuentes/hris/sedes.csv",
+      "sha256": "62a04e70172edbc636aa57a1186643a2fb79be7448856ba4d96e6aadad04efee",
+      "bytes": 50
+    },
+    {
+      "path": "datos/fuentes/planillas/cierres.csv",
+      "sha256": "b3521a1378da0984adfcafc1d21c21a530900138f7d3f66ecbc70de9278d471d",
+      "bytes": 606
+    },
+    {
+      "path": "datos/fuentes/planillas/conceptos.csv",
+      "sha256": "402543be1f987675886ba03a6f084c58691cf9d298de2e73ddb307c148e54d0b",
+      "bytes": 122
+    },
+    {
+      "path": "datos/fuentes/planillas/detalle.csv",
+      "sha256": "4dfed121c4844a688fcee3188127962e2c41bc9a310f357321a08578e36ee951",
+      "bytes": 69562
+    },
+    {
+      "path": "datos/modelo/DimArea.csv",
+      "sha256": "17b0d92416a052be5c05498e25efd55312b5b669c7abe05f4b2c1e07cbc56bb0",
+      "bytes": 79
+    },
+    {
+      "path": "datos/modelo/DimMes.csv",
+      "sha256": "c02942bc1dc8d07016d78f3b00563b4b86e90211d87cf989a4d98307d554be20",
+      "bytes": 395
+    },
+    {
+      "path": "datos/modelo/DimPersona.csv",
+      "sha256": "eea471c7646111fbfa8ed0494d4d7e1a00a732c0031c1e628c33bbd63a740f48",
+      "bytes": 1831
+    },
+    {
+      "path": "datos/modelo/DimSede.csv",
+      "sha256": "c6f9b8736d2bc86835b9c5addfa63d8ef7e4266e3627fbd2a8c8bc8d652b4410",
+      "bytes": 50
+    },
+    {
+      "path": "datos/modelo/FactCosto.csv",
+      "sha256": "4638563e30c849b276d1ccbe251f966e4b07807c856ecd25b32fd89309e94eab",
+      "bytes": 19409
+    },
+    {
+      "path": "datos/modelo/FactDotacion.csv",
+      "sha256": "766991f2960390ad5ed94992216df271f9eda8b1cc9a30fa09034eacb1b44ad6",
+      "bytes": 19045
+    },
+    {
+      "path": "datos/modelo/FactMovimiento.csv",
+      "sha256": "b9fb3722466e8bd3ccfa684096aa0acdd33d65b43f5be3e9d45cbe709662a9e1",
+      "bytes": 595
+    },
+    {
+      "path": "datos/modelo/FactPlan.csv",
+      "sha256": "2ac94a20dd6245f57418d18c8fd174ad144b5ad24fe5fef06026ffa63af851fe",
+      "bytes": 1982
+    },
+    {
+      "path": "documentacion/indicadores.md",
+      "sha256": "4354f09c0684c3acb2cc4913b6666e4ae545194b682af8fd484788416d71b6a7",
+      "bytes": 3890
+    },
+    {
+      "path": "documentacion/reglas-negocio.md",
+      "sha256": "1c234a32de81376e685bd16ff82e6bf2a651df7d2c063b9a81a3812d85e22334",
+      "bytes": 2074
+    },
+    {
+      "path": "ficha-galeria.json",
+      "sha256": "a4dfe878030ec418144d5fd22775e8aefbc452fe01487fd101a15cbf30427656",
+      "bytes": 5081
+    },
+    {
+      "path": "README.md",
+      "sha256": "8b9562981b2b9e4014e3ca226053ec168b0bd86fe746139f265bef14dcaf810d",
+      "bytes": 2598
+    },
+    {
+      "path": "reporte/sur-hr-01.pbip",
+      "sha256": "86165c1b0a7a848f6ab977861bef50cfd5a85d79ee4487d24722e1c674afc1fd",
+      "bytes": 181
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/pages.json",
+      "sha256": "518ae20b8a42151de2c211e49a9b0e34f596a8e666788710b317c278b3b5c09d",
+      "bytes": 192
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/page.json",
+      "sha256": "458d454cad745d4b8eaa5c8a278210232bf90f9ddd3d9a5242b8b7b54f4cdf7e",
+      "bytes": 772
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/area/visual.json",
+      "sha256": "dc2aa1568c9a594813d87397544d4a4ff83db789677cf991ed33b7b9c7d64c5e",
+      "bytes": 3915
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/area_detalle/visual.json",
+      "sha256": "42851f63ee2bdc93534379f2f4b727c61b3cbaca87145d2cb791052abb3cac2a",
+      "bytes": 6607
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/area_label/visual.json",
+      "sha256": "161f5858d1f7aab84bf999061ad1a4c9f63d14539a0f628495fb58e399d55afd",
+      "bytes": 2478
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/areas_note/visual.json",
+      "sha256": "0b4aaa49a0f5b0d308d22fcd74eb4677a3d047a924fd3128930e0914d98d8854",
+      "bytes": 2489
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/areas_panel/visual.json",
+      "sha256": "4290b966f8633004891df85ae02dd12e6dffd271bd3fcc9902839569fa65ed63",
+      "bytes": 2820
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/areas_title/visual.json",
+      "sha256": "b04b3d066ef09119b380329fb822507311c887d1db8116ea20892f397f7d640b",
+      "bytes": 2500
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/brand/visual.json",
+      "sha256": "cd71eb71caef01f2878f605c5a992d7b6dc3375baa9a70ddb3cb7c852e2856fc",
+      "bytes": 2438
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/brecha_label/visual.json",
+      "sha256": "c8341087af1814b708353dac522459de2ad7c7683842f8f00609fc20ae78ac8e",
+      "bytes": 2495
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/brecha_note/visual.json",
+      "sha256": "8c33c7866ada968e8cfdb2d5cd71c75ffd36bb00bd6a953bf62d1e6b2def4ced",
+      "bytes": 2410
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/brecha_panel/visual.json",
+      "sha256": "84d723c276bbf62f260e40dce805d5182840fc0f916d814304b1e30705d0a8d6",
+      "bytes": 2822
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/brecha_value/visual.json",
+      "sha256": "41f35189e03180c914f05b4979ce5495380519dcad850473bab9de68fdbe0d3f",
+      "bytes": 3805
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/cost_note/visual.json",
+      "sha256": "3825e7ea52261370c62a74ab5a6bea30f4f40c8bdb216a95a2f7e14850dd7d9e",
+      "bytes": 2482
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/cost_panel/visual.json",
+      "sha256": "d141b2564ec8a9390705eea30071dea4483ae62fce8331c6fdb2f1c9e4231169",
+      "bytes": 2820
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/cost_title/visual.json",
+      "sha256": "9221fb268fcf51d13f80ffa50588905d666fa4f92762a0956c0e3b34a1fac31a",
+      "bytes": 2505
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/costo_area/visual.json",
+      "sha256": "c7064b2f7e422cfe470fa6be694aad60722d8a1e4d111c8447b5a851c89331df",
+      "bytes": 5511
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/costo_label/visual.json",
+      "sha256": "2d4afa2308333585f66ab6964be57f81faa9da2bedc6c957af117a43e959fda5",
+      "bytes": 2502
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/costo_note/visual.json",
+      "sha256": "7172ef1a1fa81a685b55eb9c77b56a5ee724c9438581687d10869c626af67459",
+      "bytes": 2404
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/costo_panel/visual.json",
+      "sha256": "e3d51cf94916e7cc73cb82dc0f63e4ed3d2e9c7d4bec2afe37e1535604e14829",
+      "bytes": 2822
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/costo_value/visual.json",
+      "sha256": "4796676e66ab0365d1b46b22ae9e40ce9e004b3c531d2e82e28bc28da322e42e",
+      "bytes": 3835
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/cut/visual.json",
+      "sha256": "82afdf5ed0a256f870e8aabc595a0aaceb910e86021851864e866a02d5fd0edb",
+      "bytes": 2819
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/dotacion_label/visual.json",
+      "sha256": "125d851ffcb0c9980b11a1fd393d76af7e7bf56467499b7a843bca16d2ca3778",
+      "bytes": 2497
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/dotacion_note/visual.json",
+      "sha256": "b736a654309a9ee552cf7bf667ddc21a4d9a91197f3fa6ba66d4f02a17640497",
+      "bytes": 2414
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/dotacion_panel/visual.json",
+      "sha256": "b34b525b7257a3b8ca42212fe5ecc7a29257f8251df62b7481d1fe1c75084bfe",
+      "bytes": 2823
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/dotacion_plan/visual.json",
+      "sha256": "cfb8d29f5630e7476f29b034b286c86bc9df60e83903d1910b369340dfbee22f",
+      "bytes": 5937
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/dotacion_value/visual.json",
+      "sha256": "b0c7a316bfb0969bbee270a7b98e159a3e1ab7a973a173407f3659ed40869244",
+      "bytes": 3815
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/footer/visual.json",
+      "sha256": "7bdcb5d4825b98d9a00f8d6a4fbcb03e2e01224bf9fb972a6e3611485dc8d3fe",
+      "bytes": 2991
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/last_month_label/visual.json",
+      "sha256": "200a151903a60de380509cacc1a83213a83889bc6fd0d239a34bcbfc6a40cd1c",
+      "bytes": 2503
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/last_month_value/visual.json",
+      "sha256": "80483f710b854e2233b0ccca8b05f6ef30b1371e422af8e6ee377114cb894429",
+      "bytes": 3832
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/mes/visual.json",
+      "sha256": "e4d62f6635d76336d9b49901ec27e7fe2cbcdf20c73abd76a3bcb7564f3c0224",
+      "bytes": 3916
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/mes_label/visual.json",
+      "sha256": "8865cbd7ff74b67ba6b1610a8e8fcd41aef4f0ccafe2056d9cbca82c8963d28b",
+      "bytes": 2490
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/mov_altas/visual.json",
+      "sha256": "602030726dee2e23b5ee610558ae2434de1489cdb3af0f892a8ad934cfa7f703",
+      "bytes": 2373
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/mov_bajas/visual.json",
+      "sha256": "132ced1e2d6d2e2e8387b05ff8d97ea93e44a9918ca944feac6e2f82976cdca4",
+      "bytes": 2381
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/mov_fte/visual.json",
+      "sha256": "76940cd156c6062517dcee3e550355c0c1ff2bd2eff7a47c807a6c45bb86ddf6",
+      "bytes": 2387
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/mov_note/visual.json",
+      "sha256": "da04d0a3e5a3eb0fd65ea016bda7622abb59df9d148956569603840a0b1b0e6c",
+      "bytes": 2487
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/mov_panel/visual.json",
+      "sha256": "8d63a7493c93c0c83f45fe8b28d670d0ff07c70296580e3732e54313beff4df0",
+      "bytes": 2819
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/mov_title/visual.json",
+      "sha256": "3782a5adb211eb1f87f4a247372f9519eda7c82783214346e1e882b4fa4f71a4",
+      "bytes": 2501
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/mov_value_altas/visual.json",
+      "sha256": "6cccebdd3874f40ac9f25300c90681ef8cbc7c66430850ac88800eece2b2e049",
+      "bytes": 3815
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/mov_value_bajas/visual.json",
+      "sha256": "5ca2a7baafe311c98a9e7a261c961b74e4c4f11897536fa73d38f3a0b7b254f9",
+      "bytes": 3815
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/mov_value_fte/visual.json",
+      "sha256": "bb5aa2d0490115c3ce2b0b32f8ff6f30dab02d13e84e6eeb319bd1c93eaa0852",
+      "bytes": 3798
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/mov_value_voluntarias/visual.json",
+      "sha256": "dafa3300a5469e84289a88b7f4d1fdad2cbf47ceb2e128e833c321721136e943",
+      "bytes": 3818
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/mov_voluntarias/visual.json",
+      "sha256": "6977f348e3752e31c02aec339cdcc8ca4a895a8ebc1ce0d577a2df5efd4c4331",
+      "bytes": 2391
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/plan_label/visual.json",
+      "sha256": "e28ef73cd270bcf6695faa52043ad825a3cc827a5a66bffe4ea70824fd538a81",
+      "bytes": 2489
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/plan_note/visual.json",
+      "sha256": "a5f0d4f15b72dd258c30b513ff428cfea43327bec5cc72da7e756461cbd49bbe",
+      "bytes": 2395
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/plan_panel/visual.json",
+      "sha256": "3d76bd51ea5cfbc64cc6b58c1afa1693b5f1f47ef1b6db1aaf8093097c16ba63",
+      "bytes": 2820
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/plan_value/visual.json",
+      "sha256": "79f151a216a9e2b4d1485c25e1b41ef1ae31f07d11310321be6688d948ad94d4",
+      "bytes": 3797
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/rotacion_label/visual.json",
+      "sha256": "c20249ca5718b488143c61dc65558f6d5f736961bc820cfd220f4d6e3d160552",
+      "bytes": 2504
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/rotacion_note/visual.json",
+      "sha256": "537d06098d84f965871477ef65fea47a10843e3877d8f46e181ee2da1e60ec85",
+      "bytes": 2415
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/rotacion_panel/visual.json",
+      "sha256": "9f4d09c88951aa0299d5af7d29c30384b00a4389d8f1921e4fe8cc626be10542",
+      "bytes": 2824
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/rotacion_value/visual.json",
+      "sha256": "3979e089b2f0798a99334b3610cc218204bbd945d8f6ca799971b7b56761a9c0",
+      "bytes": 3834
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/sede/visual.json",
+      "sha256": "947176c99f7f72ad5ae4eec6cb9c9a8d02591241b4304f716cb188734f6dfe01",
+      "bytes": 3916
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/sede_label/visual.json",
+      "sha256": "877c9c336499c1151664fc84d228f36fa8bb919479bf582011746154a65fdd75",
+      "bytes": 2477
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/subtitle/visual.json",
+      "sha256": "63181a139ecf2792109b595d2ec5dc627b562fdf75324443e5f2afd682e30e29",
+      "bytes": 2439
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/title/visual.json",
+      "sha256": "26b47127da3f109cf77196dc94ccadec7efde3e9407481d88d0b9660b00ce247",
+      "bytes": 2504
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/trend_note/visual.json",
+      "sha256": "05c2f90290450ba43a8efd0e502afca23e8d93322f132996fea2c818c77d605e",
+      "bytes": 2419
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/trend_panel/visual.json",
+      "sha256": "79794a1f34e71b9843d1b3914eba702ad8a7286bcdd1c9a345f9103b8dea61a3",
+      "bytes": 2820
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/pages/rrhh/visuals/trend_title/visual.json",
+      "sha256": "7174eebac8496c3684aefee6baf8c1fcf710808a1a764239e0ee235b9d41cb68",
+      "bytes": 2447
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/report.json",
+      "sha256": "7ca45b82d4f75735cfffef91f181071e6b702dde9bbf2a0ab668225ab551f301",
+      "bytes": 1398
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition/version.json",
+      "sha256": "c8bdd966a85f1eaab4312d2096b6d7b508243e4d7bc5a4d25af3cfcb1056a4e7",
+      "bytes": 152
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/definition.pbir",
+      "sha256": "0fb0954d40995183a67e5ebebd5a6c2b69d7fff5499e8e5e5072fbf67d21199f",
+      "bytes": 123
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/StaticResources/RegisteredResources/tidal-accessible.json",
+      "sha256": "4b9a7d6171cd1b577a38a9c3fe499dd7fdf5f5da50d08be95ff7f1e0f2c3551a",
+      "bytes": 1342
+    },
+    {
+      "path": "reporte/sur-hr-01.Report/StaticResources/SharedResources/BaseThemes/CY26SU05.json",
+      "sha256": "e52370c540c1ca0ac856f712fb9b0a21d955bd3262149e6ece77ce731192ecec",
+      "bytes": 20403
+    },
+    {
+      "path": "reporte/sur-hr-01.SemanticModel/definition/cultures/es-PE.tmdl",
+      "sha256": "344337e50693559c22558813b4531e6035c94049d503540f17ed78dfd72c46c8",
+      "bytes": 5045
+    },
+    {
+      "path": "reporte/sur-hr-01.SemanticModel/definition/database.tmdl",
+      "sha256": "822c914b643bca32bb20abd8a762df8204a1b9ef02acc2bc7348727f6699cb96",
+      "bytes": 39
+    },
+    {
+      "path": "reporte/sur-hr-01.SemanticModel/definition/expressions.tmdl",
+      "sha256": "e18ad80d8f645e9f086a4df0c867299cdabe2747b4adab34b793c76c794b4b6c",
+      "bytes": 232
+    },
+    {
+      "path": "reporte/sur-hr-01.SemanticModel/definition/model.tmdl",
+      "sha256": "03f7f03da972fba81272a3dbe9f88fd09bb6273bdacdada43520f2ba1e7dfd3f",
+      "bytes": 602
+    },
+    {
+      "path": "reporte/sur-hr-01.SemanticModel/definition/relationships.tmdl",
+      "sha256": "de1fea29f1906754ea31808e0a1c26598180848415e253302fa2e757734d50da",
+      "bytes": 1747
+    },
+    {
+      "path": "reporte/sur-hr-01.SemanticModel/definition/tables/DimArea.tmdl",
+      "sha256": "d8c23dee0487f6ddd5fcd004f7c83a3cf40b538a76cb967a915cf0e591bd4506",
+      "bytes": 890
+    },
+    {
+      "path": "reporte/sur-hr-01.SemanticModel/definition/tables/DimMes.tmdl",
+      "sha256": "612ee01d2055474ae30dab0794fd7daa656f48ca2bb854a74442d51a00b3d4ce",
+      "bytes": 1732
+    },
+    {
+      "path": "reporte/sur-hr-01.SemanticModel/definition/tables/DimPersona.tmdl",
+      "sha256": "05723186a20694d53389cdb3404aeb38b22825f7e0ed38cf078de15144c5f7dd",
+      "bytes": 947
+    },
+    {
+      "path": "reporte/sur-hr-01.SemanticModel/definition/tables/DimSede.tmdl",
+      "sha256": "13ab98949e0db961e8d7f5dafe704764215910118c1403b0638b27a43210a2ec",
+      "bytes": 890
+    },
+    {
+      "path": "reporte/sur-hr-01.SemanticModel/definition/tables/FactCosto.tmdl",
+      "sha256": "982217473103cd25bbe17b620ded82ff4bdc1275e29b33567e858d9f47565c42",
+      "bytes": 1883
+    },
+    {
+      "path": "reporte/sur-hr-01.SemanticModel/definition/tables/FactDotacion.tmdl",
+      "sha256": "a7857fb5a425f3564329564594cc3b52a92d873d73a8debef15a789bc40263b0",
+      "bytes": 8068
+    },
+    {
+      "path": "reporte/sur-hr-01.SemanticModel/definition/tables/FactMovimiento.tmdl",
+      "sha256": "40ec61745d09405888423ef45d42e7180dcb23649d25a09891d96d8cda895e2a",
+      "bytes": 2078
+    },
+    {
+      "path": "reporte/sur-hr-01.SemanticModel/definition/tables/FactPlan.tmdl",
+      "sha256": "f63dabe4ad95e1bfaf3de004f5123e5434c05a2b8c81f0a3dcf41e5dd9a18f35",
+      "bytes": 1397
+    },
+    {
+      "path": "reporte/sur-hr-01.SemanticModel/definition.pbism",
+      "sha256": "ed99ec078efd2ff27fc1c65cc97902138d7d3c438acdb7770ae37dc71c7f06c8",
+      "bytes": 43
+    },
+    {
+      "path": "reporte/sur-hr-01.SemanticModel/diagramLayout.json",
+      "sha256": "887a4e6160aa5a79569a70dc03c5e921f5040c8449571d00c8c8f048684d6c86",
+      "bytes": 3275
+    }
+  ],
+  "sourceDefinitionsUnchanged": true,
+  "runtimeChecked": "2026-10-10T18:46:44.343821+00:00",
+  "runtimePassed": 3187,
+  "refreshedOnAnotherMachine": false,
+  "published": true,
+  "pdfSha256": "c5ff62937f6fe672dffe7917671d4dfd5d31ddf8f31542f7c626cfa50bc12327"
+}

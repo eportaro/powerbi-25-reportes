@@ -1,0 +1,60 @@
+relationship 8cd01162-d97c-5a1e-958f-d2ca6bb3e444
+	fromColumn: FactDotacion.periodo
+	toColumn: DimMes.periodo
+
+relationship bf6f789d-e533-5e57-90d5-f98ba711fea2
+	fromColumn: FactDotacion.area_id
+	toColumn: DimArea.area_id
+
+relationship 775c015c-150b-51c5-b9db-33093b29e66d
+	fromColumn: FactDotacion.sede_id
+	toColumn: DimSede.sede_id
+
+relationship 55aa9743-48e8-58e5-aae0-c5191f6e6beb
+	fromColumn: FactMovimiento.periodo
+	toColumn: DimMes.periodo
+
+relationship 4ca59226-1a17-518e-b545-b4d72fb987dc
+	fromColumn: FactMovimiento.area_id
+	toColumn: DimArea.area_id
+
+relationship 5325df13-3925-5923-b948-bba8ba4e5651
+	fromColumn: FactMovimiento.sede_id
+	toColumn: DimSede.sede_id
+
+relationship 80bfb842-0e35-539b-8834-fa9fa741cef4
+	fromColumn: FactCosto.periodo
+	toColumn: DimMes.periodo
+
+relationship 80884726-6a59-5860-871b-258c17914424
+	fromColumn: FactCosto.area_id
+	toColumn: DimArea.area_id
+
+relationship 0a8f548d-cb9b-5df4-b911-17eeff8ab16d
+	fromColumn: FactCosto.sede_id
+	toColumn: DimSede.sede_id
+
+relationship 4f0f6fcc-11e9-558a-87df-283ac78863ed
+	fromColumn: FactPlan.periodo
+	toColumn: DimMes.periodo
+
+relationship 4ef9d2dc-51c8-5531-b510-aacf57804d34
+	fromColumn: FactPlan.area_id
+	toColumn: DimArea.area_id
+
+relationship fb8ec7f5-5e6f-57e0-ae08-6c7abb077efa
+	fromColumn: FactPlan.sede_id
+	toColumn: DimSede.sede_id
+
+relationship a0f7a02a-e044-533f-90f6-aa7c03a8b81d
+	fromColumn: FactDotacion.persona_id
+	toColumn: DimPersona.persona_id
+
+relationship b340131f-46a2-5422-9d06-17e0af84d8a5
+	fromColumn: FactMovimiento.persona_id
+	toColumn: DimPersona.persona_id
+
+relationship 4b41d51b-9f5c-5f13-8505-5892c5a5b25a
+	fromColumn: FactCosto.persona_id
+	toColumn: DimPersona.persona_id
+

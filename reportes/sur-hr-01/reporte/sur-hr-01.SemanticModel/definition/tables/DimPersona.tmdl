@@ -1,0 +1,31 @@
+table DimPersona
+	lineageTag: 448c51b8-385d-52e4-90f5-d14ac2b21431
+
+	column persona_id
+		dataType: string
+		lineageTag: e1a81e94-3b6d-50b5-afc9-99927990ca14
+		summarizeBy: none
+		sourceColumn: persona_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column referencia_ficticia
+		dataType: string
+		lineageTag: fcd6da0a-0c22-53c3-b849-1bdc18cee87c
+		summarizeBy: none
+		sourceColumn: referencia_ficticia
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimPersona = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\DimPersona.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"persona_id", type text}, {"referencia_ficticia", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

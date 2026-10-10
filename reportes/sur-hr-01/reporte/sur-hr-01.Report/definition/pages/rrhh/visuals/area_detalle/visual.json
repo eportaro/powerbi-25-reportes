@@ -1,0 +1,256 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "area_detalle",
+  "position": {
+    "x": 42,
+    "y": 679,
+    "width": 776,
+    "height": 181,
+    "z": 51000,
+    "tabOrder": 51000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimArea"
+                    }
+                  },
+                  "Property": "nombre"
+                }
+              },
+              "queryRef": "DimArea.nombre",
+              "nativeQueryRef": "nombre",
+              "displayName": "Área",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactDotacion"
+                    }
+                  },
+                  "Property": "Dotación al cierre"
+                }
+              },
+              "queryRef": "FactDotacion.Dotación al cierre",
+              "nativeQueryRef": "Dotación al cierre",
+              "active": true,
+              "displayName": "Real"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactDotacion"
+                    }
+                  },
+                  "Property": "Plan al cierre"
+                }
+              },
+              "queryRef": "FactDotacion.Plan al cierre",
+              "nativeQueryRef": "Plan al cierre",
+              "active": true,
+              "displayName": "Plan"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactDotacion"
+                    }
+                  },
+                  "Property": "Brecha al cierre"
+                }
+              },
+              "queryRef": "FactDotacion.Brecha al cierre",
+              "nativeQueryRef": "Brecha al cierre",
+              "active": true,
+              "displayName": "Brecha"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactDotacion"
+                    }
+                  },
+                  "Property": "Índice ponderado mensual"
+                }
+              },
+              "queryRef": "FactDotacion.Índice ponderado mensual",
+              "nativeQueryRef": "Índice ponderado mensual",
+              "active": true,
+              "displayName": "Índice mensual"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactDotacion"
+                    }
+                  },
+                  "Property": "Costo empresa del período"
+                }
+              },
+              "queryRef": "FactDotacion.Costo empresa del período",
+              "nativeQueryRef": "Costo empresa del período",
+              "active": true,
+              "displayName": "Costo PEN"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DimArea"
+                  }
+                },
+                "Property": "nombre"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DFEAE5'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#657886'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

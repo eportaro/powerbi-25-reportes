@@ -1,0 +1,171 @@
+{
+  "id": "sur-hr-01",
+  "caso": "sur-hr-01",
+  "numero": 4,
+  "ready": true,
+  "familia": {
+    "es": "Recursos Humanos",
+    "en": "Human Resources"
+  },
+  "etiquetas": [
+    "Power BI",
+    "DAX",
+    "CSV",
+    "Excel",
+    "Modelo dimensional"
+  ],
+  "titulo": {
+    "es": "Dotación y rotación",
+    "en": "Headcount and turnover"
+  },
+  "resumen": {
+    "es": "Personas, plan, movimientos y costo devengado con asignación histórica.",
+    "en": "People, plan, movements and accrued cost with historical assignments."
+  },
+  "empresa": {
+    "es": "Servicios Sur es una empresa ficticia con cuatro áreas y tres sedes.",
+    "en": "Servicios Sur is a fictional company with four departments and three locations."
+  },
+  "problema": {
+    "es": "Contratos, traslados, reingresos y planillas pueden duplicar personas o distorsionar el histórico.",
+    "en": "Contracts, transfers, rehires and payroll can double-count people or distort history."
+  },
+  "preguntas": {
+    "es": [
+      "¿Cuántas personas hay frente al plan?",
+      "¿Qué movimientos explican la dotación?",
+      "¿Cómo varía la rotación voluntaria?",
+      "¿Dónde se concentra el costo?"
+    ],
+    "en": [
+      "How does headcount compare with plan?",
+      "Which movements explain headcount?",
+      "How does voluntary turnover vary?",
+      "Where is cost concentrated?"
+    ]
+  },
+  "decision": {
+    "es": "Contar personas por corte, separar FTE, usar versiones aprobadas del plan y costo contabilizado por devengo.",
+    "en": "Count people at cutoff, separate FTE, use approved plans and posted accrued cost."
+  },
+  "como_se_armo": [
+    {
+      "titulo": {
+        "es": "Negocio",
+        "en": "Business"
+      },
+      "texto": {
+        "es": "Siete respuestas de usuarios de negocio simulados; dudas resueltas por sus responsables.",
+        "en": "Seven responses from simulated business users; questions resolved by their owners."
+      }
+    },
+    {
+      "titulo": {
+        "es": "Fuentes",
+        "en": "Sources"
+      },
+      "texto": {
+        "es": "HRIS CSV, planillas CSV y plan Excel, conservando RAW.",
+        "en": "HRIS CSV, payroll CSV and Excel plan, preserving RAW."
+      }
+    },
+    {
+      "titulo": {
+        "es": "Modelo",
+        "en": "Model"
+      },
+      "texto": {
+        "es": "Cuatro dimensiones y cuatro hechos; quince relaciones unidireccionales.",
+        "en": "Four dimensions and four facts; fifteen single-direction relationships."
+      }
+    },
+    {
+      "titulo": {
+        "es": "DAX y calidad",
+        "en": "DAX and quality"
+      },
+      "texto": {
+        "es": "17 DAX y 187 contextos: 3187 comprobaciones en motor; referencia RAW independiente.",
+        "en": "17 DAX measures and 187 contexts: 3187 engine checks; independent RAW reference."
+      }
+    },
+    {
+      "titulo": {
+        "es": "Entrega",
+        "en": "Delivery"
+      },
+      "texto": {
+        "es": "Una página nativa revisada en Desktop; PDF original, PNG y PBIP portable.",
+        "en": "One native page reviewed in Desktop; original PDF, PNG and portable PBIP."
+      }
+    }
+  ],
+  "tecnico": {
+    "fuentes": {
+      "es": [
+        "HRIS relacional en CSV",
+        "Planillas CSV",
+        "Plan Excel"
+      ],
+      "en": [
+        "Relational HRIS in CSV",
+        "Payroll CSV",
+        "Excel plan"
+      ]
+    },
+    "modelo": {
+      "es": [
+        "8 tablas, 15 relaciones, 17 DAX",
+        "Asignación histórica; persona y mes como grano de dotación"
+      ],
+      "en": [
+        "8 tables, 15 relationships, 17 DAX measures",
+        "Historical assignment; person and month headcount grain"
+      ]
+    },
+    "calidad": {
+      "es": [
+        "3187 comprobaciones en motor",
+        "11144 controles RAW/modelo previos",
+        "Actualización y guardado comprobados en Desktop"
+      ],
+      "en": [
+        "3187 engine checks",
+        "11144 prior RAW/model checks",
+        "Refresh and save checked in Desktop"
+      ]
+    },
+    "flujo": {
+      "es": "RAW → preparación → ocho CSV modelo → Import → DAX → página Power BI",
+      "en": "RAW → preparation → eight model CSV tables → Import → DAX → Power BI page"
+    },
+    "rasgos": {
+      "es": [
+        "Enero-septiembre 2026",
+        "Personas y FTE separados",
+        "PEN; sin Pro ni credenciales locales"
+      ],
+      "en": [
+        "January-September 2026",
+        "People and FTE separated",
+        "PEN; no Pro or local credentials required"
+      ]
+    }
+  },
+  "imagenes": [
+    {
+      "archivo": "sur-hr-01.png",
+      "alt": {
+        "es": "Dotación, plan, movimientos y costo por área",
+        "en": "Headcount, plan, movements and department cost"
+      },
+      "provenance": "powerbi-desktop-pdf-render"
+    }
+  ],
+  "pdf": "capturas/sur-hr-01.pdf",
+  "repo": "https://github.com/eportaro/powerbi-25-reportes/tree/main/reportes/sur-hr-01",
+  "nota_datos": {
+    "es": "Empresa y personas ficticias; export original de Desktop.",
+    "en": "Fictional company and people; original Desktop export."
+  }
+}

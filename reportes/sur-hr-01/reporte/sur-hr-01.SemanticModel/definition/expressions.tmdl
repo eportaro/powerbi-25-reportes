@@ -1,0 +1,5 @@
+expression DataFolder = "REEMPLAZAR_POR_RUTA_ABSOLUTA_DATOS_MODELO" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 3fad1779-52b3-5d17-98d1-2ff873e876e8
+
+	annotation PBI_ResultType = Text
+

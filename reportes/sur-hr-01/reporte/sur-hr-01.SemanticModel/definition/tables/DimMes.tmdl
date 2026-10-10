@@ -1,0 +1,63 @@
+table DimMes
+	lineageTag: b8668fbc-7acf-5483-bc19-18d26cb988cd
+
+	column periodo
+		dataType: string
+		lineageTag: 37a27903-7055-526d-865b-f8cf441149c4
+		summarizeBy: none
+		sourceColumn: periodo
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes
+		dataType: int64
+		formatString: 0
+		lineageTag: 88b2e75a-6e78-5473-8f42-800256eb1308
+		summarizeBy: none
+		sourceColumn: mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes_nombre
+		dataType: string
+		lineageTag: 1fa4bfb3-113d-5275-bcb9-01844b939444
+		summarizeBy: none
+		sourceColumn: mes_nombre
+		sortByColumn: mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_inicio
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 8f163c27-3442-5bd7-b8dc-46d34110f523
+		summarizeBy: none
+		sourceColumn: fecha_inicio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column fecha_fin
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: d124749c-ce48-56c1-adc7-4272ca81b23c
+		summarizeBy: none
+		sourceColumn: fecha_fin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition DimMes = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\DimMes.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"periodo", type text}, {"mes", Int64.Type}, {"mes_nombre", type text}, {"fecha_inicio", type date}, {"fecha_fin", type date}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+
