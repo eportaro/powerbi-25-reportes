@@ -1,0 +1,146 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "ventas",
+  "displayName": "Ventas vs meta",
+  "displayOption": "FitToPage",
+  "width": 1440,
+  "height": 1012,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F0F6F3'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "mes",
+      "target": "tendencia",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "periodo",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "mes",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "unidad",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "kpi0_value",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "kpi0_note",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "kpi1_value",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "kpi1_note",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "kpi2_value",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "kpi2_note",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "kpi3_value",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "kpi3_note",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "uni_tabla",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tendencia",
+      "target": "ctl_tabla",
+      "type": "NoFilter"
+    },
+    {
+      "source": "uni_tabla",
+      "target": "kpi0_value",
+      "type": "NoFilter"
+    },
+    {
+      "source": "uni_tabla",
+      "target": "kpi0_note",
+      "type": "NoFilter"
+    },
+    {
+      "source": "uni_tabla",
+      "target": "kpi1_value",
+      "type": "NoFilter"
+    },
+    {
+      "source": "uni_tabla",
+      "target": "kpi1_note",
+      "type": "NoFilter"
+    },
+    {
+      "source": "uni_tabla",
+      "target": "kpi2_value",
+      "type": "NoFilter"
+    },
+    {
+      "source": "uni_tabla",
+      "target": "kpi2_note",
+      "type": "NoFilter"
+    },
+    {
+      "source": "uni_tabla",
+      "target": "kpi3_value",
+      "type": "NoFilter"
+    },
+    {
+      "source": "uni_tabla",
+      "target": "kpi3_note",
+      "type": "NoFilter"
+    }
+  ]
+}

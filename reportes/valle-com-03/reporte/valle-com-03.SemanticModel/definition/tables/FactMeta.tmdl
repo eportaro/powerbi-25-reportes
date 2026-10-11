@@ -1,0 +1,43 @@
+table FactMeta
+	lineageTag: 35c4580e-feec-5ec6-a690-cdaf6992ba70
+
+	column periodo
+		dataType: string
+		isHidden
+		lineageTag: 4a281d0b-7f7d-5a47-be5b-208dbb28d33b
+		summarizeBy: none
+		sourceColumn: periodo
+
+		annotation SummarizationSetBy = Automatic
+
+	column asesor_historico
+		dataType: string
+		isHidden
+		lineageTag: 82de2c89-761e-537b-8bd4-7d950e389bca
+		summarizeBy: none
+		sourceColumn: asesor_historico
+
+		annotation SummarizationSetBy = Automatic
+
+	column meta
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: 8398b445-7736-5e99-855d-00adf48416d6
+		summarizeBy: none
+		sourceColumn: meta
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactMeta = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\FactMeta.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"periodo", type text}, {"asesor_historico", type text}, {"meta", Currency.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,334 @@
+fecha,unidad,puente,paso_orden,paso,importe_pen,redondeo_pen
+2026-01-01,T01,Directorio,1,Reporte al directorio,434376.51,0
+2026-01-01,T01,Directorio,2,Ajustes manuales del reporte,0,0
+2026-01-01,T01,Directorio,3,Corporativo a su línea,-25048.54,0
+2026-01-01,T01,Directorio,4,Boletas web repetidas,0,0
+2026-01-01,T01,Directorio,5,Flete (no es venta),0,0
+2026-01-01,T01,Directorio,6,Venta oficial de tiendas y web,409327.97,0.00
+2026-02-01,T01,Directorio,1,Reporte al directorio,372898.21,0
+2026-02-01,T01,Directorio,2,Ajustes manuales del reporte,0,0
+2026-02-01,T01,Directorio,3,Corporativo a su línea,-15996.52,0
+2026-02-01,T01,Directorio,4,Boletas web repetidas,0,0
+2026-02-01,T01,Directorio,5,Flete (no es venta),0,0
+2026-02-01,T01,Directorio,6,Venta oficial de tiendas y web,356901.69,0.00
+2026-03-01,T01,Directorio,1,Reporte al directorio,478077.20,0
+2026-03-01,T01,Directorio,2,Ajustes manuales del reporte,-38517.10,0
+2026-03-01,T01,Directorio,3,Corporativo a su línea,-6881.14,0
+2026-03-01,T01,Directorio,4,Boletas web repetidas,0,0
+2026-03-01,T01,Directorio,5,Flete (no es venta),0,0
+2026-03-01,T01,Directorio,6,Venta oficial de tiendas y web,432678.96,0.00
+2026-04-01,T01,Directorio,1,Reporte al directorio,435826.35,0
+2026-04-01,T01,Directorio,2,Ajustes manuales del reporte,38517.10,0
+2026-04-01,T01,Directorio,3,Corporativo a su línea,-64292.03,0
+2026-04-01,T01,Directorio,4,Boletas web repetidas,0,0
+2026-04-01,T01,Directorio,5,Flete (no es venta),0,0
+2026-04-01,T01,Directorio,6,Venta oficial de tiendas y web,410051.42,0.00
+2026-05-01,T01,Directorio,1,Reporte al directorio,521765.72,0
+2026-05-01,T01,Directorio,2,Ajustes manuales del reporte,0,0
+2026-05-01,T01,Directorio,3,Corporativo a su línea,-16132.32,0
+2026-05-01,T01,Directorio,4,Boletas web repetidas,0,0
+2026-05-01,T01,Directorio,5,Flete (no es venta),0,0
+2026-05-01,T01,Directorio,6,Venta oficial de tiendas y web,505633.40,0.00
+2026-06-01,T01,Directorio,1,Reporte al directorio,537019.80,0
+2026-06-01,T01,Directorio,2,Ajustes manuales del reporte,0,0
+2026-06-01,T01,Directorio,3,Corporativo a su línea,-15630.87,0
+2026-06-01,T01,Directorio,4,Boletas web repetidas,0,0
+2026-06-01,T01,Directorio,5,Flete (no es venta),0,0
+2026-06-01,T01,Directorio,6,Venta oficial de tiendas y web,521388.93,0.00
+2026-07-01,T01,Directorio,1,Reporte al directorio,670812.47,0
+2026-07-01,T01,Directorio,2,Ajustes manuales del reporte,0,0
+2026-07-01,T01,Directorio,3,Corporativo a su línea,-28794.55,0
+2026-07-01,T01,Directorio,4,Boletas web repetidas,0,0
+2026-07-01,T01,Directorio,5,Flete (no es venta),0,0
+2026-07-01,T01,Directorio,6,Venta oficial de tiendas y web,642017.92,0.00
+2026-08-01,T01,Directorio,1,Reporte al directorio,539315.93,0
+2026-08-01,T01,Directorio,2,Ajustes manuales del reporte,0,0
+2026-08-01,T01,Directorio,3,Corporativo a su línea,-16648.71,0
+2026-08-01,T01,Directorio,4,Boletas web repetidas,0,0
+2026-08-01,T01,Directorio,5,Flete (no es venta),0,0
+2026-08-01,T01,Directorio,6,Venta oficial de tiendas y web,522667.22,0.00
+2026-01-01,T02,Directorio,1,Reporte al directorio,310585.72,0
+2026-01-01,T02,Directorio,2,Ajustes manuales del reporte,0,0
+2026-01-01,T02,Directorio,3,Corporativo a su línea,0,0
+2026-01-01,T02,Directorio,4,Boletas web repetidas,0,0
+2026-01-01,T02,Directorio,5,Flete (no es venta),0,0
+2026-01-01,T02,Directorio,6,Venta oficial de tiendas y web,310585.72,0.00
+2026-02-01,T02,Directorio,1,Reporte al directorio,286462.92,0
+2026-02-01,T02,Directorio,2,Ajustes manuales del reporte,0,0
+2026-02-01,T02,Directorio,3,Corporativo a su línea,0,0
+2026-02-01,T02,Directorio,4,Boletas web repetidas,0,0
+2026-02-01,T02,Directorio,5,Flete (no es venta),0,0
+2026-02-01,T02,Directorio,6,Venta oficial de tiendas y web,286462.92,0.00
+2026-03-01,T02,Directorio,1,Reporte al directorio,328740.64,0
+2026-03-01,T02,Directorio,2,Ajustes manuales del reporte,0,0
+2026-03-01,T02,Directorio,3,Corporativo a su línea,0,0
+2026-03-01,T02,Directorio,4,Boletas web repetidas,0,0
+2026-03-01,T02,Directorio,5,Flete (no es venta),0,0
+2026-03-01,T02,Directorio,6,Venta oficial de tiendas y web,328740.64,0.00
+2026-04-01,T02,Directorio,1,Reporte al directorio,319475.35,0
+2026-04-01,T02,Directorio,2,Ajustes manuales del reporte,0,0
+2026-04-01,T02,Directorio,3,Corporativo a su línea,0,0
+2026-04-01,T02,Directorio,4,Boletas web repetidas,0,0
+2026-04-01,T02,Directorio,5,Flete (no es venta),0,0
+2026-04-01,T02,Directorio,6,Venta oficial de tiendas y web,319475.35,0.00
+2026-05-01,T02,Directorio,1,Reporte al directorio,395659.23,0
+2026-05-01,T02,Directorio,2,Ajustes manuales del reporte,0,0
+2026-05-01,T02,Directorio,3,Corporativo a su línea,0,0
+2026-05-01,T02,Directorio,4,Boletas web repetidas,0,0
+2026-05-01,T02,Directorio,5,Flete (no es venta),0,0
+2026-05-01,T02,Directorio,6,Venta oficial de tiendas y web,395659.23,0.00
+2026-06-01,T02,Directorio,1,Reporte al directorio,409503.22,0
+2026-06-01,T02,Directorio,2,Ajustes manuales del reporte,0,0
+2026-06-01,T02,Directorio,3,Corporativo a su línea,0,0
+2026-06-01,T02,Directorio,4,Boletas web repetidas,0,0
+2026-06-01,T02,Directorio,5,Flete (no es venta),0,0
+2026-06-01,T02,Directorio,6,Venta oficial de tiendas y web,409503.22,0.00
+2026-07-01,T02,Directorio,1,Reporte al directorio,495295.30,0
+2026-07-01,T02,Directorio,2,Ajustes manuales del reporte,0,0
+2026-07-01,T02,Directorio,3,Corporativo a su línea,0,0
+2026-07-01,T02,Directorio,4,Boletas web repetidas,0,0
+2026-07-01,T02,Directorio,5,Flete (no es venta),0,0
+2026-07-01,T02,Directorio,6,Venta oficial de tiendas y web,495295.30,0.00
+2026-08-01,T02,Directorio,1,Reporte al directorio,412564.90,0
+2026-08-01,T02,Directorio,2,Ajustes manuales del reporte,0,0
+2026-08-01,T02,Directorio,3,Corporativo a su línea,0,0
+2026-08-01,T02,Directorio,4,Boletas web repetidas,0,0
+2026-08-01,T02,Directorio,5,Flete (no es venta),0,0
+2026-08-01,T02,Directorio,6,Venta oficial de tiendas y web,412564.90,0.00
+2026-01-01,T03,Directorio,1,Reporte al directorio,257402.00,0
+2026-01-01,T03,Directorio,2,Ajustes manuales del reporte,0,0
+2026-01-01,T03,Directorio,3,Corporativo a su línea,0,0
+2026-01-01,T03,Directorio,4,Boletas web repetidas,0,0
+2026-01-01,T03,Directorio,5,Flete (no es venta),0,0
+2026-01-01,T03,Directorio,6,Venta oficial de tiendas y web,257402.00,0.00
+2026-02-01,T03,Directorio,1,Reporte al directorio,239575.67,0
+2026-02-01,T03,Directorio,2,Ajustes manuales del reporte,0,0
+2026-02-01,T03,Directorio,3,Corporativo a su línea,0,0
+2026-02-01,T03,Directorio,4,Boletas web repetidas,0,0
+2026-02-01,T03,Directorio,5,Flete (no es venta),0,0
+2026-02-01,T03,Directorio,6,Venta oficial de tiendas y web,239575.67,0.00
+2026-03-01,T03,Directorio,1,Reporte al directorio,275920.30,0
+2026-03-01,T03,Directorio,2,Ajustes manuales del reporte,0,0
+2026-03-01,T03,Directorio,3,Corporativo a su línea,0,0
+2026-03-01,T03,Directorio,4,Boletas web repetidas,0,0
+2026-03-01,T03,Directorio,5,Flete (no es venta),0,0
+2026-03-01,T03,Directorio,6,Venta oficial de tiendas y web,275920.30,0.00
+2026-04-01,T03,Directorio,1,Reporte al directorio,276716.02,0
+2026-04-01,T03,Directorio,2,Ajustes manuales del reporte,0,0
+2026-04-01,T03,Directorio,3,Corporativo a su línea,0,0
+2026-04-01,T03,Directorio,4,Boletas web repetidas,0,0
+2026-04-01,T03,Directorio,5,Flete (no es venta),0,0
+2026-04-01,T03,Directorio,6,Venta oficial de tiendas y web,276716.02,0.00
+2026-05-01,T03,Directorio,1,Reporte al directorio,343154.04,0
+2026-05-01,T03,Directorio,2,Ajustes manuales del reporte,0,0
+2026-05-01,T03,Directorio,3,Corporativo a su línea,0,0
+2026-05-01,T03,Directorio,4,Boletas web repetidas,0,0
+2026-05-01,T03,Directorio,5,Flete (no es venta),0,0
+2026-05-01,T03,Directorio,6,Venta oficial de tiendas y web,343154.04,0.00
+2026-06-01,T03,Directorio,1,Reporte al directorio,372290.43,0
+2026-06-01,T03,Directorio,2,Ajustes manuales del reporte,0,0
+2026-06-01,T03,Directorio,3,Corporativo a su línea,0,0
+2026-06-01,T03,Directorio,4,Boletas web repetidas,0,0
+2026-06-01,T03,Directorio,5,Flete (no es venta),0,0
+2026-06-01,T03,Directorio,6,Venta oficial de tiendas y web,372290.43,0.00
+2026-07-01,T03,Directorio,1,Reporte al directorio,414739.64,0
+2026-07-01,T03,Directorio,2,Ajustes manuales del reporte,0,0
+2026-07-01,T03,Directorio,3,Corporativo a su línea,0,0
+2026-07-01,T03,Directorio,4,Boletas web repetidas,0,0
+2026-07-01,T03,Directorio,5,Flete (no es venta),0,0
+2026-07-01,T03,Directorio,6,Venta oficial de tiendas y web,414739.64,0.00
+2026-08-01,T03,Directorio,1,Reporte al directorio,350149.21,0
+2026-08-01,T03,Directorio,2,Ajustes manuales del reporte,0,0
+2026-08-01,T03,Directorio,3,Corporativo a su línea,0,0
+2026-08-01,T03,Directorio,4,Boletas web repetidas,0,0
+2026-08-01,T03,Directorio,5,Flete (no es venta),0,0
+2026-08-01,T03,Directorio,6,Venta oficial de tiendas y web,350149.21,0.00
+2026-01-01,T04,Directorio,1,Reporte al directorio,214246.97,0
+2026-01-01,T04,Directorio,2,Ajustes manuales del reporte,0,0
+2026-01-01,T04,Directorio,3,Corporativo a su línea,0,0
+2026-01-01,T04,Directorio,4,Boletas web repetidas,0,0
+2026-01-01,T04,Directorio,5,Flete (no es venta),0,0
+2026-01-01,T04,Directorio,6,Venta oficial de tiendas y web,214246.97,0.00
+2026-02-01,T04,Directorio,1,Reporte al directorio,165449.72,0
+2026-02-01,T04,Directorio,2,Ajustes manuales del reporte,0,0
+2026-02-01,T04,Directorio,3,Corporativo a su línea,0,0
+2026-02-01,T04,Directorio,4,Boletas web repetidas,0,0
+2026-02-01,T04,Directorio,5,Flete (no es venta),0,0
+2026-02-01,T04,Directorio,6,Venta oficial de tiendas y web,165449.72,0.00
+2026-03-01,T04,Directorio,1,Reporte al directorio,191178.28,0
+2026-03-01,T04,Directorio,2,Ajustes manuales del reporte,0,0
+2026-03-01,T04,Directorio,3,Corporativo a su línea,0,0
+2026-03-01,T04,Directorio,4,Boletas web repetidas,0,0
+2026-03-01,T04,Directorio,5,Flete (no es venta),0,0
+2026-03-01,T04,Directorio,6,Venta oficial de tiendas y web,191178.28,0.00
+2026-04-01,T04,Directorio,1,Reporte al directorio,199179.13,0
+2026-04-01,T04,Directorio,2,Ajustes manuales del reporte,0,0
+2026-04-01,T04,Directorio,3,Corporativo a su línea,0,0
+2026-04-01,T04,Directorio,4,Boletas web repetidas,0,0
+2026-04-01,T04,Directorio,5,Flete (no es venta),0,0
+2026-04-01,T04,Directorio,6,Venta oficial de tiendas y web,199179.13,0.00
+2026-05-01,T04,Directorio,1,Reporte al directorio,253665.35,0
+2026-05-01,T04,Directorio,2,Ajustes manuales del reporte,0,0
+2026-05-01,T04,Directorio,3,Corporativo a su línea,0,0
+2026-05-01,T04,Directorio,4,Boletas web repetidas,0,0
+2026-05-01,T04,Directorio,5,Flete (no es venta),0,0
+2026-05-01,T04,Directorio,6,Venta oficial de tiendas y web,253665.35,0.00
+2026-06-01,T04,Directorio,1,Reporte al directorio,262671.36,0
+2026-06-01,T04,Directorio,2,Ajustes manuales del reporte,0,0
+2026-06-01,T04,Directorio,3,Corporativo a su línea,0,0
+2026-06-01,T04,Directorio,4,Boletas web repetidas,0,0
+2026-06-01,T04,Directorio,5,Flete (no es venta),0,0
+2026-06-01,T04,Directorio,6,Venta oficial de tiendas y web,262671.36,0.00
+2026-07-01,T04,Directorio,1,Reporte al directorio,311247.01,0
+2026-07-01,T04,Directorio,2,Ajustes manuales del reporte,0,0
+2026-07-01,T04,Directorio,3,Corporativo a su línea,0,0
+2026-07-01,T04,Directorio,4,Boletas web repetidas,0,0
+2026-07-01,T04,Directorio,5,Flete (no es venta),0,0
+2026-07-01,T04,Directorio,6,Venta oficial de tiendas y web,311247.01,0.00
+2026-08-01,T04,Directorio,1,Reporte al directorio,245240.27,0
+2026-08-01,T04,Directorio,2,Ajustes manuales del reporte,0,0
+2026-08-01,T04,Directorio,3,Corporativo a su línea,0,0
+2026-08-01,T04,Directorio,4,Boletas web repetidas,0,0
+2026-08-01,T04,Directorio,5,Flete (no es venta),0,0
+2026-08-01,T04,Directorio,6,Venta oficial de tiendas y web,245240.27,0.00
+2026-01-01,T05,Directorio,1,Reporte al directorio,247868.88,0
+2026-01-01,T05,Directorio,2,Ajustes manuales del reporte,0,0
+2026-01-01,T05,Directorio,3,Corporativo a su línea,0,0
+2026-01-01,T05,Directorio,4,Boletas web repetidas,0,0
+2026-01-01,T05,Directorio,5,Flete (no es venta),0,0
+2026-01-01,T05,Directorio,6,Venta oficial de tiendas y web,247868.88,0.00
+2026-02-01,T05,Directorio,1,Reporte al directorio,214756.22,0
+2026-02-01,T05,Directorio,2,Ajustes manuales del reporte,0,0
+2026-02-01,T05,Directorio,3,Corporativo a su línea,0,0
+2026-02-01,T05,Directorio,4,Boletas web repetidas,0,0
+2026-02-01,T05,Directorio,5,Flete (no es venta),0,0
+2026-02-01,T05,Directorio,6,Venta oficial de tiendas y web,214756.22,0.00
+2026-03-01,T05,Directorio,1,Reporte al directorio,238701.89,0
+2026-03-01,T05,Directorio,2,Ajustes manuales del reporte,0,0
+2026-03-01,T05,Directorio,3,Corporativo a su línea,0,0
+2026-03-01,T05,Directorio,4,Boletas web repetidas,0,0
+2026-03-01,T05,Directorio,5,Flete (no es venta),0,0
+2026-03-01,T05,Directorio,6,Venta oficial de tiendas y web,238701.89,0.00
+2026-04-01,T05,Directorio,1,Reporte al directorio,233320.79,0
+2026-04-01,T05,Directorio,2,Ajustes manuales del reporte,0,0
+2026-04-01,T05,Directorio,3,Corporativo a su línea,0,0
+2026-04-01,T05,Directorio,4,Boletas web repetidas,0,0
+2026-04-01,T05,Directorio,5,Flete (no es venta),0,0
+2026-04-01,T05,Directorio,6,Venta oficial de tiendas y web,233320.79,0.00
+2026-05-01,T05,Directorio,1,Reporte al directorio,299118.41,0
+2026-05-01,T05,Directorio,2,Ajustes manuales del reporte,0,0
+2026-05-01,T05,Directorio,3,Corporativo a su línea,0,0
+2026-05-01,T05,Directorio,4,Boletas web repetidas,0,0
+2026-05-01,T05,Directorio,5,Flete (no es venta),0,0
+2026-05-01,T05,Directorio,6,Venta oficial de tiendas y web,299118.41,0.00
+2026-06-01,T05,Directorio,1,Reporte al directorio,323038.96,0
+2026-06-01,T05,Directorio,2,Ajustes manuales del reporte,0,0
+2026-06-01,T05,Directorio,3,Corporativo a su línea,0,0
+2026-06-01,T05,Directorio,4,Boletas web repetidas,0,0
+2026-06-01,T05,Directorio,5,Flete (no es venta),0,0
+2026-06-01,T05,Directorio,6,Venta oficial de tiendas y web,323038.96,0.00
+2026-07-01,T05,Directorio,1,Reporte al directorio,376849.02,0
+2026-07-01,T05,Directorio,2,Ajustes manuales del reporte,0,0
+2026-07-01,T05,Directorio,3,Corporativo a su línea,0,0
+2026-07-01,T05,Directorio,4,Boletas web repetidas,0,0
+2026-07-01,T05,Directorio,5,Flete (no es venta),0,0
+2026-07-01,T05,Directorio,6,Venta oficial de tiendas y web,376849.02,0.00
+2026-08-01,T05,Directorio,1,Reporte al directorio,304095.72,0
+2026-08-01,T05,Directorio,2,Ajustes manuales del reporte,0,0
+2026-08-01,T05,Directorio,3,Corporativo a su línea,0,0
+2026-08-01,T05,Directorio,4,Boletas web repetidas,0,0
+2026-08-01,T05,Directorio,5,Flete (no es venta),0,0
+2026-08-01,T05,Directorio,6,Venta oficial de tiendas y web,304095.72,0.00
+2026-01-01,WEB,Directorio,1,Reporte al directorio,242217.89,0
+2026-01-01,WEB,Directorio,2,Ajustes manuales del reporte,0,0
+2026-01-01,WEB,Directorio,3,Corporativo a su línea,0,0
+2026-01-01,WEB,Directorio,4,Boletas web repetidas,0,0
+2026-01-01,WEB,Directorio,5,Flete (no es venta),-2008.17,0
+2026-01-01,WEB,Directorio,6,Venta oficial de tiendas y web,240209.72,0.00
+2026-02-01,WEB,Directorio,1,Reporte al directorio,211249.71,0
+2026-02-01,WEB,Directorio,2,Ajustes manuales del reporte,0,0
+2026-02-01,WEB,Directorio,3,Corporativo a su línea,0,0
+2026-02-01,WEB,Directorio,4,Boletas web repetidas,0,0
+2026-02-01,WEB,Directorio,5,Flete (no es venta),-1894.50,0
+2026-02-01,WEB,Directorio,6,Venta oficial de tiendas y web,209355.21,0.00
+2026-03-01,WEB,Directorio,1,Reporte al directorio,242745.39,0
+2026-03-01,WEB,Directorio,2,Ajustes manuales del reporte,0,0
+2026-03-01,WEB,Directorio,3,Corporativo a su línea,0,0
+2026-03-01,WEB,Directorio,4,Boletas web repetidas,0,0
+2026-03-01,WEB,Directorio,5,Flete (no es venta),-2336.55,0
+2026-03-01,WEB,Directorio,6,Venta oficial de tiendas y web,240408.84,0.00
+2026-04-01,WEB,Directorio,1,Reporte al directorio,263414.51,0
+2026-04-01,WEB,Directorio,2,Ajustes manuales del reporte,0,0
+2026-04-01,WEB,Directorio,3,Corporativo a su línea,0,0
+2026-04-01,WEB,Directorio,4,Boletas web repetidas,0,0
+2026-04-01,WEB,Directorio,5,Flete (no es venta),-2361.81,0
+2026-04-01,WEB,Directorio,6,Venta oficial de tiendas y web,261052.70,0.00
+2026-05-01,WEB,Directorio,1,Reporte al directorio,314607.03,0
+2026-05-01,WEB,Directorio,2,Ajustes manuales del reporte,0,0
+2026-05-01,WEB,Directorio,3,Corporativo a su línea,0,0
+2026-05-01,WEB,Directorio,4,Boletas web repetidas,0,0
+2026-05-01,WEB,Directorio,5,Flete (no es venta),-2589.15,0
+2026-05-01,WEB,Directorio,6,Venta oficial de tiendas y web,312017.88,0.00
+2026-06-01,WEB,Directorio,1,Reporte al directorio,338658.85,0
+2026-06-01,WEB,Directorio,2,Ajustes manuales del reporte,0,0
+2026-06-01,WEB,Directorio,3,Corporativo a su línea,0,0
+2026-06-01,WEB,Directorio,4,Boletas web repetidas,0,0
+2026-06-01,WEB,Directorio,5,Flete (no es venta),-2942.79,0
+2026-06-01,WEB,Directorio,6,Venta oficial de tiendas y web,335716.06,0.00
+2026-07-01,WEB,Directorio,1,Reporte al directorio,452128.37,0
+2026-07-01,WEB,Directorio,2,Ajustes manuales del reporte,22000.00,0
+2026-07-01,WEB,Directorio,3,Corporativo a su línea,0,0
+2026-07-01,WEB,Directorio,4,Boletas web repetidas,0,0
+2026-07-01,WEB,Directorio,5,Flete (no es venta),-4786.77,0
+2026-07-01,WEB,Directorio,6,Venta oficial de tiendas y web,469341.60,0.00
+2026-08-01,WEB,Directorio,1,Reporte al directorio,405642.98,0
+2026-08-01,WEB,Directorio,2,Ajustes manuales del reporte,0,0
+2026-08-01,WEB,Directorio,3,Corporativo a su línea,0,0
+2026-08-01,WEB,Directorio,4,Boletas web repetidas,-54014.87,0
+2026-08-01,WEB,Directorio,5,Flete (no es venta),-3018.57,0
+2026-08-01,WEB,Directorio,6,Venta oficial de tiendas y web,348609.54,0.00
+2026-01-01,WEB,WooCommerce,1,Panel WooCommerce (con IGV y envío),298883.94,0
+2026-01-01,WEB,WooCommerce,2,IGV,-45592.86,0
+2026-01-01,WEB,WooCommerce,3,Envío,-2083.95,0
+2026-01-01,WEB,WooCommerce,4,Devoluciones (notas de crédito del mes),-10997.41,0
+2026-01-01,WEB,WooCommerce,6,Venta oficial web,240209.72,0.00
+2026-02-01,WEB,WooCommerce,1,Panel WooCommerce (con IGV y envío),266147.61,0
+2026-02-01,WEB,WooCommerce,2,IGV,-40598.91,0
+2026-02-01,WEB,WooCommerce,3,Envío,-1919.76,0
+2026-02-01,WEB,WooCommerce,4,Devoluciones (notas de crédito del mes),-14273.73,0
+2026-02-01,WEB,WooCommerce,6,Venta oficial web,209355.21,0.00
+2026-03-01,WEB,WooCommerce,1,Panel WooCommerce (con IGV y envío),299505.54,0
+2026-03-01,WEB,WooCommerce,2,IGV,-45687.47,0
+2026-03-01,WEB,WooCommerce,3,Envío,-2361.81,0
+2026-03-01,WEB,WooCommerce,4,Devoluciones (notas de crédito del mes),-11047.42,0
+2026-03-01,WEB,WooCommerce,6,Venta oficial web,240408.84,0.00
+2026-04-01,WEB,WooCommerce,1,Panel WooCommerce (con IGV y envío),325937.85,0
+2026-04-01,WEB,WooCommerce,2,IGV,-49719.62,0
+2026-04-01,WEB,WooCommerce,3,Envío,-2437.59,0
+2026-04-01,WEB,WooCommerce,4,Devoluciones (notas de crédito del mes),-12727.94,0
+2026-04-01,WEB,WooCommerce,6,Venta oficial web,261052.70,0.00
+2026-05-01,WEB,WooCommerce,1,Panel WooCommerce (con IGV y envío),392402.12,0
+2026-05-01,WEB,WooCommerce,2,IGV,-59858.35,0
+2026-05-01,WEB,WooCommerce,3,Envío,-2664.93,0
+2026-05-01,WEB,WooCommerce,4,Devoluciones (notas de crédito del mes),-17860.96,0
+2026-05-01,WEB,WooCommerce,6,Venta oficial web,312017.88,0.00
+2026-06-01,WEB,WooCommerce,1,Panel WooCommerce (con IGV y envío),423102.54,0
+2026-06-01,WEB,WooCommerce,2,IGV,-64541.47,0
+2026-06-01,WEB,WooCommerce,3,Envío,-3119.61,0
+2026-06-01,WEB,WooCommerce,4,Devoluciones (notas de crédito del mes),-19725.40,0
+2026-06-01,WEB,WooCommerce,6,Venta oficial web,335716.06,0.00
+2026-07-01,WEB,WooCommerce,1,Panel WooCommerce (con IGV y envío),594798.07,0
+2026-07-01,WEB,WooCommerce,2,IGV,-90732.22,0
+2026-07-01,WEB,WooCommerce,3,Envío,-4925.70,0
+2026-07-01,WEB,WooCommerce,4,Devoluciones (notas de crédito del mes),-29798.55,0
+2026-07-01,WEB,WooCommerce,6,Venta oficial web,469341.60,0.00
+2026-08-01,WEB,WooCommerce,1,Panel WooCommerce (con IGV y envío),449033.12,0
+2026-08-01,WEB,WooCommerce,2,IGV,-68497.00,0
+2026-08-01,WEB,WooCommerce,3,Envío,-3208.02,0
+2026-08-01,WEB,WooCommerce,4,Devoluciones (notas de crédito del mes),-28718.56,0
+2026-08-01,WEB,WooCommerce,6,Venta oficial web,348609.54,0.00
+2026-09-01,WEB,WooCommerce,1,Panel WooCommerce (con IGV y envío),398328.56,0
+2026-09-01,WEB,WooCommerce,2,IGV,-60762.43,0
+2026-09-01,WEB,WooCommerce,3,Envío,-2387.07,0
+2026-09-01,WEB,WooCommerce,4,Devoluciones (notas de crédito del mes),-19715.20,0
+2026-09-01,WEB,WooCommerce,6,Venta oficial web,315463.86,0.00

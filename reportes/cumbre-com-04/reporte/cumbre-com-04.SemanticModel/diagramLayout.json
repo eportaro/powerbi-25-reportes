@@ -1,0 +1,113 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 231.51637496128589,
+            "y": 815.18424865232168
+          },
+          "nodeIndex": "FactMeta",
+          "nodeLineageTag": "4df91361-a1a6-5cfc-b19a-f7da21fcee28",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 339.85331614133,
+            "y": -50
+          },
+          "nodeIndex": "FactVenta",
+          "nodeLineageTag": "049da8a6-2fd7-55d6-94e9-f724b7037c04",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 518.67984686961972,
+            "y": 590.04915150347529
+          },
+          "nodeIndex": "FactWeb",
+          "nodeLineageTag": "8d2b6d2e-6f0f-5a8b-ab41-a3cf99ea7856",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 852.60225836564632,
+            "y": 482.59212432616084
+          },
+          "nodeIndex": "ControlCalidad",
+          "nodeLineageTag": "96373298-7353-5393-8d22-d457d255176c",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 618.60225836564632,
+            "y": 310.02944308034967
+          },
+          "nodeIndex": "DimFecha",
+          "nodeLineageTag": "08f0f21a-1896-5793-ba4b-76b9080423fa",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 231.89389650626248,
+            "y": 448.13671876317414
+          },
+          "nodeIndex": "DimUnidad",
+          "nodeLineageTag": "23bc6702-d62e-5b24-9e41-293d75545789",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 96.701543508534542
+          },
+          "nodeIndex": "FactPuente",
+          "nodeLineageTag": "5a35c274-723a-52cb-9047-721ef0ab2e61",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}

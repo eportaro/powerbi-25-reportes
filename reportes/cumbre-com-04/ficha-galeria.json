@@ -1,0 +1,200 @@
+{
+  "id": "cumbre-com-04",
+  "caso": "cumbre-com-04",
+  "numero": 5,
+  "ready": true,
+  "familia": {
+    "es": "Comercial",
+    "en": "Commercial"
+  },
+  "etiquetas": [
+    "Power BI",
+    "DAX",
+    "SQL Server",
+    "API REST",
+    "OCR",
+    "Excel"
+  ],
+  "titulo": {
+    "es": "Ventas omnicanal frente a la meta",
+    "en": "Omnichannel sales against target"
+  },
+  "resumen": {
+    "es": "Una sola cifra de venta para tiendas, web y corporativo, frente a la meta, y la conciliación paso a paso con el reporte al directorio y el panel de la tienda online.",
+    "en": "One sales figure for stores, web and corporate against target, and a step-by-step reconciliation with the board report and the online store dashboard."
+  },
+  "empresa": {
+    "es": "Cumbre Outdoor es una cadena ficticia de ropa y equipo outdoor con cinco tiendas, una tienda online y ventas corporativas. Empresa y datos son simulados.",
+    "en": "Cumbre Outdoor is a fictional outdoor apparel and gear chain with five stores, an online store and corporate sales. The company and all data are simulated."
+  },
+  "problema": {
+    "es": "El ERP trae anulados, boletas web duplicadas por la integración y flete mezclado con venta. El panel de la tienda online suma IGV y envío. La meta tiene IGV y una celda corregida a mano. Una tienda dejó de sincronizar y su venta solo existe en fotos del cierre de caja.",
+    "en": "The ERP carries voided documents, web receipts duplicated by the integration and shipping mixed with sales. The online store dashboard includes VAT and shipping. Targets include VAT and one hand-edited cell. One store stopped syncing and its sales exist only in photos of the daily till close."
+  },
+  "preguntas": {
+    "es": [
+      "¿Cuánto vendimos este mes y en el año, sin IGV?",
+      "¿Qué tienda o canal llega a su meta y cuál no?",
+      "¿Cuánto convierte la tienda online?",
+      "¿Por qué el reporte al directorio y el panel web no dan la misma cifra?"
+    ],
+    "en": [
+      "How much did we sell this month and year to date, excluding VAT?",
+      "Which store or channel meets its target and which does not?",
+      "How well does the online store convert?",
+      "Why do the board report and the web dashboard show different figures?"
+    ]
+  },
+  "decision": {
+    "es": "La venta oficial sale del ERP sin IGV, sin anulados, sin flete y con la primera boleta de cada pedido web; las notas de crédito restan en su mes. Cusco de septiembre sale de las fotos del cierre leídas por OCR, y un día sin foto no se estima.",
+    "en": "Official sales come from the ERP excluding VAT, voided documents and shipping, keeping the first receipt of each web order; credit notes subtract in their own month. Cusco's September sales come from OCR of the till-close photos, and a day without a photo is not estimated."
+  },
+  "como_se_armo": [
+    {
+      "titulo": {
+        "es": "Requerimiento",
+        "en": "Requirements"
+      },
+      "texto": {
+        "es": "Comercial, Finanzas, Ecommerce y Operaciones fijaron venta oficial, meta, pedido pagado y lectura del cierre de caja; un desacuerdo sobre el mes de una venta lo resolvió Finanzas.",
+        "en": "Sales, Finance, Ecommerce and Operations set official sales, target, paid order and how to read the till close; a disagreement over the month of one sale was settled by Finance."
+      }
+    },
+    {
+      "titulo": {
+        "es": "Fuentes",
+        "en": "Sources"
+      },
+      "texto": {
+        "es": "ERP al estilo SAP Business One en SQL Server, API REST de la tienda online paginada y verificada contra su total, export de GA4, tres Excel y 30 fotos de cierre leídas por OCR con cuadre automático.",
+        "en": "SAP Business One-style ERP on SQL Server, paginated online store REST API checked against its total, GA4 export, three workbooks and 30 till-close photos read by OCR with automatic balancing."
+      }
+    },
+    {
+      "titulo": {
+        "es": "Modelo dimensional",
+        "en": "Dimensional model"
+      },
+      "texto": {
+        "es": "Venta por día y unidad, meta por mes, web por día y dos puentes de conciliación que deben cerrar al céntimo o el modelo no se construye.",
+        "en": "Sales by day and unit, target by month, web by day and two reconciliation bridges that must close to the cent or the model is not built."
+      }
+    },
+    {
+      "titulo": {
+        "es": "Modelo semántico",
+        "en": "Semantic model"
+      },
+      "texto": {
+        "es": "Medidas DAX de mes y acumulado, avance solo donde hay meta, ticket solo en tiendas y conversión con días completos de GA4.",
+        "en": "Month and year-to-date DAX measures, attainment only where a target exists, ticket only for stores and conversion on complete GA4 days."
+      }
+    },
+    {
+      "titulo": {
+        "es": "Calidad",
+        "en": "Quality"
+      },
+      "texto": {
+        "es": "Recálculo independiente con SQL directo contra la verdad oculta del escenario: cada unidad y mes al céntimo y cada cierre de caja.",
+        "en": "Independent recalculation with direct SQL against the scenario's hidden truth: every unit and month to the cent and every till close."
+      }
+    },
+    {
+      "titulo": {
+        "es": "Visual y entrega",
+        "en": "Visual and delivery"
+      },
+      "texto": {
+        "es": "Dos páginas nativas en Desktop: ventas frente a la meta y conciliación.",
+        "en": "Two native Desktop pages: sales against target and reconciliation."
+      }
+    }
+  ],
+  "tecnico": {
+    "fuentes": {
+      "es": [
+        "ERP al estilo SAP Business One en SQL Server local (simulado)",
+        "API REST de WooCommerce local (simulada)",
+        "Export CSV de GA4",
+        "Excel de metas, reporte al directorio y equivalencias de SKU",
+        "Fotos de cierre Z leídas por OCR"
+      ],
+      "en": [
+        "SAP Business One-style ERP on local SQL Server (simulated)",
+        "Local WooCommerce REST API (simulated)",
+        "GA4 CSV export",
+        "Target, board report and SKU mapping workbooks",
+        "Till-close photos read by OCR"
+      ]
+    },
+    "modelo": {
+      "es": [
+        "Venta: día + unidad; 1,654 filas",
+        "Meta: mes + unidad; 54 filas",
+        "Web: día; 273 filas",
+        "Puentes: mes + unidad + paso; 333 filas"
+      ],
+      "en": [
+        "Sales: day + unit; 1,654 rows",
+        "Target: month + unit; 54 rows",
+        "Web: day; 273 rows",
+        "Bridges: month + unit + step; 333 rows"
+      ]
+    },
+    "calidad": {
+      "es": [
+        "Venta por unidad y mes recalculada con SQL directo, 63 celdas al céntimo",
+        "29 cierres de caja leídos coinciden con la verdad oculta",
+        "Puentes cerrados sin redondeo"
+      ],
+      "en": [
+        "Sales by unit and month recalculated with direct SQL, 63 cells to the cent",
+        "29 till closes read match the hidden truth",
+        "Bridges closed with no rounding"
+      ]
+    },
+    "flujo": {
+      "es": "SQL, API, GA4, Excel y fotos → conector, OCR y validación → reglas y conciliación → siete CSV del modelo → Power Query Import → modelo en estrella y DAX → dos páginas nativas. Desktop refresca el modelo preparado; no consulta las fuentes.",
+      "en": "SQL, API, GA4, workbooks and photos → connector, OCR and validation → rules and reconciliation → seven model CSV files → Power Query Import → star schema and DAX → two native pages. Desktop refreshes prepared data; it does not query the sources."
+    },
+    "rasgos": {
+      "es": [
+        "Dos páginas, enero a septiembre de 2026",
+        "PEN sin IGV",
+        "Sistemas simulados; no probado contra SAP, HANA ni WooCommerce reales",
+        "Un día sin foto no se estima"
+      ],
+      "en": [
+        "Two pages, January to September 2026",
+        "PEN excluding VAT",
+        "Simulated systems; not tested against real SAP, HANA or WooCommerce",
+        "A day without a photo is not estimated"
+      ]
+    }
+  },
+  "imagenes": [
+    {
+      "archivo": "cumbre-com-04-ventas.png",
+      "alt": {
+        "es": "Venta neta frente a la meta por tienda y canal, tendencia mensual y controles del corte",
+        "en": "Net sales against target by store and channel, monthly trend and cut-off controls"
+      },
+      "provenance": "powerbi-desktop-pdf-render"
+    },
+    {
+      "archivo": "cumbre-com-04-conciliacion.png",
+      "alt": {
+        "es": "Conciliación del reporte al directorio y del panel de la tienda online con la venta oficial",
+        "en": "Reconciliation of the board report and the online store dashboard with official sales"
+      },
+      "provenance": "powerbi-desktop-pdf-render"
+    }
+  ],
+  "repo": "https://github.com/eportaro/powerbi-25-reportes/tree/main/reportes/cumbre-com-04",
+  "pdf": "capturas/cumbre-com-04.pdf",
+  "nota_datos": {
+    "es": "Demostración con datos sintéticos de una empresa ficticia; no contiene datos de clientes reales.",
+    "en": "Demonstration with synthetic data for a fictional company; it contains no real customer data."
+  }
+}

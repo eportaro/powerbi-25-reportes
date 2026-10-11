@@ -1,0 +1,7 @@
+document_id,business_id,line,item_code,quantity,net_amount,cost_amount
+N-V-03-A-28,V-03-A-28,1,NEW-X,17,853.54,531.43
+N-V-03-A-28,V-03-A-28,2,NEW-Y,26,929.50,585.59
+N-V-03-B-28,V-03-B-28,1,NEW-X,17,461.01,284.14
+N-V-03-B-28,V-03-B-28,2,NEW-Y,15,424.05,267.15
+N-V-03-C-28,V-03-C-28,1,NEW-X,13,664.16,412.12
+N-V-03-C-28,V-03-C-28,2,NEW-Y,19,706.04,444.81

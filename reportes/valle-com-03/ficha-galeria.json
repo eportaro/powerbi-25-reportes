@@ -1,0 +1,179 @@
+{
+  "id": "valle-com-03",
+  "caso": "valle-com-03",
+  "numero": 6,
+  "ready": true,
+  "familia": {
+    "es": "Comercial",
+    "en": "Commercial"
+  },
+  "etiquetas": [
+    "Power BI",
+    "DAX",
+    "CSV",
+    "Excel",
+    "Migración ERP"
+  ],
+  "titulo": {
+    "es": "Migración ERP y cartera",
+    "en": "ERP migration and account assignment"
+  },
+  "resumen": {
+    "es": "Venta, margen y cumplimiento sin duplicar sistemas ni confundir cartera histórica con actual.",
+    "en": "Sales, margin and attainment without double-counting systems or conflating historical and current account assignments."
+  },
+  "empresa": {
+    "es": "Distribuidora Valle es una empresa ficticia con tres clientes y dos artículos.",
+    "en": "Distribuidora Valle is a fictional distributor with three customers and two products."
+  },
+  "problema": {
+    "es": "Una migración repite operaciones, cambia códigos y coincide con traslados de cartera y ajustes de cierre.",
+    "en": "A migration repeats transactions, changes codes and overlaps account transfers and closing adjustments."
+  },
+  "preguntas": {
+    "es": [
+      "¿Cómo evolucionan venta y margen?",
+      "¿Quién atendía la cartera entonces y quién la tiene hoy?",
+      "¿Cómo conciliamos ambos ERP con el cierre oficial?",
+      "¿Qué resultados dependen de insumos faltantes?"
+    ],
+    "en": [
+      "How do sales and margin evolve?",
+      "Who handled the accounts then and who handles them now?",
+      "How do both ERPs reconcile to the official close?",
+      "Which results depend on missing inputs?"
+    ]
+  },
+  "decision": {
+    "es": "ERP nuevo prevalece por negocio canónico; historial por vigencia y ajustes sin distribución.",
+    "en": "The new ERP prevails by canonical transaction; assignment history follows effective dates and adjustments remain unallocated."
+  },
+  "como_se_armo": [
+    {
+      "titulo": {
+        "es": "Negocio",
+        "en": "Business"
+      },
+      "texto": {
+        "es": "Responsables simulados confirmaron equivalencias, vigencias y ámbitos de indicadores.",
+        "en": "Simulated owners confirmed mappings, effective dates and metric scope."
+      }
+    },
+    {
+      "titulo": {
+        "es": "Fuentes",
+        "en": "Sources"
+      },
+      "texto": {
+        "es": "CSV legacy, ERP nuevo exportado y Excel; entrega tardía controlada, originales preservados.",
+        "en": "Legacy CSV, new ERP exports and Excel; controlled late delivery with preserved originals."
+      }
+    },
+    {
+      "titulo": {
+        "es": "Modelo",
+        "en": "Model"
+      },
+      "texto": {
+        "es": "Tres hechos, cinco dimensiones y ocho relaciones; asesores histórico y actual separados.",
+        "en": "Three facts, five dimensions and eight relationships; historical and current advisor roles separated."
+      }
+    },
+    {
+      "titulo": {
+        "es": "DAX y calidad",
+        "en": "DAX and quality"
+      },
+      "texto": {
+        "es": "23 DAX, 98 contextos y 2.262 controles de motor contra RAW independiente.",
+        "en": "23 DAX measures, 98 contexts and 2,262 engine checks against independent RAW."
+      }
+    },
+    {
+      "titulo": {
+        "es": "Entrega",
+        "en": "Delivery"
+      },
+      "texto": {
+        "es": "Dos páginas nativas revisadas en Desktop, PBIP portable y PDF/PNG de la exportación anterior conservada.",
+        "en": "Two native pages reviewed in Desktop, portable PBIP and preserved PDF/PNG from the previous export."
+      }
+    }
+  ],
+  "tecnico": {
+    "fuentes": {
+      "es": [
+        "Legacy CSV",
+        "ERP nuevo CSV cabecera/línea",
+        "Excel de gestión"
+      ],
+      "en": [
+        "Legacy CSV",
+        "New ERP header/line CSV",
+        "Management Excel"
+      ]
+    },
+    "modelo": {
+      "es": [
+        "8 tablas, 8 relaciones, 23 DAX",
+        "Línea documental canónica; atribución temporal y cartera actual"
+      ],
+      "en": [
+        "8 tables, 8 relationships, 23 DAX measures",
+        "Canonical transaction line; temporal and current assignments"
+      ]
+    },
+    "calidad": {
+      "es": [
+        "2.262 controles de motor",
+        "Referencia RAW independiente",
+        "Entrega tardía y ámbitos de indicadores explícitos"
+      ],
+      "en": [
+        "2,262 engine checks",
+        "Independent RAW reference",
+        "Explicit late delivery and metric scope"
+      ]
+    },
+    "flujo": {
+      "es": "RAW → preparación → ocho CSV modelo → Import → DAX → dos páginas Power BI",
+      "en": "RAW → preparation → eight model CSV tables → Import → DAX → two Power BI pages"
+    },
+    "rasgos": {
+      "es": [
+        "PEN sin IGV",
+        "Cartera histórica/actual separadas",
+        "SQL real no ejecutado"
+      ],
+      "en": [
+        "PEN excluding tax",
+        "Historical/current assignments separated",
+        "Real SQL connection not executed"
+      ]
+    }
+  },
+  "imagenes": [
+    {
+      "archivo": "valle-com-03-1.png",
+      "alt": {
+        "es": "Resultado comercial y cartera histórica/actual",
+        "en": "Sales results and historical/current accounts"
+      },
+      "provenance": "powerbi-desktop-pdf-render"
+    },
+    {
+      "archivo": "valle-com-03-2.png",
+      "alt": {
+        "es": "Conciliación de migración y disponibilidad",
+        "en": "Migration reconciliation and input availability"
+      },
+      "provenance": "powerbi-desktop-pdf-render"
+    }
+  ],
+  "pdf": "capturas/valle-com-03.pdf",
+  "repo": "https://github.com/eportaro/powerbi-25-reportes/tree/main/reportes/valle-com-03",
+  "nota_datos": {
+    "es": "Empresa y datos ficticios; PDF/PNG conservan una exportación anterior y pueden diferir de la revisión actual del PBIP.",
+    "en": "Fictional company and data; PDF/PNG preserve a previous export and may differ from the current PBIP layout."
+  }
+}

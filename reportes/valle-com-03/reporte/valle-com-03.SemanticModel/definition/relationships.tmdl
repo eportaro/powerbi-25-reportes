@@ -1,0 +1,32 @@
+relationship 2bcc5128-ab17-5a3f-9aa7-df32e270113a
+	fromColumn: FactVenta.periodo
+	toColumn: DimMes.periodo
+
+relationship c2c7c469-71ec-59d1-a770-8f1be1590d43
+	fromColumn: FactMeta.periodo
+	toColumn: DimMes.periodo
+
+relationship f0ab0932-4936-5b82-aba2-c6a4d27c9a20
+	fromColumn: FactAjuste.periodo
+	toColumn: DimMes.periodo
+
+relationship e259649d-690a-5bc1-a844-77ee4bc6c344
+	fromColumn: FactVenta.cliente_id
+	toColumn: DimCliente.cliente_id
+
+relationship c7ce57d5-dcbe-5d68-b726-8bebe9ec0b97
+	fromColumn: FactVenta.producto_id
+	toColumn: DimProducto.producto_id
+
+relationship 939784ae-6408-562e-b8e4-c49d1e867196
+	fromColumn: FactVenta.asesor_historico
+	toColumn: DimAsesorHistorico.asesor_historico
+
+relationship d4a65d71-e1b3-5d76-8987-73e5b7cbd938
+	fromColumn: FactVenta.asesor_actual
+	toColumn: DimAsesorActual.asesor_actual
+
+relationship d4da42ca-8659-530d-bb4b-cbbff17cc558
+	fromColumn: FactMeta.asesor_historico
+	toColumn: DimAsesorHistorico.asesor_historico
+

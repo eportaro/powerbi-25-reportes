@@ -1,0 +1,50 @@
+table DimMes
+	lineageTag: 758bb926-b0e6-5b80-a1af-07a2ae02443c
+
+	column periodo
+		dataType: string
+		lineageTag: 52eaabb5-8e1a-5c4f-93a3-c6c8d2533ded
+		summarizeBy: none
+		sourceColumn: periodo
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes
+		dataType: int64
+		formatString: 0
+		lineageTag: 6737d082-661c-5e41-8fe9-0697da713536
+		summarizeBy: none
+		sourceColumn: mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre
+		dataType: string
+		lineageTag: d3f0ca51-26bd-5de4-b84d-0faddd1948c7
+		summarizeBy: none
+		sourceColumn: nombre
+		sortByColumn: mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column completo
+		dataType: int64
+		formatString: 0
+		lineageTag: 45836364-2719-502e-8c97-1ab57908c206
+		summarizeBy: none
+		sourceColumn: completo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimMes = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\DimMes.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"periodo", type text}, {"mes", Int64.Type}, {"nombre", type text}, {"completo", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

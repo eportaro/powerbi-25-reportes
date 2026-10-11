@@ -1,0 +1,31 @@
+table DimCliente
+	lineageTag: 535eec03-23dd-5883-82ff-29cb202724d7
+
+	column cliente_id
+		dataType: string
+		lineageTag: c15d3f4d-670b-5827-9931-a1871aa0b1d4
+		summarizeBy: none
+		sourceColumn: cliente_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre
+		dataType: string
+		lineageTag: 90da57a5-7ab4-5627-b534-27b3bdca0c86
+		summarizeBy: none
+		sourceColumn: nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimCliente = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\DimCliente.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"cliente_id", type text}, {"nombre", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,145 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "reglas",
+  "position": {
+    "x": 40,
+    "y": 664,
+    "width": 1360,
+    "height": 320,
+    "z": 19000,
+    "tabOrder": 19000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Venta oficial = líneas de boletas y facturas sin IGV − notas de crédito, en el mes de la nota.  ·  Anuladas fuera.  ·  El flete no es venta.",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#132B43",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "La boleta web repetida no cuenta: vale la primera.  ·  El pedido minero va en abril (fecha del comprobante) y en su línea Corporativo, sin meta.",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#132B43",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Cusco desde el 01/09: venta = operación gravada del cierre Z leído de la foto. Un día sin foto no se estima.",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#132B43",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Meta = Excel ÷ 1.18 (sin IGV).  ·  Conversión = pedidos pagados / sesiones GA4, solo días con export completo (sin el 29/09).",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#132B43",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DFEAE5'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

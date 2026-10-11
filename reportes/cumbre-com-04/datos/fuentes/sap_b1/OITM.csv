@@ -1,0 +1,31 @@
+ItemCode,ItemName,ItmsGrpCod,InvntItem,SellItem,validFor,AvgPrice,CreateDate
+A1001,Carpa Andes 2 personas,101,Y,Y,Y,153.80,2025-03-01
+A1002,Carpa Andes 4 personas,101,Y,Y,Y,263.97,2025-03-01
+A1003,Carpa ultraligera Vilcanota,101,Y,Y,Y,396.17,2025-03-01
+A1004,Toldo plegable 3x3,101,Y,Y,Y,83.29,2025-03-01
+A2001,Mochila Salkantay 20 L,102,Y,Y,Y,65.66,2025-03-01
+A2002,Mochila Salkantay 35 L,102,Y,Y,Y,114.13,2025-03-01
+A2003,Mochila Ausangate 50 L,102,Y,Y,Y,171.42,2025-03-01
+A2004,Mochila Ausangate 65 L,102,Y,Y,Y,241.93,2025-03-01
+A2005,Mochila de hidratación 10 L,102,Y,Y,Y,56.85,2025-03-01
+A3001,Zapatilla trail Cordillera,103,Y,Y,Y,144.98,2025-03-01
+A3002,Bota trekking Huascarán,103,Y,Y,Y,202.27,2025-03-01
+A3003,Sandalia de río,103,Y,Y,Y,52.44,2025-03-01
+A3004,Bota impermeable mujer,103,Y,Y,Y,215.49,2025-03-01
+A4001,Casaca impermeable 3 capas,104,Y,Y,Y,175.83,2025-03-01
+A4002,Polar Altiplano,104,Y,Y,Y,78.88,2025-03-01
+A4003,Primera capa térmica,104,Y,Y,Y,43.63,2025-03-01
+A4004,Pantalón convertible,104,Y,Y,Y,87.69,2025-03-01
+A4005,Casaca de pluma Nevado,104,Y,Y,Y,263.97,2025-03-01
+A4006,Gorro de lana,104,Y,Y,Y,21.60,2025-03-01
+A4007,Guantes térmicos,104,Y,Y,Y,30.40,2025-03-01
+A5001,Linterna frontal 300 lm,105,Y,Y,Y,39.22,2025-03-01
+A5002,Par de bastones de aluminio,105,Y,Y,Y,109.73,2025-03-01
+A5003,Botella térmica 750 ml,105,Y,Y,Y,26.00,2025-03-01
+A5004,Saco de dormir -5 °C,105,Y,Y,Y,127.36,2025-03-01
+A5005,Colchoneta autoinflable,105,Y,Y,Y,70.07,2025-03-01
+A5006,Cocina portátil a gas,105,Y,Y,Y,87.69,2025-03-01
+A5007,Navaja multiuso,105,Y,Y,Y,34.81,2025-03-01
+A4008,Chaleco híbrido Qhapaq,104,Y,Y,Y,122.95,2026-09-01
+A5008,Par de bastones de carbono,105,Y,Y,Y,175.83,2026-09-01
+SRV-ENVIO,Servicio de envío a domicilio,199,N,Y,Y,0,2025-03-01

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "cumbre-com-04"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "681fffac-60fe-45ca-ba30-e8d57b37ce3b"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "cumbre-com-04"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7bce51f9-7388-4d83-8983-9b63fe262d82"
+  }
+}

@@ -1,0 +1,10 @@
+control_id,tema,detalle,estado,valor
+C01,Cusco septiembre,29 cierres Z leídos por OCR; ventas del día = operación gravada,ok,29
+C02,Cusco septiembre,Días sin foto de cierre (no se estiman): 2026-09-20 · Z 002436,pendiente,1
+C03,Cusco septiembre,Fotos repetidas del mismo cierre (se toma una): IMG-20260910-WA1040.jpg,ok,1
+C04,Cusco septiembre,"Cola de revisión del OCR: 2026-09-23 efectivo ilegible en la foto, propuesta 4,103.99 por diferencia; no cambia la venta oficial",revisar,1
+C05,Cuadres de la Z,"86 cuadres ok, 1 sin dato, 0 rotos",ok,0
+C06,SAP,Boletas web repetidas excluidas (vale la primera),ok,422
+C07,SAP,Comprobantes anulados (Y) y documentos de cancelación (C) excluidos,ok,692
+C08,GA4,29/09 fuera de la conversión (export parcial),ok,1
+C09,Metas,Metas con IGV ÷ 1.18; WEB julio con el valor escrito; fila TOTAL no se carga,ok,0

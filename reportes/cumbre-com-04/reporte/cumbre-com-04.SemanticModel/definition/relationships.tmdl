@@ -1,0 +1,28 @@
+relationship 2e487511-4887-565b-a535-e933c000c89d
+	fromColumn: FactVenta.fecha
+	toColumn: DimFecha.fecha
+
+relationship 2cf5a64d-88f9-57ea-a0f0-8db9ca19f5dc
+	fromColumn: FactMeta.fecha
+	toColumn: DimFecha.fecha
+
+relationship 7b45c4f9-e49a-5ac7-ab95-62b5bbad4fa3
+	fromColumn: FactWeb.fecha
+	toColumn: DimFecha.fecha
+
+relationship b7e9370b-6a32-5845-ac90-f6b10d3477f5
+	fromColumn: FactPuente.fecha
+	toColumn: DimFecha.fecha
+
+relationship 165d5e79-060c-5b64-9cf5-789f74587aad
+	fromColumn: FactVenta.unidad
+	toColumn: DimUnidad.unidad
+
+relationship ba0accad-e18e-5548-a4b7-59b1df5c4b73
+	fromColumn: FactMeta.unidad
+	toColumn: DimUnidad.unidad
+
+relationship ee7761a2-94cf-5a4a-bfad-8a1abd3d5fbe
+	fromColumn: FactPuente.unidad
+	toColumn: DimUnidad.unidad
+

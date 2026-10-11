@@ -1,0 +1,56 @@
+table ControlCalidad
+	lineageTag: 96373298-7353-5393-8d22-d457d255176c
+
+	column control_id
+		dataType: string
+		lineageTag: c880c83c-55c4-5235-8a8c-da5a25f17079
+		summarizeBy: none
+		sourceColumn: control_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tema
+		dataType: string
+		lineageTag: 2e4e4d4b-9def-56de-9a96-4d571fb441f2
+		summarizeBy: none
+		sourceColumn: tema
+
+		annotation SummarizationSetBy = Automatic
+
+	column detalle
+		dataType: string
+		lineageTag: f367f938-dfe5-5d33-9667-b9979b372cab
+		summarizeBy: none
+		sourceColumn: detalle
+
+		annotation SummarizationSetBy = Automatic
+
+	column estado
+		dataType: string
+		lineageTag: 8dd78ba6-7837-5f82-95ba-2b1e4c8cfc3e
+		summarizeBy: none
+		sourceColumn: estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column valor
+		dataType: int64
+		formatString: 0
+		lineageTag: 8736c50d-7087-50de-9ffe-eaaa3946412d
+		summarizeBy: none
+		sourceColumn: valor
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ControlCalidad = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\ControlCalidad.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"control_id", type text}, {"tema", type text}, {"detalle", type text}, {"estado", type text}, {"valor", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

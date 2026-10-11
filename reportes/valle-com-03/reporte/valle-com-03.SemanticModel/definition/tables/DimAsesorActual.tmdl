@@ -1,0 +1,31 @@
+table DimAsesorActual
+	lineageTag: 7803c9bb-0429-5142-be1a-db070534423c
+
+	column asesor_actual
+		dataType: string
+		lineageTag: 1ea0fd86-62c3-587d-a2eb-044a12a3f2fa
+		summarizeBy: none
+		sourceColumn: asesor_actual
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre
+		dataType: string
+		lineageTag: b641b5b1-5911-5d26-a4c1-6ac77e7a6730
+		summarizeBy: none
+		sourceColumn: nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimAsesorActual = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\DimAsesorActual.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"asesor_actual", type text}, {"nombre", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

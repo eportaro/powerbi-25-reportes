@@ -1,0 +1,318 @@
+table FactVenta
+	lineageTag: d948ffb5-1498-5e52-a844-ac69380a6ba3
+
+	/// Venta documental recibida neta sin IGV, luego de deduplicación y precedencia ERP. Puede ser parcial; no es cierre oficial.
+	measure 'Venta recibida' = SUM ( FactVenta[venta] )
+		formatString: "S/ "#,0.00
+		displayFolder: 01 Resultado
+		lineageTag: e2650b96-80f4-56f0-b098-651f9b725994
+
+	/// Meses del contexto; universo enero-junio 2026.
+	measure 'Meses seleccionados' = COUNTROWS ( VALUES ( DimMes[periodo] ) )
+		formatString: 0
+		isHidden
+		displayFolder: 04 Contexto
+		lineageTag: 2d964e8f-e97f-597b-97e8-677114230f37
+
+	/// Meses seleccionados sin cabecera y líneas completas. No baja al filtrar cliente/asesor.
+	measure 'Meses pendientes' = COUNTROWS ( FILTER ( VALUES ( DimMes[periodo] ), CALCULATE ( MAX ( DimMes[completo] ) ) = 0 ) )
+		formatString: 0
+		displayFolder: 04 Contexto
+		lineageTag: ef218240-0671-58e4-8041-85f0eccf6c22
+
+	/// Completitud de fuentes del contexto; no implica Desktop validado ni aceptación humana.
+	measure 'Estado de cobertura' = IF ( [Meses seleccionados] = 0, "Sin período", IF ( [Meses pendientes] > 0, "PARCIAL · falta entrega", "COMPLETO · fuentes recibidas" ) )
+		displayFolder: 04 Contexto
+		lineageTag: 69d12427-73ab-5bf0-8d45-191b47a3f80b
+
+	/// Ajuste financiero sin reparto. Sólo aplica bajo filtros de mes; BLANK por cliente, producto o cualquier asesor.
+	measure 'Ajustes de cierre' = IF ( ISCROSSFILTERED ( DimCliente ) || ISCROSSFILTERED ( DimProducto ) || ISCROSSFILTERED ( DimAsesorHistorico ) || ISCROSSFILTERED ( DimAsesorActual ), BLANK (), SUM ( FactAjuste[ajuste] ) )
+		formatString: "S/ "#,0.00
+		displayFolder: 02 Conciliación
+		lineageTag: b828098d-2912-5926-a64b-5d2de0e0a866
+
+	/// Cierre: venta recibida + ajuste permitido por ámbito. BLANK si cualquier mes seleccionado falta. Bajo asesor/producto/cliente conserva venta atribuida y explica ajuste excluido.
+	measure 'Venta oficial' = IF ( [Meses seleccionados] > 0 && [Meses pendientes] = 0, IF ( ISBLANK ( [Venta recibida] ) && ISBLANK ( [Ajustes de cierre] ), BLANK (), COALESCE ( [Venta recibida], 0 ) + COALESCE ( [Ajustes de cierre], 0 ) ), BLANK () )
+		formatString: "S/ "#,0.00
+		displayFolder: 01 Resultado
+		lineageTag: ea66fcc6-a208-5dfe-a1e9-8031e283eafb
+
+	/// Costo de líneas del mismo grano/contexto de venta; nunca suma costo de cabecera.
+	measure 'Costo recibido' = SUM ( FactVenta[costo] )
+		formatString: "S/ "#,0.00
+		displayFolder: 01 Resultado
+		lineageTag: 58e2b7f2-61b7-5f94-b90f-494b309e91fc
+
+	/// Costo recibido + costo del ajuste sólo en ámbito compatible; BLANK por cobertura incompleta.
+	measure 'Costo oficial' = IF ( [Meses seleccionados] > 0 && [Meses pendientes] = 0, [Costo recibido] + IF ( ISCROSSFILTERED ( DimCliente ) || ISCROSSFILTERED ( DimProducto ) || ISCROSSFILTERED ( DimAsesorHistorico ) || ISCROSSFILTERED ( DimAsesorActual ), 0, COALESCE ( SUM ( FactAjuste[costo_ajuste] ), 0 ) ), BLANK () )
+		formatString: "S/ "#,0.00
+		isHidden
+		displayFolder: 01 Resultado
+		lineageTag: 9876fa08-345e-566d-a24c-6298aa4a441e
+
+	/// Venta oficial menos costo oficial bajo el mismo ámbito. No mostrar margen oficial de cobertura parcial.
+	measure 'Margen oficial' = IF ( ISBLANK ( [Venta oficial] ), BLANK (), [Venta oficial] - [Costo oficial] )
+		formatString: "S/ "#,0.00
+		displayFolder: 01 Resultado
+		lineageTag: 10c0af43-5395-59a9-9031-dbd4101a0637
+
+	/// Margen total / venta total del contexto; no suma ni promedia porcentajes de líneas. Venta cero: BLANK.
+	measure 'Margen %' = DIVIDE ( [Margen oficial], [Venta oficial] )
+		formatString: 0.0%
+		displayFolder: 01 Resultado
+		lineageTag: 06bf65e8-f6f5-5fc1-aa71-b22380e4a08b
+
+	/// Meta mensual por asesor histórico: base×factor HALF_UP. No aplicable por cliente, producto o cartera actual; no distribuir artificialmente.
+	measure 'Meta comercial' = IF ( ISCROSSFILTERED ( DimCliente ) || ISCROSSFILTERED ( DimProducto ) || ISCROSSFILTERED ( DimAsesorActual ), BLANK (), SUM ( FactMeta[meta] ) )
+		formatString: "S/ "#,0.00
+		displayFolder: 03 Metas
+		lineageTag: 0dee5d39-4e06-5c69-96ae-561460b1834c
+
+	/// Venta oficial / meta aplicable recalculado en total; BLANK por cobertura incompleta o ámbito no compatible.
+	measure Cumplimiento = DIVIDE ( [Venta oficial], [Meta comercial] )
+		formatString: 0.0%
+		displayFolder: 03 Metas
+		lineageTag: 81247ce9-f885-5c40-8821-ad86b6f74ec2
+
+	/// Meta menos venta oficial. Positivo indica venta faltante; no equivale a forecast.
+	measure 'Brecha a meta' = IF ( ISBLANK ( [Venta oficial] ) || ISBLANK ( [Meta comercial] ), BLANK (), [Meta comercial] - [Venta oficial] )
+		formatString: "S/ "#,0.00
+		displayFolder: 03 Metas
+		lineageTag: 03f62ee3-04ca-5b41-a24a-6c9d253b86ec
+
+	/// Explica por qué no se evalúa meta/cumplimiento, sin representar BLANK como cero.
+	measure 'Aplicación de meta' = IF ( ISCROSSFILTERED ( DimCliente ) || ISCROSSFILTERED ( DimProducto ) || ISCROSSFILTERED ( DimAsesorActual ), "META NO APLICABLE · ámbito", IF ( [Meses pendientes] > 0, "CUMPLIMIENTO PENDIENTE · fuentes", "Meta por mes / asesor histórico" ) )
+		displayFolder: 04 Contexto
+		lineageTag: 04347e22-072c-5b16-8278-6ef041ea34b6
+
+	/// Legacy luego de clave vacía/deduplicación; incluye líneas sustituidas para el puente.
+	measure 'Legacy válido único' = SUM ( FactVenta[legacy_base] )
+		formatString: "S/ "#,0.00
+		displayFolder: 02 Conciliación
+		lineageTag: 97d86f55-e3bb-5eab-bdb5-ad2298083235
+
+	/// Nuevas líneas recibidas incluida última semana marzo; cabeceras sólo controlan.
+	measure 'ERP nuevo recibido' = SUM ( FactVenta[nuevo_base] )
+		formatString: "S/ "#,0.00
+		displayFolder: 02 Conciliación
+		lineageTag: ef08a9b1-2d94-5720-8862-52391e21d4e5
+
+	/// Legacy retirado por mismo negocio cuando ERP nuevo prevalece; restar del puente.
+	measure 'Legacy sustituido' = SUM ( FactVenta[legacy_sustituido] )
+		formatString: "S/ "#,0.00
+		displayFolder: 02 Conciliación
+		lineageTag: 9c3a52c8-e958-5f89-990a-b86ad0101e34
+
+	/// Diferencia nuevo−legacy de operaciones repetidas; no se suma otra vez al puente.
+	measure 'Corrección de migración' = SUM ( FactVenta[correccion_migracion] )
+		formatString: "S/ "#,0.00
+		displayFolder: 02 Conciliación
+		lineageTag: 88229ef9-d13a-5c1d-a80a-a540985ee0c6
+
+	/// Legacy válido + nuevo recibido − legacy sustituido. Debe igualar venta recibida. Sin filas recibidas: BLANK.
+	measure 'Puente documental' = IF ( ISBLANK ( [Venta recibida] ), BLANK (), [Legacy válido único] + [ERP nuevo recibido] - [Legacy sustituido] )
+		formatString: "S/ "#,0.00
+		displayFolder: 02 Conciliación
+		lineageTag: f3c0c63d-0db8-51db-a790-a748ff4a20ee
+
+	/// Diferencia independiente de visuales: cero con datos válidos, BLANK sin filas recibidas. No prueba DAX runtime hasta consultar motor.
+	measure 'Diferencia de puente' = IF ( ISBLANK ( [Venta recibida] ), BLANK (), [Puente documental] - [Venta recibida] )
+		formatString: "S/ "#,0.00
+		displayFolder: 02 Conciliación
+		lineageTag: fa26fe2b-b1ef-5130-8cf0-f7d47a31d4f5
+
+	/// Negocios únicos recibidos luego de precedencia; no contar dos sistemas como dos ventas.
+	measure 'Documentos recibidos' = DISTINCTCOUNT ( FactVenta[business_id] )
+		formatString: #,0
+		displayFolder: 04 Contexto
+		lineageTag: ca2976b2-91d8-5047-8ae6-06a726e57a17
+
+	/// Grano único de línea documental canónica en mart.
+	measure 'Líneas recibidas' = COUNTROWS ( FactVenta )
+		formatString: #,0
+		isHidden
+		displayFolder: 04 Contexto
+		lineageTag: 21c0f4fc-a6d3-5529-8804-3b6bf9f744b3
+
+	/// Ventas con asesor histórico desconocido; incluidas en venta recibida, separadas de asesores identificados.
+	measure 'Venta sin historia' = CALCULATE ( [Venta recibida], KEEPFILTERS ( FactVenta[sin_historia] = 1 ) )
+		formatString: "S/ "#,0.00
+		displayFolder: 04 Contexto
+		lineageTag: baa413bc-1c45-5999-a499-f7582ff7398f
+
+	column line_id
+		dataType: string
+		isHidden
+		lineageTag: 8532d832-1e45-5b34-9f3b-03f9633fabd6
+		summarizeBy: none
+		sourceColumn: line_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_id
+		dataType: string
+		isHidden
+		lineageTag: 64712baa-4c2d-5337-b368-ea708d2d7bcc
+		summarizeBy: none
+		sourceColumn: business_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 8bed7b24-e356-5060-8742-677ee03f8ad8
+		summarizeBy: none
+		sourceColumn: fecha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column periodo
+		dataType: string
+		isHidden
+		lineageTag: 4b9c4fa5-cb4b-50fc-b04f-2ff95959404e
+		summarizeBy: none
+		sourceColumn: periodo
+
+		annotation SummarizationSetBy = Automatic
+
+	column cliente_id
+		dataType: string
+		isHidden
+		lineageTag: 0870f898-8db9-54a1-85a0-a08f314b5a44
+		summarizeBy: none
+		sourceColumn: cliente_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column producto_id
+		dataType: string
+		isHidden
+		lineageTag: 188bd922-24bf-50d8-adf5-0d6a8522a2cf
+		summarizeBy: none
+		sourceColumn: producto_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column asesor_historico
+		dataType: string
+		isHidden
+		lineageTag: 9aed86ed-6a08-58f3-8db6-d799e5bfcbb7
+		summarizeBy: none
+		sourceColumn: asesor_historico
+
+		annotation SummarizationSetBy = Automatic
+
+	column asesor_actual
+		dataType: string
+		isHidden
+		lineageTag: 759a156a-b291-5c88-8c38-91b2d9b4f322
+		summarizeBy: none
+		sourceColumn: asesor_actual
+
+		annotation SummarizationSetBy = Automatic
+
+	column sistema
+		dataType: string
+		isHidden
+		lineageTag: 2fa60e77-c497-5056-933b-03920a6d93a0
+		summarizeBy: none
+		sourceColumn: sistema
+
+		annotation SummarizationSetBy = Automatic
+
+	column cantidad
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5a469a3d-930c-5c3c-a01d-1b71701443ea
+		summarizeBy: none
+		sourceColumn: cantidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column venta
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: 1b16c48a-499b-5cb7-885c-f86aaacaf473
+		summarizeBy: none
+		sourceColumn: venta
+
+		annotation SummarizationSetBy = Automatic
+
+	column costo
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: 2c6a80f4-8144-5e1b-8627-e9c62d50ee71
+		summarizeBy: none
+		sourceColumn: costo
+
+		annotation SummarizationSetBy = Automatic
+
+	column legacy_base
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: 01851d33-2ba7-5052-91c0-1cdafa198801
+		summarizeBy: none
+		sourceColumn: legacy_base
+
+		annotation SummarizationSetBy = Automatic
+
+	column nuevo_base
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: b1ebaf9e-22cf-5326-ac34-c1c042c0aec3
+		summarizeBy: none
+		sourceColumn: nuevo_base
+
+		annotation SummarizationSetBy = Automatic
+
+	column legacy_sustituido
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: 263498e1-533a-59fe-8d26-7690c5f0d34b
+		summarizeBy: none
+		sourceColumn: legacy_sustituido
+
+		annotation SummarizationSetBy = Automatic
+
+	column correccion_migracion
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: f95eba2f-ea9e-5755-9e70-8985d0815f67
+		summarizeBy: none
+		sourceColumn: correccion_migracion
+
+		annotation SummarizationSetBy = Automatic
+
+	column sin_historia
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 730842e4-e293-5160-9025-d1469b8fa89b
+		summarizeBy: none
+		sourceColumn: sin_historia
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactVenta = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\FactVenta.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"line_id", type text}, {"business_id", type text}, {"fecha", type date}, {"periodo", type text}, {"cliente_id", type text}, {"producto_id", type text}, {"asesor_historico", type text}, {"asesor_actual", type text}, {"sistema", type text}, {"cantidad", Int64.Type}, {"venta", Currency.Type}, {"costo", Currency.Type}, {"legacy_base", Currency.Type}, {"nuevo_base", Currency.Type}, {"legacy_sustituido", Currency.Type}, {"correccion_migracion", Currency.Type}, {"sin_historia", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

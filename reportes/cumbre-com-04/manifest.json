@@ -1,0 +1,812 @@
+{
+  "caseId": "cumbre-com-04",
+  "passed": true,
+  "rows": {
+    "DimFecha": 273,
+    "DimUnidad": 7,
+    "FactVenta": 1654,
+    "FactMeta": 54,
+    "FactWeb": 273,
+    "FactPuente": 333,
+    "ControlCalidad": 9
+  },
+  "singleEntry": true,
+  "relativeReferencesValid": true,
+  "publicContentScanPassed": true,
+  "files": [
+    {
+      "path": "capturas/cumbre-com-04-conciliacion.png",
+      "sha256": "3b44f358d2eff7f1953aba81272a3db0300fef7e8355a0e39399c4c7d6f10d5e",
+      "bytes": 188673
+    },
+    {
+      "path": "capturas/cumbre-com-04-ventas.png",
+      "sha256": "9ce093db103b94e68da5a0a1f399af7c6d33070e6d2c7edc734e9adce4d20217",
+      "bytes": 269960
+    },
+    {
+      "path": "capturas/cumbre-com-04.pdf",
+      "sha256": "3afc8ce8bdc68f8a3da48d96fd51550069751435c10ae4c169777f570c70bb8f",
+      "bytes": 294007
+    },
+    {
+      "path": "datos/fuentes/diccionario.json",
+      "sha256": "afb219278fd6afb1f09841129e69e350e54b5537eb056ac447d04864bc5d2899",
+      "bytes": 3397
+    },
+    {
+      "path": "datos/fuentes/excel/equivalencias_sku.xlsx",
+      "sha256": "a5e5c2d51e8d6b084a52e32f994ce2bb04c08040dee728ae68feb8ebc0f075a9",
+      "bytes": 6071
+    },
+    {
+      "path": "datos/fuentes/excel/metas_comerciales_2026.xlsx",
+      "sha256": "4becfa29955d00c5b6cdf1070b7aade32b258a6578079ba4a1623b2d97875804",
+      "bytes": 8384
+    },
+    {
+      "path": "datos/fuentes/excel/reporte_directorio_2026.xlsx",
+      "sha256": "45dd39ac3167a95681ad704cda58da25dc9bb013fdbeacc055fe9b4df6004247",
+      "bytes": 6365
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260902-WA1002.jpg",
+      "sha256": "29a9071056e21a77e38ba07b91b5119a60c59e4adb2d9e472d995deaeb87824f",
+      "bytes": 68733
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260903-WA1003.jpg",
+      "sha256": "f64bb0b1e0d7267a4d41034ce964b681ed7fce51c3c0b3f2a0458af287531eb9",
+      "bytes": 62103
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260904-WA1008.jpg",
+      "sha256": "04d5b4d7c9732f1a921761183f3fc85500e77aa4d142aa210fa5bb9efa977a22",
+      "bytes": 71073
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260905-WA1014.jpg",
+      "sha256": "accf7cfd0af38cbc03cd7dc3d8bdd907519140919e08bb711535eb6affaaa6f4",
+      "bytes": 65109
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260906-WA1023.jpg",
+      "sha256": "67e433b143d954d5b221a8d788513d2d4fb672fa89497fbdd52869764ee282ee",
+      "bytes": 71848
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260907-WA1028.jpg",
+      "sha256": "d04a7f5397b2864d03145da6837b2c3d8be85c9acb08b69a3b9d98062ed3c1f1",
+      "bytes": 73823
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260908-WA1035.jpg",
+      "sha256": "1bf3a8f51d0a14e416381510ddf9d7d51b2ac1ff5a87f0d0df29501d68cbf141",
+      "bytes": 69471
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260909-WA1037.jpg",
+      "sha256": "9afc2afced0d694bb7f14c2776dd639ff555872e9df9805db65fd38d6f965e09",
+      "bytes": 67767
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260910-WA1038.jpg",
+      "sha256": "e692e4af54d146c136bedf615321ca5410a10e047570a85651b3eaa689fc320d",
+      "bytes": 73885
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260910-WA1040.jpg",
+      "sha256": "64fce4eab34a863f4021261945d5888f3742f6217cece3e58d945b6e9b1f8df1",
+      "bytes": 64763
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260911-WA1049.jpg",
+      "sha256": "7346cb93a34798e8dd826f73d73b0825df47844e298264520d18433bc2e465ef",
+      "bytes": 70338
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260912-WA1051.jpg",
+      "sha256": "65c816080e3337e3d8c4234f5869b3de9e10e28a31e7800683b601ceb577bfaa",
+      "bytes": 69779
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260913-WA1056.jpg",
+      "sha256": "a0a0155ed7422191dbdbb65dc1f9960d3a63a87408b16e7b0b900b4642d5c4f9",
+      "bytes": 68036
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260914-WA1057.jpg",
+      "sha256": "799990d8c355da00333f571923c944054e29f746284eab463b248cd13b01bda4",
+      "bytes": 66069
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260915-WA1063.jpg",
+      "sha256": "cb801ba45c8955df75e0a751ec4d2d024fcd5da5b8956895c88add033431cafa",
+      "bytes": 71487
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260916-WA1068.jpg",
+      "sha256": "626495e769b79a7638eaefdb1575796df5b908f6e5c7ccdb93f284edb8b15c13",
+      "bytes": 68270
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260917-WA1075.jpg",
+      "sha256": "27d55f01516e334e874d3abce1748e9469803b8dc2b503658ffa0ce99d309059",
+      "bytes": 67488
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260918-WA1077.jpg",
+      "sha256": "94b06012c1542bf7622b818eaba738da6d87f9e666b3736e5c7acedf5d412ac5",
+      "bytes": 70366
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260919-WA1080.jpg",
+      "sha256": "8db740d8ad1a072fe1210e978f81f76a06b0918f17f3d799e25337d941349761",
+      "bytes": 64744
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260920-WA1081.jpg",
+      "sha256": "37b49c16d66e15e98b32e018df5157787eb25bb905192bca51e0dfeb978c1e79",
+      "bytes": 70863
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260922-WA1089.jpg",
+      "sha256": "3500ff884d4f3f10187b287b888172cdce6176c676a16bc2acbfd201561f9c35",
+      "bytes": 68291
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260923-WA1097.jpg",
+      "sha256": "069fc7487fd7be8ff0bc9d3432d17d346ab74d662d3f3c5f47fca90f45d6b51a",
+      "bytes": 67958
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260924-WA1099.jpg",
+      "sha256": "1dfd3c12c47030e53c95c253f411de50c82e704b0c398bdd92959e98abd8771b",
+      "bytes": 69002
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260925-WA1100.jpg",
+      "sha256": "bed0f7637c72e2a10446323ea9ab64d013fbbfff7faf8836e008ed6110e79f51",
+      "bytes": 69384
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260926-WA1104.jpg",
+      "sha256": "2c46ff1b1069b10ec7519a86ed5e8f8db64faf1f5fe2df8c3a766f4cbf4cb877",
+      "bytes": 70335
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260927-WA1105.jpg",
+      "sha256": "312a246fa682965f819e2fff9879d943f8517f76b8a16da8e2847bfeef200f71",
+      "bytes": 69807
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260928-WA1109.jpg",
+      "sha256": "d80dbb56e7cb8ea74cff23fd97486581cdfdc62b4b52517b3048de2fc5fde96c",
+      "bytes": 64042
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260929-WA1113.jpg",
+      "sha256": "82370cbe6ae07b034b9fe3516735ead424b8fefbca37e7548e6e0d5f74fb59f3",
+      "bytes": 63327
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20260930-WA1120.jpg",
+      "sha256": "b4a9d9ae8af098e7cd47cfde44af96efff02303eeef1e0d410e3c1d4793b053c",
+      "bytes": 69287
+    },
+    {
+      "path": "datos/fuentes/fotos_cierre_cusco/IMG-20261001-WA1121.jpg",
+      "sha256": "f2316453bc8b3db5e4604c7305c1c9b3f7086e10fd5bd1cc6a38d5869402d6a6",
+      "bytes": 71036
+    },
+    {
+      "path": "datos/fuentes/ga4/ga4_adquisicion_trafico_20260101-20260929.csv",
+      "sha256": "c9789857b1040185ebda8da61f0654f85dd021e052b58df9b60bb5e1cce83912",
+      "bytes": 69794
+    },
+    {
+      "path": "datos/fuentes/sap_b1/CRD1.csv",
+      "sha256": "1fde0ed742dc7d7a6c746ab3e1dbe06b9410e8896a79bb4270faaacc2431c2f7",
+      "bytes": 178
+    },
+    {
+      "path": "datos/fuentes/sap_b1/DLN1.csv",
+      "sha256": "0140634a86b69937e5f579d0ebd82da4b9532b02fc88a80440230a4b77af29de",
+      "bytes": 205
+    },
+    {
+      "path": "datos/fuentes/sap_b1/HLD1.csv",
+      "sha256": "41746ca47eb9b99b9e6a656ffd1e390cc16bc91370cec3fc989f2becc4a26a57",
+      "bytes": 559
+    },
+    {
+      "path": "datos/fuentes/sap_b1/INV1.csv",
+      "sha256": "3d1545740519881b902c52f67b61f1fcc6807118e090497aba31ec375c4c943e",
+      "bytes": 7789948
+    },
+    {
+      "path": "datos/fuentes/sap_b1/OCRD.csv",
+      "sha256": "30c70c0d10f03ab63844996ab26ed5aa03d78cbaddfeba4880b91e3d85bb19d9",
+      "bytes": 587
+    },
+    {
+      "path": "datos/fuentes/sap_b1/OCRG.csv",
+      "sha256": "7c41b1105a3268b73a8c932afd065a48e747f8390a63543ae9b7a1d4381e7752",
+      "bytes": 71
+    },
+    {
+      "path": "datos/fuentes/sap_b1/ODLN.csv",
+      "sha256": "4abb4bde32ff41bc74defb04561d896359cf5e709fc22f86f41cb9dc03a789a6",
+      "bytes": 224
+    },
+    {
+      "path": "datos/fuentes/sap_b1/OHLD.csv",
+      "sha256": "e913c4645d345a42bfa8380fc461f77651105e2086eb047697d86f37ff20c7cf",
+      "bytes": 17
+    },
+    {
+      "path": "datos/fuentes/sap_b1/OINV.csv",
+      "sha256": "cf83091562799cfde9498fe6114eaf9326f10374b50982819a6e2500fe658219",
+      "bytes": 6545828
+    },
+    {
+      "path": "datos/fuentes/sap_b1/OITB.csv",
+      "sha256": "5f9964aa14699c93c0369e1f4e3abdce7a29a8347fe6a26a8dd751bb8699655e",
+      "bytes": 105
+    },
+    {
+      "path": "datos/fuentes/sap_b1/OITM.csv",
+      "sha256": "26ab57845ea856ccdf7a38e69ee9103350791cc1efd62d4532458b1c16541e91",
+      "bytes": 1773
+    },
+    {
+      "path": "datos/fuentes/sap_b1/OITW.csv",
+      "sha256": "ed067616902543afafd030061a752c93c6b93b60634270653808eff8bd0bbfbc",
+      "bytes": 43
+    },
+    {
+      "path": "datos/fuentes/sap_b1/OPKL.csv",
+      "sha256": "849868723256317a1c80a59080944a3c65a01b99daecefeb3143a45faec1a945",
+      "bytes": 33
+    },
+    {
+      "path": "datos/fuentes/sap_b1/OPOR.csv",
+      "sha256": "b6c136198adb951e36da50ad4d6962f0e8bdba82361fd7613c694f9e6561e1b6",
+      "bytes": 72
+    },
+    {
+      "path": "datos/fuentes/sap_b1/OQUT.csv",
+      "sha256": "4abb4bde32ff41bc74defb04561d896359cf5e709fc22f86f41cb9dc03a789a6",
+      "bytes": 224
+    },
+    {
+      "path": "datos/fuentes/sap_b1/ORDR.csv",
+      "sha256": "d9ed1d39a41cf00e2986c810c8239667d25f7b60aba6275e8e2e1b9e76671597",
+      "bytes": 1079373
+    },
+    {
+      "path": "datos/fuentes/sap_b1/ORIN.csv",
+      "sha256": "bc4e66cb67cda2f9d2292cc383c8b61b75c13f32fb30be8d4b11f963d70efd6f",
+      "bytes": 201781
+    },
+    {
+      "path": "datos/fuentes/sap_b1/OSLP.csv",
+      "sha256": "7062413010748485dcf69f248c9fe99145d1d9ca54a77fa46b1e5a7c4d6620cf",
+      "bytes": 687
+    },
+    {
+      "path": "datos/fuentes/sap_b1/OTER.csv",
+      "sha256": "a45e787f4a00944a0d72c9c28b800681fc949195e479821a639a3fb0a23c1d25",
+      "bytes": 74
+    },
+    {
+      "path": "datos/fuentes/sap_b1/OWHS.csv",
+      "sha256": "acca075b7832e94bd2987a241721fc98879ca95ccea16e24eb4e1fd8aee4b2ee",
+      "bytes": 198
+    },
+    {
+      "path": "datos/fuentes/sap_b1/PKL1.csv",
+      "sha256": "829c1f0f8275e0dd57b498e3f4a69aba0abbbb7ae2a5adc2bc3479b6fb854d9b",
+      "bytes": 79
+    },
+    {
+      "path": "datos/fuentes/sap_b1/POR1.csv",
+      "sha256": "b4e41f64d88b6ae8fe62a7ff0c5b99811f889128c05d8b975eb05f53ed590954",
+      "bytes": 71
+    },
+    {
+      "path": "datos/fuentes/sap_b1/QUT1.csv",
+      "sha256": "0140634a86b69937e5f579d0ebd82da4b9532b02fc88a80440230a4b77af29de",
+      "bytes": 205
+    },
+    {
+      "path": "datos/fuentes/sap_b1/RDR1.csv",
+      "sha256": "fd8de714b71ec703b82e0271939886ecc3375b0e27135846415c1a84913a8327",
+      "bytes": 1450384
+    },
+    {
+      "path": "datos/fuentes/sap_b1/RIN1.csv",
+      "sha256": "60bc4eb942f06af57448919b9ec443d618d83257d6795c57e03dca6ddca87a37",
+      "bytes": 158057
+    },
+    {
+      "path": "datos/fuentes/woocommerce/orders.json",
+      "sha256": "3c78df7feb886ca0a742c16d6343212618f8d860e396ed312bc38c2edb2c8c21",
+      "bytes": 9079668
+    },
+    {
+      "path": "datos/modelo/ControlCalidad.csv",
+      "sha256": "b19eb42478172650038196d4b317d8c226d5e8a7a46b772fe26c3879047c1270",
+      "bytes": 854
+    },
+    {
+      "path": "datos/modelo/DimFecha.csv",
+      "sha256": "fbcfa73816356e8148d2b1d336a43bce980c9bdb9c65b0f8bdb24a315f79685e",
+      "bytes": 6582
+    },
+    {
+      "path": "datos/modelo/DimUnidad.csv",
+      "sha256": "f90a916c67967e082cb6c628ab9a8c69209610d082426abc4df2fc9e54f08cfd",
+      "bytes": 231
+    },
+    {
+      "path": "datos/modelo/FactMeta.csv",
+      "sha256": "7c11821c51972d72ee0108ba8bd5fa069a1bb223121418b0d68be15269aefa0b",
+      "bytes": 1929
+    },
+    {
+      "path": "datos/modelo/FactPuente.csv",
+      "sha256": "8dc812bac5d02a4c46a8dba1c1e07885e6b7129b32e90ed0e3196551ff2ad489",
+      "bytes": 20268
+    },
+    {
+      "path": "datos/modelo/FactVenta.csv",
+      "sha256": "7ff8d8332c8ce5c93386e6c56f72b674329e915d4c57953b52f3ef8a701750ad",
+      "bytes": 74767
+    },
+    {
+      "path": "datos/modelo/FactWeb.csv",
+      "sha256": "5d0083a69058f6e76dc39e47e8741d0830246ee19c417864e6385951704bca24",
+      "bytes": 8151
+    },
+    {
+      "path": "documentacion/guia-uso.md",
+      "sha256": "0b5a864eafae9020b8f1161ef85c51853995ed9c86085f3a65823befb629cb11",
+      "bytes": 1947
+    },
+    {
+      "path": "documentacion/indicadores.md",
+      "sha256": "2976852e8e821899dc14292b0b73a106a0cc07918599b70bc44b69756d3e6ab6",
+      "bytes": 1514
+    },
+    {
+      "path": "documentacion/reglas-negocio.md",
+      "sha256": "d7c1340d175f01ba06b59d4babd0c47d6d420fe6df061d4f2eebbdcca9e18b1b",
+      "bytes": 3067
+    },
+    {
+      "path": "ficha-galeria.json",
+      "sha256": "25ac31018c6a76f99e697297135658d58d03a8db8941f00210724312a19d8b12",
+      "bytes": 9271
+    },
+    {
+      "path": "README.md",
+      "sha256": "c480800cf789bda3178eba5089ed3724a4e24c06b5092568234c64ecc1a1ac0c",
+      "bytes": 3392
+    },
+    {
+      "path": "reporte/cumbre-com-04.pbip",
+      "sha256": "377cad1eb314ff410402061316c5640e46d828828509f361f007e5a97a697c30",
+      "bytes": 185
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/.platform",
+      "sha256": "d2e29c2224ce471f9af5c20d00dab06e70cfe985582e366956857a998d80c84f",
+      "bytes": 307
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/conciliacion/page.json",
+      "sha256": "7ee72e3835d7dd0279c48e336c5c812d7ec578a4eaeb9884322e4aa9a657a3f2",
+      "bytes": 769
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/conciliacion/visuals/brand/visual.json",
+      "sha256": "d71337e2e701fc674dd97d8f00df4bb3e3227f878c4119d2e75f7e043df776fc",
+      "bytes": 2425
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/conciliacion/visuals/cut/visual.json",
+      "sha256": "37a37053c0f6d2271e712cf9d07e96f7ae920f32ee72dbfd182f9fa38e9dcc1d",
+      "bytes": 2884
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/conciliacion/visuals/dir_panel/visual.json",
+      "sha256": "30d0bf7c5d2ebafe3dfa16b02f345f2904d62a0d934018ed6321309c8a7d8522",
+      "bytes": 2816
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/conciliacion/visuals/dir_sub/visual.json",
+      "sha256": "9555ceaf0526a1f4e2a3abe0365819cd4b3c0ba7b4ab762e75847def8b1e4cce",
+      "bytes": 2480
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/conciliacion/visuals/dir_tabla/visual.json",
+      "sha256": "76547e5d44548dca31187df915a2627d38177b2ba8dee63c2f9505b324568c72",
+      "bytes": 7512
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/conciliacion/visuals/dir_title/visual.json",
+      "sha256": "248a87355852aef981ca55bf7db3fed341b3281bbb504041586913426ce9be8a",
+      "bytes": 2451
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/conciliacion/visuals/mes/visual.json",
+      "sha256": "bc43e113dc9c530c6c115f0d90f88903cfcaa6a5f5967f837cdafe9659b573d9",
+      "bytes": 4168
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/conciliacion/visuals/mes_label/visual.json",
+      "sha256": "54073c4590949897d3234fc18eec7739260cc061b54accfd14a3e8e18924e1a4",
+      "bytes": 2418
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/conciliacion/visuals/periodo/visual.json",
+      "sha256": "f4025a5049c628ff87ac33a7b423e1a35c7ae0b1254b4bde4980b259b4771bab",
+      "bytes": 3425
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/conciliacion/visuals/reglas/visual.json",
+      "sha256": "af995681852816d6262a342aeb156983aeb5b48826f76d4ffffa09243679cb34",
+      "bytes": 3968
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/conciliacion/visuals/reglas_panel/visual.json",
+      "sha256": "f38e0ca629b70c913ccb48e6efa4bc65a64824d4fbb809f6be3f65debb0e5422",
+      "bytes": 2822
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/conciliacion/visuals/reglas_title/visual.json",
+      "sha256": "0369e4293c227038baafaac97bebe92ffe7af6454ecbe295cb5a06a295e2002c",
+      "bytes": 2481
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/conciliacion/visuals/sub/visual.json",
+      "sha256": "bb467df3a2ec80e886fb82996ec406c6e523486e1bef62b7672a26ea13314fbd",
+      "bytes": 2459
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/conciliacion/visuals/title/visual.json",
+      "sha256": "ca0e7840db56bc555a3ff542b7a8dc49cbe8bd88429d3e39aed4bb7c57030c52",
+      "bytes": 2451
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/conciliacion/visuals/unidad/visual.json",
+      "sha256": "b742560c46dce61dca86322ce8836f0a2237fc10e98b4ad95f601b3a3490431b",
+      "bytes": 3924
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/conciliacion/visuals/unidad_label/visual.json",
+      "sha256": "ba3f60e4dbadcd79835455e2861c82c493a3c8218dcd1e3d1840834543c5c272",
+      "bytes": 2427
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/conciliacion/visuals/woo_panel/visual.json",
+      "sha256": "49ac9d713c6e5eb2c7f72fc93b64e7fc6999c1900bb18c4417ba42888b11cfc3",
+      "bytes": 2819
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/conciliacion/visuals/woo_sub/visual.json",
+      "sha256": "0bc5213e5d08b069d3f95e8a85275eb56102457d09e16b84b60f76285f154c43",
+      "bytes": 2483
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/conciliacion/visuals/woo_tabla/visual.json",
+      "sha256": "b321c1821f5ceed22270319eee4bcdbb2b2ad1e23cd16af6768d8200b94ce5a6",
+      "bytes": 7514
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/conciliacion/visuals/woo_title/visual.json",
+      "sha256": "f57ecfb7f12e78edd8bdef3f6731d68b7df19161e39d41e04d152c9ad1b83f0b",
+      "bytes": 2455
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/pages.json",
+      "sha256": "549e65ede683f0dfe79ede475a606808d7f659e22b0631afb2d0e956c8931a64",
+      "bytes": 217
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/page.json",
+      "sha256": "9f8292ceca2f9f1a78a8148f76ce869607c88720718a19272a55bc04bc6f5a45",
+      "bytes": 3009
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/brand/visual.json",
+      "sha256": "d71337e2e701fc674dd97d8f00df4bb3e3227f878c4119d2e75f7e043df776fc",
+      "bytes": 2425
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/ctl_panel/visual.json",
+      "sha256": "8dfb10befc0d1c28ebcdefb8dc41ea9f1f7e87585665b9a981e733cd61acd691",
+      "bytes": 2819
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/ctl_sub/visual.json",
+      "sha256": "38163d722aed589fce1bc06ac75f3d2be89ad3d2d2a4048d4e22b5fa4948105a",
+      "bytes": 2515
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/ctl_tabla/visual.json",
+      "sha256": "15722aa98b79699311032393bb7bb02fc3a1c9a7c39e0b882c17122961bdaff3",
+      "bytes": 8522
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/ctl_title/visual.json",
+      "sha256": "7bb4a3dfcc39d07ac84ed8b79b02873f4a375b4fd39f7911bc4592b155509ecb",
+      "bytes": 2432
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/cut/visual.json",
+      "sha256": "37a37053c0f6d2271e712cf9d07e96f7ae920f32ee72dbfd182f9fa38e9dcc1d",
+      "bytes": 2884
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/kpi0_label/visual.json",
+      "sha256": "31550a6cbd8771894b1f3f5f22c1fa96295745d770bd159b858d7394379e518a",
+      "bytes": 2431
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/kpi0_note/visual.json",
+      "sha256": "6da34cc544c5f3b88c8877ee91c64bfbbb6ad5c9edce018e95cb33d189920226",
+      "bytes": 3452
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/kpi0_panel/visual.json",
+      "sha256": "7bd5e90d0173cf7ecb24d805e50cef27e4908a0f07ef265ecfe58ab52fc0fd7b",
+      "bytes": 2817
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/kpi0_value/visual.json",
+      "sha256": "0da6a7c885daef644fa90cb78830142238514a7b53267bc5e434302d20b42bc3",
+      "bytes": 3438
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/kpi1_label/visual.json",
+      "sha256": "c74ae4121dd026296760a3566162ca5e331e2dc499b643a1bbdf45bf9cb46dcf",
+      "bytes": 2436
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/kpi1_note/visual.json",
+      "sha256": "bc1124129043b6f629717989dc0873e820a76146a983b5b9be1c7bd4a4761bd3",
+      "bytes": 3445
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/kpi1_panel/visual.json",
+      "sha256": "42b99e675c784249c3542f29c7c365e78857181302a96475ce7442ad11af0bc3",
+      "bytes": 2820
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/kpi1_value/visual.json",
+      "sha256": "2a3ef51cfe9d243eafa50775049ddef47b2383427ef28f347b10b6627f3ef681",
+      "bytes": 3642
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/kpi2_label/visual.json",
+      "sha256": "c4df9f27397d34840063089106b748923785278e2ed5089d5b313fd259c037c4",
+      "bytes": 2442
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/kpi2_note/visual.json",
+      "sha256": "7f201b7615fdd8a363a7cf265285e14823bb0920f315b080ccd4cb8be0ca99f8",
+      "bytes": 3463
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/kpi2_panel/visual.json",
+      "sha256": "03c18e74dd47143d1b94610a9e7ce43f1b3cb3bafa4be469090466cd2ab8cb4d",
+      "bytes": 2820
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/kpi2_value/visual.json",
+      "sha256": "0205d1fea6a52061ff665e539cbfea257f773e2d8f4e66107e2e9778451a288d",
+      "bytes": 3666
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/kpi3_label/visual.json",
+      "sha256": "bea12f0d5dd7da44845f925d82f29707e8dd80036b84d1646be1e7922ce64bc4",
+      "bytes": 2438
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/kpi3_note/visual.json",
+      "sha256": "9a136ae377943c471d2502b1912d0e93d02682d96acf42be424788d2f7014ade",
+      "bytes": 3468
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/kpi3_panel/visual.json",
+      "sha256": "b9a550b0ddc7ec86d6225635cbfac729074c8c082bd369f65d350857ece10282",
+      "bytes": 2821
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/kpi3_value/visual.json",
+      "sha256": "31fa378dd713c283cf1e4dd476ac3cee430a2111db12c1b9de9963519048e212",
+      "bytes": 3454
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/mes/visual.json",
+      "sha256": "bc43e113dc9c530c6c115f0d90f88903cfcaa6a5f5967f837cdafe9659b573d9",
+      "bytes": 4168
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/mes_label/visual.json",
+      "sha256": "54073c4590949897d3234fc18eec7739260cc061b54accfd14a3e8e18924e1a4",
+      "bytes": 2418
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/periodo/visual.json",
+      "sha256": "f4025a5049c628ff87ac33a7b423e1a35c7ae0b1254b4bde4980b259b4771bab",
+      "bytes": 3425
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/sub/visual.json",
+      "sha256": "00c271fb7ea044cfd55d8ff72f8ee629cd6dd609f666d078e93919720f294ebb",
+      "bytes": 2475
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/tend_panel/visual.json",
+      "sha256": "786ad8a07f4887d4fd380cbdfba3ea2342735b27b57d878bd642691d5b03d20c",
+      "bytes": 2820
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/tend_sub/visual.json",
+      "sha256": "036fba3169438cf7f1d7aeb8a7166e1a8ba5d93cece2ed7e6a0c5757f129c3e7",
+      "bytes": 2433
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/tend_title/visual.json",
+      "sha256": "3e65665f9bf025a0b102ade40fc410c51a07adc13d992b97b37d53a489f4f611",
+      "bytes": 2434
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/tendencia/visual.json",
+      "sha256": "6695dd65958da0d99acc61f2e6eed93724a0d1cddb09adca44c51d6b751e46c1",
+      "bytes": 7027
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/title/visual.json",
+      "sha256": "8029d327ff3e47f4288a4d90fe5c688900df4aee224827bb67b09ad195c1b42a",
+      "bytes": 2453
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/uni_panel/visual.json",
+      "sha256": "2fdbee035af121bc793534c27646b6d40fb3d9e651a3af3cc55fcc81dfa5e492",
+      "bytes": 2818
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/uni_sub/visual.json",
+      "sha256": "8ff3c8f933f4bbe54c582526fcf98d0f8630cb96790401e1db177878cdd5fccb",
+      "bytes": 2533
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/uni_tabla/visual.json",
+      "sha256": "892928bd0e5cad826fce08199ec96639c27787158337753de1e2e887217a448d",
+      "bytes": 12681
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/uni_title/visual.json",
+      "sha256": "400bb86a24eea3cd65ab0996a4100b2d6a68fa5c8f3d64e231bb12c43534146c",
+      "bytes": 2430
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/unidad/visual.json",
+      "sha256": "b742560c46dce61dca86322ce8836f0a2237fc10e98b4ad95f601b3a3490431b",
+      "bytes": 3924
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/pages/ventas/visuals/unidad_label/visual.json",
+      "sha256": "ba3f60e4dbadcd79835455e2861c82c493a3c8218dcd1e3d1840834543c5c272",
+      "bytes": 2427
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/report.json",
+      "sha256": "ed01256136b652fe4fb967e800e3718799696c7a4038c087735eac008c6c4faa",
+      "bytes": 1386
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition/version.json",
+      "sha256": "c8bdd966a85f1eaab4312d2096b6d7b508243e4d7bc5a4d25af3cfcb1056a4e7",
+      "bytes": 152
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/definition.pbir",
+      "sha256": "a52200915a902c63be0e8cf19b2ea7b58c9d5944229dfbd626fb4fca59722da0",
+      "bytes": 127
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/StaticResources/RegisteredResources/portaro-mint.json",
+      "sha256": "4b9a7d6171cd1b577a38a9c3fe499dd7fdf5f5da50d08be95ff7f1e0f2c3551a",
+      "bytes": 1342
+    },
+    {
+      "path": "reporte/cumbre-com-04.Report/StaticResources/SharedResources/BaseThemes/CY26SU05.json",
+      "sha256": "e52370c540c1ca0ac856f712fb9b0a21d955bd3262149e6ece77ce731192ecec",
+      "bytes": 20403
+    },
+    {
+      "path": "reporte/cumbre-com-04.SemanticModel/.platform",
+      "sha256": "12f71f4a530492adacd347fe02d03fda4d8d4f718c7e28c811e146bc2f128770",
+      "bytes": 314
+    },
+    {
+      "path": "reporte/cumbre-com-04.SemanticModel/definition/cultures/es-PE.tmdl",
+      "sha256": "e873375450c0395c41e9b020d75be7318709126cd42576a98db8aa553d729619",
+      "bytes": 10404
+    },
+    {
+      "path": "reporte/cumbre-com-04.SemanticModel/definition/database.tmdl",
+      "sha256": "822c914b643bca32bb20abd8a762df8204a1b9ef02acc2bc7348727f6699cb96",
+      "bytes": 39
+    },
+    {
+      "path": "reporte/cumbre-com-04.SemanticModel/definition/expressions.tmdl",
+      "sha256": "5f07a12fe6810fbe4ca239683f16e9e76d6a70e6c7cba507c4a93de4cd69521a",
+      "bytes": 232
+    },
+    {
+      "path": "reporte/cumbre-com-04.SemanticModel/definition/model.tmdl",
+      "sha256": "32f45546143a384ee45dd493b5c8affc8371291c0982d3d7d2780119c46b221c",
+      "bytes": 571
+    },
+    {
+      "path": "reporte/cumbre-com-04.SemanticModel/definition/relationships.tmdl",
+      "sha256": "c7a6bb20c9c7730e9ba1c08433cae4d9ae3c33ba0398e3efa53e95bb9414b1f9",
+      "bytes": 777
+    },
+    {
+      "path": "reporte/cumbre-com-04.SemanticModel/definition/tables/ControlCalidad.tmdl",
+      "sha256": "3ecb8f293591e483aa68a57d3909ff5ac8a770448fecdb1dd0fba277faf7fa1a",
+      "bytes": 1548
+    },
+    {
+      "path": "reporte/cumbre-com-04.SemanticModel/definition/tables/DimFecha.tmdl",
+      "sha256": "1d20186c3ea476acf4d14da35d41b508cb315e8ce79756d3b82e6e6388de67eb",
+      "bytes": 2048
+    },
+    {
+      "path": "reporte/cumbre-com-04.SemanticModel/definition/tables/DimUnidad.tmdl",
+      "sha256": "de69d1a98dc2b8fa12231fdacb691b6c0edf5feff077c36151a1646d1cb07c3c",
+      "bytes": 1590
+    },
+    {
+      "path": "reporte/cumbre-com-04.SemanticModel/definition/tables/FactMeta.tmdl",
+      "sha256": "c0666845b18cfd91254fdea28af713cb361f99b3c3de6e890846aab28dd9bfd8",
+      "bytes": 4984
+    },
+    {
+      "path": "reporte/cumbre-com-04.SemanticModel/definition/tables/FactPuente.tmdl",
+      "sha256": "48db6911217044320b6eb016ca22e1863e70563c59e70143c3534b9fea7c8d5f",
+      "bytes": 2739
+    },
+    {
+      "path": "reporte/cumbre-com-04.SemanticModel/definition/tables/FactVenta.tmdl",
+      "sha256": "83fe6f796a33ee303e9b1225af6a628374cfbc7ebeb6160a3e059e11f530d9bd",
+      "bytes": 6795
+    },
+    {
+      "path": "reporte/cumbre-com-04.SemanticModel/definition/tables/FactWeb.tmdl",
+      "sha256": "de161c9cfe18a935d72e38f18ed6b24f03c447867baa363afb56a5a012a1b7c0",
+      "bytes": 3995
+    },
+    {
+      "path": "reporte/cumbre-com-04.SemanticModel/definition.pbism",
+      "sha256": "ed99ec078efd2ff27fc1c65cc97902138d7d3c438acdb7770ae37dc71c7f06c8",
+      "bytes": 43
+    },
+    {
+      "path": "reporte/cumbre-com-04.SemanticModel/diagramLayout.json",
+      "sha256": "7268b01bda86710b3c7f1749100c7b8fea883f55cc4215007c672c1113ec6c5d",
+      "bytes": 2922
+    }
+  ],
+  "sourceEntryUnchanged": true,
+  "imageProvenance": [
+    "powerbi-desktop-pdf-render"
+  ]
+}

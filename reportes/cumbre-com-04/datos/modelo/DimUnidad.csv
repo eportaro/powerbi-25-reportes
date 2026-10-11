@@ -1,0 +1,8 @@
+unidad,nombre,canal,orden,tiene_meta_flag
+T01,Miraflores,Tienda,1,1
+T02,San Miguel,Tienda,2,1
+T03,Arequipa Cayma,Tienda,3,1
+T04,Trujillo,Tienda,4,1
+T05,Cusco,Tienda,5,1
+WEB,Tienda online,Online,6,1
+CORP,Corporativo,Corporativo,7,0

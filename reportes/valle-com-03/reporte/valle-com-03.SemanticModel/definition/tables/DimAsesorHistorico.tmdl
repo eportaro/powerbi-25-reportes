@@ -1,0 +1,31 @@
+table DimAsesorHistorico
+	lineageTag: 12ffc9f5-9aba-5c41-81ec-a0b1642ffafd
+
+	column asesor_historico
+		dataType: string
+		lineageTag: d41c1986-b85a-5c13-973c-3881bb40f5f0
+		summarizeBy: none
+		sourceColumn: asesor_historico
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre
+		dataType: string
+		lineageTag: 6f4f757a-4c89-515c-8da1-862d5df285c6
+		summarizeBy: none
+		sourceColumn: nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimAsesorHistorico = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\DimAsesorHistorico.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"asesor_historico", type text}, {"nombre", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

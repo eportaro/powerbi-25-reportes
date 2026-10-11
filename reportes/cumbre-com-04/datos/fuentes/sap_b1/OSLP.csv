@@ -1,0 +1,18 @@
+SlpCode,SlpName,Memo,Active,U_Zona
+1,Vendedor Miraflores 1,T01,Y,Miraflores
+2,Vendedor Miraflores 2,T01,Y,Miraflores
+3,Vendedor Miraflores 3,T01,Y,Miraflores
+4,Vendedor San Miguel 1,T02,Y,San
+5,Vendedor San Miguel 2,T02,Y,San
+6,Vendedor San Miguel 3,T02,Y,San
+7,Vendedor Arequipa Cayma 1,T03,Y,Arequipa
+8,Vendedor Arequipa Cayma 2,T03,Y,Arequipa
+9,Vendedor Arequipa Cayma 3,T03,Y,Arequipa
+10,Vendedor Trujillo 1,T04,Y,Trujillo
+11,Vendedor Trujillo 2,T04,Y,Trujillo
+12,Vendedor Trujillo 3,T04,Y,Trujillo
+13,Vendedor Cusco 1,T05,Y,Cusco
+14,Vendedor Cusco 2,T05,Y,Cusco
+15,Vendedor Cusco 3,T05,Y,Cusco
+-1,-Ningún empleado del departamento de ventas-,,Y,
+20,Ventas corporativas,CORP,Y,Lima

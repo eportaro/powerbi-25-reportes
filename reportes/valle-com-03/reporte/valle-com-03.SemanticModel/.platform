@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "valle-com-03"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "51dadb39-3aca-4bc9-91f4-f24e4f606ea7"
+  }
+}

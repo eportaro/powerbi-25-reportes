@@ -1,0 +1,388 @@
+cultureInfo es-PE
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "controlcalidad.control_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ControlCalidad",
+			          "ConceptualProperty": "control_id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "#": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "controlcalidad.tema": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ControlCalidad",
+			          "ConceptualProperty": "tema"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Fuente": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "controlcalidad.detalle": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ControlCalidad",
+			          "ConceptualProperty": "detalle"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Qué se hizo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "controlcalidad.estado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ControlCalidad",
+			          "ConceptualProperty": "estado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Estado": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "controlcalidad.valor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ControlCalidad",
+			          "ConceptualProperty": "valor"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Casos": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimfecha.mes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimFecha",
+			          "ConceptualProperty": "mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "mes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factventa.venta_con_meta_mes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactVenta",
+			          "ConceptualProperty": "Venta con meta mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Venta (tiendas y web)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factventa.venta_neta_mes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactVenta",
+			          "ConceptualProperty": "Venta neta mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Venta mes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factventa.venta_neta_acumulado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactVenta",
+			          "ConceptualProperty": "Venta neta acumulado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Venta acum.": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factventa.ticket_promedio_mes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactVenta",
+			          "ConceptualProperty": "Ticket promedio mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Ticket prom.": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factmeta.meta_mes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactMeta",
+			          "ConceptualProperty": "Meta mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Meta sin IGV": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Meta mes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factmeta.avance_mes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactMeta",
+			          "ConceptualProperty": "Avance mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Avance mes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factmeta.meta_acumulado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactMeta",
+			          "ConceptualProperty": "Meta acumulado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Meta acum.": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factmeta.avance_acumulado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactMeta",
+			          "ConceptualProperty": "Avance acumulado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Avance acum.": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimunidad.nombre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimUnidad",
+			          "ConceptualProperty": "nombre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nombre": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Tienda o canal": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factpuente.paso": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactPuente",
+			          "ConceptualProperty": "paso"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Paso": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factpuente.puente_acumulado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactPuente",
+			          "ConceptualProperty": "Puente acumulado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "S/": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

@@ -1,0 +1,371 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "bridge_table",
+  "position": {
+    "x": 42,
+    "y": 448,
+    "z": 35000,
+    "height": 186,
+    "width": 914,
+    "tabOrder": 35000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimMes"
+                    }
+                  },
+                  "Property": "periodo"
+                }
+              },
+              "queryRef": "DimMes.periodo",
+              "nativeQueryRef": "periodo",
+              "active": true,
+              "displayName": "Mes"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactVenta"
+                    }
+                  },
+                  "Property": "Legacy válido único"
+                }
+              },
+              "queryRef": "FactVenta.Legacy válido único",
+              "nativeQueryRef": "Legacy válido único",
+              "active": true,
+              "displayName": "Legacy"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactVenta"
+                    }
+                  },
+                  "Property": "ERP nuevo recibido"
+                }
+              },
+              "queryRef": "FactVenta.ERP nuevo recibido",
+              "nativeQueryRef": "ERP nuevo recibido",
+              "active": true,
+              "displayName": "Nuevo"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactVenta"
+                    }
+                  },
+                  "Property": "Legacy sustituido"
+                }
+              },
+              "queryRef": "FactVenta.Legacy sustituido",
+              "nativeQueryRef": "Legacy sustituido",
+              "active": true,
+              "displayName": "Sustituido"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactVenta"
+                    }
+                  },
+                  "Property": "Ajustes de cierre"
+                }
+              },
+              "queryRef": "FactVenta.Ajustes de cierre",
+              "nativeQueryRef": "Ajustes de cierre",
+              "active": true,
+              "displayName": "Ajustes"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactVenta"
+                    }
+                  },
+                  "Property": "Venta oficial"
+                }
+              },
+              "queryRef": "FactVenta.Venta oficial",
+              "nativeQueryRef": "Venta oficial",
+              "active": true,
+              "displayName": "Oficial"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DimMes"
+                  }
+                },
+                "Property": "periodo"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#657886'"
+                    }
+                  }
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DFEAE5'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "facc03f074c02efebb84",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimMes"
+              }
+            },
+            "Property": "periodo"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "04dc72806b8e6d8167aa",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FactVenta"
+              }
+            },
+            "Property": "Legacy válido único"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5b4f642f2edbc36642c6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FactVenta"
+              }
+            },
+            "Property": "ERP nuevo recibido"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a598a72300352371d1e2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FactVenta"
+              }
+            },
+            "Property": "Legacy sustituido"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "71a36f44dfaa3d973386",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FactVenta"
+              }
+            },
+            "Property": "Ajustes de cierre"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c1aaaf70813350b0df28",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FactVenta"
+              }
+            },
+            "Property": "Venta oficial"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+table FactPuente
+	lineageTag: 5a35c274-723a-52cb-9047-721ef0ab2e61
+
+	/// Importe del paso del puente de conciliación.
+	measure 'Puente base' = SUM ( FactPuente[importe_pen] )
+		formatString: #,0.00
+		isHidden
+		displayFolder: Base
+		lineageTag: 2d89425e-b546-509f-96f9-ab6b6bf6cd5c
+
+	/// Enero hasta el mes elegido. Cada paso del puente; el reporte al directorio llega hasta agosto.
+	measure 'Puente acumulado' =
+			VAR _mes = MAX ( DimFecha[mes_num] )
+			RETURN CALCULATE ( [Puente base], REMOVEFILTERS ( DimFecha ), DimFecha[mes_num] <= _mes )
+		formatString: #,0
+		displayFolder: Conciliación
+		lineageTag: 446f0d48-fc28-527b-b85c-4fae9df4a2de
+
+	column fecha
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 011488ac-700a-56b9-ab1a-02af4294d1b3
+		summarizeBy: none
+		sourceColumn: fecha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column unidad
+		dataType: string
+		lineageTag: f9debb42-a7c9-5f9f-a0ae-52d31929f302
+		summarizeBy: none
+		sourceColumn: unidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column puente
+		dataType: string
+		lineageTag: 2eaf2f26-f448-55df-8f02-dbc154670d23
+		summarizeBy: none
+		sourceColumn: puente
+
+		annotation SummarizationSetBy = Automatic
+
+	column paso_orden
+		dataType: int64
+		formatString: 0
+		lineageTag: 1038a736-c49f-5206-af74-12a42e64092c
+		summarizeBy: none
+		sourceColumn: paso_orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column paso
+		dataType: string
+		lineageTag: 98a584d4-f20a-5cbb-9cfa-af4a8f6dbf80
+		summarizeBy: none
+		sourceColumn: paso
+		sortByColumn: paso_orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column importe_pen
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: 7ad73ec9-11f6-5bc4-ac5a-20acc394a019
+		summarizeBy: none
+		sourceColumn: importe_pen
+
+		annotation SummarizationSetBy = Automatic
+
+	column redondeo_pen
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: 9c40d264-23f3-56aa-91e1-c8aa3667e663
+		summarizeBy: none
+		sourceColumn: redondeo_pen
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactPuente = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\FactPuente.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"fecha", type date}, {"unidad", type text}, {"puente", type text}, {"paso_orden", Int64.Type}, {"paso", type text}, {"importe_pen", Currency.Type}, {"redondeo_pen", Currency.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

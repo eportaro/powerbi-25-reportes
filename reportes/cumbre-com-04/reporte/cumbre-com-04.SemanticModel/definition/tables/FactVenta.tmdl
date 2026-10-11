@@ -1,0 +1,189 @@
+table FactVenta
+	lineageTag: 049da8a6-2fd7-55d6-94e9-f724b7037c04
+
+	/// Venta oficial sin IGV: líneas de boletas y facturas válidas (sin anuladas, sin flete, sin la boleta web repetida) menos notas de crédito en el mes de la nota. Cusco desde el 01/09 sale de la operación gravada del cierre Z.
+	measure 'Venta neta base' = SUM ( FactVenta[venta_neta_pen] )
+		formatString: #,0.00
+		isHidden
+		displayFolder: Base
+		lineageTag: d8fb7767-f44a-5628-8142-034d5c1197d0
+
+	/// Venta neta de las unidades que tienen meta (tiendas y web). El corporativo queda fuera.
+	measure 'Venta con meta base' = CALCULATE ( [Venta neta base], DimUnidad[tiene_meta_flag] = 1 )
+		formatString: #,0.00
+		isHidden
+		displayFolder: Base
+		lineageTag: ac2c6dd9-eade-532f-a7ec-2fe890924460
+
+	/// Comprobantes válidos del día (boletas y facturas). En Cusco desde el 01/09, los tickets que imprime la Z (incluye anulados).
+	measure 'Tickets base' = SUM ( FactVenta[tickets] )
+		formatString: #,0
+		isHidden
+		displayFolder: Base
+		lineageTag: cc874871-3d89-53d9-840b-d92bab11a745
+
+	/// Mes elegido. Venta oficial sin IGV de la selección, incluido el corporativo.
+	measure 'Venta neta mes' =
+			VAR _mes = MAX ( DimFecha[mes_num] )
+			RETURN CALCULATE ( [Venta neta base], REMOVEFILTERS ( DimFecha ), DimFecha[mes_num] = _mes )
+		formatString: #,0
+		displayFolder: Ventas
+		lineageTag: 15db7efd-2e2c-5417-a509-dd4cde5c2e65
+
+	/// Mes elegido. Venta de tiendas y web, la base que se compara con la meta.
+	measure 'Venta con meta mes' =
+			VAR _mes = MAX ( DimFecha[mes_num] )
+			RETURN CALCULATE ( [Venta con meta base], REMOVEFILTERS ( DimFecha ), DimFecha[mes_num] = _mes )
+		formatString: #,0
+		displayFolder: Ventas
+		lineageTag: ddd7ee37-3eed-5ab8-8ed1-42c4e34b40e5
+
+	/// Enero hasta el mes elegido. Venta oficial sin IGV de la selección, incluido el corporativo.
+	measure 'Venta neta acumulado' =
+			VAR _mes = MAX ( DimFecha[mes_num] )
+			RETURN CALCULATE ( [Venta neta base], REMOVEFILTERS ( DimFecha ), DimFecha[mes_num] <= _mes )
+		formatString: #,0
+		displayFolder: Ventas
+		lineageTag: 550cd8ce-2f8b-5357-8457-342c82d49436
+
+	/// Enero hasta el mes elegido. Venta de tiendas y web, la base que se compara con la meta.
+	measure 'Venta con meta acumulado' =
+			VAR _mes = MAX ( DimFecha[mes_num] )
+			RETURN CALCULATE ( [Venta con meta base], REMOVEFILTERS ( DimFecha ), DimFecha[mes_num] <= _mes )
+		formatString: #,0
+		displayFolder: Ventas
+		lineageTag: 9b22e0e8-1f51-5efe-a5b0-c139adc2e926
+
+	/// Mes elegido. Comprobantes emitidos de la selección.
+	measure 'Tickets mes' =
+			VAR _mes = MAX ( DimFecha[mes_num] )
+			RETURN CALCULATE ( [Tickets base], REMOVEFILTERS ( DimFecha ), DimFecha[mes_num] = _mes )
+		formatString: #,0
+		displayFolder: Ventas
+		lineageTag: 8e458ba9-91ab-59af-990e-4801c8eacf31
+
+	/// Mes elegido. Venta neta de tiendas / tickets de tienda, en soles sin IGV. La web y el corporativo no tienen ticket.
+	measure 'Ticket promedio mes' = DIVIDE ( CALCULATE ( [Venta neta mes], DimUnidad[canal] = "Tienda" ), CALCULATE ( [Tickets mes], DimUnidad[canal] = "Tienda" ) )
+		formatString: #,0.00
+		displayFolder: Ventas
+		lineageTag: 81dd6509-fb66-5422-8ef0-c4070ad907fd
+
+	/// Enero hasta el mes elegido. Días de Cusco sin foto del cierre Z: no se estiman, la venta del día queda en blanco.
+	measure 'Días sin cierre' =
+			VAR _mes = MAX ( DimFecha[mes_num] )
+			RETURN CALCULATE ( [Días sin cierre base], REMOVEFILTERS ( DimFecha ), DimFecha[mes_num] <= _mes )
+		formatString: #,0
+		displayFolder: Control
+		lineageTag: 8495310f-c725-5951-a624-fb92f6ae4241
+
+	/// Días marcados sin cierre.
+	measure 'Días sin cierre base' = SUM ( FactVenta[sin_cierre_flag] )
+		formatString: #,0
+		isHidden
+		displayFolder: Base
+		lineageTag: 282cd6c9-b0aa-561f-80e3-740d5e95012d
+
+	/// Texto de tarjeta: venta neta del mes.
+	measure 'Tarjeta venta' =
+			VAR _v = [Venta neta mes]
+			RETURN IF ( ISBLANK ( _v ), "Sin venta", "S/ " & FORMAT ( _v, "#,0" ) )
+		displayFolder: Tarjetas
+		lineageTag: 5060c96b-3980-5b59-8047-fabc7c69deed
+
+	/// Texto de tarjeta: venta acumulada.
+	measure 'Tarjeta venta nota' = "Acumulado " & "S/ " & FORMAT ( [Venta neta acumulado], "#,0" ) & " · sin IGV"
+		displayFolder: Tarjetas
+		lineageTag: 6ab2c7de-29c1-5103-9e36-97e9aa4c55f3
+
+	column fecha
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 82851980-90ce-5346-8538-8af459bf12ed
+		summarizeBy: none
+		sourceColumn: fecha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column unidad
+		dataType: string
+		isHidden
+		lineageTag: c6321d9d-8be2-5e71-9894-5247cc2aaf1d
+		summarizeBy: none
+		sourceColumn: unidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column venta_pen
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: 6f83321a-74d1-5a59-b03c-1f1fa98c056c
+		summarizeBy: none
+		sourceColumn: venta_pen
+
+		annotation SummarizationSetBy = Automatic
+
+	column devoluciones_pen
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: a7dc97f2-8c17-52f2-824e-ad34c9bed13e
+		summarizeBy: none
+		sourceColumn: devoluciones_pen
+
+		annotation SummarizationSetBy = Automatic
+
+	column venta_neta_pen
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: bae71088-c60a-5112-92b9-657f46322a0a
+		summarizeBy: none
+		sourceColumn: venta_neta_pen
+
+		annotation SummarizationSetBy = Automatic
+
+	column tickets
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c40206f0-c0ca-5e35-a612-19ecd402173a
+		summarizeBy: none
+		sourceColumn: tickets
+
+		annotation SummarizationSetBy = Automatic
+
+	column origen
+		dataType: string
+		isHidden
+		lineageTag: a754d3ef-9a63-551f-b1c0-870622b0e6e3
+		summarizeBy: none
+		sourceColumn: origen
+
+		annotation SummarizationSetBy = Automatic
+
+	column sin_cierre_flag
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 16985041-a0bd-5f4a-8bf4-500903ef858d
+		summarizeBy: none
+		sourceColumn: sin_cierre_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactVenta = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\FactVenta.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"fecha", type date}, {"unidad", type text}, {"venta_pen", Currency.Type}, {"devoluciones_pen", Currency.Type}, {"venta_neta_pen", Currency.Type}, {"tickets", Int64.Type}, {"origen", type text}, {"sin_cierre_flag", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

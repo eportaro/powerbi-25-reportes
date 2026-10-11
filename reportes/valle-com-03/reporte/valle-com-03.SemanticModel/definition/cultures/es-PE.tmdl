@@ -1,0 +1,336 @@
+cultureInfo es-PE
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "dimcliente.nombre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimCliente",
+			          "ConceptualProperty": "nombre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nombre": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimasesoractual.nombre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimAsesorActual",
+			          "ConceptualProperty": "nombre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nombre": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimasesorhistorico.nombre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimAsesorHistorico",
+			          "ConceptualProperty": "nombre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Asesor histórico": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factventa.venta_recibida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactVenta",
+			          "ConceptualProperty": "Venta recibida"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Venta recibida": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factventa.meta_comercial": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactVenta",
+			          "ConceptualProperty": "Meta comercial"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Meta PEN": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factventa.cumplimiento": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactVenta",
+			          "ConceptualProperty": "Cumplimiento"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cumplimiento": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factventa.legacy_válido_único": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactVenta",
+			          "ConceptualProperty": "Legacy válido único"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Legacy": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factventa.erp_nuevo_recibido": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactVenta",
+			          "ConceptualProperty": "ERP nuevo recibido"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Nuevo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factventa.legacy_sustituido": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactVenta",
+			          "ConceptualProperty": "Legacy sustituido"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Sustituido": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factventa.ajustes_de_cierre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactVenta",
+			          "ConceptualProperty": "Ajustes de cierre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Ajustes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factventa.venta_oficial": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactVenta",
+			          "ConceptualProperty": "Venta oficial"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Oficial": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factventa.documentos_recibidos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactVenta",
+			          "ConceptualProperty": "Documentos recibidos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Negocios únicos": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimmes.periodo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimMes",
+			          "ConceptualProperty": "periodo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "periodo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Mes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimmes.completo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimMes",
+			          "ConceptualProperty": "completo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Recibido (1 / 0)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimproducto.nombre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimProducto",
+			          "ConceptualProperty": "nombre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nombre": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

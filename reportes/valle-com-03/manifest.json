@@ -1,0 +1,792 @@
+{
+  "caseId": "valle-com-03",
+  "passed": true,
+  "singleEntry": true,
+  "rows": {
+    "DimMes": 6,
+    "DimCliente": 3,
+    "DimProducto": 2,
+    "DimAsesorHistorico": 3,
+    "DimAsesorActual": 3,
+    "FactVenta": 72,
+    "FactMeta": 12,
+    "FactAjuste": 1
+  },
+  "relativeReferencesValid": true,
+  "publicContentScanPassed": true,
+  "files": [
+    {
+      "path": "capturas/valle-com-03-1.png",
+      "sha256": "2ced4a642f27fb23e30a8df41c744ce034f0ba7f41c06c3ce660e58344a1dae5",
+      "bytes": 133866
+    },
+    {
+      "path": "capturas/valle-com-03-2.png",
+      "sha256": "c4a9316e4eac4363db57c0b7bd70ad20d91b464e29fc8c9e4b9f6e20589c42a6",
+      "bytes": 189960
+    },
+    {
+      "path": "capturas/valle-com-03.pdf",
+      "sha256": "634f9e81a397ae923ea0ed4e62ffad4272dba122db493f5ab08a65cd9249d2c9",
+      "bytes": 383051
+    },
+    {
+      "path": "datos/fuentes/gestion.xlsx",
+      "sha256": "ba212049145d72c3b6f19b2f0c4592259e106e534fa22fcbd0e6ca1c2b6e9b34",
+      "bytes": 7592
+    },
+    {
+      "path": "datos/fuentes/legacy/ventas_lineas.csv",
+      "sha256": "cdedd2137e4adf6f714693a9b696da1f771b44a2773824f9875db98c952b895c",
+      "bytes": 2369
+    },
+    {
+      "path": "datos/fuentes/nuevo/cabeceras_2026-03.csv",
+      "sha256": "6a6b464d35c932dab72a55025ecedb3e1fb243a8acc97e29d77a718094cbaecd",
+      "bytes": 262
+    },
+    {
+      "path": "datos/fuentes/nuevo/cabeceras_2026-04.csv",
+      "sha256": "f78bd3859fe37f44d18530ca66cc522ac25c854d6b89b1c99acb109fc35d9c40",
+      "bytes": 439
+    },
+    {
+      "path": "datos/fuentes/nuevo/cabeceras_2026-05.csv",
+      "sha256": "c827fac66c1fcada5f546ba5013dbfc8708106354fbdd981ae4e26360fbc7b04",
+      "bytes": 441
+    },
+    {
+      "path": "datos/fuentes/nuevo/cabeceras_2026-06.csv",
+      "sha256": "135d5dcbca3e78c3a8725088dc664ccc02f65e743f89d7337db27a9be5f16722",
+      "bytes": 439
+    },
+    {
+      "path": "datos/fuentes/nuevo/lineas_2026-03.csv",
+      "sha256": "7ac7d9a017b62486c079f48ccc7306aadbc81cc81285c68f33e961e339bf0ec5",
+      "bytes": 353
+    },
+    {
+      "path": "datos/fuentes/nuevo/lineas_2026-04.csv",
+      "sha256": "2ddd72df3804482528d7004da037053af67b01814bc9667225d41a1e674561eb",
+      "bytes": 625
+    },
+    {
+      "path": "datos/fuentes/nuevo/lineas_2026-05.csv",
+      "sha256": "433406ac62d492caff7e76da655ef672f8d26f6d47c2b00550efa4d23f6de94d",
+      "bytes": 630
+    },
+    {
+      "path": "datos/fuentes/nuevo/lineas_2026-06.csv",
+      "sha256": "99c13f712f3ec5dba6eb07b5dcbfe62b8391bb72267557e38c87cfb66e2ccb5b",
+      "bytes": 628
+    },
+    {
+      "path": "datos/modelo/DimAsesorActual.csv",
+      "sha256": "5c0fbff0ef6ec06a9fc10fc37d88486de856be49b73c612e2ef2c39b25503bc0",
+      "bytes": 77
+    },
+    {
+      "path": "datos/modelo/DimAsesorHistorico.csv",
+      "sha256": "90a4d5b4dda636cf492fba053365ba5b29f2e831cc3d3904aa669e37c334b53e",
+      "bytes": 84
+    },
+    {
+      "path": "datos/modelo/DimCliente.csv",
+      "sha256": "f7bdd585efc270a4affef36145346a3756576bba7fbeebe49603e1954f3aa986",
+      "bytes": 78
+    },
+    {
+      "path": "datos/modelo/DimMes.csv",
+      "sha256": "351122ec176316d098a758ce31ee0575f05d11f6f6db24e2a972638da6c8f583",
+      "bytes": 137
+    },
+    {
+      "path": "datos/modelo/DimProducto.csv",
+      "sha256": "e6447a124f07667705b0c3e31669a8bb0fde47a4878f0cf63c483059fec211b6",
+      "bytes": 47
+    },
+    {
+      "path": "datos/modelo/FactAjuste.csv",
+      "sha256": "7d41e79f58c109c2d64904f5a1947994a3972f0e7b6a8d055b29364306d14e9b",
+      "bytes": 97
+    },
+    {
+      "path": "datos/modelo/FactMeta.csv",
+      "sha256": "68c65dcd26cb0c456c9bb229c81aa46279f3cd8c0ace3f2b282347e3791ca855",
+      "bytes": 284
+    },
+    {
+      "path": "datos/modelo/FactVenta.csv",
+      "sha256": "27005b8e1c1cb416ddcd8bbda6b53e1348b6f292f4b128606a5979a69ce925e9",
+      "bytes": 7728
+    },
+    {
+      "path": "documentacion/guia-uso.md",
+      "sha256": "490b46f250acea12d7a47b58c832eb4cf83690beb9df11f01d41f57f66042119",
+      "bytes": 993
+    },
+    {
+      "path": "documentacion/indicadores.md",
+      "sha256": "43a2987c772ee7cb0c2d6e4e0164454813981f1380adb005a4fbd0a570e7c5b2",
+      "bytes": 7016
+    },
+    {
+      "path": "documentacion/reglas-negocio.md",
+      "sha256": "6f796a1973d80665c14975f48a9ac17a8e04a409641cd258fb2b4d99a7aaf8fe",
+      "bytes": 1391
+    },
+    {
+      "path": "ficha-galeria.json",
+      "sha256": "bbad8098f1529ad79cd72c7faf6c4cb6ca3bf00943f5d8ff24b853033a68be27",
+      "bytes": 6044
+    },
+    {
+      "path": "README.md",
+      "sha256": "4e4946a24b2733132f252e556f0e3d1457feb6e50964a7beb5c0af1034f932c7",
+      "bytes": 1911
+    },
+    {
+      "path": "reporte/valle-com-03.pbip",
+      "sha256": "a3ed4206c65a9b815084a499a63fcd010da77e2a747e1ff4add44d11d44c5287",
+      "bytes": 184
+    },
+    {
+      "path": "reporte/valle-com-03.Report/.platform",
+      "sha256": "c340ce076866c591235a8f1fe6c49af40cbbae199f965ff0e899313332e2729a",
+      "bytes": 306
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/page.json",
+      "sha256": "6a63ba0fd9ef05d2e032c70140a13cd0dd64fa303dfbd5456ed28657acf0fd1f",
+      "bytes": 781
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/ajustes_label/visual.json",
+      "sha256": "fdee1f526633efeb5538970d38427c89c639283a270ecae45c393b9e074cc9fc",
+      "bytes": 2495
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/ajustes_note/visual.json",
+      "sha256": "881b754e84e4565307c1fcb42edf74b80f13c951ccc08a567de183cb5397c6a5",
+      "bytes": 2463
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/ajustes_panel/visual.json",
+      "sha256": "4179776bd74606489029da7195c5a5aaf6b710988a7b419c00ace0ac7d5eaa12",
+      "bytes": 2823
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/ajustes_value/visual.json",
+      "sha256": "1abe3c8aa4f58bb217a04401051c24640c9dc74a06d44f9e5d8d6f62991fd6f3",
+      "bytes": 3803
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/brand/visual.json",
+      "sha256": "70aa026878394e633b49b2c9403f05f1fc2f830a6e5db418b737af201721092f",
+      "bytes": 2449
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/bridge_note/visual.json",
+      "sha256": "a2a22640b3561006cea34294b89f652c0b9a37fb6247087edd8c8f574c8f0150",
+      "bytes": 2430
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/bridge_panel/visual.json",
+      "sha256": "b42c579f85ff5944434635876f2c453671a8d09b093ff0e6f098a87f12bc67b4",
+      "bytes": 2821
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/bridge_table/visual.json",
+      "sha256": "50b3dab0053a3e36abe09c4dc5ca47f4db053667e3ab8b45270e44368367c92f",
+      "bytes": 9166
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/bridge_title/visual.json",
+      "sha256": "948890d904b0cde2fb33e1c1390abb6a6b2834307ab6c2d12bab1531e4baa182",
+      "bytes": 2505
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/cliente/visual.json",
+      "sha256": "84836c84b96afea627bbecad8dc442a25799f26ddcd4238b08505e8d02382590",
+      "bytes": 3928
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/cliente_label/visual.json",
+      "sha256": "ab0df795b9ab31c008df065c906385eb0ee9b16ebde54dde129f0414da3320f6",
+      "bytes": 2483
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/coverage/visual.json",
+      "sha256": "cba035791451004bd6b80f877224de63d09a3e46cbc73b97c7eb9f71f2ee5619",
+      "bytes": 4190
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/coverage_detail_note/visual.json",
+      "sha256": "a3e352f200e736f97b834e376688afe2352711e60c7509a0e0247f86cce66c2d",
+      "bytes": 2524
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/coverage_detail_panel/visual.json",
+      "sha256": "b7ca54fad0561df0bbe5a7124f61a5907df47c697a7ce5eb9f86361045aab0a1",
+      "bytes": 2830
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/coverage_detail_title/visual.json",
+      "sha256": "2a306bf7e695424b46d4caeb2974607f2c586803aa7abf0d30d0bd5f7397cfd5",
+      "bytes": 2499
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/coverage_table/visual.json",
+      "sha256": "a28850684b116a6e530b71b1c2288a2b4426b9fdd162691d82164e1cf3782877",
+      "bytes": 5561
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/cut/visual.json",
+      "sha256": "acc555c6287b3a71df74596d84616d11111fb7ec585321d4403d7c379bd6ff6e",
+      "bytes": 2850
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/diferencia_label/visual.json",
+      "sha256": "406644ef0ed1f9f65dbe7d8f0ba669b6af4cead4aacc585afd9b407910d28486",
+      "bytes": 2502
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/diferencia_note/visual.json",
+      "sha256": "3a5b7aab4627e5f9d2caf862de532c53da93c8bf8c319739f3285cd6bc1ee2d6",
+      "bytes": 2472
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/diferencia_panel/visual.json",
+      "sha256": "aab9ea47701e6bfea73d1cd1365cad0a401112900f2f5faa8df3e1a91b08ec86",
+      "bytes": 2827
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/diferencia_value/visual.json",
+      "sha256": "74a4dcff18e57ce0a085446364a0515239ed404106849dc4a1cc350690976db1",
+      "bytes": 3816
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/footer/visual.json",
+      "sha256": "8f45dc39c61f1dfa545de44eb9f5e1dc9b2d06811d8686f96d8197dc6e8187de",
+      "bytes": 3012
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/legacy_label/visual.json",
+      "sha256": "12ec886c5cc75b0a268c01b936b1a5b9399280e4a9de4944abb2ac0ae9c835e2",
+      "bytes": 2498
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/legacy_note/visual.json",
+      "sha256": "15ca8f578c2aca3f85f3aaf69c5919de953e2a48d9d53368da7967413c94d9b3",
+      "bytes": 2470
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/legacy_panel/visual.json",
+      "sha256": "5f4f3a3a711d115b2364fc5123bb19e11191317f70fbc335187db44f2caec235",
+      "bytes": 2821
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/legacy_value/visual.json",
+      "sha256": "c238fced989d28e90b13018f1b1603e56b47bdaadf59468019d838aae4c6d2fe",
+      "bytes": 3813
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/mes/visual.json",
+      "sha256": "2111cb77e72b8b0096de830abb07a72e90893d678e220c4ea1f548df5ff6c8ad",
+      "bytes": 3917
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/mes_label/visual.json",
+      "sha256": "8e4fcd37aa8c3075ee7fc91cb888d000dbcf1c0f25e5d24e7e3446cbce156f64",
+      "bytes": 2480
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/meta_context/visual.json",
+      "sha256": "8ee1afca08a967384faec18834a898cdb6aec07a39345b17c9c0735d0a6733a3",
+      "bytes": 3808
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/nuevo_label/visual.json",
+      "sha256": "7a0ad4743be9fc61b0a0ad868bbc4dbd2578f5dec87ecd01ead4847013eb38f6",
+      "bytes": 2494
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/nuevo_note/visual.json",
+      "sha256": "0c2985e4da89d2b18d99166e324d2f69fa43774fafb3bbfd8c2c7c507faeb348",
+      "bytes": 2468
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/nuevo_panel/visual.json",
+      "sha256": "f922c1dfa5683c9f43d208dbee75c5116cd53c6ddab1609c4ea2631152b4af32",
+      "bytes": 2628
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/nuevo_value/visual.json",
+      "sha256": "d752d5c638ea0576ea75cf77e0bb2ca1bf63ddfdfa4b121ea3c8160ee97b3575",
+      "bytes": 3804
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/producto/visual.json",
+      "sha256": "e28d44970ce9467d5e5c22a772f4032c8989c604ad3c8553c1d565ca75621656",
+      "bytes": 3933
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/producto_label/visual.json",
+      "sha256": "ab24c65002737da8a5970caf929fcdc836efe638990969c6be39fb27813386d5",
+      "bytes": 2485
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/resolution_list/visual.json",
+      "sha256": "b299556e5129bee8cb73fe0692d0946e1b135140aabca5f08d79853aa50987e7",
+      "bytes": 2478
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/resolutions_note/visual.json",
+      "sha256": "35a7e81204c757ae63a695e374dce182c9d887059a2315d3224cf4f2d7554b78",
+      "bytes": 2414
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/resolutions_panel/visual.json",
+      "sha256": "1acc9dfea8bc27db4370a4338f5a10c5af63fbb24b8bd956fd1cc8064de56abd",
+      "bytes": 2827
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/resolutions_title/visual.json",
+      "sha256": "ef7b943c0dae5dba7352ee09d33b4e0125e96cfc00db81bbc22a696717cdad9d",
+      "bytes": 2511
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/subtitle/visual.json",
+      "sha256": "c5e14991957d131dba5ea9d8b2a788d6363c8477889c4ce7db9b75c734d8f9ca",
+      "bytes": 2447
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/sustituido_label/visual.json",
+      "sha256": "1d1bf40b3c102a41d83cbf8c5099d92bad6d77687604be1985a864c76e3dae68",
+      "bytes": 2498
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/sustituido_note/visual.json",
+      "sha256": "071cba6735397fe11f9ccbcc207099a9c71100aba20f5e6a36d70c39cfc66ca3",
+      "bytes": 2474
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/sustituido_panel/visual.json",
+      "sha256": "407ca7a5ebeed601a6939d496a7f2ae5b04ba070022c0b6e011588f50f56a709",
+      "bytes": 2826
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/sustituido_value/visual.json",
+      "sha256": "8924702f99fa89b0852df41b32a14765161ea10072867a06b0d959e3f45640e5",
+      "bytes": 4191
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/title/visual.json",
+      "sha256": "57eb01597b2b65f8c277d6327cb9b46e071d112a91cc9921d4f3ab35a1f287dc",
+      "bytes": 2508
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/uncertainty_note/visual.json",
+      "sha256": "6007fe48109cac42f103d4c25de28638a6badc918bf2629af1512b229fc79caa",
+      "bytes": 2420
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/uncertainty_panel/visual.json",
+      "sha256": "c2e5b93e76e7dd2a4d2b5b37a582a0a340cf8df2a13c6f8744636f811703b64a",
+      "bytes": 2827
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/uncertainty_title/visual.json",
+      "sha256": "cfd8cab7b10970c3e363d72d2fdfcbd20c4b959be6c21cec5b3658f9c70acbfd",
+      "bytes": 2511
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/unknown_amount/visual.json",
+      "sha256": "40c5f33f1e05011edf5cf64bb211472169196520f925fefff0d38898b80e439c",
+      "bytes": 3808
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/conciliacion/visuals/unknown_note/visual.json",
+      "sha256": "a853370098b53fc6ae9274127006d1da6c48c4b11a5bf9b33b8db8ab4223d8a0",
+      "bytes": 2490
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/pages.json",
+      "sha256": "5fdc724b0af61e5c16ea15a945439a338b88c0d721bf1ef2dc590ab3a29f2c8b",
+      "bytes": 226
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/page.json",
+      "sha256": "27d199041c1c2523066339904337c8024b5faf5ebf1c347fc39d18d5dad91b0e",
+      "bytes": 771
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/brand/visual.json",
+      "sha256": "70aa026878394e633b49b2c9403f05f1fc2f830a6e5db418b737af201721092f",
+      "bytes": 2449
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/cliente/visual.json",
+      "sha256": "84836c84b96afea627bbecad8dc442a25799f26ddcd4238b08505e8d02382590",
+      "bytes": 3928
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/cliente_label/visual.json",
+      "sha256": "ab0df795b9ab31c008df065c906385eb0ee9b16ebde54dde129f0414da3320f6",
+      "bytes": 2483
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/coverage/visual.json",
+      "sha256": "7413ded84d0f3a341f0e736a4ab7528adba62f5b42eb0a58a63ea54b725fab4a",
+      "bytes": 4190
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/cumplimiento_label/visual.json",
+      "sha256": "f77b6ca867c6539a2313591b07ac048fad1515fdcdfd0446f76af858b4d90967",
+      "bytes": 2495
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/cumplimiento_note/visual.json",
+      "sha256": "271ba9cfd02951e7eb0f2c16edd62558e637302e2a8ceeb3db3184c00e077b57",
+      "bytes": 2461
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/cumplimiento_panel/visual.json",
+      "sha256": "4b4bed375161ab8a3aad82e0d7b67754ebc6c6d7f4f07eb5e5469df74328dc28",
+      "bytes": 2829
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/cumplimiento_value/visual.json",
+      "sha256": "c80745ebe2cb3cd68ae5ceda65068b4b99e08e4f2bc9ca409f6fe2fdc8a99d3d",
+      "bytes": 3794
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/current_note/visual.json",
+      "sha256": "815b6580dc26a0b6b67009d662ffc66d0b6698b7fb536e4e3876154d41b73b26",
+      "bytes": 2441
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/current_panel/visual.json",
+      "sha256": "d7b66d442eeb5e67a1cb73cab075020577d1a4feb4abc0b021260e049a52e11d",
+      "bytes": 2630
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/current_sales/visual.json",
+      "sha256": "05046fbdc3501d81e09f768eedfc2b06f27813ee27a2654dc945220ad242b4f8",
+      "bytes": 5476
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/current_title/visual.json",
+      "sha256": "834b336a9204470e705ecef367606a3bdea40d9c918d26700e0379bc241d0858",
+      "bytes": 2510
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/cut/visual.json",
+      "sha256": "05296c295c7e4a2a1841451875ef7e016007c0ff22d868e0bc3d5f0b2ba117b4",
+      "bytes": 2831
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/footer/visual.json",
+      "sha256": "a1928a5267b3cc4524d7eb8871160961261e04ccddbd1c989629037ba82cfa00",
+      "bytes": 3005
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/historic_note/visual.json",
+      "sha256": "7cd0cbda7471caf80a943db6ce13c340e198f53cecd5e8fc9038361ab22f8d89",
+      "bytes": 2431
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/historic_panel/visual.json",
+      "sha256": "232034338e57bcf3464bbaeb1cc66a851a17b42cbf3da1e602cae0567ff75424",
+      "bytes": 2823
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/historic_table/visual.json",
+      "sha256": "c70adda2a88a99fc43312a3d2f1cb0122a6386842cf3e6d6cbea9ec34653b919",
+      "bytes": 6113
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/historic_title/visual.json",
+      "sha256": "ac7634ba9a8645d7e29f680f34da7ef2f725161dd2db53c8b8bf452af3367709",
+      "bytes": 2516
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/historic_total_note/visual.json",
+      "sha256": "a0fb1268575ec61dba5e8e9c55f1c2324d70b56d20995e5e0219ea7c979c27e4",
+      "bytes": 2915
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/margen_label/visual.json",
+      "sha256": "ae8961bfef9436e392f7866027f5064cc35a513eb018b131786df1dadd523faa",
+      "bytes": 2491
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/margen_note/visual.json",
+      "sha256": "c52c6a7d3022daf90577b3eec223708a19833833db0ae637a1dd762352ac6f86",
+      "bytes": 2467
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/margen_panel/visual.json",
+      "sha256": "46bb580672aef58ee2eeda0ce541aa35587e74ef0e8994dbfe65b1e7179d1a34",
+      "bytes": 2822
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/margen_pct_label/visual.json",
+      "sha256": "057e1073f09be65ef57b991a050cd2193a04afb4272c11aa599a6eac63fdf0be",
+      "bytes": 2489
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/margen_pct_note/visual.json",
+      "sha256": "21640de59e44347161748c3a91e97cfe2e70e709aa2ac5983bb43d7620efe1a7",
+      "bytes": 2466
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/margen_pct_panel/visual.json",
+      "sha256": "68f9b3a7a0a5c50d403af5eb0821517176fd17a8e089e54f075806044f37c4ea",
+      "bytes": 2826
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/margen_pct_value/visual.json",
+      "sha256": "edd89a31810493980cbec4e044c03f1c5a0ee705110f25e776537b31bed2511f",
+      "bytes": 3779
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/margen_value/visual.json",
+      "sha256": "abe95590f63f5ac80b432fdf27a4cabdf6239e0518a1fbc1dc04336fdfe15934",
+      "bytes": 3793
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/mes/visual.json",
+      "sha256": "2111cb77e72b8b0096de830abb07a72e90893d678e220c4ea1f548df5ff6c8ad",
+      "bytes": 3917
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/mes_label/visual.json",
+      "sha256": "8e4fcd37aa8c3075ee7fc91cb888d000dbcf1c0f25e5d24e7e3446cbce156f64",
+      "bytes": 2480
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/meta_context/visual.json",
+      "sha256": "8ee1afca08a967384faec18834a898cdb6aec07a39345b17c9c0735d0a6733a3",
+      "bytes": 3808
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/meta_label/visual.json",
+      "sha256": "442982194282a0f4f6daf3645b5ea36edd76fd4ee5d4743bc3fc35bdae574b6f",
+      "bytes": 2489
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/meta_note/visual.json",
+      "sha256": "c39f21774761bb790b166fe62b08eace3878d361d676eb797acdf199f3d43640",
+      "bytes": 2459
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/meta_panel/visual.json",
+      "sha256": "6a4b1105bc52b2ec38c14e08ab0fbad0b889777db81b38e4db1731583e505f9c",
+      "bytes": 2820
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/meta_value/visual.json",
+      "sha256": "0a9b82a37866b1cf3ccb990c091fb4447ccdb15fd1f569fd41b0117ef83c4332",
+      "bytes": 3791
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/oficial_label/visual.json",
+      "sha256": "be6c2c38ca05c7bb49120f5f028342d616482e2b33fb3e59a5dd34bd985f08fe",
+      "bytes": 2491
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/oficial_note/visual.json",
+      "sha256": "24ad994abdd6b99331600492cf3b4f88f8bac3c435ecc961edf71c7ba8c98876",
+      "bytes": 2463
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/oficial_panel/visual.json",
+      "sha256": "009bebb38582aafd3affac43071ee6c9cced0198a42ff36017e4e0cc773e655a",
+      "bytes": 2822
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/oficial_value/visual.json",
+      "sha256": "0de59e56931708946aeaeebd0746ba3facf93d40d1715478ebc647bee64c9f8a",
+      "bytes": 3790
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/producto/visual.json",
+      "sha256": "e28d44970ce9467d5e5c22a772f4032c8989c604ad3c8553c1d565ca75621656",
+      "bytes": 3933
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/producto_label/visual.json",
+      "sha256": "ee72c0fb607c23ceaad5dd715745412f0a960e02f3fa720a66a07f12410445d4",
+      "bytes": 2485
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/reading_note/visual.json",
+      "sha256": "a58deb7bd04d8c7c4f488141caf1550d0ceaebaf48fa2139a342b4f3299f0206",
+      "bytes": 2426
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/reading_panel/visual.json",
+      "sha256": "1fd2e5c7cec4cba2f5999982ad9a3abcf29f1e1b085640ad5243cb38ed6543c4",
+      "bytes": 2823
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/reading_rules/visual.json",
+      "sha256": "391b4b4b8d86682759e54cebd91bb3cb0e9b310730ec4fad6b1c4c34604926ab",
+      "bytes": 2524
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/reading_title/visual.json",
+      "sha256": "16ad20519a5c954139f81929e5b44496200dd811544bdf36e54a369c3d3dcb85",
+      "bytes": 2501
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/subtitle/visual.json",
+      "sha256": "e7f1edaf435593e88f9054c0d9dc4c86299f970ace1925998441044424f13d7b",
+      "bytes": 2455
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/title/visual.json",
+      "sha256": "4e694d392ef2bd9072940b4be2da12579f1d10bff08c6abdf9cb1c197382405a",
+      "bytes": 2504
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/trend_note/visual.json",
+      "sha256": "85ec893c938a01b03c8cca68208000793b3cfcd73cc19b377f14f36b7c1b8b6f",
+      "bytes": 2418
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/trend_panel/visual.json",
+      "sha256": "72c0535f695f053022f66f901006f09357955992ef2c3a61b2718bade36a693a",
+      "bytes": 2820
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/trend_title/visual.json",
+      "sha256": "17e3d1b5d43a168f6af045acd5cb2e1a4d2fac7ac12f26078480cdd2e0df8051",
+      "bytes": 2509
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/pages/resultado/visuals/venta_mensual/visual.json",
+      "sha256": "caf9548f464e0ec9e226a7d9e8b17df1b5c98e2b75826346f39b064b94bbc22e",
+      "bytes": 5449
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/report.json",
+      "sha256": "7ca45b82d4f75735cfffef91f181071e6b702dde9bbf2a0ab668225ab551f301",
+      "bytes": 1398
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition/version.json",
+      "sha256": "c8bdd966a85f1eaab4312d2096b6d7b508243e4d7bc5a4d25af3cfcb1056a4e7",
+      "bytes": 152
+    },
+    {
+      "path": "reporte/valle-com-03.Report/definition.pbir",
+      "sha256": "d1281a59ea1d5d6791430b97c3ed2aea41e4bd53eb49f09e97a8a9d2544d2108",
+      "bytes": 126
+    },
+    {
+      "path": "reporte/valle-com-03.Report/StaticResources/RegisteredResources/tidal-accessible.json",
+      "sha256": "4b9a7d6171cd1b577a38a9c3fe499dd7fdf5f5da50d08be95ff7f1e0f2c3551a",
+      "bytes": 1342
+    },
+    {
+      "path": "reporte/valle-com-03.Report/StaticResources/SharedResources/BaseThemes/CY26SU05.json",
+      "sha256": "e52370c540c1ca0ac856f712fb9b0a21d955bd3262149e6ece77ce731192ecec",
+      "bytes": 20403
+    },
+    {
+      "path": "reporte/valle-com-03.SemanticModel/.platform",
+      "sha256": "4ebdae1aba091472efbb904a364a56e2c536deff85c2396a601568f83d14b872",
+      "bytes": 313
+    },
+    {
+      "path": "reporte/valle-com-03.SemanticModel/definition/cultures/es-PE.tmdl",
+      "sha256": "b3d9640630ff125f5b9c095462e0b224c3c67381ef591d5ed2da7ac54631fec0",
+      "bytes": 9028
+    },
+    {
+      "path": "reporte/valle-com-03.SemanticModel/definition/database.tmdl",
+      "sha256": "822c914b643bca32bb20abd8a762df8204a1b9ef02acc2bc7348727f6699cb96",
+      "bytes": 39
+    },
+    {
+      "path": "reporte/valle-com-03.SemanticModel/definition/expressions.tmdl",
+      "sha256": "499ae827f3ef10b040ff44f3d34075153992235485e8ce0f3d1c9242e20068e8",
+      "bytes": 232
+    },
+    {
+      "path": "reporte/valle-com-03.SemanticModel/definition/model.tmdl",
+      "sha256": "0e751a06b28d1b97746a132826ad3d2800f3927737b54f837b291d9007cad4ce",
+      "bytes": 630
+    },
+    {
+      "path": "reporte/valle-com-03.SemanticModel/definition/relationships.tmdl",
+      "sha256": "ace9eb2c9557436c9aaf2427156e4fefb32230d29306429af1794f2d67182214",
+      "bytes": 999
+    },
+    {
+      "path": "reporte/valle-com-03.SemanticModel/definition/tables/DimAsesorActual.tmdl",
+      "sha256": "914cabc28caa170411ddaed74bc3e70b244e6fad08ecbd4dd2c6733730957370",
+      "bytes": 932
+    },
+    {
+      "path": "reporte/valle-com-03.SemanticModel/definition/tables/DimAsesorHistorico.tmdl",
+      "sha256": "93b2687e4996bad4e53b2e21fcd1082c58de42f506a4a3f911abbd12997f1706",
+      "bytes": 950
+    },
+    {
+      "path": "reporte/valle-com-03.SemanticModel/definition/tables/DimCliente.tmdl",
+      "sha256": "e2988ac087128ff7ec38462b07becd39c3dbcccaa0780a0f943127754a4ce0e8",
+      "bytes": 908
+    },
+    {
+      "path": "reporte/valle-com-03.SemanticModel/definition/tables/DimMes.tmdl",
+      "sha256": "f2d68535dcc2813edbae2c9d3188504bf9644bdce49b9a5223e9cf155d758846",
+      "bytes": 1353
+    },
+    {
+      "path": "reporte/valle-com-03.SemanticModel/definition/tables/DimProducto.tmdl",
+      "sha256": "7c1c7ee17dd1bc700a24abf7e3b070074d1d5fdce522ba1d1546b8e4447a70a8",
+      "bytes": 914
+    },
+    {
+      "path": "reporte/valle-com-03.SemanticModel/definition/tables/FactAjuste.tmdl",
+      "sha256": "50b97a13b967421422de0e2a27c3ed7d855d8142722b786158f13628ca209288",
+      "bytes": 1665
+    },
+    {
+      "path": "reporte/valle-com-03.SemanticModel/definition/tables/FactMeta.tmdl",
+      "sha256": "54dfe6b28b17c260689e6e09ec42fb4c2ea14b0d45d1098fb6b5f9c57aac4c8e",
+      "bytes": 1187
+    },
+    {
+      "path": "reporte/valle-com-03.SemanticModel/definition/tables/FactVenta.tmdl",
+      "sha256": "678c2d7bc559a94cced5c854cca41b105bec7235c11d8d7d77ab5deffc7f02bf",
+      "bytes": 12573
+    },
+    {
+      "path": "reporte/valle-com-03.SemanticModel/definition.pbism",
+      "sha256": "ed99ec078efd2ff27fc1c65cc97902138d7d3c438acdb7770ae37dc71c7f06c8",
+      "bytes": 43
+    },
+    {
+      "path": "reporte/valle-com-03.SemanticModel/diagramLayout.json",
+      "sha256": "e2809b2e9f43c54af722edca1985f831398f32bed8d268e748fa7f92b017f60e",
+      "bytes": 3293
+    }
+  ],
+  "sourceDefinitionsUnchanged": true,
+  "refreshedOnAnotherMachine": false,
+  "published": true,
+  "runtimePassed": 2262,
+  "pdfSha256": "634f9e81a397ae923ea0ed4e62ffad4272dba122db493f5ab08a65cd9249d2c9",
+  "knownVisualIssues": [],
+  "visualDesktopVerified": true,
+  "pdfMatchesCurrentLayout": false,
+  "desktopRevision": 2,
+  "pdfExportProvenance": "original-preserved-export",
+  "runtimeReuse": "semantic-byte-identical",
+  "originalCheckedAt": "2026-10-11T04:30:27.759081+00:00",
+  "runtimeExecutedForThisRevision": false
+}

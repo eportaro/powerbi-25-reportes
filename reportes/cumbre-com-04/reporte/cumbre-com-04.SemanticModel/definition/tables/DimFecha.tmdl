@@ -1,0 +1,69 @@
+table DimFecha
+	lineageTag: 08f0f21a-1896-5793-ba4b-76b9080423fa
+
+	/// Texto con el mes elegido y su acumulado; sin selección, septiembre.
+	measure 'Mes elegido' =
+			VAR _mes = MAX ( DimFecha[mes_num] )
+			VAR _nombre = CALCULATE ( MAX ( DimFecha[mes] ), REMOVEFILTERS ( DimFecha ), DimFecha[mes_num] = _mes )
+			RETURN "Mes " & _nombre & "  ·  Acumulado Ene–" & _nombre & " 2026"
+		displayFolder: Tarjetas
+		lineageTag: 375e4c36-cdd4-5aab-bd82-89a188bab19f
+
+	column fecha
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: baf88085-4aa1-57ee-9f1c-522bdbbbd04c
+		summarizeBy: none
+		sourceColumn: fecha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column mes_num
+		dataType: int64
+		formatString: 0
+		lineageTag: 407e83a5-082e-5c7e-98ce-9ea8d2cd0da1
+		summarizeBy: none
+		sourceColumn: mes_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes
+		dataType: string
+		lineageTag: 57e061a3-6503-57d9-bbc2-36c067a9e282
+		summarizeBy: none
+		sourceColumn: mes
+		sortByColumn: mes_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column dia
+		dataType: int64
+		formatString: 0
+		lineageTag: 0ecd5d78-ec0c-5137-94a1-cf516b0dabc6
+		summarizeBy: none
+		sourceColumn: dia
+
+		annotation SummarizationSetBy = Automatic
+
+	column semana_dia
+		dataType: string
+		lineageTag: a6f69ff3-0ee7-5254-8f55-1c8421c208c3
+		summarizeBy: none
+		sourceColumn: semana_dia
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimFecha = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\DimFecha.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"fecha", type date}, {"mes_num", Int64.Type}, {"mes", type text}, {"dia", Int64.Type}, {"semana_dia", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

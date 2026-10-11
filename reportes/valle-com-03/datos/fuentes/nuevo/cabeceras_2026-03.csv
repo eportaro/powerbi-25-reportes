@@ -1,0 +1,4 @@
+document_id,business_id,document_date,customer_code,status,net_header,cost_header
+N-V-03-A-28,V-03-A-28,2026-03-28,N100,POSTED,1783.04,1117.02
+N-V-03-B-28,V-03-B-28,2026-03-28,N200,POSTED,885.06,551.29
+N-V-03-C-28,V-03-C-28,2026-03-28,N300,POSTED,1370.20,856.93

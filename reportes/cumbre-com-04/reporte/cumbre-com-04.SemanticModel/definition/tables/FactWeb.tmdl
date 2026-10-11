@@ -1,0 +1,114 @@
+table FactWeb
+	lineageTag: 8d2b6d2e-6f0f-5a8b-ab41-a3cf99ea7856
+
+	/// Mes elegido. Pedidos web completados, en proceso o reembolsados, por fecha de creación.
+	measure 'Pedidos pagados mes' =
+			VAR _mes = MAX ( DimFecha[mes_num] )
+			RETURN CALCULATE ( [Pedidos pagados base], REMOVEFILTERS ( DimFecha ), DimFecha[mes_num] = _mes )
+		formatString: #,0
+		displayFolder: Web
+		lineageTag: cd883d59-9e4b-5c4c-b2dc-39f18618de7e
+
+	/// Pedidos pagados del día.
+	measure 'Pedidos pagados base' = SUM ( FactWeb[pedidos_pagados] )
+		formatString: #,0
+		isHidden
+		displayFolder: Base
+		lineageTag: b4e9cb2d-cf7c-5368-ad57-b355a8b2b56d
+
+	/// Mes elegido. Sesiones de GA4 de los días con export completo (el 29/09 queda fuera).
+	measure 'Sesiones mes' =
+			VAR _mes = MAX ( DimFecha[mes_num] )
+			RETURN CALCULATE ( SUM ( FactWeb[sesiones] ), REMOVEFILTERS ( DimFecha ), DimFecha[mes_num] = _mes, FactWeb[ga4_completo_flag] = 1 )
+		formatString: #,0
+		displayFolder: Web
+		lineageTag: b71651a6-8eda-5219-809a-e765d496346c
+
+	/// Mes elegido. Pedidos pagados / sesiones GA4, solo días con export completo en ambos lados.
+	measure 'Conversión mes' =
+			VAR _mes = MAX ( DimFecha[mes_num] )
+			VAR _p = CALCULATE ( [Pedidos pagados base], REMOVEFILTERS ( DimFecha ), DimFecha[mes_num] = _mes, FactWeb[ga4_completo_flag] = 1 )
+			RETURN DIVIDE ( _p, [Sesiones mes] )
+		formatString: 0.00%
+		displayFolder: Web
+		lineageTag: 936c7020-7e83-501e-897d-4886067c7dce
+
+	/// Texto de tarjeta: conversión web.
+	measure 'Tarjeta conversión' =
+			VAR _c = [Conversión mes]
+			RETURN IF ( ISBLANK ( _c ), "Sin sesiones", FORMAT ( _c, "0.00%" ) )
+		displayFolder: Tarjetas
+		lineageTag: e1d9c517-8721-5b15-8896-0c9ace047b03
+
+	/// Texto de tarjeta: pedidos y sesiones del mes en los días con export completo de GA4.
+	measure 'Tarjeta conversión nota' =
+			VAR _mes = MAX ( DimFecha[mes_num] )
+			VAR _p = CALCULATE ( [Pedidos pagados base], REMOVEFILTERS ( DimFecha ), DimFecha[mes_num] = _mes, FactWeb[ga4_completo_flag] = 1 )
+			RETURN FORMAT ( _p, "#,0" ) & " pedidos / " & FORMAT ( [Sesiones mes], "#,0" ) & " sesiones · días completos"
+		displayFolder: Tarjetas
+		lineageTag: 23797cc6-6c86-5b93-ab45-a13dab9feec7
+
+	column fecha
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 9822eaf1-1d74-57de-8636-5f07090b134e
+		summarizeBy: none
+		sourceColumn: fecha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column pedidos_pagados
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9c25fe0a-dafc-51de-bcaa-78ca9b1ab1dd
+		summarizeBy: none
+		sourceColumn: pedidos_pagados
+
+		annotation SummarizationSetBy = Automatic
+
+	column panel_woo_pen
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: 286e959d-c561-55bf-8e14-597e46ff225f
+		summarizeBy: none
+		sourceColumn: panel_woo_pen
+
+		annotation SummarizationSetBy = Automatic
+
+	column sesiones
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 09111f29-f504-5424-b59c-6e193a79daf1
+		summarizeBy: none
+		sourceColumn: sesiones
+
+		annotation SummarizationSetBy = Automatic
+
+	column ga4_completo_flag
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 012fc242-148e-5eae-9fc7-6c31588e346f
+		summarizeBy: none
+		sourceColumn: ga4_completo_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactWeb = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\FactWeb.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"fecha", type date}, {"pedidos_pagados", Int64.Type}, {"panel_woo_pen", Currency.Type}, {"sesiones", Int64.Type}, {"ga4_completo_flag", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

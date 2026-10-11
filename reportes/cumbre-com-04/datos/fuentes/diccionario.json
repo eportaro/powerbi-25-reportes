@@ -1,0 +1,135 @@
+{
+  "caseId": "cumbre-com-04",
+  "company": "Cumbre Outdoor S.A.C.",
+  "currency": "PEN",
+  "cutoff": "2026-09-30",
+  "systems": {
+    "sap_b1": {
+      "kind": "ERP SAP Business One 10.0 simulado",
+      "access": "Base SQL Server simulada; aquí, una tabla por CSV en sap_b1/",
+      "tables": {
+        "OCRG": {
+          "desc": "Grupos de socios de negocio",
+          "rows": 2
+        },
+        "OTER": {
+          "desc": "Territorios",
+          "rows": 4
+        },
+        "OSLP": {
+          "desc": "Empleados de ventas. SAP no guarda la zona: U_Zona es la de hoy",
+          "rows": 17
+        },
+        "OCRD": {
+          "desc": "Socios de negocio (clientes)",
+          "rows": 5
+        },
+        "CRD1": {
+          "desc": "Direcciones de socios de negocio",
+          "rows": 3
+        },
+        "OITB": {
+          "desc": "Grupos de artículos (línea de producto)",
+          "rows": 6
+        },
+        "OITM": {
+          "desc": "Artículos",
+          "rows": 30
+        },
+        "OWHS": {
+          "desc": "Almacenes",
+          "rows": 6
+        },
+        "ORDR": {
+          "desc": "Pedidos de cliente",
+          "rows": 7316
+        },
+        "RDR1": {
+          "desc": "Líneas de pedido",
+          "rows": 14277
+        },
+        "OINV": {
+          "desc": "Facturas de clientes. CANCELED: N normal, Y anulada, C documento de cancelación",
+          "rows": 44421
+        },
+        "INV1": {
+          "desc": "Líneas de factura",
+          "rows": 76007
+        },
+        "ORIN": {
+          "desc": "Notas de crédito de clientes",
+          "rows": 1171
+        },
+        "RIN1": {
+          "desc": "Líneas de nota de crédito",
+          "rows": 1437
+        },
+        "OHLD": {
+          "desc": "Calendarios de feriados",
+          "rows": 1
+        },
+        "HLD1": {
+          "desc": "Feriados de cada calendario",
+          "rows": 11
+        }
+      }
+    },
+    "woocommerce": {
+      "kind": "API REST v3 simulada",
+      "access": "API REST paginada simulada; aquí, los pedidos descargados en woocommerce/orders.json",
+      "objects": [
+        "orders",
+        "orders/<id>/refunds"
+      ]
+    },
+    "ga4": {
+      "kind": "Export manual de GA4 (CSV)",
+      "file": "ga4/ga4_adquisicion_trafico_20260101-20260929.csv"
+    },
+    "excel_comercial": {
+      "files": [
+        "excel/metas_comerciales_2026.xlsx",
+        "excel/reporte_directorio_2026.xlsx"
+      ]
+    },
+    "excel_ecommerce": {
+      "files": [
+        "excel/equivalencias_sku.xlsx"
+      ]
+    },
+    "fotos": {
+      "kind": "Fotos de cierre Z diario de una tienda (WhatsApp)",
+      "folder": "fotos_cierre_cusco/"
+    }
+  },
+  "stateDomains": {
+    "OINV.CANCELED": [
+      "N",
+      "Y",
+      "C"
+    ],
+    "OINV.U_Canal": [
+      "TIENDA",
+      "WEB",
+      "CORPORATIVO"
+    ],
+    "ORIN.U_TipoNC": [
+      "04",
+      "06",
+      "07"
+    ],
+    "woocommerce.status": [
+      "cancelled",
+      "completed",
+      "failed",
+      "on-hold",
+      "pending",
+      "processing",
+      "refunded"
+    ]
+  },
+  "notes": [
+    "Los nombres de tablas y campos son los de SAP Business One; los U_* son campos de usuario.",
+    "Montos de línea de SAP sin IGV; DocTotal y VatSum incluyen el IGV."
+  ]
+}

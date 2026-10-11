@@ -1,0 +1,137 @@
+table FactMeta
+	lineageTag: 4df91361-a1a6-5cfc-b19a-f7da21fcee28
+
+	/// Meta comercial 2026 sin IGV: valor de cada celda del Excel ÷ 1.18. La fila TOTAL no se carga.
+	measure 'Meta base' = SUM ( FactMeta[meta_pen] )
+		formatString: #,0.00
+		isHidden
+		displayFolder: Base
+		lineageTag: e5356c16-442d-5379-b246-eedafe69992d
+
+	/// Mes elegido. Meta sin IGV de tiendas y web.
+	measure 'Meta mes' =
+			VAR _mes = MAX ( DimFecha[mes_num] )
+			RETURN CALCULATE ( [Meta base], REMOVEFILTERS ( DimFecha ), DimFecha[mes_num] = _mes )
+		formatString: #,0
+		displayFolder: Ventas
+		lineageTag: aa247197-4d86-5b9c-9aa7-9952e1d6ebf4
+
+	/// Mes elegido. Venta con meta / meta sin IGV. En blanco sin meta (corporativo).
+	measure 'Avance mes' = DIVIDE ( [Venta con meta mes], [Meta mes] )
+		formatString: 0.0%
+		displayFolder: Ventas
+		lineageTag: 68634371-ff2a-51e8-8185-e8c1aa011980
+
+	/// Mes elegido. Verde si la venta llega a la meta, rojo si no, gris sin meta.
+	measure 'Color avance mes' =
+			VAR _a = [Avance mes]
+			RETURN IF ( ISBLANK ( _a ), "#657886", IF ( _a >= 1, "#087F73", "#B4232A" ) )
+		isHidden
+		displayFolder: Formato
+		lineageTag: 940babb0-b32d-5461-b89f-979c43fad1f2
+
+	/// Enero hasta el mes elegido. Meta sin IGV de tiendas y web.
+	measure 'Meta acumulado' =
+			VAR _mes = MAX ( DimFecha[mes_num] )
+			RETURN CALCULATE ( [Meta base], REMOVEFILTERS ( DimFecha ), DimFecha[mes_num] <= _mes )
+		formatString: #,0
+		displayFolder: Ventas
+		lineageTag: 2f415dbc-25a7-56be-a131-152ac789c12d
+
+	/// Enero hasta el mes elegido. Venta con meta / meta sin IGV. En blanco sin meta (corporativo).
+	measure 'Avance acumulado' = DIVIDE ( [Venta con meta acumulado], [Meta acumulado] )
+		formatString: 0.0%
+		displayFolder: Ventas
+		lineageTag: 2c81fd6b-7665-5b44-bada-b74609e351f3
+
+	/// Enero hasta el mes elegido. Verde si la venta llega a la meta, rojo si no, gris sin meta.
+	measure 'Color avance acumulado' =
+			VAR _a = [Avance acumulado]
+			RETURN IF ( ISBLANK ( _a ), "#657886", IF ( _a >= 1, "#087F73", "#B4232A" ) )
+		isHidden
+		displayFolder: Formato
+		lineageTag: 93a0633d-7f7e-577d-b7a2-ff8ceda368f8
+
+	/// Texto de tarjeta: avance mes.
+	measure 'Tarjeta avance mes' =
+			VAR _a = [Avance mes]
+			RETURN IF ( ISBLANK ( _a ), "Sin meta", FORMAT ( _a, "0.0%" ) )
+		displayFolder: Tarjetas
+		lineageTag: 6fb79c0a-978b-57f2-bcaa-7bfc1874d784
+
+	/// Texto de tarjeta: meta mes y diferencia en soles.
+	measure 'Tarjeta meta mes' =
+			VAR _d = [Venta con meta mes] - [Meta mes]
+			RETURN IF ( ISBLANK ( [Meta mes] ), "La selección no tiene meta",
+				"Meta " & "S/ " & FORMAT ( [Meta mes], "#,0" ) & " · " & IF ( _d >= 0, "+", "−" ) & "S/ " & FORMAT ( ABS ( _d ), "#,0" ) )
+		displayFolder: Tarjetas
+		lineageTag: 69886c70-b4f1-5d2c-9fd2-bc9f5503698b
+
+	/// Texto de tarjeta: avance acumulado.
+	measure 'Tarjeta avance acumulado' =
+			VAR _a = [Avance acumulado]
+			RETURN IF ( ISBLANK ( _a ), "Sin meta", FORMAT ( _a, "0.0%" ) )
+		displayFolder: Tarjetas
+		lineageTag: 0824442b-2abc-534b-8ca0-3589a5aef7e2
+
+	/// Texto de tarjeta: meta acumulado y diferencia en soles.
+	measure 'Tarjeta meta acumulado' =
+			VAR _d = [Venta con meta acumulado] - [Meta acumulado]
+			RETURN IF ( ISBLANK ( [Meta acumulado] ), "La selección no tiene meta",
+				"Meta " & "S/ " & FORMAT ( [Meta acumulado], "#,0" ) & " · " & IF ( _d >= 0, "+", "−" ) & "S/ " & FORMAT ( ABS ( _d ), "#,0" ) )
+		displayFolder: Tarjetas
+		lineageTag: 2c03b602-da2c-5756-bb39-f7fd9097acd2
+
+	column fecha
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 57f1af76-3441-5a69-91d7-215e38527b95
+		summarizeBy: none
+		sourceColumn: fecha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column unidad
+		dataType: string
+		isHidden
+		lineageTag: 438ae6cc-948b-5d48-8d8c-eab5dd42d5ca
+		summarizeBy: none
+		sourceColumn: unidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column meta_con_igv_pen
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: 9acfca4f-78cd-5e79-a7c1-c036f373ddb8
+		summarizeBy: none
+		sourceColumn: meta_con_igv_pen
+
+		annotation SummarizationSetBy = Automatic
+
+	column meta_pen
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: 2e84fe4d-ee2c-581f-8e74-056fb94033c5
+		summarizeBy: none
+		sourceColumn: meta_pen
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactMeta = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\FactMeta.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"fecha", type date}, {"unidad", type text}, {"meta_con_igv_pen", Currency.Type}, {"meta_pen", Currency.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+
