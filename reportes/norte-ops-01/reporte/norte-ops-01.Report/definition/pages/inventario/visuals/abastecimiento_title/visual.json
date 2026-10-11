@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "abastecimiento_title",
   "position": {
-    "x": 992,
-    "y": 616,
-    "width": 408,
-    "height": 28,
+    "x": 992.05911330049253,
+    "y": 601.9655172413793,
     "z": 41000,
+    "height": 42.3743842364532,
+    "width": 407.54187192118223,
     "tabOrder": 41000
   },
   "visual": {
@@ -21,10 +21,10 @@
                   {
                     "value": "Compras por atender",
                     "textStyle": {
-                      "fontSize": "12pt",
-                      "color": "#132B43",
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
-                      "fontWeight": "bold"
+                      "fontSize": "12pt",
+                      "color": "#132b43"
                     }
                   }
                 ]

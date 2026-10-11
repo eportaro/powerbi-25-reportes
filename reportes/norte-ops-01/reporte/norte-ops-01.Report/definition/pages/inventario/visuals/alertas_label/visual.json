@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "alertas_label",
   "position": {
-    "x": 600,
-    "y": 180,
-    "width": 240,
-    "height": 23,
+    "x": 599.4729064039409,
+    "y": 168.25123152709358,
     "z": 17000,
+    "height": 34.896551724137929,
+    "width": 240.53694581280789,
     "tabOrder": 17000
   },
   "visual": {
@@ -21,10 +21,10 @@
                   {
                     "value": "BAJO MÍNIMO",
                     "textStyle": {
-                      "fontSize": "8.5pt",
-                      "color": "#657886",
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
-                      "fontWeight": "bold"
+                      "fontSize": "8.5pt",
+                      "color": "#657886"
                     }
                   }
                 ]

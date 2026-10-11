@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "valor_note",
   "position": {
-    "x": 36,
-    "y": 258,
-    "width": 244,
-    "height": 24,
+    "x": 36.142857142857139,
+    "y": 253,
     "z": 11000,
+    "height": 28.665024630541872,
+    "width": 244.27586206896549,
     "tabOrder": 11000
   },
   "visual": {
@@ -21,9 +21,9 @@
                   {
                     "value": "Saldo × costo oficial · PEN sin IGV",
                     "textStyle": {
+                      "fontFamily": "Segoe UI",
                       "fontSize": "7.8pt",
-                      "color": "#657886",
-                      "fontFamily": "Segoe UI"
+                      "color": "#657886"
                     }
                   }
                 ]

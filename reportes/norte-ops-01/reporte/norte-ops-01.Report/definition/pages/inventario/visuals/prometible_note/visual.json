@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "prometible_note",
   "position": {
-    "x": 317,
-    "y": 258,
-    "width": 244,
-    "height": 24,
+    "x": 316.5615763546798,
+    "y": 253,
     "z": 15000,
+    "height": 28.665024630541872,
+    "width": 244.27586206896549,
     "tabOrder": 15000
   },
   "visual": {
@@ -21,9 +21,9 @@
                   {
                     "value": "Neto con piso cero por SKU / almacén",
                     "textStyle": {
+                      "fontFamily": "Segoe UI",
                       "fontSize": "7.8pt",
-                      "color": "#657886",
-                      "fontFamily": "Segoe UI"
+                      "color": "#657886"
                     }
                   }
                 ]

@@ -183,7 +183,7 @@
   "repo": "https://github.com/eportaro/powerbi-25-reportes/tree/main/reportes/norte-ops-01",
   "pdf": "capturas/norte-ops-01-v2.pdf",
   "nota_datos": {
-    "es": "Demostración con datos sintéticos. El PDF conserva el export original, incluidos iconos grises y tarjetas sin filas; no contiene datos de clientes reales.",
-    "en": "Demonstration with synthetic data. The PDF preserves the original export, including grey icons and cards with no eligible rows; it contains no real customer data."
+    "es": "Demostración con datos sintéticos. El PDF es el export de Power BI Desktop; las dos tarjetas sin filas al corte muestran «En blanco». No contiene datos de clientes reales.",
+    "en": "Demonstration with synthetic data. The PDF is the Power BI Desktop export; the two cards with no eligible rows at cutoff show “(Blank)”. It contains no real customer data."
   }
 }

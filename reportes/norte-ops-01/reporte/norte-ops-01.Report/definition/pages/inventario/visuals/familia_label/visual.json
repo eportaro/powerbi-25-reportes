@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "familia_label",
   "position": {
-    "x": 1186,
-    "y": 72,
-    "width": 220,
-    "height": 22,
+    "x": 1186.4827586206895,
+    "y": 62.315270935960591,
     "z": 6000,
+    "height": 31.157635467980295,
+    "width": 219.34975369458127,
     "tabOrder": 6000
   },
   "visual": {

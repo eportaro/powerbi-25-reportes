@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "compra_label",
   "position": {
-    "x": 881,
-    "y": 180,
-    "width": 240,
-    "height": 23,
+    "x": 881.13793103448268,
+    "y": 168.25123152709358,
     "z": 21000,
+    "height": 34.896551724137929,
+    "width": 239.29064039408865,
     "tabOrder": 21000
   },
   "visual": {
@@ -21,10 +21,10 @@
                   {
                     "value": "COMPRA PENDIENTE",
                     "textStyle": {
-                      "fontSize": "8.5pt",
-                      "color": "#657886",
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
-                      "fontWeight": "bold"
+                      "fontSize": "8.5pt",
+                      "color": "#657886"
                     }
                   }
                 ]

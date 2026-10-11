@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "prioridad_title",
   "position": {
-    "x": 860,
-    "y": 320,
-    "width": 540,
-    "height": 28,
+    "x": 859.95073891625611,
+    "y": 306.59113300492612,
     "z": 35000,
+    "height": 41.128078817733986,
+    "width": 539.6502463054187,
     "tabOrder": 35000
   },
   "visual": {
@@ -21,10 +21,10 @@
                   {
                     "value": "Primero, las alertas",
                     "textStyle": {
-                      "fontSize": "12pt",
-                      "color": "#132B43",
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
-                      "fontWeight": "bold"
+                      "fontSize": "12pt",
+                      "color": "#132b43"
                     }
                   }
                 ]

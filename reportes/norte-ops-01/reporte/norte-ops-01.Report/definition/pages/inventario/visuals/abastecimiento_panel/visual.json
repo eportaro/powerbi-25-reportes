@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "abastecimiento_panel",
   "position": {
     "x": 976,
     "y": 602,
-    "width": 440,
-    "height": 338,
     "z": 40000,
+    "height": 338,
+    "width": 440,
     "tabOrder": 40000
   },
   "visual": {
@@ -19,12 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "",
-                    "textStyle": {
-                      "fontSize": "11pt",
-                      "color": "#132B43",
-                      "fontFamily": "Segoe UI"
-                    }
+                    "value": ""
                   }
                 ]
               }

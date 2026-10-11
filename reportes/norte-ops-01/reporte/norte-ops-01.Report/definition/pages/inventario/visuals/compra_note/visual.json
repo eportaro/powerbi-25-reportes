@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "compra_note",
   "position": {
-    "x": 879,
-    "y": 258,
-    "width": 244,
-    "height": 24,
+    "x": 878.64532019704427,
+    "y": 253,
     "z": 23000,
+    "height": 28.665024630541872,
+    "width": 244.27586206896549,
     "tabOrder": 23000
   },
   "visual": {

@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "disponibilidad_title",
   "position": {
-    "x": 492,
-    "y": 320,
-    "width": 320,
-    "height": 28,
+    "x": 492.29064039408865,
+    "y": 306.59113300492612,
     "z": 32000,
+    "height": 41.128078817733986,
+    "width": 320.30049261083741,
     "tabOrder": 32000
   },
   "visual": {
@@ -21,10 +21,10 @@
                   {
                     "value": "Qué puedes prometer",
                     "textStyle": {
-                      "fontSize": "12pt",
-                      "color": "#132B43",
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
-                      "fontWeight": "bold"
+                      "fontSize": "12pt",
+                      "color": "#132b43"
                     }
                   }
                 ]

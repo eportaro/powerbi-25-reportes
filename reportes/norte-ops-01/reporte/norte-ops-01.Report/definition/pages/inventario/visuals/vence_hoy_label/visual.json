@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "vence_hoy_label",
   "position": {
-    "x": 992,
-    "y": 847,
-    "width": 198,
-    "height": 22,
+    "x": 992.05911330049253,
+    "y": 837.51724137931035,
     "z": 55000,
+    "height": 31.157635467980295,
+    "width": 198.16256157635468,
     "tabOrder": 55000
   },
   "visual": {
@@ -21,9 +21,9 @@
                   {
                     "value": "Vence al corte",
                     "textStyle": {
+                      "fontFamily": "Segoe UI",
                       "fontSize": "8.3pt",
-                      "color": "#657886",
-                      "fontFamily": "Segoe UI"
+                      "color": "#657886"
                     }
                   }
                 ]

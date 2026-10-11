@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "atrasada_note",
   "position": {
-    "x": 1160,
-    "y": 258,
-    "width": 244,
-    "height": 24,
+    "x": 1160.3103448275861,
+    "y": 253,
     "z": 27000,
+    "height": 28.665024630541872,
+    "width": 244.27586206896549,
     "tabOrder": 27000
   },
   "visual": {
@@ -21,9 +21,9 @@
                   {
                     "value": "Prometida antes del corte",
                     "textStyle": {
+                      "fontFamily": "Segoe UI",
                       "fontSize": "7.8pt",
-                      "color": "#657886",
-                      "fontFamily": "Segoe UI"
+                      "color": "#657886"
                     }
                   }
                 ]

@@ -23,7 +23,7 @@ Reglas completas y explicación de indicadores en `documentacion/`.
 
 La comprobación previa del motor concilió 1.412 controles RAW/modelo/DAX; apertura, actualización, guardado y filtros se comprobaron en Desktop. La copia portable cambia únicamente el
 parámetro DataFolder y excluye cachés; aún no se ha refrescado esta copia en otra máquina.
-Se incluyen el **PDF exportado de Power BI Desktop** y su render PNG; la previsualización HTML anterior conserva su etiqueta. El PDF conserva algunos iconos grises y tarjetas «En blanco»: detalle de acabado pendiente antes de usarlo en marketing.
+Se incluyen el **PDF exportado de Power BI Desktop** y su render PNG; la previsualización HTML anterior conserva su etiqueta. El PDF corresponde a la revisión v2 guardada en Desktop (11/10/2026), con títulos y cabeceras completos; las dos tarjetas sin filas al corte muestran «En blanco».
 No hay histórico suficiente para rotación, cobertura ni proyecciones. Se publica el proyecto descargable; no es un enlace interactivo del servicio Power BI.
 
 ## PDF e imagen
@@ -36,5 +36,5 @@ No hay histórico suficiente para rotación, cobertura ni proyecciones. Se publi
 
 ## Open in Power BI Desktop
 
-Open `reporte/norte-ops-01-v2.pbip`, then set **DataFolder** under Transform data → Edit parameters to the absolute path of this folder’s `datos/modelo`. Refresh and save. Data is synthetic, at 2026-09-30 cutoff. Desktop reads the prepared model CSV files; it does not transform RAW sources. The portable copy has not been refreshed on a different machine. The original PDF is preserved unchanged, including grey icons and blank cards.
+Open `reporte/norte-ops-01-v2.pbip`, then set **DataFolder** under Transform data → Edit parameters to the absolute path of this folder’s `datos/modelo`. Refresh and save. Data is synthetic, at 2026-09-30 cutoff. Desktop reads the prepared model CSV files; it does not transform RAW sources. The portable copy has not been refreshed on a different machine. The PDF is the v2 revision saved in Desktop (2026-10-11), with full titles and headers; the two cards with no eligible rows at cutoff show “(Blank)”.
 

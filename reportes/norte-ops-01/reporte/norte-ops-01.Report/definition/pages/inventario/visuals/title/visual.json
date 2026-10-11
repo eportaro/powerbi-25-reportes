@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "title",
   "position": {
-    "x": 24,
-    "y": 72,
-    "width": 830,
-    "height": 46,
+    "x": 23.679802955665025,
+    "y": 62.315270935960591,
     "z": 2000,
+    "height": 56.083743842364527,
+    "width": 830.039408866995,
     "tabOrder": 2000
   },
   "visual": {
@@ -21,10 +21,10 @@
                   {
                     "value": "Inventario que puedes comprometer.",
                     "textStyle": {
-                      "fontSize": "25pt",
-                      "color": "#132B43",
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
-                      "fontWeight": "bold"
+                      "fontSize": "25pt",
+                      "color": "#132b43"
                     }
                   }
                 ]
